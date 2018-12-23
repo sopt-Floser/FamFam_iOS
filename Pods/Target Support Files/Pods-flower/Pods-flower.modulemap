@@ -1,0 +1,6 @@
+framework module Pods_flower {
+  umbrella header "Pods-flower-umbrella.h"
+
+  export *
+  module * { export * }
+}
