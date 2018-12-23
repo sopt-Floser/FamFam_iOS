@@ -43,13 +43,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9B0DE9B721CF46140020371E /* New Group5 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group5";
-			sourceTree = "<group>";
-		};
 		9B44BEDF21CF33DE00EB5C17 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,39 +51,36 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		9B44BEE021CF33EA00EB5C17 /* New Group */ = {
+		9B44BEE021CF33EA00EB5C17 /* Plus */ = {
 			isa = PBXGroup;
 			children = (
+				9B453EE421CE014B001BD091 /* PlusBoard.storyboard */,
 			);
-			path = "New Group";
+			path = Plus;
 			sourceTree = "<group>";
 		};
-		9B44BEE121CF33F700EB5C17 /* New Group1 */ = {
+		9B44BEE121CF33F700EB5C17 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */,
 			);
-			path = "New Group1";
+			path = Home;
 			sourceTree = "<group>";
 		};
-		9B44BEE221CF33FF00EB5C17 /* New Group2 */ = {
+		9B44BEE221CF33FF00EB5C17 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */,
 			);
-			path = "New Group2";
+			path = Chat;
 			sourceTree = "<group>";
 		};
-		9B44BEE321CF341300EB5C17 /* New Group3 */ = {
+		9B44BEE321CF341300EB5C17 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				9B453EDE21CDFDFA001BD091 /* TodayBoard.storyboard */,
 			);
-			path = "New Group3";
-			sourceTree = "<group>";
-		};
-		9B44BEE421CF341D00EB5C17 /* New Group4 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group4";
+			path = Today;
 			sourceTree = "<group>";
 		};
 		9B453EC021CDFD3A001BD091 = {
@@ -112,32 +102,18 @@
 		9B453ECB21CDFD3A001BD091 /* flower */ = {
 			isa = PBXGroup;
 			children = (
-				9B0DE9B721CF46140020371E /* New Group5 */,
-				9B44BEE421CF341D00EB5C17 /* New Group4 */,
-				9B44BEE321CF341300EB5C17 /* New Group3 */,
-				9B44BEE221CF33FF00EB5C17 /* New Group2 */,
-				9B44BEE121CF33F700EB5C17 /* New Group1 */,
-				9B44BEE021CF33EA00EB5C17 /* New Group */,
+				9B44BEE321CF341300EB5C17 /* Today */,
+				9B44BEE221CF33FF00EB5C17 /* Chat */,
+				9B44BEE121CF33F700EB5C17 /* Home */,
+				9B44BEE021CF33EA00EB5C17 /* Plus */,
 				9B44BEDF21CF33DE00EB5C17 /* Main */,
 				9B453EE921CE1839001BD091 /* ViewController */,
-				9B453EE821CE181C001BD091 /* Storyboard */,
 				9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */,
 				9B453ED321CDFD3B001BD091 /* Assets.xcassets */,
 				9B453ED521CDFD3B001BD091 /* LaunchScreen.storyboard */,
 				9B453ED821CDFD3B001BD091 /* Info.plist */,
 			);
 			path = flower;
-			sourceTree = "<group>";
-		};
-		9B453EE821CE181C001BD091 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				9B453EE421CE014B001BD091 /* PlusBoard.storyboard */,
-				9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */,
-				9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */,
-				9B453EDE21CDFDFA001BD091 /* TodayBoard.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		9B453EE921CE1839001BD091 /* ViewController */ = {
