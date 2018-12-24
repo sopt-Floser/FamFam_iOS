@@ -35,6 +35,7 @@ class CalendarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /** 서버 정보 가져오기 */
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
             let serverObject = self.getServerEvents()
             for (date, event) in serverObject{
@@ -45,7 +46,6 @@ class CalendarVC: UIViewController {
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
             }
-            
         }
 
         
