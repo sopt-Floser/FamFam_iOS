@@ -19,6 +19,7 @@
 		9B453EE121CDFEF9001BD091 /* HomeBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */; };
 		9B453EE521CE014B001BD091 /* PlusBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE421CE014B001BD091 /* PlusBoard.storyboard */; };
 		9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */; };
+		9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B497AB721D0A4D200182C41 /* CalendarHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeBoard.storyboard; sourceTree = "<group>"; };
 		9B453EE421CE014B001BD091 /* PlusBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlusBoard.storyboard; sourceTree = "<group>"; };
 		9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatBoard.storyboard; sourceTree = "<group>"; };
+		9B497AB721D0A4D200182C41 /* CalendarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
 		A7F151B357CC25EDA7E8439B /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
 		C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */,
 				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
 				9B0DE9BA21CF56360020371E /* CalendarVC.swift */,
+				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
+				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
