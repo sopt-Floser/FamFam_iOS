@@ -22,6 +22,13 @@ class Responder: NSObject{
 let responder = Responder()
 
 
+/** 할 것
+ 1. 버튼 여러개 클릭 시 앱 터짐 -> 오류 처리문 작성
+ 2. 데이터 저장, 서버에 전달하기
+ 3. 가족일정 (수정)
+ */
+
+
 class CalendarAddVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
