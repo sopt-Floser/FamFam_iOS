@@ -119,7 +119,7 @@
         <scene sceneID="q4d-Z4-ylX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4ma-wn-QWu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" id="hlk-hy-HGd"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="homeIcon2" id="hlk-hy-HGd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eSr-0C-kqD">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -153,4 +153,7 @@
             <point key="canvasLocation" x="366" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeIcon2" width="24" height="24"/>
+    </resources>
 </document>
