@@ -28,6 +28,16 @@ class CalendarVC: UIViewController {
         return dateFormatter
     }()
     
+    let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
+    
+    @objc func handleLongPress(gesture: UILongPressGestureRecognizer){
+        print("long press")
+        
+        if gesture.state == UIGestureRecognizer.State.began{
+            
+        }
+    }
+    
     var eventsFromTheServer: [String:String] = [:]
     
     override func viewDidLoad() {
@@ -47,6 +57,9 @@ class CalendarVC: UIViewController {
         calendarView.visibleDates { dateSegment in
             self.setupCalendarView(dateSegment: dateSegment)
         }
+        
+        calendarView.addGestureRecognizer(longPressGesture)
+        
     }
     
     func setupCalendarView(dateSegment: DateSegmentInfo){
@@ -142,6 +155,7 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     /** 셀을 선택했을 시 동작 */
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         configureCell(cell: cell, cellState: cellState)
+        
         cell?.bounce()
     }
     
