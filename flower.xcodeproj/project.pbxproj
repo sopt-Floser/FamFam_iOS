@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9A6843FEAA7FD0E45E736445 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */; };
+		9B096B0521D465A500442A68 /* todayBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0421D465A500442A68 /* todayBoardCell.swift */; };
+		9B096B0721D465B300442A68 /* todayReadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0621D465B300442A68 /* todayReadCell.swift */; };
+		9B096B0921D465E300442A68 /* todayWriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0821D465E300442A68 /* todayWriteCell.swift */; };
+		9B096B0B21D46A9C00442A68 /* todayBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0A21D46A9C00442A68 /* todayBoardVC.swift */; };
+		9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0D21D472BF00442A68 /* LocalDataBase.swift */; };
 		9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9B821CF550E0020371E /* CalendarCell.swift */; };
 		9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9BA21CF56360020371E /* CalendarVC.swift */; };
 		9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */; };
@@ -27,6 +32,11 @@
 
 /* Begin PBXFileReference section */
 		7265A9BC1ECD072DEC31FC40 /* Pods-flower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.release.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.release.xcconfig"; sourceTree = "<group>"; };
+		9B096B0421D465A500442A68 /* todayBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBoardCell.swift; sourceTree = "<group>"; };
+		9B096B0621D465B300442A68 /* todayReadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayReadCell.swift; sourceTree = "<group>"; };
+		9B096B0821D465E300442A68 /* todayWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayWriteCell.swift; sourceTree = "<group>"; };
+		9B096B0A21D46A9C00442A68 /* todayBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBoardVC.swift; sourceTree = "<group>"; };
+		9B096B0D21D472BF00442A68 /* LocalDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataBase.swift; sourceTree = "<group>"; };
 		9B0DE9B821CF550E0020371E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		9B0DE9BA21CF56360020371E /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopVC.swift; sourceTree = "<group>"; };
@@ -67,6 +77,14 @@
 				7265A9BC1ECD072DEC31FC40 /* Pods-flower.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B096B0C21D472AF00442A68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B096B0D21D472BF00442A68 /* LocalDataBase.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9B44BEDF21CF33DE00EB5C17 /* Main */ = {
@@ -111,6 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				9B453EDE21CDFDFA001BD091 /* TodayBoard.storyboard */,
+				9B096B0421D465A500442A68 /* todayBoardCell.swift */,
+				9B096B0621D465B300442A68 /* todayReadCell.swift */,
+				9B096B0821D465E300442A68 /* todayWriteCell.swift */,
+				9B096B0A21D46A9C00442A68 /* todayBoardVC.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -136,6 +158,7 @@
 		9B453ECB21CDFD3A001BD091 /* flower */ = {
 			isa = PBXGroup;
 			children = (
+				9B096B0C21D472AF00442A68 /* Model */,
 				9B44BEE321CF341300EB5C17 /* Today */,
 				9B44BEE221CF33FF00EB5C17 /* Chat */,
 				9B44BEE121CF33F700EB5C17 /* Home */,
@@ -292,14 +315,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B096B0921D465E300442A68 /* todayWriteCell.swift in Sources */,
 				9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */,
+				9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */,
+				9B096B0721D465B300442A68 /* todayReadCell.swift in Sources */,
 				9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */,
 				9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */,
 				9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
+				9B096B0521D465A500442A68 /* todayBoardCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
+				9B096B0B21D46A9C00442A68 /* todayBoardVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
