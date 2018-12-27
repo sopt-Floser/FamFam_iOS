@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Log In View Controller-->
+        <!--LoginVC-->
         <scene sceneID="bR1-pg-FL3">
             <objects>
-                <viewController id="iRd-7A-wVp" customClass="LogInViewController" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iRd-7A-wVp" customClass="LoginVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYa-hi-sax">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginAction:" destination="iRd-7A-wVp" eventType="touchUpInside" id="Mi1-5i-ZsD"/>
+                                    <action selector="loginAction:" destination="iRd-7A-wVp" eventType="touchUpInside" id="GY6-Ge-A8F"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9Q-NI-K88">
@@ -137,8 +137,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="W7G-gN-qNN"/>
                     <connections>
-                        <outlet property="emailTF" destination="VTJ-va-dKw" id="lMV-Lj-9rE"/>
-                        <outlet property="passwordTF" destination="Tfi-Zs-Hns" id="sTh-0v-2L1"/>
+                        <outlet property="emailTF" destination="VTJ-va-dKw" id="yM8-QQ-DrV"/>
+                        <outlet property="passwordTF" destination="Tfi-Zs-Hns" id="Oym-fK-2rG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SL2-0Y-fr4" userLabel="First Responder" sceneMemberID="firstResponder"/>

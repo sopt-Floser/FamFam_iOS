@@ -6,6 +6,7 @@ target 'flower' do
   use_frameworks!
 pod 'JTAppleCalendar', '~> 7.0'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'SlideController'
 
   # Pods for flower
 

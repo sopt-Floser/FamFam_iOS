@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideController
 
 class IntroduceVC: UIViewController {
     
@@ -39,6 +40,8 @@ class IntroduceVC: UIViewController {
         introduceImage.image = UIImage(named: images[pageControl.currentPage])
         
     }
+    
+    
     
 
     /*
