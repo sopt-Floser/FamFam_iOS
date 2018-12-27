@@ -91,6 +91,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9B096B0F21D4B67800442A68 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9B0DE9BA21CF56360020371E /* CalendarVC.swift */,
+				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
+				9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */,
+				9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */,
+				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		9B096B1021D4B69600442A68 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		9B096B1121D4B6BB00442A68 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
 		9B44BEDF21CF33DE00EB5C17 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +138,10 @@
 		9B44BEE121CF33F700EB5C17 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9B096B1121D4B6BB00442A68 /* Notice */,
+				9B096B1021D4B69600442A68 /* Statistic */,
+				9B096B0F21D4B67800442A68 /* Calendar */,
 				9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */,
-				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
-				9B0DE9BA21CF56360020371E /* CalendarVC.swift */,
-				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
-				9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */,
-				9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
