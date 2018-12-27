@@ -17,8 +17,8 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month: UILabel!
- 
     
+    let todayDate = Date()
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -28,13 +28,20 @@ class CalendarVC: UIViewController {
         return dateFormatter
     }()
     
-    let todayDate = Date()
+    let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
+    
+    @objc func handleLongPress(gesture: UILongPressGestureRecognizer){
+        print("long press")
+        
+        if gesture.state == UIGestureRecognizer.State.began{
+            
+        }
+    }
     
     var eventsFromTheServer: [String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         /** 서버 정보 가져오기 */
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
             let serverObject = self.getServerEvents()
@@ -42,16 +49,17 @@ class CalendarVC: UIViewController {
                 let stringDate = self.formatter.string(from: date)
                 self.eventsFromTheServer[stringDate] = event
             }
-            
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
             }
         }
 
-        
         calendarView.visibleDates { dateSegment in
             self.setupCalendarView(dateSegment: dateSegment)
         }
+        
+        calendarView.addGestureRecognizer(longPressGesture)
+        
     }
     
     func setupCalendarView(dateSegment: DateSegmentInfo){
@@ -112,7 +120,6 @@ extension CalendarVC:JTAppleCalendarViewDataSource{
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let myCalendarCell = cell as! CalendarCell
         sharedFunctionToConfigureCell(myCalendarCell: myCalendarCell, cellState: cellState, date: date)
-        print("calendar cell setting complete!")
     }
     
     /** 달력 시작과 끝 설정 */
@@ -148,6 +155,7 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     /** 셀을 선택했을 시 동작 */
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         configureCell(cell: cell, cellState: cellState)
+        
         cell?.bounce()
     }
     
@@ -156,11 +164,12 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
         configureCell(cell: cell, cellState: cellState)
     }
     
-    /** 스와핑 */
+    /** 좌우 스와핑 */
     func calendar(_ calendar:JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupCalendarView(dateSegment: visibleDates)
     }
     
+    /** 헤더에 요일 설정 */
     func calendar(_ calendar: JTAppleCalendarView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTAppleCollectionReusableView {
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "calendarheader", for: indexPath) as! CalendarHeader
         return header
@@ -186,6 +195,7 @@ extension CalendarVC {
     }
 }
 
+/** 클릭 시 뛰어오르는 이벤트 */
 extension UIView {
     func bounce(){
         self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
