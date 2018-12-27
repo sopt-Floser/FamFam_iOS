@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B7n-kQ-GxH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -257,9 +257,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="alramPic" width="716" height="1276"/>
-        <image name="cakeImg" width="512" height="512"/>
-        <image name="todayPic2" width="624" height="1102"/>
-        <image name="todayPic3" width="736" height="1308"/>
+        <image name="alramPic" width="358" height="638"/>
+        <image name="cakeImg" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="todayPic2" width="312" height="551"/>
+        <image name="todayPic3" width="368" height="654"/>
     </resources>
 </document>
