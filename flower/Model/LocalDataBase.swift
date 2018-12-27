@@ -9,33 +9,34 @@
 import UIKit
 import Foundation
 
-/** 오늘의 하루 - 게시글 데이터 */
+// 오늘의 하루 - 게시글 데이터
 class TodayBoardData {
     var profileImageData: UIImage
-    var profileNameData: UILabel
+    var profileNameData: String
     var profileDateDate: Date
     
     var boardContentData: UIImage
-    var boardPageControlData: Int
+    var boardPageControlData: Int = 0
     
     var commentImageData: UIImage
-    var commentNameData: UILabel
-    var commentContentData: UILabel
+    var commentNameData: String
+    var commentContentData: String
     var commentCountData: Int
 
+    
     init(pImage : UIImage, pName: String, pDate: Date,
          bContent:UIImage, bPage:Int,
          cImage: UIImage, cName:String, cContent:String, cCount:Int){
         self.profileImageData = pImage
-        self.profileNameData.text = pName
+        self.profileNameData = pName
         self.profileDateDate = pDate
-        
+
         self.boardContentData = bContent
         self.boardPageControlData = bPage
-        
+
         self.commentImageData = cImage
-        self.commentNameData.text = cName
-        self.commentContentData.text = cContent
+        self.commentNameData = cName
+        self.commentContentData = cContent
         self.commentCountData = cCount
     }
 }
@@ -50,36 +51,37 @@ class TodayWriteData {
     
 }
 
+// 채팅 - 채팅 내역 데이터
 class ChartBoardData {
     
 }
 
-// 
+// 채팅 - 채팅 작성 데이터
 class ChartwriteData {
     
 }
 
-// 캘린더 모델
+// 홈 - 일정 모델
 class CalendarModel {
     
 }
 
-// 달력 데이터
+// 홈 - 일정 데이터
 class CalendarData {
     
 }
 
-// 캘린더 작성
+// 홈 - 일정 작성
 class CalendarWriteData {
     
 }
 
-// 캘린더 알림
+// 홈 - 일정 알림
 class CalendarNoticeData {
     
 }
 
-// 더보기
+// 더보기 - 더보기 데이터
 class PlusData{
     
 }

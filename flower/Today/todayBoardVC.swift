@@ -37,14 +37,14 @@ class todayBoardVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let boardcell = tableView.dequeueReusableCell(withIdentifier: "today_board_Cell", for: indexPath) as! todayBoardCell
         // 상단 (프로필)
-        boardcell.profileImage.image = UIImage(named: <#T##String#>)
+        boardcell.profileImage.image = UIImage(named:"cakeImg")
         boardcell.profileName.text = ""
         boardcell.profileDate.text = ""
         // 중간 (게시글)
-        boardcell.boardContent.image = UIImage(named: <#T##String#>)
+        boardcell.boardContent.image = UIImage(named:"cakeImg")
         boardcell.boardPagecontrol.currentPage = 0
         // 하단 (댓글)
-        boardcell.commentImage.image = UIImage(named: <#T##String#>)
+        boardcell.commentImage.image = UIImage(named:"cakeImg")
         boardcell.commentName.text = ""
         boardcell.commentContent.text = ""
         boardcell.commentCount.text = ""
