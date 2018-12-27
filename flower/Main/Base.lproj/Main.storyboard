@@ -155,6 +155,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7BC-Wv-qcw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="오늘의 하루로 가족들과 일상을 공유해보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBW-Dx-YN2">
                                 <rect key="frame" x="58" y="472" width="260" height="16"/>
@@ -250,7 +251,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WvP-zX-qE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611.2" y="-254.57271364317842"/>
+            <point key="canvasLocation" x="2563" y="-254"/>
         </scene>
         <!--TodayBoard-->
         <scene sceneID="cwG-h5-d4q">
@@ -260,7 +261,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW4-nk-jW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371" y="-1353"/>
+            <point key="canvasLocation" x="2245" y="-1353"/>
         </scene>
         <!--HomeBoard-->
         <scene sceneID="1Qs-oB-gnd">
