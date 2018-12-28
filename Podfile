@@ -6,8 +6,12 @@ target 'flower' do
   use_frameworks!
 pod 'JTAppleCalendar', '~> 7.0'
 pod 'SwiftyJSON', '~> 4.0'
+<<<<<<< HEAD
+pod 'SlideController'
+=======
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+>>>>>>> 1ddc509c840ecb905b28f4c2684ca3b475bf2ec8
 
   # Pods for flower
 

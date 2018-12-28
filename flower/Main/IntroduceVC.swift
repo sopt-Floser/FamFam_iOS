@@ -7,25 +7,31 @@
 //
 
 import UIKit
+import SlideController
 
 class IntroduceVC: UIViewController {
     
     @IBOutlet var introduceImage: UIImageView!
     @IBOutlet var pageControl: UIPageControl!
     
-    var images = ["임시 스플래시 이미지.png","plusPic.png"] //소개 이미지들
+
+    var images = ["todayPic2.png","plusPic.png","plusPic2","plusPic3"] //소개 이미지들
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pageControl.numberOfPages = images.count
         pageControl.currentPage = 0
-        pageControl.pageIndicatorTintColor = UIColor.green
-        pageControl.currentPageIndicatorTintColor = UIColor.red
         introduceImage.image = UIImage(named: images[0])
-
+    
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        pageControl.subviews.forEach {
+            $0.transform = CGAffineTransform(scaleX: 1.7, y: 1.7)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +46,8 @@ class IntroduceVC: UIViewController {
         
     }
     
+    
+    
 
     /*
     // MARK: - Navigation
@@ -52,3 +60,4 @@ class IntroduceVC: UIViewController {
     */
 
 }
+

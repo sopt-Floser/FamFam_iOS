@@ -18,6 +18,8 @@ class todayReadCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        readImage.clipsToBounds = true
+        readImage.layer.cornerRadius = readImage.frame.height/2
         // Initialization code
     }
 

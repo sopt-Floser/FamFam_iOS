@@ -1,20 +1,24 @@
 PODS:
   - JTAppleCalendar (7.1.6)
+  - SlideController (1.4.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
+  - SlideController
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - JTAppleCalendar
+    - SlideController
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   JTAppleCalendar: abb30678f42a4ef8a340a932b1dcb8c85a33dac2
+  SlideController: df5d348a6189c7d0950e96966de4933bb3ee65a6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 2c28ba934bafd4392650da8f086495d5d308e484
+PODFILE CHECKSUM: e2b4162f24c505b4dfee7e291c08f72ceb24bec2
 
 COCOAPODS: 1.5.3

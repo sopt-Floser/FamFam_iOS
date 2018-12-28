@@ -42,7 +42,16 @@ class TodayBoardData {
 }
 
 // 오늘의 하루 - 댓글 보기 데이터
-class TodayReadData {
+struct TodayReadData {
+    var readImage: UIImage?
+    var readName: String
+    var readContent: String
+    
+    init(profile: String,replier: String,memo:String){
+        self.readImage = UIImage(named: profile)
+        self.readName = replier
+        self.readContent = memo
+    }
     
 }
 
