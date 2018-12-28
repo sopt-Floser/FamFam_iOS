@@ -707,7 +707,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7wT-4s-yQL">
                                 <rect key="frame" x="132" y="181" width="204" height="66"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="uC2-X4-WEm"/>
                                 </constraints>
@@ -741,7 +741,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Mhb-pH-njc" firstAttribute="top" secondItem="Umc-y1-ODR" secondAttribute="bottom" constant="5" id="Efa-Mu-d27"/>
                                             <constraint firstItem="Umc-y1-ODR" firstAttribute="leading" secondItem="Mhb-pH-njc" secondAttribute="leading" id="Tne-IX-mw3"/>

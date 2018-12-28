@@ -50,8 +50,6 @@ class CalendarAddVC: UIViewController, UITextFieldDelegate {
     let segmentFont = "DiwanMishafi"
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentSetting()
@@ -120,4 +118,8 @@ class CalendarAddVC: UIViewController, UITextFieldDelegate {
         self.view.frame.origin.y = 0
     }
     
+    func keyboardAccessorySetting(){
+    
+    }
 }
+
