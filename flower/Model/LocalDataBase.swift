@@ -10,47 +10,51 @@ import UIKit
 import Foundation
 
 // 오늘의 하루 - 게시글 데이터
-class TodayBoardData {
-    var profileImageData: UIImage
-    var profileNameData: String
-    var profileDateDate: Date
+struct TodayPostData {
+    var postProfileImage: String? //UIImage?
+    var postName: String
+    var postDate: String //date로 바꿔야함
     
-    var boardContentData: UIImage
-    var boardPageControlData: Int = 0
+    var postImage: String? //UIImage?
+    var postImagePagecontrol: Int = 0
     
-    var commentImageData: UIImage
-    var commentNameData: String
-    var commentContentData: String
-    var commentCountData: Int
+    
+    
+    var emotionImage: String? //UIImage?
+    var emotionName: String
+    
+    var postContent: String
+    
+    var replyCount: Int
 
     
-    init(pImage : UIImage, pName: String, pDate: Date,
-         bContent:UIImage, bPage:Int,
-         cImage: UIImage, cName:String, cContent:String, cCount:Int){
-        self.profileImageData = pImage
-        self.profileNameData = pName
-        self.profileDateDate = pDate
+    init(pPImage : String, pName: String, pDate: String,
+         pImage:String, pPage:Int,
+         eImage: String, eName:String, pContent:String, rCount:Int){
+        self.postProfileImage = pPImage//UIImage(named: pPImage)
+        self.postName = pName
+        self.postDate = pDate
 
-        self.boardContentData = bContent
-        self.boardPageControlData = bPage
+        self.postImage = pImage //UIImage(named:pImage)
+        self.postImagePagecontrol = pPage
 
-        self.commentImageData = cImage
-        self.commentNameData = cName
-        self.commentContentData = cContent
-        self.commentCountData = cCount
+        self.emotionImage = eImage //UIImage(named:eImage)
+        self.emotionName = eName
+        self.postContent = pContent
+        self.replyCount = rCount
     }
 }
 
 // 오늘의 하루 - 댓글 보기 데이터
-struct TodayReadData {
-    var readImage: UIImage?
-    var readName: String
-    var readContent: String
+struct TodayReplyData {
+    var replyImage: UIImage?
+    var replyName: String
+    var replyContent: String
     
     init(profile: String,replier: String,memo:String){
-        self.readImage = UIImage(named: profile)
-        self.readName = replier
-        self.readContent = memo
+        self.replyImage = UIImage(named: profile)
+        self.replyName = replier
+        self.replyContent = memo
     }
     
 }

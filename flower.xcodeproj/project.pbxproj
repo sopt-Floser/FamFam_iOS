@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B85FE21D4642A00268906 /* LoginVC.swift */; };
 		4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */; };
+		4DB0CD3A21D62E3800105EAE /* FullPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3921D62E3800105EAE /* FullPostVC.swift */; };
 		4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */; };
 		9A6843FEAA7FD0E45E736445 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */; };
 		9B096B0521D465A500442A68 /* todayPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0421D465A500442A68 /* todayPostCell.swift */; };
 		9B096B0721D465B300442A68 /* todayReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0621D465B300442A68 /* todayReplyCell.swift */; };
 		9B096B0921D465E300442A68 /* todayNewReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0821D465E300442A68 /* todayNewReplyCell.swift */; };
-		9B096B0B21D46A9C00442A68 /* TodayFeedTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0A21D46A9C00442A68 /* TodayFeedTableVC.swift */; };
 		9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0D21D472BF00442A68 /* LocalDataBase.swift */; };
 		9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1221D4B75B00442A68 /* StatisticCell.swift */; };
 		9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1421D4B76C00442A68 /* NoticeCell.swift */; };
@@ -41,12 +41,12 @@
 /* Begin PBXFileReference section */
 		4D2B85FE21D4642A00268906 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedVC.swift; sourceTree = "<group>"; };
+		4DB0CD3921D62E3800105EAE /* FullPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPostVC.swift; sourceTree = "<group>"; };
 		4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceVC.swift; sourceTree = "<group>"; };
 		7265A9BC1ECD072DEC31FC40 /* Pods-flower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.release.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.release.xcconfig"; sourceTree = "<group>"; };
 		9B096B0421D465A500442A68 /* todayPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayPostCell.swift; sourceTree = "<group>"; };
 		9B096B0621D465B300442A68 /* todayReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayReplyCell.swift; sourceTree = "<group>"; };
 		9B096B0821D465E300442A68 /* todayNewReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayNewReplyCell.swift; sourceTree = "<group>"; };
-		9B096B0A21D46A9C00442A68 /* TodayFeedTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedTableVC.swift; sourceTree = "<group>"; };
 		9B096B0D21D472BF00442A68 /* LocalDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataBase.swift; sourceTree = "<group>"; };
 		9B096B1221D4B75B00442A68 /* StatisticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCell.swift; sourceTree = "<group>"; };
 		9B096B1421D4B76C00442A68 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				9B096B0621D465B300442A68 /* todayReplyCell.swift */,
 				9B096B0821D465E300442A68 /* todayNewReplyCell.swift */,
 				4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */,
-				9B096B0A21D46A9C00442A68 /* TodayFeedTableVC.swift */,
+				4DB0CD3921D62E3800105EAE /* FullPostVC.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -396,11 +396,11 @@
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
+				4DB0CD3A21D62E3800105EAE /* FullPostVC.swift in Sources */,
 				9B096B0521D465A500442A68 /* todayPostCell.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
-				9B096B0B21D46A9C00442A68 /* TodayFeedTableVC.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
