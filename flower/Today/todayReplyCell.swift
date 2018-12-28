@@ -9,17 +9,17 @@
 import UIKit
 import Foundation
 
-class todayReadCell: UITableViewCell {
+class todayReplyCell: UITableViewCell {
 
-    @IBOutlet weak var readImage: UIImageView!
-    @IBOutlet weak var readName: UILabel!
-    @IBOutlet weak var readContent: UILabel!
+    @IBOutlet weak var replyImage: UIImageView!
+    @IBOutlet weak var replyName: UILabel!
+    @IBOutlet weak var replyContent: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        readImage.clipsToBounds = true
-        readImage.layer.cornerRadius = readImage.frame.height/2
+        replyImage.clipsToBounds = true
+        replyImage.layer.cornerRadius = replyImage.frame.height/2
         // Initialization code
     }
 

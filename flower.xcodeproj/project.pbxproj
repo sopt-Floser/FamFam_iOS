@@ -10,9 +10,9 @@
 		4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B85FE21D4642A00268906 /* LoginVC.swift */; };
 		4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */; };
 		9A6843FEAA7FD0E45E736445 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */; };
-		9B096B0521D465A500442A68 /* todayBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0421D465A500442A68 /* todayBoardCell.swift */; };
-		9B096B0721D465B300442A68 /* todayReadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0621D465B300442A68 /* todayReadCell.swift */; };
-		9B096B0921D465E300442A68 /* todayWriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0821D465E300442A68 /* todayWriteCell.swift */; };
+		9B096B0521D465A500442A68 /* todayPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0421D465A500442A68 /* todayPostCell.swift */; };
+		9B096B0721D465B300442A68 /* todayReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0621D465B300442A68 /* todayReplyCell.swift */; };
+		9B096B0921D465E300442A68 /* todayNewReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0821D465E300442A68 /* todayNewReplyCell.swift */; };
 		9B096B0B21D46A9C00442A68 /* todayBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0A21D46A9C00442A68 /* todayBoardVC.swift */; };
 		9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0D21D472BF00442A68 /* LocalDataBase.swift */; };
 		9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1221D4B75B00442A68 /* StatisticCell.swift */; };
@@ -26,7 +26,7 @@
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
 		9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED321CDFD3B001BD091 /* Assets.xcassets */; };
 		9B453ED721CDFD3B001BD091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED521CDFD3B001BD091 /* LaunchScreen.storyboard */; };
-		9B453EDF21CDFDFA001BD091 /* TodayBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EDE21CDFDFA001BD091 /* TodayBoard.storyboard */; };
+		9B453EDF21CDFDFA001BD091 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EDE21CDFDFA001BD091 /* Today.storyboard */; };
 		9B453EE121CDFEF9001BD091 /* HomeBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */; };
 		9B453EE521CE014B001BD091 /* PlusBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE421CE014B001BD091 /* PlusBoard.storyboard */; };
 		9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */; };
@@ -40,9 +40,9 @@
 		4D2B85FE21D4642A00268906 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceVC.swift; sourceTree = "<group>"; };
 		7265A9BC1ECD072DEC31FC40 /* Pods-flower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.release.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.release.xcconfig"; sourceTree = "<group>"; };
-		9B096B0421D465A500442A68 /* todayBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBoardCell.swift; sourceTree = "<group>"; };
-		9B096B0621D465B300442A68 /* todayReadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayReadCell.swift; sourceTree = "<group>"; };
-		9B096B0821D465E300442A68 /* todayWriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayWriteCell.swift; sourceTree = "<group>"; };
+		9B096B0421D465A500442A68 /* todayPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayPostCell.swift; sourceTree = "<group>"; };
+		9B096B0621D465B300442A68 /* todayReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayReplyCell.swift; sourceTree = "<group>"; };
+		9B096B0821D465E300442A68 /* todayNewReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayNewReplyCell.swift; sourceTree = "<group>"; };
 		9B096B0A21D46A9C00442A68 /* todayBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todayBoardVC.swift; sourceTree = "<group>"; };
 		9B096B0D21D472BF00442A68 /* LocalDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataBase.swift; sourceTree = "<group>"; };
 		9B096B1221D4B75B00442A68 /* StatisticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCell.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		9B453ED321CDFD3B001BD091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B453ED621CDFD3B001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B453ED821CDFD3B001BD091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B453EDE21CDFDFA001BD091 /* TodayBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TodayBoard.storyboard; sourceTree = "<group>"; };
+		9B453EDE21CDFDFA001BD091 /* Today.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Today.storyboard; sourceTree = "<group>"; };
 		9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeBoard.storyboard; sourceTree = "<group>"; };
 		9B453EE421CE014B001BD091 /* PlusBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlusBoard.storyboard; sourceTree = "<group>"; };
 		9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatBoard.storyboard; sourceTree = "<group>"; };
@@ -179,10 +179,10 @@
 		9B44BEE321CF341300EB5C17 /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				9B453EDE21CDFDFA001BD091 /* TodayBoard.storyboard */,
-				9B096B0421D465A500442A68 /* todayBoardCell.swift */,
-				9B096B0621D465B300442A68 /* todayReadCell.swift */,
-				9B096B0821D465E300442A68 /* todayWriteCell.swift */,
+				9B453EDE21CDFDFA001BD091 /* Today.storyboard */,
+				9B096B0421D465A500442A68 /* todayPostCell.swift */,
+				9B096B0621D465B300442A68 /* todayReplyCell.swift */,
+				9B096B0821D465E300442A68 /* todayNewReplyCell.swift */,
 				9B096B0A21D46A9C00442A68 /* todayBoardVC.swift */,
 			);
 			path = Today;
@@ -308,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B453ED721CDFD3B001BD091 /* LaunchScreen.storyboard in Resources */,
-				9B453EDF21CDFDFA001BD091 /* TodayBoard.storyboard in Resources */,
+				9B453EDF21CDFDFA001BD091 /* Today.storyboard in Resources */,
 				9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */,
 				9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */,
 				9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */,
@@ -375,11 +375,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B096B0921D465E300442A68 /* todayWriteCell.swift in Sources */,
+				9B096B0921D465E300442A68 /* todayNewReplyCell.swift in Sources */,
 				4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */,
 				9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */,
 				9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */,
-				9B096B0721D465B300442A68 /* todayReadCell.swift in Sources */,
+				9B096B0721D465B300442A68 /* todayReplyCell.swift in Sources */,
 				9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */,
 				9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */,
 				4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */,
@@ -390,7 +390,7 @@
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
-				9B096B0521D465A500442A68 /* todayBoardCell.swift in Sources */,
+				9B096B0521D465A500442A68 /* todayPostCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				9B096B0B21D46A9C00442A68 /* todayBoardVC.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
@@ -540,7 +540,9 @@
 			baseConfigurationReference = A7F151B357CC25EDA7E8439B /* Pods-flower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = flower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -548,6 +550,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = semina6.flower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -558,7 +561,9 @@
 			baseConfigurationReference = 7265A9BC1ECD072DEC31FC40 /* Pods-flower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = flower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -566,6 +571,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = semina6.flower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

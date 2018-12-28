@@ -9,10 +9,10 @@
 import UIKit
 import Foundation
 
-class todayWriteCell: UITableViewCell {
+class todayNewReplyCell: UITableViewCell {
 
-    @IBOutlet weak var writeTF: UITextField!
-    @IBAction func writeComplete(_ sender: Any) {
+    @IBOutlet weak var newReplyTF: UITextField!
+    @IBAction func newReplyAdd(_ sender: Any) {
     }
     
     
