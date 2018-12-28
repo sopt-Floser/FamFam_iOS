@@ -113,14 +113,6 @@
                                                     <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fql-k0-Kz0" userLabel="emotion Add btn">
-                                                    <rect key="frame" x="17" y="341" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <connections>
-                                                        <action selector="emotionAddBtn:" destination="JKr-iq-WYh" eventType="touchUpInside" id="QYP-1H-3SQ"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yv4-9C-avi">
                                                     <rect key="frame" x="20" y="478" width="86" height="49"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,6 +122,14 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="replyShow:" destination="JKr-iq-WYh" eventType="touchUpInside" id="JoF-Zz-Rdn"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fql-k0-Kz0" userLabel="emotion Add btn">
+                                                    <rect key="frame" x="15" y="341" width="33" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="emotionAdd"/>
+                                                    <connections>
+                                                        <action selector="emotionAddBtn:" destination="JKr-iq-WYh" eventType="touchUpInside" id="QYP-1H-3SQ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -425,6 +425,7 @@
     </scenes>
     <resources>
         <image name="cakeImg" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="emotionAdd" width="33" height="30"/>
         <image name="todayPic2" width="312" height="551"/>
         <image name="todayPic3" width="368" height="654"/>
     </resources>

@@ -16,7 +16,7 @@ class TodayFeedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("view Load!")
+        
         setTodayPostData()
         
         todayPostTable.delegate = self
@@ -69,23 +69,17 @@ extension TodayFeedVC: UITableViewDataSource {
         
         var checkimage = post.postProfileImage
         cell.postProfileImage?.image = UIImage(named:stringOptionalUnwork(checkimage))
-    
-       
+        cell.postName.text = post.postName
         cell.postDate.text = post.postDate
         // 중간 (게시글)
-        
-        
         checkimage = post.postImage
         cell.postImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
-       
+    
         cell.postImagePagecontrol.currentPage = post.postImagePagecontrol
-
         // 중간 (감정)
             
         checkimage = post.emotionImage
         cell.emotionImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
-        
-       
         cell.emotionName.text = post.emotionName
         // 중간 (게시글)
         
@@ -114,7 +108,7 @@ extension TodayFeedVC: UITableViewDelegate {
 
 extension TodayFeedVC {
     func setTodayPostData() {
-        let post1 = TodayPostData(pPImage: "cakeImg", pName: "엄마", pDate: "19950801", pImage: "family", pPage: 3, eImage: "cakeImg", eName: "딸", pContent: "졸리다", rCount: 3)
+        let post1 = TodayPostData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "family", pPage: 3, eImage: "emotionSmile", eName: "딸", pContent: "졸리다", rCount: 3)
         let post2 = TodayPostData(pPImage: "cakeImg", pName: "딸", pDate: "20181225", pImage: "cakeImg", pPage: 5, eImage: "cakeImg", eName: "막내", pContent: "배고프다", rCount: 5)
         todayPostList = [post1,post2]
         
