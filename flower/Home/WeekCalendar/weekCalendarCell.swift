@@ -1,14 +1,14 @@
 //
-//  NoticeCell.swift
+//  weekCalendarCell.swift
 //  flower
 //
-//  Created by 성다연 on 2018. 12. 27..
+//  Created by 성다연 on 2018. 12. 28..
 //  Copyright © 2018년 성다연. All rights reserved.
 //
 
 import UIKit
 
-class NoticeCell: UICollectionViewCell {
+class weekCalendarCell: UICollectionViewCell {
     
     /** 효과 씌우기 */
     override func layoutSubviews() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nm7-c5-heW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8fJ-pE-W64">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,27 +31,30 @@
             </objects>
             <point key="canvasLocation" x="-1886" y="-1503"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="kxc-0H-B12">
+        <!--Today FeedVC-->
+        <scene sceneID="OvS-Lu-BbT">
             <objects>
-                <viewController id="J4H-nY-H28" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uFr-Qe-HXj">
+                <viewController id="8fJ-pE-W64" customClass="TodayFeedVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eT2-T3-1UU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b2s-bc-3US">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kl5-Ef-7ZN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="owb-mz-j2p"/>
+                        <viewLayoutGuide key="safeArea" id="FmU-sx-fPc"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Kl5-Ef-7ZN" id="U63-fa-hhU"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dLV-rS-5wQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sYs-9a-iLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2428" y="-834"/>
+            <point key="canvasLocation" x="-2176.8000000000002" y="-846.02698650674665"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0rQ-SY-Vka">
@@ -92,7 +95,7 @@
                                             <constraint firstAttribute="height" constant="1000" id="9LQ-9X-9qG"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="today_post_cell" rowHeight="527" id="kgb-Cz-WIi" customClass="todayPostCell" customModule="flower" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayPostCell" rowHeight="527" id="kgb-Cz-WIi" customClass="todayPostCell" customModule="flower" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="527"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kgb-Cz-WIi" id="zYA-qe-h2N">
@@ -194,7 +197,7 @@
                                                     <outlet property="replyCount" destination="bJy-0A-5bS" id="HHg-Qb-L2B"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="today_reply_cell" rowHeight="40" id="hiE-GA-y6u" customClass="todayReplyCell" customModule="flower" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayReplyCell" rowHeight="40" id="hiE-GA-y6u" customClass="todayReplyCell" customModule="flower" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="555" width="375" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hiE-GA-y6u" id="dUN-P2-fOP">
@@ -232,7 +235,7 @@
                                                     <outlet property="replyName" destination="Z1v-ka-g0B" id="eFZ-7s-sec"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="today_new_reply_cell" rowHeight="55" id="LEm-4i-Pmi" customClass="todayNewReplyCell" customModule="flower" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayNewReplyCell" rowHeight="55" id="LEm-4i-Pmi" customClass="todayNewReplyCell" customModule="flower" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="595" width="375" height="55"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LEm-4i-Pmi" id="bFd-BD-Wka">

@@ -3,7 +3,7 @@
 //  flower
 //
 //  Created by 성다연 on 2018. 12. 27..
-//  Copyright © 2018년 성다연. All rights reserved.
+//  Copyright © 2018년 성다연. /Users/kimjimin/Desktop/famfamAll rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,6 @@ class todayNewReplyCell: UITableViewCell {
     @IBOutlet weak var newReplyTF: UITextField!
     @IBAction func newReplyAdd(_ sender: Any) {
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

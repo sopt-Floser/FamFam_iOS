@@ -8,7 +8,7 @@
 
 import UIKit
 
-class todayBoardVC: UITableViewController {
+class TodayFeedTableVC: UITableViewController {
 
     /** 서버와 연결안되어있음
      1. 임시 데이터 적용
