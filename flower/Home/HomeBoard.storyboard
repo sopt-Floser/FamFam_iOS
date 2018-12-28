@@ -562,10 +562,10 @@
             </objects>
             <point key="canvasLocation" x="177" y="531"/>
         </scene>
-        <!--View Controller-->
+        <!--Home CollectionVC-->
         <scene sceneID="ZJ0-TX-OIz">
             <objects>
-                <viewController id="2ZG-cW-Z8j" sceneMemberID="viewController">
+                <viewController id="2ZG-cW-Z8j" customClass="HomeCollectionVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zCT-cK-y1D">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -708,6 +708,15 @@
                                             <outlet property="newPicCountLabel" destination="TgC-nI-GOe" id="np7-BV-YMX"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weekCalendarCell" id="9OO-Zd-Nx9">
+                                        <rect key="frame" x="689" y="0.0" width="311" height="367"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="311" height="367"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.90364583330000003" alpha="1" colorSpace="calibratedWhite"/>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="noticeCell" id="yfv-MH-eGB" customClass="NoticeCell" customModule="flower" customModuleProvider="target">
                                         <rect key="frame" x="344.5" y="0.0" width="311" height="367"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -772,16 +781,11 @@
                                             <constraint firstAttribute="bottom" secondItem="cPB-uJ-X0E" secondAttribute="bottom" id="vy5-g4-ul4"/>
                                         </constraints>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weekCalendarCell" id="9OO-Zd-Nx9">
-                                        <rect key="frame" x="689" y="0.0" width="311" height="367"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="311" height="367"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                        <color key="backgroundColor" white="0.90364583330000003" alpha="1" colorSpace="calibratedWhite"/>
-                                    </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="2ZG-cW-Z8j" id="9R4-Tz-5g7"/>
+                                    <outlet property="delegate" destination="2ZG-cW-Z8j" id="Clr-Dg-Z75"/>
+                                </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sSz-R3-an7">
                                 <rect key="frame" x="484" y="124" width="171" height="67"/>
@@ -856,10 +860,14 @@
                         <viewLayoutGuide key="safeArea" id="YSI-FB-a0e"/>
                     </view>
                     <size key="freeformSize" width="1000" height="667"/>
+                    <connections>
+                        <outlet property="mainCollectionView" destination="c3l-dz-Oaj" id="ZDM-DW-9P4"/>
+                        <outlet property="profileCollectionView" destination="sSz-R3-an7" id="b7b-wX-y4b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zes-RX-yPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1238.4000000000001" y="1205.8470764617691"/>
+            <point key="canvasLocation" x="-1238" y="1187"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="H1T-Tf-zEd">

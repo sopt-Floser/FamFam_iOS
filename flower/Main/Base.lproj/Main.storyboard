@@ -298,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieQ-u8-E56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="65" y="-1796"/>
+            <point key="canvasLocation" x="622" y="-1162"/>
         </scene>
         <!--오늘의 하루-->
         <scene sceneID="9ni-KK-P2V">
