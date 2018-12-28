@@ -16,5 +16,14 @@ class StatisticCell: UICollectionViewCell {
     @IBAction func goCameraBtn(_ sender: Any) {
     }
     
-    
+    /** 효과 씌우기 */
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.layer.cornerRadius = 15
+        layer.shadowRadius = 10
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = CGSize(width: 5, height: 10)
+        self.clipsToBounds = false
+    }
 }

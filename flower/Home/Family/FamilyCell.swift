@@ -11,5 +11,4 @@ import UIKit
 class FamilyCell: UICollectionViewCell {
     @IBOutlet weak var familyImage: UIImageView!
     @IBOutlet weak var familyName: UILabel!
-    
 }

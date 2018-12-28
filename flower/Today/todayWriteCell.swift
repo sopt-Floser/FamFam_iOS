@@ -13,6 +13,7 @@ class todayWriteCell: UITableViewCell {
 
     @IBOutlet weak var writeTF: UITextField!
     @IBAction func writeComplete(_ sender: Any) {
+        
     }
     
     
