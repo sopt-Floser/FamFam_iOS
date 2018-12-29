@@ -37,7 +37,6 @@ class CalendarVC: UIViewController {
         print("long press")
         
         if gesture.state == UIGestureRecognizer.State.began{
-            
         }
     }
     
