@@ -19,11 +19,13 @@ class StatisticCell: UICollectionViewCell {
     /** 효과 씌우기 */
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.layer.cornerRadius = 15
+        self.clipsToBounds = false
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 5, height: 10)
-        self.clipsToBounds = false
+        
+        
+        backgroundImage.layer.masksToBounds = true
+        backgroundImage.layer.cornerRadius = 15
     }
 }

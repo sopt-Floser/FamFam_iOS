@@ -9,13 +9,16 @@
 import UIKit
 
 class HomeCollectionVC: UIViewController {
+    /** 콜렉션 뷰 */
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var profileCollectionView: UICollectionView!
     
-    let FamilyMember = ["엄마","아빠"]
+    
+    let FamilyMember = ["sampleProfile","엄마"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
@@ -34,6 +37,8 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     
     /** 셀 바꾸어주기 */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        mainCollectionView.layoutSubviews()
         // 아래 큰 콜렉션 뷰
         if (collectionView == mainCollectionView) {
             var state = indexPath.row % 3
@@ -71,8 +76,6 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     func thirdCellSetting(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noticeCell", for: indexPath) as! NoticeCell
         
-        
-        
         return cell
     }
     
@@ -88,10 +91,10 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
 
-    // 초점 가운데로 모이게 하기 ( 안됨)
+    // 초점 가운데로 모이게 하기 (안됨)
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.mainCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        let cellWithIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing - 8
+        let cellWithIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing - 10
         
         var offset = targetContentOffset.pointee
         let index = (offset.x + scrollView.contentInset.left) / cellWithIncludingSpacing
@@ -102,3 +105,9 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
 }
 
+extension HomeCollectionVC {
+    /** 가족 프로필 세팅 */
+    func familyProfileSetting(){
+        
+    }
+}
