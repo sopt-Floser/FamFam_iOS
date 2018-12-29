@@ -8,12 +8,22 @@
 
 import UIKit
 
-class HomeCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {   
+class HomeCollectionVC: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var profileCollectionView: UICollectionView!
     
     let FamilyMember = ["엄마","아빠"]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        mainCollectionView.delegate = self
+        mainCollectionView.dataSource = self
+    }
+}
+
+
+extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == mainCollectionView ){
             return 9
@@ -73,13 +83,6 @@ class HomeCollectionVC: UIViewController, UICollectionViewDelegate, UICollection
         print("select cell")
     }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-        mainCollectionView.delegate = self
-        mainCollectionView.dataSource = self
-    }
 
     // 초점 가운데로 모이게 하기 ( 안됨)
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

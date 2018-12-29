@@ -125,11 +125,6 @@
                             <constraint firstItem="4Oq-PG-AZu" firstAttribute="centerY" secondItem="15w-Yy-n3q" secondAttribute="centerY" id="x2d-lS-lHy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gZd-Jh-eRq"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="25"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="W7G-gN-qNN"/>
                     <connections>
@@ -256,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="2563" y="-254"/>
         </scene>
-        <!--TodayBoard-->
+        <!--Today-->
         <scene sceneID="cwG-h5-d4q">
             <objects>
-                <viewControllerPlaceholder storyboardName="TodayBoard" id="H2v-a7-hbu" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Today" id="H2v-a7-hbu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="z61-Jd-jlR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW4-nk-jW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -326,14 +321,16 @@
         <!--홈-->
         <scene sceneID="q4d-Z4-ylX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4ma-wn-QWu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4ma-wn-QWu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈" image="homeIcon2" id="hlk-hy-HGd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eSr-0C-kqD">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6zZ-Ar-HbQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="3os-XE-b8W" kind="relationship" relationship="rootViewController" id="XrF-0J-bmp"/>
                     </connections>

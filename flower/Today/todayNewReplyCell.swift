@@ -1,25 +1,22 @@
 //
-//  todayCommentCell.swift
+//  todayWriteCommentCell.swift
 //  flower
 //
 //  Created by 성다연 on 2018. 12. 27..
-//  Copyright © 2018년 성다연. All rights reserved.
+//  Copyright © 2018년 성다연. /Users/kimjimin/Desktop/famfamAll rights reserved.
 //
 
 import UIKit
 import Foundation
 
-class todayReadCell: UITableViewCell {
+class todayNewReplyCell: UITableViewCell {
 
-    @IBOutlet weak var readImage: UIImageView!
-    @IBOutlet weak var readName: UILabel!
-    @IBOutlet weak var readContent: UILabel!
-    
+    @IBOutlet weak var newReplyTF: UITextField!
+    @IBAction func newReplyAdd(_ sender: Any) {
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        readImage.clipsToBounds = true
-        readImage.layer.cornerRadius = readImage.frame.height/2
         // Initialization code
     }
 

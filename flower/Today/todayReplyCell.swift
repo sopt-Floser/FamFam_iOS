@@ -1,5 +1,5 @@
 //
-//  todayWriteCommentCell.swift
+//  todayCommentCell.swift
 //  flower
 //
 //  Created by 성다연 on 2018. 12. 27..
@@ -9,16 +9,17 @@
 import UIKit
 import Foundation
 
-class todayWriteCell: UITableViewCell {
+class todayReplyCell: UITableViewCell {
 
-    @IBOutlet weak var writeTF: UITextField!
-    @IBAction func writeComplete(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var replyImage: UIImageView!
+    @IBOutlet weak var replyName: UILabel!
+    @IBOutlet weak var replyContent: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        replyImage.clipsToBounds = true
+        replyImage.layer.cornerRadius = replyImage.frame.height/2
         // Initialization code
     }
 

@@ -15,7 +15,6 @@ class CalendarPopVC: UIViewController {
     @IBOutlet weak var todoImage: UIImageView!
     @IBOutlet weak var todoLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,5 +28,7 @@ class CalendarPopVC: UIViewController {
     @objc func handleTap(sender: UITapGestureRecognizer){
         dismiss(animated: true, completion: nil)
     }
+    
+    
 
 }

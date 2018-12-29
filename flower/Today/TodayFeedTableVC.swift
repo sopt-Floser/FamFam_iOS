@@ -8,7 +8,7 @@
 
 import UIKit
 
-class todayBoardVC: UITableViewController {
+class TodayFeedTableVC: UITableViewController {
 
     /** 서버와 연결안되어있음
      1. 임시 데이터 적용
@@ -35,22 +35,27 @@ class todayBoardVC: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let boardcell = tableView.dequeueReusableCell(withIdentifier: "today_board_Cell", for: indexPath) as! todayBoardCell
+        let postcell = tableView.dequeueReusableCell(withIdentifier: "today_post_cell", for: indexPath) as! todayPostCell
         // 상단 (프로필)
-        boardcell.profileImage.image = UIImage(named:"cakeImg")
-        boardcell.profileName.text = ""
-        boardcell.profileDate.text = ""
+        postcell.postProfileImage.image = UIImage(named:"cakeImg")
+        postcell.postName.text = ""
+        postcell.postDate.text = ""
         // 중간 (게시글)
-        boardcell.boardContent.image = UIImage(named:"cakeImg")
-        boardcell.boardPagecontrol.currentPage = 0
+        postcell.postImage.image = UIImage(named:"cakeImg")
+        postcell.postImagePagecontrol.currentPage = 0
+        // 중간 (감정)
+        postcell.emotionImage.image = UIImage(named: "cakeImg")
+        postcell.emotionName.text = ""
+        // 중간 (게시글)
+        
+        postcell.postContent.text = ""
+        
         // 하단 (댓글)
-        boardcell.commentImage.image = UIImage(named:"cakeImg")
-        boardcell.commentName.text = ""
-        boardcell.commentContent.text = ""
-        boardcell.commentCount.text = ""
+        
+        postcell.replyCount.text = ""
 
     
-        return boardcell
+        return postcell
     }
     
     /*

@@ -17,6 +17,9 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month: UILabel!
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
     let todayDate = Date()
     /** 날,월,일 변환기 */
