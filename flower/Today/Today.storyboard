@@ -258,9 +258,6 @@
                                                     <state key="normal" title="   댓글">
                                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     </state>
-                                                    <connections>
-                                                        <action selector="replyShow:" destination="kgb-Cz-WIi" eventType="touchUpInside" id="ZVl-KJ-jhO"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -352,7 +349,6 @@
                     </view>
                     <connections>
                         <outlet property="postFullTable" destination="ORB-80-j0c" id="U3X-e9-COj"/>
-                        <outlet property="postReplyTable" destination="xwb-lq-dvk" id="3XD-jM-3oB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbD-kA-yYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,9 +492,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cakeImg" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="emotionAdd" width="33" height="30"/>
-        <image name="todayPic2" width="312" height="551"/>
-        <image name="todayPic3" width="368" height="654"/>
+        <image name="cakeImg" width="512" height="512"/>
+        <image name="emotionAdd" width="66" height="60"/>
+        <image name="todayPic2" width="624" height="1102"/>
+        <image name="todayPic3" width="736" height="1308"/>
     </resources>
 </document>
