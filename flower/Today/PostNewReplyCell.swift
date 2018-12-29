@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class todayNewReplyCell: UITableViewCell {
+class PostNewReplyCell: UITableViewCell {
 
     @IBOutlet weak var newReplyTF: UITextField!
     @IBAction func newReplyAdd(_ sender: Any) {

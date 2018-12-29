@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SlideController
 
 class IntroduceVC: UIViewController {
     

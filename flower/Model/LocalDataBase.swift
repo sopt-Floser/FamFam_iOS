@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 // 오늘의 하루 - 게시글 데이터
-struct TodayPostData {
+struct TodayFeedData {
     var postProfileImage: String? //UIImage?
     var postName: String
     var postDate: String //date로 바꿔야함
@@ -46,7 +46,7 @@ struct TodayPostData {
 }
 
 // 오늘의 하루 - 댓글 보기 데이터
-struct TodayReplyData {
+struct PostReplyData {
     var replyImage: UIImage?
     var replyName: String
     var replyContent: String
@@ -60,7 +60,7 @@ struct TodayReplyData {
 }
 
 // 오늘의 하루 - 댓글 작성 데이터
-class TodayWriteData {
+class PostNewReplyData {
     
 }
 

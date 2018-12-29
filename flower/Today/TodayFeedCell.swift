@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class todayPostCell: UITableViewCell {
+class TodayFeedCell: UITableViewCell {
     // 상단 (프로필)
     @IBOutlet var postProfileImage: UIImageView?
     @IBOutlet var postName: UILabel!
