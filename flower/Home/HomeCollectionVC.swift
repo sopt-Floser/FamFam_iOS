@@ -63,12 +63,16 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     /** 일주일 cell 데이터 세팅 */
     func secondCellSetting(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekCalendarCell", for: indexPath)
+        
         return cell
     }
     
     /** 알림 cell 데이터 세팅 */
     func thirdCellSetting(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noticeCell", for: indexPath) as! NoticeCell
+        
+        
+        
         return cell
     }
     

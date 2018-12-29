@@ -37,14 +37,14 @@ class TodayFeedTableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let postcell = tableView.dequeueReusableCell(withIdentifier: "today_post_cell", for: indexPath) as! todayPostCell
         // 상단 (프로필)
-        postcell.postProfileImage.image = UIImage(named:"cakeImg")
+        postcell.postProfileImage?.image = UIImage(named:"cakeImg")
         postcell.postName.text = ""
         postcell.postDate.text = ""
         // 중간 (게시글)
-        postcell.postImage.image = UIImage(named:"cakeImg")
+        postcell.postImage?.image = UIImage(named:"cakeImg")
         postcell.postImagePagecontrol.currentPage = 0
         // 중간 (감정)
-        postcell.emotionImage.image = UIImage(named: "cakeImg")
+        postcell.emotionImage?.image = UIImage(named: "cakeImg")
         postcell.emotionName.text = ""
         // 중간 (게시글)
         

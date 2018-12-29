@@ -32,9 +32,6 @@ class LoginVC: UIViewController {
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
-
-
-        
         
     }
     

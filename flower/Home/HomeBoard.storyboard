@@ -232,7 +232,6 @@
                         <viewLayoutGuide key="safeArea" id="vpQ-Hd-8tG"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="qZc-2M-5Z5" id="6hj-X6-CA4"/>
                         <outlet property="calendarView" destination="pwg-gX-Jrb" id="mj1-no-V3x"/>
                         <outlet property="month" destination="rPk-Rr-0j6" id="esI-O1-PrC"/>
                         <outlet property="year" destination="Ug0-E6-Jmc" id="6X4-KQ-jvk"/>

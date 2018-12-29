@@ -11,12 +11,12 @@ import Foundation
 
 class todayPostCell: UITableViewCell {
     // 상단 (프로필)
-    @IBOutlet var postProfileImage: UIImageView!
+    @IBOutlet var postProfileImage: UIImageView?
     @IBOutlet var postName: UILabel!
     @IBOutlet var postDate: UILabel!
     
     // 중간 (게시글)
-    @IBOutlet var postImage: UIImageView!
+    @IBOutlet var postImage: UIImageView?
     @IBOutlet var postImagePagecontrol: UIPageControl!
     
 
@@ -24,7 +24,7 @@ class todayPostCell: UITableViewCell {
     // 중간 (감정)
     @IBAction func emotionAddBtn(_ sender: Any) {
     }
-    @IBOutlet var emotionImage: UIImageView!
+    @IBOutlet var emotionImage: UIImageView?
     @IBOutlet var emotionName: UILabel!
     
 
@@ -39,8 +39,12 @@ class todayPostCell: UITableViewCell {
     
     //
     
+    
+    //
     override func awakeFromNib() {
         super.awakeFromNib()
+//        postProfileImage.layer.cornerRadius = 25
+//        postProfileImage.layer.masksToBounds = true
         // Initialization code
     }
 

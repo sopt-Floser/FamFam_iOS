@@ -8,51 +8,99 @@
 
 import UIKit
 
-class TodayFeedVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class TodayFeedVC: UIViewController {
     
-    @IBOutlet var tableView:UITableView!
+    @IBOutlet var todayPostTable: UITableView!
     
-
+    var todayPostList: [TodayPostData] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-
+        setTodayPostData()
+        
+        todayPostTable.delegate = self
+        todayPostTable.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if let index = todayPostTable.indexPathForSelectedRow{
+            todayPostTable.deselectRow(at: index, animated: true)
+        }
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.isUserInteractionEnabled = false
+    }
+ 
+
+}
+
+extension TodayFeedVC: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return todayPostList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 527
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let postcell = tableView.dequeueReusableCell(withIdentifier: "todayPostCell", for: indexPath) as! todayPostCell
-        // 상단 (프로필)
-        postcell.postProfileImage.image = UIImage(named:"cakeImg")
-        postcell.postName.text = ""
-        postcell.postDate.text = ""
+        
+        /** string type의 optional을 풀어준다 */
+        func stringOptionalUnwork(_ value: String?) -> String{
+            guard let value_ = value else {
+                return ""
+            }
+            return value_
+        }
+        
+        //cell 객체를 선언합니다. reusable identifier를 제대로 설정해주는거 잊지마세요!
+        let cell = todayPostTable.dequeueReusableCell(withIdentifier: "todayPostCell") as! todayPostCell
+        //각 row에 해당하는 cell의 데이터를 넣어주기위해 모델에서 post 데이터 하나를 선언합니다.
+        let post = todayPostList[indexPath.row]
+        
+        //위에서 가져온 데이터를 각 cell에 넣어줍니다.
+        
+        var checkimage = post.postProfileImage
+        cell.postProfileImage?.image = UIImage(named:stringOptionalUnwork(checkimage))
+        cell.postName.text = post.postName
+        cell.postDate.text = post.postDate
         // 중간 (게시글)
-        postcell.postImage.image = UIImage(named:"cakeImg")
-        postcell.postImagePagecontrol.currentPage = 0
+        checkimage = post.postImage
+        cell.postImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
+    
+        cell.postImagePagecontrol.currentPage = post.postImagePagecontrol
         // 중간 (감정)
-        postcell.emotionImage.image = UIImage(named: "cakeImg")
-        postcell.emotionName.text = ""
+            
+        checkimage = post.emotionImage
+        cell.emotionImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
+        cell.emotionName.text = post.emotionName
         // 중간 (게시글)
         
-        postcell.postContent.text = ""
+        cell.postContent.text = post.postContent
         
         // 하단 (댓글)
         
-        postcell.replyCount.text = ""
+        cell.replyCount.text = String(post.replyCount)
         
-        
-        return postcell
+        //위의 과정을 마친 cell 객체를 반환합니다.
+        return cell
     }
 }
+
+extension TodayFeedVC {
+    func setTodayPostData() {
+        let post1 = TodayPostData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "family", pPage: 3, eImage: "emotionSmile", eName: "딸", pContent: "졸리다", rCount: 3)
+        let post2 = TodayPostData(pPImage: "cakeImg", pName: "딸", pDate: "20181225", pImage: "cakeImg", pPage: 5, eImage: "cakeImg", eName: "막내", pContent: "배고프다", rCount: 5)
+        todayPostList = [post1,post2]
+        
+    }
+    
+}
+
 
 
