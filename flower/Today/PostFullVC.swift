@@ -10,15 +10,8 @@ import UIKit
 
 class PostFullVC: UIViewController {
     
+    
     //게시글 테이블
-    class PostFullCell: UITableViewCell {
-    }
-    
-    class PostReplyCell: UITableViewCell {
-    }
-    
-    class PostNewReplyCell: UITableViewCell {
-    }
     
     
     @IBOutlet var postFullTable: UITableView!
@@ -69,30 +62,24 @@ class PostFullVC: UIViewController {
 
 extension PostFullVC: UITableViewDataSource {
     //게시글
-    func tableView(_ tableView: postFullTable, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    //댓글보기
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
-    
-    //댓글 달기
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostFullCell") as! PostFullCell
+            
+            return cell
+        } else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostReplyCell") as! PostReplyCell
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostNewReply") as! PostNewReplyCell
+            
+            return cell
+        }
     }
     
     
@@ -102,6 +89,6 @@ extension PostFullVC: UITableViewDataSource {
 
 extension PostFullVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        print("Hi")
     }
 }

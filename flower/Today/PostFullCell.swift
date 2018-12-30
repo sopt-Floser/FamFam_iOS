@@ -16,7 +16,7 @@ class PostFullCell: UITableViewCell {
     @IBOutlet var postDateView: UILabel!
     @IBOutlet var postImageView: UIImageView!
     
-    @IBOutlet var postImagePageControl: UIPageControl!
+    @IBOutlet var postImagePageControlView: UIPageControl!
     
     
     @IBAction func emotionAddBtn(_ sender: Any) {
@@ -28,7 +28,8 @@ class PostFullCell: UITableViewCell {
     @IBOutlet var postContentView: UILabel!
     
     @IBOutlet var replyCountView: UILabel!
-
+  
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

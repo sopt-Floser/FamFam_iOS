@@ -9,6 +9,10 @@
 import UIKit
 import Foundation
 
+protocol TodayFeedDelegate{
+    func showReplyTapped(at index: IndexPath)
+}
+
 class TodayFeedCell: UITableViewCell {
     // 상단 (프로필)
     @IBOutlet var postProfileImage: UIImageView?
@@ -33,8 +37,9 @@ class TodayFeedCell: UITableViewCell {
     
     //하단 (댓글)
     
-    @IBAction func replyShow(_ sender: Any) {
-    }
+  
+   
+    
     @IBOutlet weak var replyCount: UILabel!
     
     //
@@ -52,6 +57,15 @@ class TodayFeedCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    var delegate: TodayFeedDelegate!
+    
+    @IBOutlet var showReplyBtn: UIButton!
+    var indexPath:IndexPath!
+    @IBAction func showReplyAction(_ sender: UIButton) {
+        self.delegate?.showReplyTapped(at: indexPath)
+        
     }
 
 }
