@@ -38,6 +38,7 @@
 		9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */; };
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
+		9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF705AC21D8631800212766 /* FamilyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddVC.swift; sourceTree = "<group>"; };
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
+		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 		A7F151B357CC25EDA7E8439B /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
 		C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				9B096B1E21D4B81200442A68 /* FamilyCell.swift */,
+				9BF705AC21D8631800212766 /* FamilyModel.swift */,
 			);
 			path = Family;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
+				9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* FullPostVC.swift in Sources */,

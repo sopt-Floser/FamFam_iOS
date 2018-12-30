@@ -16,6 +16,13 @@ class NoticeCell: UICollectionViewCell {
     
     var tempDataBase:[NoticeModel]=[]
     
+    override func awakeFromNib() {
+        setTempData()
+        self.noticeTableView.delegate = self
+        self.noticeTableView.dataSource = self
+       
+    }
+    
     func setTempData(){
         var tempData = NoticeModel(noticeImage: "cakeImg", noticeLabel: "생일 축하해!")
         tempDataBase.append(tempData)
@@ -23,11 +30,6 @@ class NoticeCell: UICollectionViewCell {
         tempDataBase.append(tempData)
     }
     
-    override func awakeFromNib() {
-        setTempData()
-        self.noticeTableView.delegate = self
-        self.noticeTableView.dataSource = self
-    }
     
     /** 효과 씌우기 */
     override func layoutSubviews() {
@@ -43,11 +45,11 @@ class NoticeCell: UICollectionViewCell {
         
         shadowView.layer.cornerRadius = 15
         noticeTableView.layer.cornerRadius = 15
+        
     }
 }
 
 extension NoticeCell : UITableViewDelegate, UITableViewDataSource {
-   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -58,14 +60,11 @@ extension NoticeCell : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let noticeCell : NoticeTableCell = tableView.dequeueReusableCell(withIdentifier: "noticeTableCell") as! NoticeTableCell
-        
         let imageString = tempDataBase[indexPath.row]
-        
         
         noticeCell.noticeImage.image = tempDataBase[indexPath.row].noticeImage
         noticeCell.noticeLabel.text = tempDataBase[indexPath.row].noticeLabel
 
-        
         return noticeCell
         
     }
