@@ -65,17 +65,20 @@ extension TodayFeedVC: UITableViewDataSource{
         
         //위에서 가져온 데이터를 각 cell에 넣어줍니다.
         
+        
         var checkimage = post.postProfileImage
         cell.postProfileImage?.image = UIImage(named:stringOptionalUnwork(checkimage))
+        
         cell.postName.text = post.postName
         cell.postDate.text = post.postDate
         // 중간 (게시글)
+        
         checkimage = post.postImage
         cell.postImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
     
         cell.postImagePagecontrol.currentPage = post.postImagePagecontrol
         // 중간 (감정)
-            
+       
         checkimage = post.emotionImage
         cell.emotionImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
         cell.emotionName.text = post.emotionName
