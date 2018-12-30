@@ -245,14 +245,6 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlY-VM-zlr" userLabel="emotion Add btn">
-                                                    <rect key="frame" x="18" y="341" width="33" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="emotionAdd"/>
-                                                    <connections>
-                                                        <action selector="emotionAddBtn:" destination="kgb-Cz-WIi" eventType="touchUpInside" id="RFf-AM-4TQ"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -371,8 +363,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cakeImg" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="emotionAdd" width="33" height="30"/>
-        <image name="emotionSmile" width="30" height="27"/>
+        <image name="cakeImg" width="512" height="512"/>
+        <image name="emotionAdd" width="66" height="60"/>
+        <image name="emotionSmile" width="60" height="54"/>
     </resources>
 </document>
