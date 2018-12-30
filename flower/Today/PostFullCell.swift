@@ -28,8 +28,7 @@ class PostFullCell: UITableViewCell {
     @IBOutlet var postContentView: UILabel!
     
     @IBOutlet var replyCountView: UILabel!
-    @IBAction func replyShowBtn(_ sender: Any) {
-    }
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()

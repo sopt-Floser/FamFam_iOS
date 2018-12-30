@@ -11,7 +11,8 @@ import UIKit
 class TodayFeedVC: UIViewController {
     
     @IBOutlet var todayFeedTable: UITableView!
-    
+
+   
     var todayFeedList: [TodayFeedData] = []
     
     override func viewDidLoad() {
@@ -39,7 +40,16 @@ class TodayFeedVC: UIViewController {
 
 }
 
-extension TodayFeedVC: UITableViewDataSource{
+extension TodayFeedVC: UITableViewDataSource,TodayFeedDelegate{
+    
+    func showReplyTapped(at Index: IndexPath) {
+        print("button tapped at index:\(index)")
+        let storyboard = UIStoryboard(name: "Today", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PostFull")
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todayFeedList.count
     }
@@ -50,6 +60,7 @@ extension TodayFeedVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+
         /** string type의 optional을 풀어준다 */
         func stringOptionalUnwork(_ value: String?) -> String{
             guard let value_ = value else {
@@ -57,6 +68,8 @@ extension TodayFeedVC: UITableViewDataSource{
             }
             return value_
         }
+        
+        
         
         //cell 객체를 선언합니다. reusable identifier를 제대로 설정해주는거 잊지마세요!
         let cell = todayFeedTable.dequeueReusableCell(withIdentifier: "TodayFeedCell") as! TodayFeedCell
@@ -91,9 +104,19 @@ extension TodayFeedVC: UITableViewDataSource{
         cell.replyCount.text = String(post.replyCount)
         
         //위의 과정을 마친 cell 객체를 반환합니다.
+        
+        //showReply
+        cell.delegate = self
+        cell.indexPath = indexPath
+        
         return cell
     }
+    
+
 }
+
+    
+
 
 extension TodayFeedVC: UITableViewDelegate {
     //didSelectRowAt은 셀을 선택했을때 어떤 동작을 할지 설정해 줄 수 있습니다.
@@ -124,10 +147,8 @@ extension TodayFeedVC: UITableViewDelegate {
         navigationController?.pushViewController(nextVC, animated: true)
     } //여기까지 보셨다면 잠깐 다시 위의 viewWillApear로!
     
-    //canMoveRowAt은 테이블뷰의 row의 위치를 이동할 수 있는지 없는지 설정합니다.
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+    
+    
 }
 
 
@@ -140,6 +161,5 @@ extension TodayFeedVC {
     }
     
 }
-
 
 
