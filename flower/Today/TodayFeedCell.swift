@@ -9,9 +9,7 @@
 import UIKit
 import Foundation
 
-protocol TodayFeedDelegate{
-    func showReplyTapped(at index: IndexPath)
-}
+
 
 class TodayFeedCell: UITableViewCell {
     // 상단 (프로필)
@@ -59,13 +57,14 @@ class TodayFeedCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var delegate: TodayFeedDelegate!
-    
-    @IBOutlet var showReplyBtn: UIButton!
-    var indexPath:IndexPath!
-    @IBAction func showReplyAction(_ sender: UIButton) {
-        self.delegate?.showReplyTapped(at: indexPath)
-        
-    }
+//    var delegate: TodayFeedDelegate!
+//
+//    @IBOutlet var showReplyBtn: UIButton!
+//    var indexPath:IndexPath!
+//    @IBAction func showReplyAction(_ sender: UIButton) {
+//        print("btnd")
+//        self.delegate?.showReplyTapped(at: indexPath)
+//        print("btn")
+//    }
 
 }

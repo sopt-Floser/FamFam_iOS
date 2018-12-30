@@ -11,10 +11,10 @@ import UIKit
 class PostFullCell: UITableViewCell {
     
     
-    @IBOutlet var postProfileImageView: UIImageView!
+    @IBOutlet var postProfileImageView: UIImageView?
     @IBOutlet var postNameView: UILabel!
     @IBOutlet var postDateView: UILabel!
-    @IBOutlet var postImageView: UIImageView!
+    @IBOutlet var postImageView: UIImageView?
     
     @IBOutlet var postImagePageControlView: UIPageControl!
     
@@ -22,7 +22,7 @@ class PostFullCell: UITableViewCell {
     @IBAction func emotionAddBtn(_ sender: Any) {
     }
     
-    @IBOutlet var emotionImageView: UIImageView!
+    @IBOutlet var emotionImageView: UIImageView?
     @IBOutlet var emotionNameView: UILabel!
     
     @IBOutlet var postContentView: UILabel!
