@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class todayReplyCell: UITableViewCell {
+class PostReplyCell: UITableViewCell {
 
     @IBOutlet weak var replyImage: UIImageView!
     @IBOutlet weak var replyName: UILabel!
