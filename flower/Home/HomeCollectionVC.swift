@@ -20,6 +20,8 @@ class HomeCollectionVC: UIViewController {
         super.viewDidLoad()
         tempDataBase()
         collectionViewDD()
+        scrollToNextItem()
+        scrollToPreviousItem()
     }
     
     func tempDataBase(){
@@ -38,8 +40,28 @@ class HomeCollectionVC: UIViewController {
     }
 }
 
+//CGPoint newContentOffset = yourCollectionView.contentOffset;
+//float offset = selectedIndex * (self.view.bounds.size.width + cellSpacing);
+//newContentOffset.x += offset;
+//yourCollectionView.contentOffset = newContentOffset;
 
-extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource {
+
+extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource , UIScrollViewDelegate{
+    func scrollToNextItem() {
+        let contentOffset = CGFloat(floor(profileCollectionView.contentOffset.x + profileCollectionView.bounds.size.width))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+    
+    func scrollToPreviousItem() {
+        let contentOffset = CGFloat(floor(profileCollectionView.contentOffset.x - profileCollectionView.bounds.size.width))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+    
+    func moveToFrame(contentOffset : CGFloat) {
+        let frame: CGRect = CGRect(x: contentOffset, y: profileCollectionView.contentOffset.y , width: profileCollectionView.frame.width, height: profileCollectionView.frame.height)
+        profileCollectionView.scrollRectToVisible(frame, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == mainCollectionView ){
             return 9
@@ -55,7 +77,6 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
         // 아래 큰 콜렉션 뷰
         if (collectionView == mainCollectionView) {
             var state = indexPath.row % 3
-            print("setting MainCollectionView")
             switch state {
                 case 0:
                     return firstCellSetting(mainCollectionView, indexPath: indexPath)
@@ -68,7 +89,6 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
             }
         }
         else {// 위의 큰 콜렉션 뷰 셀 세팅
-            print("setting FamilyCollectionView")
             super.viewDidLayoutSubviews()
             let layout = UICollectionViewFlowLayout()
             var collectionHeight = view.frame.height
@@ -137,17 +157,20 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
         }
     }
     
-    // 초점 가운데로 모이게 하기 (안됨)
+    // 초점 가운데로 모이게 하기
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let layout = self.mainCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        let cellWithIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing - 10
+        let cellWithIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
         
         var offset = targetContentOffset.pointee
         let index = (offset.x + scrollView.contentInset.left) / cellWithIncludingSpacing
         let roundedIndex = round(index)
-        
-        offset = CGPoint(x: roundedIndex * cellWithIncludingSpacing - scrollView.contentInset.left, y: -scrollView.contentInset.top)
+    
+        let settingFocus = (self.view.frame.width - layout.itemSize.width ) / 2
+
+        offset = CGPoint(x: roundedIndex * cellWithIncludingSpacing - scrollView.contentInset.left - settingFocus, y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
     }
 }
+
 
