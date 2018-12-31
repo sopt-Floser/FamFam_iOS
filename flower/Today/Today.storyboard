@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="zRQ-y9-GnI">
+            <objects>
+                <viewController id="XOF-0n-qzp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0xj-rs-qF6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hhg-hO-lee"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOK-Bd-Foq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-637" y="-1594"/>
+        </scene>
         <!--Today FeedVC-->
         <scene sceneID="OvS-Lu-BbT">
             <objects>
@@ -108,7 +123,7 @@
                                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="showReplyAction:" destination="JKr-iq-WYh" eventType="touchUpInside" id="ZyL-aQ-T43"/>
+                                                        <segue destination="MTs-rw-JNB" kind="show" id="dVS-hn-Zmb"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -123,7 +138,6 @@
                                             <outlet property="postName" destination="wBd-nv-rBe" id="2JC-Ot-5dd"/>
                                             <outlet property="postProfileImage" destination="gt3-NL-4ao" id="qAp-AP-bOJ"/>
                                             <outlet property="replyCount" destination="Ccf-IY-aCZ" id="a6l-AQ-KnU"/>
-                                            <outlet property="showReplyBtn" destination="Yv4-9C-avi" id="Kc9-ka-Nda"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -144,7 +158,7 @@
         <!--Post FullVC-->
         <scene sceneID="aXG-qY-4pY">
             <objects>
-                <viewController storyboardIdentifier="PostFull" id="MTs-rw-JNB" customClass="PostFullVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostFullVC" id="MTs-rw-JNB" customClass="PostFullVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hvF-je-pwu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

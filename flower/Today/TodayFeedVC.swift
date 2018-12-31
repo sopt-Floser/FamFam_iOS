@@ -8,12 +8,11 @@
 
 import UIKit
 
+var todayFeedList: [TodayFeedData] = []
+
 class TodayFeedVC: UIViewController {
     
     @IBOutlet var todayFeedTable: UITableView!
-
-   
-    var todayFeedList: [TodayFeedData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,22 +32,33 @@ class TodayFeedVC: UIViewController {
         }
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.isUserInteractionEnabled = false
-    }
+    
+    
+    
+    
+    
+    
+}
+    
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.isUserInteractionEnabled = false
+//    }
  
 
-}
-
-extension TodayFeedVC: UITableViewDataSource,TodayFeedDelegate{
     
-    func showReplyTapped(at Index: IndexPath) {
-        print("button tapped at index:\(index)")
-        let storyboard = UIStoryboard(name: "Today", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "PostFull")
-        
-        self.present(vc, animated: true, completion: nil)
-    }
+    
+
+
+extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
+    
+//    func showReplyTapped(at Index: IndexPath) {
+//        print("button tapped at index:\(index)")
+//        let storyboard = UIStoryboard(name: "Today", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "PostFull")
+//
+//        self.present(vc, animated: true, completion: nil)
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todayFeedList.count
@@ -106,9 +116,9 @@ extension TodayFeedVC: UITableViewDataSource,TodayFeedDelegate{
         //위의 과정을 마친 cell 객체를 반환합니다.
         
         //showReply
-        cell.delegate = self
-        cell.indexPath = indexPath
-        
+//        cell.delegate = self
+//        cell.indexPath = indexPath
+//
         return cell
     }
     
@@ -121,21 +131,25 @@ extension TodayFeedVC: UITableViewDataSource,TodayFeedDelegate{
 extension TodayFeedVC: UITableViewDelegate {
     //didSelectRowAt은 셀을 선택했을때 어떤 동작을 할지 설정해 줄 수 있습니다.
     /** 셀 선택 시 게시글 페이지로 전환 */
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //아래의 과정들은 화면전환에서 데이터 전달을 하는 방법과 동일합니다.
-        let nextVC = storyboard?.instantiateViewController(withIdentifier: "PostFull") as! PostFullVC
+        
+        
+        let nextVC = storyboard?.instantiateViewController(withIdentifier: "PostFullVC") as! PostFullVC
         let post = todayFeedList[indexPath.row]
         
        
-        nextVC.postProfileImage = UIImage(named: post.postProfileImage!)
+        nextVC.postProfileImage = post.postProfileImage!
         nextVC.postName = post.postName
         nextVC.postDate = post.postDate
         // 중간 (게시글)
-        nextVC.postImage = UIImage(named: post.postImage!)
-        nextVC.postImagePageControl!.currentPage = post.postImagePagecontrol
+        nextVC.postImage = post.postImage!
+        nextVC.postImagePageControl = post.postImagePagecontrol
         // 중간 (감정)
         
-        nextVC.emotionImage = UIImage(named: post.emotionImage!)
+        nextVC.emotionImage = post.emotionImage!
         nextVC.emotionName = post.emotionName
         // 중간 (게시글)
         
@@ -159,7 +173,5 @@ extension TodayFeedVC {
         todayFeedList = [post1,post2]
         
     }
-    
+
 }
-
-
