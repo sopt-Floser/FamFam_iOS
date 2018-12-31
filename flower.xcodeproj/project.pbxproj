@@ -35,6 +35,7 @@
 		9B453EE521CE014B001BD091 /* PlusBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE421CE014B001BD091 /* PlusBoard.storyboard */; };
 		9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */; };
 		9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B497AB721D0A4D200182C41 /* CalendarHeader.swift */; };
+		9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */; };
 		9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */; };
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
@@ -76,12 +77,11 @@
 		9B453EE421CE014B001BD091 /* PlusBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlusBoard.storyboard; sourceTree = "<group>"; };
 		9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatBoard.storyboard; sourceTree = "<group>"; };
 		9B497AB721D0A4D200182C41 /* CalendarHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeader.swift; sourceTree = "<group>"; };
+		9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListPopupVC.swift; sourceTree = "<group>"; };
 		9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddVC.swift; sourceTree = "<group>"; };
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
 		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
-		A7F151B357CC25EDA7E8439B /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
-		C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +129,7 @@
 				9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */,
 				9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */,
 				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
+				9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -418,6 +419,7 @@
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */,
+				9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */,
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
 				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,

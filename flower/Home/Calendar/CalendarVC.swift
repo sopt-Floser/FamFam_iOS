@@ -12,7 +12,6 @@ import JTAppleCalendar
 typealias DateString = String
 
 /** calendar 다루는 곳 */
-
 class CalendarVC: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
@@ -20,8 +19,10 @@ class CalendarVC: UIViewController {
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
-    
+    var takeDate = switchDate
     let todayDate = Date()
+    var selectDate = Date()
+    
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -44,6 +45,7 @@ class CalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         /** 서버 정보 가져오기 */
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
             let serverObject = self.getServerEvents()
@@ -55,23 +57,24 @@ class CalendarVC: UIViewController {
                 self.calendarView.reloadData()
             }
         }
-
+        
+        
+        calendarView.cellStatus(for: takeDate)
         calendarView.visibleDates { dateSegment in
             self.setupCalendarView(dateSegment: dateSegment)
         }
         
         calendarView.addGestureRecognizer(longPressGesture)
-        
     }
     
     func setupCalendarView(dateSegment: DateSegmentInfo){
         guard let date = dateSegment.monthDates.first?.date else {return}
         
-        formatter.dateFormat = "MMMM"
-        month.text = formatter.string(from: date)
+        formatter.dateFormat = "MM"
+        month.text = formatter.string(from: date) + "월"
         
         formatter.dateFormat = "yyyy"
-        year.text = formatter.string(from: date)
+        year.text = formatter.string(from: date) + "년"
         
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
@@ -84,7 +87,7 @@ class CalendarVC: UIViewController {
         
         handleCellTextColor(cell: myCalendarCell, cellState: cellState)
         handleCellSelected(cell: myCalendarCell, cellState: cellState)
-        handleCellVisibility(cell: myCalendarCell, cellState: cellState)
+        handleCellThisMonth(cell: myCalendarCell, cellState: cellState)
         handleCellEvent(cell: myCalendarCell, cellState: cellState)
     }
     
@@ -95,14 +98,18 @@ class CalendarVC: UIViewController {
         
         // 오늘 = 오렌지색
         if todayDateString == monthDateString {
+            print("today date = \(todayDateString)")
             cell.dateLabel.textColor = UIColor.orange
         } else { // 선택한 날
            cell.dateLabel.textColor = cellState.isSelected ? UIColor.white : UIColor.black
         }
     }
     
-    func handleCellVisibility(cell:CalendarCell, cellState: CellState){
-        cell.isHidden = cellState.dateBelongsTo == .thisMonth ? false : true
+    /** 다른 달 회색으로 */
+    func handleCellThisMonth(cell:CalendarCell, cellState: CellState){
+        if (cellState.dateBelongsTo != .thisMonth ) {
+            cell.dateLabel.textColor = UIColor.lightGray
+        }
     }
     
     /** 날짜 선택 시 이벤트 */
@@ -224,3 +231,4 @@ extension UIColor{
         )
     }
 }
+
