@@ -419,6 +419,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-flower/Pods-flower-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -429,6 +430,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -451,7 +453,6 @@
 				4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */,
 				9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */,
 				4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */,
-				9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */,
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
 				4DF78BC421D8B488004D2D62 /* JoinAgreementVC.swift in Sources */,
 				9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */,

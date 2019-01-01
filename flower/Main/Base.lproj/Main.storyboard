@@ -573,7 +573,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-7e-dul">
                                         <rect key="frame" x="37" y="449.5" width="301" height="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -757,7 +757,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="778"/>
                     <connections>
-                        <outlet property="dateTF" destination="AX9-7e-dul" id="qqc-A4-qfT"/>
+                        <outlet property="dateTF" destination="AX9-7e-dul" id="zBX-xI-bIr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b91-9H-b56" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,15 +10,18 @@ import UIKit
 
 class JoinPersonalInfoVC: UIViewController {
 
-   override func viewDidLoad() {
-        super.viewDidLoad()
-
-    dateTF.inputView = datePicker
-
-    }
+    
+    
+    
+//성별 선택
     
 
-    var placeholder = NSAttributedString(string: "               년               월                 일")
+    
+    
+    
+    
+//생년월일
+    var placeholder = NSAttributedString(string: "               년               월                 일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray])
     @IBOutlet var dateTF: UITextField!
    
     lazy var datePicker: UIDatePicker = {
@@ -28,23 +31,20 @@ class JoinPersonalInfoVC: UIViewController {
         dateTF.attributedPlaceholder = placeholder;
         return picker
     }()
-
+    
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
         formatter.dateFormat = "   yyyy  년         MM   월         dd   일"
         return formatter
-
     }()
-
-
-
+    
     @objc func datePickerChanged(sender:UIDatePicker) {
         dateTF.text = dateFormatter.string(from: sender.date)
 
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
