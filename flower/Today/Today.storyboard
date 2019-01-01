@@ -363,8 +363,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cakeImg" width="512" height="512"/>
-        <image name="emotionAdd" width="66" height="60"/>
-        <image name="emotionSmile" width="60" height="54"/>
+        <image name="cakeImg" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="emotionAdd" width="33" height="30"/>
+        <image name="emotionSmile" width="30" height="27"/>
     </resources>
 </document>

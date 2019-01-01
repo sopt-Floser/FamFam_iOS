@@ -73,7 +73,7 @@ extension PostFullVC: UITableViewDataSource {
         case 0 :
             return 1
         case 1 :
-            print("replyCu=ont = \(replyCount)")
+            print("replyCuont = \(replyCount)")
             return Int(replyCount!)!
         default :
             return 1
