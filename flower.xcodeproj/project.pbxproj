@@ -12,6 +12,13 @@
 		4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */; };
 		4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3921D62E3800105EAE /* PostFullVC.swift */; };
 		4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */; };
+		4DF54A5621DB926E0081B9C7 /* JoinCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF54A5521DB926E0081B9C7 /* JoinCreateVC.swift */; };
+		4DF54A5821DB92A40081B9C7 /* JoinCreateEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF54A5721DB92A40081B9C7 /* JoinCreateEnterVC.swift */; };
+		4DF54A5A21DB92C10081B9C7 /* JoinEnterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF54A5921DB92C10081B9C7 /* JoinEnterVC.swift */; };
+		4DF78BC421D8B488004D2D62 /* JoinAgreementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC321D8B488004D2D62 /* JoinAgreementVC.swift */; };
+		4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */; };
+		4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */; };
+		4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */; };
 		9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0421D465A500442A68 /* TodayFeedCell.swift */; };
 		9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0621D465B300442A68 /* PostReplyCell.swift */; };
 		9B096B0921D465E300442A68 /* PostNewReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0821D465E300442A68 /* PostNewReplyCell.swift */; };
@@ -51,6 +58,13 @@
 		4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedVC.swift; sourceTree = "<group>"; };
 		4DB0CD3921D62E3800105EAE /* PostFullVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFullVC.swift; sourceTree = "<group>"; };
 		4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroduceVC.swift; sourceTree = "<group>"; };
+		4DF54A5521DB926E0081B9C7 /* JoinCreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCreateVC.swift; sourceTree = "<group>"; };
+		4DF54A5721DB92A40081B9C7 /* JoinCreateEnterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCreateEnterVC.swift; sourceTree = "<group>"; };
+		4DF54A5921DB92C10081B9C7 /* JoinEnterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinEnterVC.swift; sourceTree = "<group>"; };
+		4DF78BC321D8B488004D2D62 /* JoinAgreementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAgreementVC.swift; sourceTree = "<group>"; };
+		4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bordered.swift"; sourceTree = "<group>"; };
+		4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCellPhoneVC.swift; sourceTree = "<group>"; };
+		4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPersonalInfoVC.swift; sourceTree = "<group>"; };
 		9B096B0421D465A500442A68 /* TodayFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedCell.swift; sourceTree = "<group>"; };
 		9B096B0621D465B300442A68 /* PostReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReplyCell.swift; sourceTree = "<group>"; };
 		9B096B0821D465E300442A68 /* PostNewReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNewReplyCell.swift; sourceTree = "<group>"; };
@@ -80,8 +94,6 @@
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
 		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
-		A7F151B357CC25EDA7E8439B /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
-		C3C22FFB8DE217378F6EC2AB /* Pods_flower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +178,13 @@
 				9B453ED021CDFD3A001BD091 /* Main.storyboard */,
 				4D2B85FE21D4642A00268906 /* LoginVC.swift */,
 				4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */,
+				4DF78BC321D8B488004D2D62 /* JoinAgreementVC.swift */,
+				4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */,
+				4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */,
+				4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */,
+				4DF54A5721DB92A40081B9C7 /* JoinCreateEnterVC.swift */,
+				4DF54A5521DB926E0081B9C7 /* JoinCreateVC.swift */,
+				4DF54A5921DB92C10081B9C7 /* JoinEnterVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -402,8 +421,10 @@
 				9B096B0921D465E300442A68 /* PostNewReplyCell.swift in Sources */,
 				4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */,
 				9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */,
+				4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */,
 				9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */,
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
+				4DF78BC421D8B488004D2D62 /* JoinAgreementVC.swift in Sources */,
 				9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */,
 				9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */,
 				9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */,
@@ -412,18 +433,23 @@
 				9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
+				4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */,
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
 				9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */,
+				4DF54A5A21DB92C10081B9C7 /* JoinEnterVC.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */,
+				4DF54A5621DB926E0081B9C7 /* JoinCreateVC.swift in Sources */,
+				4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */,
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
 				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
+				4DF54A5821DB92A40081B9C7 /* JoinCreateEnterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
