@@ -26,5 +26,15 @@ class JoinCreateEnterVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func CreateFamily(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
+    }
+    
+    
+    
 
 }
