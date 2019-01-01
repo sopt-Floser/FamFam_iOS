@@ -11,17 +11,28 @@ import JTAppleCalendar
 
 typealias DateString = String
 
-/** calendar 다루는 곳 */
+var didSwitchDate = false
 
-class CalendarVC: UIViewController {
+/** calendar 다루는 곳 */
+class CalendarVC: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month: UILabel!
+    @IBOutlet weak var switchBtn:UIButton!
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
+    @IBAction func switchButton(_ sender: UIButton) {
+        didSwitchDate = true
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
+        present(dvc, animated: true, completion: nil)
+    }
+    @IBOutlet weak var searchbar: UISearchBar!
     
+    
+    var takeDate = switchDate
     let todayDate = Date()
+    
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -35,7 +46,7 @@ class CalendarVC: UIViewController {
     
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer){
         print("long press")
-        
+        calendarView.allowsMultipleSelection = true
         if gesture.state == UIGestureRecognizer.State.began{
         }
     }
@@ -44,6 +55,8 @@ class CalendarVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchbar.delegate = self
+        
         /** 서버 정보 가져오기 */
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
             let serverObject = self.getServerEvents()
@@ -55,26 +68,46 @@ class CalendarVC: UIViewController {
                 self.calendarView.reloadData()
             }
         }
-
+    
         calendarView.visibleDates { dateSegment in
             self.setupCalendarView(dateSegment: dateSegment)
         }
-        
+    
         calendarView.addGestureRecognizer(longPressGesture)
         
+        calendarView.reloadData(withanchor: takeDate){
+            let visibleDates = self.calendarView.visibleDates()
+        }
+
+        
     }
+
+    
+//    func switchCalendar(){
+//        print("running")
+//        if (didSwitchDate == true){
+//            calendarView.scrollToDate(takeDate)
+//            print("didswitchDate is true")
+//            didSwitchDate = false
+//        }
+////        calendarView.scrollToDate(takeDate)
+//    }
     
     func setupCalendarView(dateSegment: DateSegmentInfo){
         guard let date = dateSegment.monthDates.first?.date else {return}
         
-        formatter.dateFormat = "MMMM"
-        month.text = formatter.string(from: date)
+        formatter.dateFormat = "MM"
+        month.text = formatter.string(from: date) + "월"
         
         formatter.dateFormat = "yyyy"
-        year.text = formatter.string(from: date)
+        year.text = formatter.string(from: date) + "년"
         
+        calendarView.ibCalendarDelegate = self
+        calendarView.ibCalendarDataSource = self
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
+        calendarView.isRangeSelectionUsed = true
+        //calendarView.sectionInset = UIEdgeInsets(top: 22, left: 22, bottom: 22, right: 22)
     }
     
     
@@ -84,9 +117,20 @@ class CalendarVC: UIViewController {
         
         handleCellTextColor(cell: myCalendarCell, cellState: cellState)
         handleCellSelected(cell: myCalendarCell, cellState: cellState)
-        handleCellVisibility(cell: myCalendarCell, cellState: cellState)
+        handleCellThisMonth(cell: myCalendarCell, cellState: cellState)
         handleCellEvent(cell: myCalendarCell, cellState: cellState)
     }
+    
+//    func setInitialPostDatesOnCalendarView() {
+//        guard let post = MyObjects.sharedInstance.workingPostViewModel?.post,
+//            let prep = post.prepDate,
+//            let deliver = post.deliverDate,
+//            let dateRange = self.calendarView?.generateDateRange(from: prep, to: deliver) else {
+//                return
+//        }
+//        calendarView?.scrollToDate(deliver, animateScroll:false)
+//        calendarView?.selectDates(dateRange)
+//    }
     
     /** 달력 일 색갈 변환기 */
     func handleCellTextColor(cell: CalendarCell, cellState: CellState){
@@ -101,8 +145,11 @@ class CalendarVC: UIViewController {
         }
     }
     
-    func handleCellVisibility(cell:CalendarCell, cellState: CellState){
-        cell.isHidden = cellState.dateBelongsTo == .thisMonth ? false : true
+    /** 다른 달 회색으로 */
+    func handleCellThisMonth(cell:CalendarCell, cellState: CellState){
+        if (cellState.dateBelongsTo != .thisMonth ) {
+            cell.dateLabel.textColor = UIColor.lightGray
+        }
     }
     
     /** 날짜 선택 시 이벤트 */
@@ -157,7 +204,7 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     /** 셀을 선택했을 시 동작 */
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         configureCell(cell: cell, cellState: cellState)
-        
+        calendarView.allowsMultipleSelection = false
         cell?.bounce()
     }
     
@@ -181,6 +228,12 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
         return MonthSize(defaultSize: 50)
     }
     
+    // 취소버튼 클릭 시 키보드 닫히고 검색어 초기화
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchbar.text = ""
+        searchbar.resignFirstResponder()
+        
+    }
 }
 
 /** 임시 서버 정보 받아오기 */
@@ -189,10 +242,10 @@ extension CalendarVC {
         formatter.dateFormat = "yyyy MM dd"
         
         return [
-            formatter.date(from:"2018 12 25")!: "happy Birthday",
-            formatter.date(from:"2018 12 27")!: "happy Birthday",
-            formatter.date(from:"2018 12 28")!: "happy Birthday",
-            formatter.date(from:"2018 12 31")!: "happy Birthday",
+            formatter.date(from:"2019 01 01")!: "happy Birthday",
+            formatter.date(from:"2019 01 12")!: "happy Birthday",
+            formatter.date(from:"2019 01 28")!: "happy Birthday",
+            formatter.date(from:"2019 01 31")!: "happy Birthday",
         ]
     }
 }
@@ -224,3 +277,4 @@ extension UIColor{
         )
     }
 }
+

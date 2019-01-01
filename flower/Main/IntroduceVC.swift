@@ -21,7 +21,7 @@ class IntroduceVC: UIViewController {
         
         pageControl.numberOfPages = images.count
         pageControl.currentPage = 0
-        introduceImage.image = UIImage(named: images[0])
+        //introduceImage.image = UIImage(named: images[0])
     
 
         // Do any additional setup after loading the view.
