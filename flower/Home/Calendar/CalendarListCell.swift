@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Foundation
 
 class CalendarListCell: UITableViewCell {
 
     @IBOutlet weak var listName: UILabel!
-    @IBOutlet weak var listColor: UILabel!
+    @IBOutlet weak var listColor: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

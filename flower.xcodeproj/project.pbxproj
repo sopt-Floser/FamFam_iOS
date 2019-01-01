@@ -15,7 +15,6 @@
 		9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0421D465A500442A68 /* TodayFeedCell.swift */; };
 		9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0621D465B300442A68 /* PostReplyCell.swift */; };
 		9B096B0921D465E300442A68 /* PostNewReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0821D465E300442A68 /* PostNewReplyCell.swift */; };
-		9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B0D21D472BF00442A68 /* LocalDataBase.swift */; };
 		9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1221D4B75B00442A68 /* StatisticCell.swift */; };
 		9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1421D4B76C00442A68 /* NoticeCell.swift */; };
 		9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1E21D4B81200442A68 /* FamilyCell.swift */; };
@@ -44,6 +43,8 @@
 		9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */; };
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
 		9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */; };
+		9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1121DBB32100A3688F /* CalendarData.swift */; };
+		9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1321DBB3BE00A3688F /* TodayData.swift */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
 		9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF705AC21D8631800212766 /* FamilyModel.swift */; };
 		FDDC38C5131D208AFCAE52A8 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDB18806E50FCBDFDEC3C05 /* Pods_flower.framework */; };
@@ -61,7 +62,6 @@
 		9B096B0421D465A500442A68 /* TodayFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedCell.swift; sourceTree = "<group>"; };
 		9B096B0621D465B300442A68 /* PostReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReplyCell.swift; sourceTree = "<group>"; };
 		9B096B0821D465E300442A68 /* PostNewReplyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostNewReplyCell.swift; sourceTree = "<group>"; };
-		9B096B0D21D472BF00442A68 /* LocalDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataBase.swift; sourceTree = "<group>"; };
 		9B096B1221D4B75B00442A68 /* StatisticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCell.swift; sourceTree = "<group>"; };
 		9B096B1421D4B76C00442A68 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
 		9B096B1E21D4B81200442A68 /* FamilyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyCell.swift; sourceTree = "<group>"; };
@@ -92,6 +92,8 @@
 		9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddVC.swift; sourceTree = "<group>"; };
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListCell.swift; sourceTree = "<group>"; };
+		9BD13B1121DBB32100A3688F /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
+		9BD13B1321DBB3BE00A3688F /* TodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayData.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
 		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,7 +130,8 @@
 		9B096B0C21D472AF00442A68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9B096B0D21D472BF00442A68 /* LocalDataBase.swift */,
+				9BD13B1121DBB32100A3688F /* CalendarData.swift */,
+				9BD13B1321DBB3BE00A3688F /* TodayData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -429,7 +432,6 @@
 				9B096B0921D465E300442A68 /* PostNewReplyCell.swift in Sources */,
 				4DD94D3021D495800098C7A2 /* IntroduceVC.swift in Sources */,
 				9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */,
-				9B096B0E21D472BF00442A68 /* LocalDataBase.swift in Sources */,
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
 				9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */,
 				9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */,
@@ -457,7 +459,9 @@
 				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
+				9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
+				9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

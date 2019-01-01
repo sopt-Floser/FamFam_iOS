@@ -12,6 +12,7 @@ import JTAppleCalendar
 typealias DateString = String
 
 var didSwitchDate = false
+var filter:[CalendarModel] = [] // 선택한 날짜의 할일을 보관하는 배열
 
 /** calendar 다루는 곳 */
 class CalendarVC: UIViewController, UISearchBarDelegate {
@@ -30,8 +31,11 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchbar: UISearchBar!
     
     
-    var takeDate = switchDate
+    var takeDate = switchDate // 피커뷰에서 가져온 Date 값
     let todayDate = Date()
+    var selectDate = ""
+    
+    var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
     
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
@@ -53,6 +57,10 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     
     var eventsFromTheServer: [String:String] = [:]
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbar.delegate = self
@@ -60,9 +68,9 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
         /** 서버 정보 가져오기 */
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
             let serverObject = self.getServerEvents()
-            for (date, event) in serverObject{
+            for (date) in serverObject{
                 let stringDate = self.formatter.string(from: date)
-                self.eventsFromTheServer[stringDate] = event
+                self.eventsFromTheServer[stringDate] = ""
             }
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
@@ -159,7 +167,7 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     
     /** 서버에서 받아오는 정보 달력에 보여주기 (할일) */
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
-        cell.eventLabel.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
+        cell.eventView.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
     }
  
 }
@@ -205,6 +213,11 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         configureCell(cell: cell, cellState: cellState)
         calendarView.allowsMultipleSelection = false
+        
+        selectDate = formatter.string(from: cellState.date)
+        print("selectDate = \(selectDate)")
+        filter = CalendarDatabase.CalendarDataArray.filter{$0.date == selectDate  }
+        print("filter = \(filter)")
         cell?.bounce()
     }
     
@@ -217,6 +230,7 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     func calendar(_ calendar:JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo){
         setupCalendarView(dateSegment: visibleDates)
     }
+
     
     /** 헤더에 요일 설정 */
     func calendar(_ calendar: JTAppleCalendarView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTAppleCollectionReusableView {
@@ -236,16 +250,16 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     }
 }
 
-/** 임시 서버 정보 받아오기 */
+// 임시 서버 정보 받아오기
 extension CalendarVC {
-    func getServerEvents() -> [Date:String]{
+    func getServerEvents() -> [Date]{
         formatter.dateFormat = "yyyy MM dd"
-        
+
         return [
-            formatter.date(from:"2019 01 01")!: "happy Birthday",
-            formatter.date(from:"2019 01 12")!: "happy Birthday",
-            formatter.date(from:"2019 01 28")!: "happy Birthday",
-            formatter.date(from:"2019 01 31")!: "happy Birthday",
+            formatter.date(from:dateList[0]) ?? Date(),
+            formatter.date(from:dateList[1]) ?? Date(),
+            formatter.date(from:dateList[2]) ?? Date(),
+            formatter.date(from:dateList[3]) ?? Date(),
         ]
     }
 }

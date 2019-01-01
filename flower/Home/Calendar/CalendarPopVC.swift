@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import Foundation
 
 class CalendarPopVC: UIViewController {
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var outsideView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var listTableView: UITableView!
+    
+    // 임시 배열
+    let dateList = CalendarDatabase.CalendarDataArray // 할일 모든 정보
+    let formatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        listTableView.delegate = self
+        listTableView.dataSource = self
+        
         /** 일정 추가 뷰 바깥 영역 인식 */
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender: )))
         outsideView.addGestureRecognizer(tapGesture)
-        
     }
     
     /** 터치 리스너, 화면 내리기 */
@@ -32,14 +38,17 @@ class CalendarPopVC: UIViewController {
 
 extension CalendarPopVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return filter.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listTableView.dequeueReusableCell(withIdentifier: "todolistcell", for: indexPath) as! CalendarListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todolistcell", for: indexPath) as! CalendarListCell
         
-        cell.listColor.backgroundColor = UIColor.green
-        cell.listName.text = "일정 등록"
+        print("filter = \(filter[indexPath.row].memo),  \(filter[indexPath.row].color)")
+        
+        cell.listName.text = filter[indexPath.row].memo
+//        cell.listColor.backgroundColor = UIColor.blue
+        
         
         return cell
     }
