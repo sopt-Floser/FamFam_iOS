@@ -16,7 +16,10 @@ class CalendarListPopupVC: UIViewController {
     @IBAction func selectDateBtn(_ sender: Any) {
         datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
         switchDate = datePicker.date
+        didSwitchDate = true 
         dismiss(animated: true, completion: nil)
+        print("switchDate = \(switchDate)")
+        
     }
     @IBAction func dismissPopup(_ sender: Any) {
         dismiss(animated: true, completion: nil)

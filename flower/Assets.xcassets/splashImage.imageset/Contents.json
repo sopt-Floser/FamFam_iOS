@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "presentIcon.png",
+      "filename" : "splashImage.png",
       "scale" : "1x"
     },
     {

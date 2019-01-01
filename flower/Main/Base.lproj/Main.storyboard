@@ -279,7 +279,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtx-gA-t4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622" y="-1797"/>
+            <point key="canvasLocation" x="1124" y="-1163"/>
         </scene>
         <!--채팅-->
         <scene sceneID="GCZ-2r-1Bs">

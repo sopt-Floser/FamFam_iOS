@@ -25,6 +25,11 @@
 		9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */; };
 		9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32102021D6322200995ADD /* NoticeTableCell.swift */; };
 		9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32102421D6341B00995ADD /* NoticeModel.swift */; };
+		9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4921DB530700FC6ED6 /* addAnniversaryCell.swift */; };
+		9B41DB4C21DB531600FC6ED6 /* listAnniversaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4B21DB531600FC6ED6 /* listAnniversaryCell.swift */; };
+		9B41DB4E21DB532D00FC6ED6 /* marrageAnniversaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4D21DB532D00FC6ED6 /* marrageAnniversaryCell.swift */; };
+		9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */; };
+		9B41DB5221DB570900FC6ED6 /* AnniversaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB5121DB570900FC6ED6 /* AnniversaryModel.swift */; };
 		9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */; };
 		9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECE21CDFD3A001BD091 /* ViewController.swift */; };
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
@@ -38,6 +43,7 @@
 		9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */; };
 		9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */; };
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
+		9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
 		9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF705AC21D8631800212766 /* FamilyModel.swift */; };
 		FDDC38C5131D208AFCAE52A8 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDB18806E50FCBDFDEC3C05 /* Pods_flower.framework */; };
@@ -65,6 +71,11 @@
 		9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekCalendarCell.swift; sourceTree = "<group>"; };
 		9B32102021D6322200995ADD /* NoticeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableCell.swift; sourceTree = "<group>"; };
 		9B32102421D6341B00995ADD /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
+		9B41DB4921DB530700FC6ED6 /* addAnniversaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAnniversaryCell.swift; sourceTree = "<group>"; };
+		9B41DB4B21DB531600FC6ED6 /* listAnniversaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listAnniversaryCell.swift; sourceTree = "<group>"; };
+		9B41DB4D21DB532D00FC6ED6 /* marrageAnniversaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marrageAnniversaryCell.swift; sourceTree = "<group>"; };
+		9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryVC.swift; sourceTree = "<group>"; };
+		9B41DB5121DB570900FC6ED6 /* AnniversaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryModel.swift; sourceTree = "<group>"; };
 		9B453EC921CDFD3A001BD091 /* flower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B453ECE21CDFD3A001BD091 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +91,7 @@
 		9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListPopupVC.swift; sourceTree = "<group>"; };
 		9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddVC.swift; sourceTree = "<group>"; };
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListCell.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
 		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,12 +136,14 @@
 		9B096B0F21D4B67800442A68 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				9B41DB4821DB52E400FC6ED6 /* Anniversary */,
 				9B0DE9BA21CF56360020371E /* CalendarVC.swift */,
 				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
 				9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */,
 				9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */,
 				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
 				9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */,
+				9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -159,6 +173,18 @@
 				9BF705AC21D8631800212766 /* FamilyModel.swift */,
 			);
 			path = Family;
+			sourceTree = "<group>";
+		};
+		9B41DB4821DB52E400FC6ED6 /* Anniversary */ = {
+			isa = PBXGroup;
+			children = (
+				9B41DB4921DB530700FC6ED6 /* addAnniversaryCell.swift */,
+				9B41DB4B21DB531600FC6ED6 /* listAnniversaryCell.swift */,
+				9B41DB4D21DB532D00FC6ED6 /* marrageAnniversaryCell.swift */,
+				9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */,
+				9B41DB5121DB570900FC6ED6 /* AnniversaryModel.swift */,
+			);
+			path = Anniversary;
 			sourceTree = "<group>";
 		};
 		9B44BEDF21CF33DE00EB5C17 /* Main */ = {
@@ -407,6 +433,7 @@
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
 				9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */,
 				9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */,
+				9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */,
 				9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */,
 				4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */,
 				9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */,
@@ -414,6 +441,8 @@
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
+				9B41DB4C21DB531600FC6ED6 /* listAnniversaryCell.swift in Sources */,
+				9B41DB5221DB570900FC6ED6 /* AnniversaryModel.swift in Sources */,
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
 				9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
@@ -422,6 +451,9 @@
 				9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */,
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
+				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
+				9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */,
+				9B41DB4E21DB532D00FC6ED6 /* marrageAnniversaryCell.swift in Sources */,
 				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
