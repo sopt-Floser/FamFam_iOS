@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B85FE21D4642A00268906 /* LoginVC.swift */; };
+		4D39CA0A21DC6F180092CD9C /* genderSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D39CA0921DC6F180092CD9C /* genderSelection.swift */; };
 		4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9B502D21D764D60032F541 /* PostFullCell.swift */; };
 		4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */; };
 		4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3921D62E3800105EAE /* PostFullVC.swift */; };
@@ -61,6 +62,7 @@
 		246EAE64FE4D6F81931180B1 /* Pods-flower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.release.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.release.xcconfig"; sourceTree = "<group>"; };
 		49FA21D43248AA584B4C9B15 /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
 		4D2B85FE21D4642A00268906 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4D39CA0921DC6F180092CD9C /* genderSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genderSelection.swift; sourceTree = "<group>"; };
 		4D9B502D21D764D60032F541 /* PostFullCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFullCell.swift; sourceTree = "<group>"; };
 		4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedVC.swift; sourceTree = "<group>"; };
 		4DB0CD3921D62E3800105EAE /* PostFullVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFullVC.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */,
 				4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */,
 				4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */,
+				4D39CA0921DC6F180092CD9C /* genderSelection.swift */,
 				4DF54A5721DB92A40081B9C7 /* JoinCreateEnterVC.swift */,
 				4DF54A5921DB92C10081B9C7 /* JoinEnterVC.swift */,
 			);
@@ -419,9 +422,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-flower/Pods-flower-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/PasswordTextField/PasswordTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -430,9 +433,9 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PasswordTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -460,6 +463,7 @@
 				9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */,
 				9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */,
 				4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */,
+				4D39CA0A21DC6F180092CD9C /* genderSelection.swift in Sources */,
 				9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */,
 				9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,

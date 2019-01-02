@@ -9,6 +9,7 @@ pod 'JTAppleCalendar', '~> 7.0'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
+pod 'PasswordTextField'
 
   # Pods for flower
 
