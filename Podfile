@@ -10,6 +10,7 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'DLRadioButton', '~> 1.4'
+pod 'BetterSegmentedControl', '~> 1.0'
   # Pods for flower
 
 end
