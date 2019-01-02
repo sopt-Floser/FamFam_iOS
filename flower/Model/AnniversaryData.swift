@@ -1,13 +1,13 @@
 //
-//  AnniversaryModel.swift
+//  AnniversaryData.swift
 //  flower
 //
-//  Created by 성다연 on 2019. 1. 1..
+//  Created by 성다연 on 2019. 1. 2..
 //  Copyright © 2019년 성다연. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Foundation
 
 
 let AnniversaryDateBase = AnniversaryData()
@@ -34,6 +34,6 @@ class AnniversaryData {
         let stock2 = AnniversaryModel(name: "아빠 생일", date: "1963 11 20", DDay: "--")
         let stock3 = AnniversaryModel(name: "다연 생일", date: "1997 10 21", DDay: "--")
         
-        AnniversaryList = [stock, stock2, stock3]
+        self.AnniversaryList = [stock, stock2, stock3]
     }
 }

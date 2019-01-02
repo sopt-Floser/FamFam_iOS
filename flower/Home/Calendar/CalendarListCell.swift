@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import Foundation
 
 class CalendarListCell: UITableViewCell {
-
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var listColor: UIView!
     

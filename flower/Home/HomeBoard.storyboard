@@ -193,7 +193,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="marriageAnniversaryCell" rowHeight="69" id="QGa-jP-2FD" customClass="marrageAnniversaryCell" customModule="flower" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="marriageAnniversaryCell" rowHeight="69" id="QGa-jP-2FD" customClass="marriageAnniversaryCell" customModule="flower" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="97" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QGa-jP-2FD" id="rVA-b0-uxt">
@@ -217,8 +217,8 @@
                                                     <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-as-IHO">
-                                                    <rect key="frame" x="286" y="19" width="52" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-as-IHO">
+                                                    <rect key="frame" x="275" y="12" width="80" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="HLS-eB-r1E"/>
                                                         <constraint firstAttribute="width" constant="52" id="a5P-Jt-TVZ"/>
@@ -245,7 +245,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listAnniversaryCell" rowHeight="72" id="51s-KJ-vGQ" customClass="listAnniversaryCell" customModule="flower" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="listAnniversaryCell" rowHeight="72" id="51s-KJ-vGQ" customClass="listAnniversaryCell" customModule="flower" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="166" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="51s-KJ-vGQ" id="SGl-Av-bui">
@@ -638,6 +638,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="listColor" destination="ytt-Ba-9et" id="PS7-2J-Osr"/>
                                                     <outlet property="listName" destination="k9x-I5-S46" id="6ya-Qo-ON9"/>
                                                 </connections>
                                             </tableViewCell>

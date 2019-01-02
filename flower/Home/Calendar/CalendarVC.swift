@@ -218,6 +218,8 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
         print("selectDate = \(selectDate)")
         filter = CalendarDatabase.CalendarDataArray.filter{$0.date == selectDate  }
         print("filter = \(filter)")
+        
+        
         cell?.bounce()
     }
     

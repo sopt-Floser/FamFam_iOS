@@ -10,6 +10,12 @@ import Foundation
 
 let CalendarDatabase = CalendarData()
 
+// 일정 할일 데이터 간략화 시 사용
+enum anniversary:String {
+    case birth = "생일"
+    case marriage = "결혼"
+    case other = "기타"
+}
 // 홈 - 일정 모델
 class CalendarModel {
     var date: String
@@ -22,6 +28,13 @@ class CalendarModel {
         self.color = color
     }
 }
+
+//class selectCalendar {
+//    var date:String
+//    init(date:String){
+//        self.date = date
+//    }
+//}
 
 // 홈 - 일정 데이터
 class CalendarData {
