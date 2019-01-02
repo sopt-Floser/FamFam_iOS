@@ -1243,47 +1243,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8lt-cS-h6V">
-                                        <rect key="frame" x="35.5" y="242" width="304" height="38"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AC-i9-OQk">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="38"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="152" id="7B3-yT-zRn"/>
-                                                    <constraint firstAttribute="height" constant="38" id="ROf-pH-iBX"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="같이 먹어요!">
-                                                    <color key="titleColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderColor" value="UIColor.gray.cgColor"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pun-ds-bW2">
-                                                <rect key="frame" x="152" y="0.0" width="152" height="38"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="먹고 올게요!">
-                                                    <color key="titleColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderColor" value="UIColor.black.cgColor"/>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                        <integer key="value" value="2"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="304" id="Emt-wz-98v"/>
-                                            <constraint firstAttribute="height" constant="38" id="w3V-II-oFp"/>
-                                        </constraints>
-                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5C-nA-b95" userLabel="line">
                                         <rect key="frame" x="30" y="109" width="315" height="1"/>
                                         <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1305,7 +1264,7 @@
                                         <color key="textColor" red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅁㅁㅁㅁ년 ㅁㅁ월 ㅁㅁ일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvH-8g-hmT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅁㅁㅁㅁ년 ㅁㅁ월 ㅁㅁ일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvH-8g-hmT">
                                         <rect key="frame" x="186" y="142" width="152" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="152" id="1Dw-S0-tE2"/>
@@ -1315,43 +1274,6 @@
                                         <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SyI-WU-MEv">
-                                        <rect key="frame" x="34.5" y="353" width="306" height="75"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5t-gV-9Sp">
-                                                <rect key="frame" x="0.0" y="0.0" width="102" height="75"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="MpF-65-gFW"/>
-                                                    <constraint firstAttribute="width" constant="102" id="uo6-rd-qcg"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="10시 전">
-                                                    <color key="titleColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xJ-Zj-ZGG">
-                                                <rect key="frame" x="102" y="0.0" width="102" height="75"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="10시 ~ 12시">
-                                                    <color key="titleColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8S-Om-Gf9">
-                                                <rect key="frame" x="204" y="0.0" width="102" height="75"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                                <state key="normal" title="12시 이후">
-                                                    <color key="titleColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="Dw8-7X-yT3"/>
-                                            <constraint firstAttribute="width" constant="306" id="ILw-lz-dF8"/>
-                                        </constraints>
-                                    </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="일정을 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkH-Lp-wTe">
                                         <rect key="frame" x="31.5" y="76" width="312" height="26"/>
                                         <constraints>
@@ -1387,23 +1309,18 @@
                                     <constraint firstItem="NLK-Uy-auH" firstAttribute="leading" secondItem="aTn-RM-HlU" secondAttribute="leading" constant="36" id="VZb-VG-khm"/>
                                     <constraint firstItem="dkH-Lp-wTe" firstAttribute="width" secondItem="aTn-RM-HlU" secondAttribute="height" multiplier="156:283" id="W6U-Zm-9zd"/>
                                     <constraint firstItem="bzS-4r-j6c" firstAttribute="leading" secondItem="aTn-RM-HlU" secondAttribute="leading" constant="36" id="XeQ-Hn-5X8"/>
-                                    <constraint firstItem="TAK-Rr-X7u" firstAttribute="top" secondItem="8lt-cS-h6V" secondAttribute="bottom" constant="23" id="bmV-CX-1Gc"/>
-                                    <constraint firstItem="8lt-cS-h6V" firstAttribute="centerX" secondItem="aTn-RM-HlU" secondAttribute="centerX" id="etm-BX-Nph"/>
                                     <constraint firstItem="TvH-8g-hmT" firstAttribute="width" secondItem="aTn-RM-HlU" secondAttribute="height" multiplier="76:283" id="evE-rw-eIX"/>
                                     <constraint firstItem="2Qj-pP-JBd" firstAttribute="top" secondItem="y5C-nA-b95" secondAttribute="bottom" constant="70" id="fCH-Dl-vJt"/>
                                     <constraint firstItem="dkH-Lp-wTe" firstAttribute="centerX" secondItem="aTn-RM-HlU" secondAttribute="centerX" id="ftS-0Q-ePU"/>
                                     <constraint firstItem="NLK-Uy-auH" firstAttribute="top" secondItem="aTn-RM-HlU" secondAttribute="top" constant="31" id="g50-5e-PyB"/>
-                                    <constraint firstItem="SyI-WU-MEv" firstAttribute="top" secondItem="TAK-Rr-X7u" secondAttribute="bottom" constant="23" id="icw-Za-4dH"/>
                                     <constraint firstItem="y5C-nA-b95" firstAttribute="top" secondItem="dkH-Lp-wTe" secondAttribute="bottom" constant="7" id="ikF-zH-6It"/>
                                     <constraint firstItem="bzS-4r-j6c" firstAttribute="width" secondItem="aTn-RM-HlU" secondAttribute="height" multiplier="20:283" id="mJE-P5-ZKK"/>
                                     <constraint firstAttribute="height" constant="566" id="nbr-Pt-pGL"/>
                                     <constraint firstItem="y5C-nA-b95" firstAttribute="centerX" secondItem="aTn-RM-HlU" secondAttribute="centerX" id="oHo-dh-gUV"/>
-                                    <constraint firstItem="8lt-cS-h6V" firstAttribute="top" secondItem="9kD-gd-l7m" secondAttribute="bottom" constant="16" id="rdc-6G-Xe9"/>
                                     <constraint firstItem="2Qj-pP-JBd" firstAttribute="width" secondItem="aTn-RM-HlU" secondAttribute="height" multiplier="315:566" id="rjN-eO-XOh"/>
-                                    <constraint firstItem="SyI-WU-MEv" firstAttribute="width" secondItem="aTn-RM-HlU" secondAttribute="height" multiplier="153:283" id="tRh-7y-Coa"/>
                                     <constraint firstItem="NLK-Uy-auH" firstAttribute="width" secondItem="aTn-RM-HlU" secondAttribute="height" multiplier="39:283" id="tXs-By-7aK"/>
+                                    <constraint firstItem="TAK-Rr-X7u" firstAttribute="top" secondItem="9kD-gd-l7m" secondAttribute="bottom" constant="77" id="tk3-lt-pQj"/>
                                     <constraint firstItem="9kD-gd-l7m" firstAttribute="leading" secondItem="aTn-RM-HlU" secondAttribute="leading" constant="36" id="vxe-jX-lMv"/>
-                                    <constraint firstItem="SyI-WU-MEv" firstAttribute="centerX" secondItem="aTn-RM-HlU" secondAttribute="centerX" id="yxP-cV-sSH"/>
                                     <constraint firstItem="bzS-4r-j6c" firstAttribute="top" secondItem="y5C-nA-b95" secondAttribute="bottom" constant="31" id="zNy-OC-OQT"/>
                                 </constraints>
                             </view>
@@ -1472,7 +1389,7 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅁㅁㅁㅁ년ㅁㅁ월ㅁㅁ일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwc-UQ-cB3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅁㅁㅁㅁ년ㅁㅁ월ㅁㅁ일" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwc-UQ-cB3">
                                         <rect key="frame" x="188" y="273" width="150" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="SAu-IB-4EG"/>
