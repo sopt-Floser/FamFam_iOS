@@ -13,12 +13,15 @@ var myPlusInfoArray: [PlusData] = []
 
 class PlusVC: UIViewController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         getPlusData() // 정보 받아오는 함수
         setPlusData() // 정보를 화면에 넣는 함수
     }
+    
     
     ///// 배경화면 aspect fill 같은 거 차후 수정
     @IBOutlet var plusBackPic: UIImageView! // 내 배경화면
@@ -78,10 +81,9 @@ class PlusVC: UIViewController {
 
 extension PlusVC {
     func getPlusData() {
-        let myPlusData = PlusData(backPic: "imgViewMoreBack", profilePic: "sampleProfile", name: "이승수", introduce: "아요 파트장입니다 ^^*", version: "1.2.3")
+        let myPlusData = PlusData(backPic: "family", profilePic: "sampleProfile", name: "이승수", introduce: "아요 파트장입니다 ^^*", version: "1.2.3")
         myPlusInfoArray = [myPlusData]
         
     }
 }
-
 
