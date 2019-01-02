@@ -21,7 +21,6 @@ class TodayFeedVC: UIViewController {
         
         todayFeedTable.delegate = self
         todayFeedTable.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -31,13 +30,6 @@ class TodayFeedVC: UIViewController {
             todayFeedTable.deselectRow(at: index, animated: true)
         }
     }
-    
-    
-    
-    
-    
-    
-    
 }
     
     
@@ -45,10 +37,6 @@ class TodayFeedVC: UIViewController {
 //        cell.isUserInteractionEnabled = false
 //    }
  
-
-    
-    
-
 
 extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
     
@@ -78,8 +66,6 @@ extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
             }
             return value_
         }
-        
-        
         
         //cell 객체를 선언합니다. reusable identifier를 제대로 설정해주는거 잊지마세요!
         let cell = todayFeedTable.dequeueReusableCell(withIdentifier: "TodayFeedCell") as! TodayFeedCell
@@ -136,11 +122,9 @@ extension TodayFeedVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //아래의 과정들은 화면전환에서 데이터 전달을 하는 방법과 동일합니다.
         
-        
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "PostFullVC") as! PostFullVC
         let post = todayFeedList[indexPath.row]
         
-       
         nextVC.postProfileImage = post.postProfileImage!
         nextVC.postName = post.postName
         nextVC.postDate = post.postDate

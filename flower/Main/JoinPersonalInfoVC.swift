@@ -10,21 +10,43 @@ import UIKit
 
 class JoinPersonalInfoVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
+    
+    
+//성별 선택
     
 
-    /*
-    // MARK: - Navigation
+    
+    
+    
+    
+//생년월일
+    var placeholder = NSAttributedString(string: "               년               월                 일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray])
+    @IBOutlet var dateTF: UITextField!
+   
+    lazy var datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.datePickerMode = .date
+        picker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
+        dateTF.attributedPlaceholder = placeholder;
+        return picker
+    }()
+    
+    lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.dateFormat = "   yyyy  년         MM   월         dd   일"
+        return formatter
+    }()
+    
+    @objc func datePickerChanged(sender:UIDatePicker) {
+        dateTF.text = dateFormatter.string(from: sender.date)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
 }
