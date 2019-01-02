@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import Foundation
 
 class CalendarListCell: UITableViewCell {
-
     @IBOutlet weak var listName: UILabel!
     @IBOutlet weak var listColor: UIView!
     
     override func awakeFromNib() {
+        listColor.cornerRadius = 4
         super.awakeFromNib()
         // Initialization code
     }

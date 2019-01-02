@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Foundation
 
-class marrageAnniversaryCell: UITableViewCell {
+class marriageAnniversaryCell: UITableViewCell {
 
-    @IBAction func writeBtn(_ sender: Any) {
+    @IBAction func writeBtn(_ sender: UIButton) {
+//        let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
+//        present(dvc, animated: true, completion: nil)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

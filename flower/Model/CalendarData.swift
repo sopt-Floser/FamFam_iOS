@@ -10,6 +10,12 @@ import Foundation
 
 let CalendarDatabase = CalendarData()
 
+// 일정 할일 데이터 간략화 시 사용
+enum anniversary:String {
+    case birth = "생일"
+    case marriage = "결혼"
+    case other = "기타"
+}
 // 홈 - 일정 모델
 class CalendarModel {
     var date: String
@@ -23,17 +29,24 @@ class CalendarModel {
     }
 }
 
+//class selectCalendar {
+//    var date:String
+//    init(date:String){
+//        self.date = date
+//    }
+//}
+
 // 홈 - 일정 데이터
 class CalendarData {
     var CalendarDataArray: [CalendarModel] = []
     var CalendarDateArray: [String] = []
     
     init(){
-        let stock = CalendarModel(date: "2019 01 02", memo: "합숙", color: "blue")
-        let stock2 = CalendarModel(date: "2019 01 05", memo: "서버 연동", color: "green")
-        let stock3 = CalendarModel(date: "2019 01 06", memo: "에어비엔비", color: "black")
-        let stock4 = CalendarModel(date: "2019 01 08", memo: "와우", color: "gray")
-        let stock5 = CalendarModel(date: "2019 01 10", memo: "오버워치", color: "orange")
+        let stock = CalendarModel(date: "2019 01 02", memo: "합숙", color: "#eeclad")
+        let stock2 = CalendarModel(date: "2019 01 05", memo: "서버 연동", color: "#8eedd6")
+        let stock3 = CalendarModel(date: "2019 01 06", memo: "에어비엔비", color: "#367bf0")
+        let stock4 = CalendarModel(date: "2019 01 08", memo: "와우", color: "#fea2ab")
+        let stock5 = CalendarModel(date: "2019 01 10", memo: "오버워치", color: "#525c68")
         self.CalendarDataArray = [stock, stock2, stock3, stock4, stock5]
         self.CalendarDateArray = [stock.date, stock2.date, stock3.date, stock4.date, stock5.date]
     }

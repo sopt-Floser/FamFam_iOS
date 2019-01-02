@@ -42,7 +42,10 @@ class CalendarAddVC: UIViewController, UITextFieldDelegate {
     }
     @IBAction func saveBtn(_ sender: Any) {
         // 데이터 추가 코드
-        dismiss(animated: true, completion: nil)
+        
+        //dismiss(animated: false, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        
     }
     
     /** 세그먼트 폰트, 색상 설정 */

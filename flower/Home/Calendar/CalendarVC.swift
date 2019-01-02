@@ -11,8 +11,8 @@ import JTAppleCalendar
 
 typealias DateString = String
 
-var didSwitchDate = false
 var filter:[CalendarModel] = [] // 선택한 날짜의 할일을 보관하는 배열
+var selectDate = Date()
 
 /** calendar 다루는 곳 */
 class CalendarVC: UIViewController, UISearchBarDelegate {
@@ -24,16 +24,12 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func switchButton(_ sender: UIButton) {
-        didSwitchDate = true
         let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
         present(dvc, animated: true, completion: nil)
     }
     @IBOutlet weak var searchbar: UISearchBar!
     
-    
-    var takeDate = switchDate // 피커뷰에서 가져온 Date 값
     let todayDate = Date()
-    var selectDate = ""
     
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
     
@@ -83,7 +79,7 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     
         calendarView.addGestureRecognizer(longPressGesture)
         
-        calendarView.reloadData(withanchor: takeDate){
+        calendarView.reloadData(withanchor: switchDate){
             let visibleDates = self.calendarView.visibleDates()
         }
 
@@ -167,7 +163,7 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     
     /** 서버에서 받아오는 정보 달력에 보여주기 (할일) */
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
-        cell.eventView.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
+        cell.eventLabel.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
     }
  
 }
@@ -214,10 +210,13 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
         configureCell(cell: cell, cellState: cellState)
         calendarView.allowsMultipleSelection = false
         
-        selectDate = formatter.string(from: cellState.date)
+        var stringSelectDate = formatter.string(from: cellState.date)
+        selectDate = cellState.date
         print("selectDate = \(selectDate)")
-        filter = CalendarDatabase.CalendarDataArray.filter{$0.date == selectDate  }
+        filter = CalendarDatabase.CalendarDataArray.filter{$0.date == stringSelectDate  }
         print("filter = \(filter)")
+        
+        
         cell?.bounce()
     }
     
@@ -282,13 +281,22 @@ extension UIView {
 
 /** 색 변환기 */
 extension UIColor{
-    convenience init(colorWithHexValue value: Int, alpha:CGFloat = 1.0){
+    convenience init(hex: String){
+        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var rgbValue:UInt32 = 0
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        Scanner(string:cString).scanHexInt32(&rgbValue)
+        
         self.init(
-            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(value & 0x0000FF) / 255.0,
-            alpha: alpha
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
         )
     }
+    
 }
 

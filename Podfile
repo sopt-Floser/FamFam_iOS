@@ -10,6 +10,7 @@ pod 'SwiftyJSON', '~> 4.0'
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'PasswordTextField'
+pod 'DLRadioButton', '~> 1.4'
 
   # Pods for flower
 
