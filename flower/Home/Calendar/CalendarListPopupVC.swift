@@ -8,17 +8,18 @@
 import Foundation
 import UIKit
 
-var switchDate:Date = Date()
+var switchDate = Date()
+var formatDate = ""
 
 class CalendarListPopupVC: UIViewController {
-    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBAction func selectDateBtn(_ sender: Any) {
+        
         datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
-        switchDate = datePicker.date
-        didSwitchDate = true 
+        switchDate = datePicker.date 
+        formatDate = selectDateFormatter()
         dismiss(animated: true, completion: nil)
-        print("switchDate = \(switchDate)")
+        print("formatDate = \(formatDate)")
         
     }
     @IBAction func dismissPopup(_ sender: Any) {
@@ -29,6 +30,13 @@ class CalendarListPopupVC: UIViewController {
         print("this function doesn't work")
     }
     
+    func selectDateFormatter() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy MM dd"
+        let returnValue = formatter.string(from: datePicker?.date ?? Date())
+        print("picker date = \(returnValue)")
+        return returnValue
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }

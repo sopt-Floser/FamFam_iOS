@@ -18,19 +18,18 @@ class CalendarPopVC: UIViewController {
     // 임시 배열
     let dateList = CalendarDatabase.CalendarDataArray // 할일 모든 정보
     let formatter = DateFormatter()
-    var formateDate = ""
+
     
     override func viewWillAppear(_ animated: Bool) {
+        setSelectDate()
         super.viewWillAppear(animated)
         listTableView.delegate = self
         listTableView.dataSource = self
-        setSelectDate()
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender: )))
         outsideView.addGestureRecognizer(tapGesture)
     }
@@ -40,18 +39,18 @@ class CalendarPopVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    // nn월 nn일 요일
     func setSelectDate(){
         formatter.dateFormat = "MM"
-        //formatter.locale = Locale(identifier: "ko_KR")
-        var tempString = formatter.date(from: formateDate)
+        formatter.locale = Locale(identifier: "ko_KR")
+        let tempString = formatter.string(from: selectDate)
         formatter.dateFormat = "dd"
-        var tempString2 = formatter.date(from: formateDate)
+        let tempString2 = formatter.string(from: selectDate)
         formatter.dateFormat = "E"
-        var tempString3 = formatter.date(from: formateDate)
+        let tempString3 = formatter.string(from: selectDate)
         
-        var finalString = "\(tempString)월 \(tempString2)일 \(tempString3)"
-        
-        print("finalString = \(finalString), \(formateDate)")
+        let finalString = "\(tempString)월 \(tempString2)일 \(tempString3)"
+        dateLabel.text = finalString
     }
 }
 
@@ -61,14 +60,11 @@ extension CalendarPopVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todolistcell", for: indexPath) as! CalendarListCell
+        let cell = listTableView.dequeueReusableCell(withIdentifier: "todolistcell", for: indexPath) as! CalendarListCell
         
-        let memo = filter[indexPath.row].memo
-        let color = filter[indexPath.row].color
-        print("filter = \(filter[indexPath.row].memo),  \(filter[indexPath.row].date), \(indexPath.row)")
-        
-//        cell.listName.text = memo
-//        cell.listColor.backgroundColor = UIColor.blue
+        print("list color = \(filter[indexPath.row].color)")
+        cell.listName.text = filter[indexPath.row].memo
+        cell.listColor.backgroundColor = UIColor.init(hex: filter[indexPath.row].color)
         
         return cell
     }

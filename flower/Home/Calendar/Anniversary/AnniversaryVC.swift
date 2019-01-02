@@ -11,9 +11,14 @@ import UIKit
 class AnniversaryVC: UIViewController {
     @IBOutlet weak var anniversaryTableView: UITableView!
     @IBAction func backBtn(_ sender: UIButton) {
-        
+//        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     @IBAction func trashBtn(_ sender: UIButton) {
+    }
+    @IBAction func marrageBtn(_ sender: UIButton) {
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
+        present(dvc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
