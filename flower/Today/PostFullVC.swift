@@ -61,7 +61,6 @@ extension PostFullVC: UITableViewDataSource {
         case 0 :
             return 1
         case 1 :
-            print("replyCount = \(replyCount)")
             return Int(replyCount!)!
         default:
             return 1
@@ -96,6 +95,10 @@ extension PostFullVC: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = postFullTable.dequeueReusableCell(withIdentifier: "PostReplyCell") as! PostReplyCell
+        
+        return cell
     }
 }
        // if indexPath.row == 0 {

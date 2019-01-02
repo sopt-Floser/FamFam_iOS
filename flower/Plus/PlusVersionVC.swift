@@ -24,8 +24,6 @@ class PlusVersionVC: UIViewController {
     
     
     
-    
-    
     @IBOutlet var latestVersion: UILabel!
     
     func setPlusVersionData() {

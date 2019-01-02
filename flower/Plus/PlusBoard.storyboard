@@ -601,7 +601,6 @@
         </scene>
     </scenes>
     <resources>
-<<<<<<< HEAD
         <image name="iconLauncher" width="139" height="139"/>
         <image name="plusPic10" width="240" height="428"/>
         <image name="plusPic11" width="242" height="427"/>
@@ -611,16 +610,5 @@
         <image name="plusPic5" width="240" height="426"/>
         <image name="plusPic7" width="239" height="428"/>
         <image name="plusPic9" width="240" height="429"/>
-=======
-        <image name="plusPic10" width="480" height="856"/>
-        <image name="plusPic11" width="484" height="854"/>
-        <image name="plusPic2" width="480" height="852"/>
-        <image name="plusPic3" width="482" height="856"/>
-        <image name="plusPic4" width="480" height="856"/>
-        <image name="plusPic5" width="480" height="852"/>
-        <image name="plusPic7" width="478" height="856"/>
-        <image name="plusPic8" width="482" height="856"/>
-        <image name="plusPic9" width="480" height="858"/>
->>>>>>> 5debf7ddaa73d9ad0504677ef69f468fceab171d
     </resources>
 </document>
