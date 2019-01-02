@@ -52,46 +52,108 @@
             </objects>
             <point key="canvasLocation" x="3794" y="-1155"/>
         </scene>
-        <!--Plus Version InfoVC-->
+        <!--버전정보-->
         <scene sceneID="Xyq-lL-aFu">
             <objects>
-                <viewController id="NKu-eb-z5N" customClass="PlusVersionInfoVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="버전정보" id="NKu-eb-z5N" customClass="PlusVersionVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uIH-fy-k5u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconLauncher" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-ey-Gwd">
+                                <rect key="frame" x="118" y="121" width="139" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="9fk-4z-P1b"/>
+                                    <constraint firstAttribute="height" constant="139" id="C2w-ry-1eh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 최신인지 아닌지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9O-t7-ge4">
+                                <rect key="frame" x="116.5" y="271" width="142" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Id2-dD-rzL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56M-5V-2wf">
+                                <rect key="frame" x="52" y="307" width="271" height="1"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="32E-Fb-DUl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 버전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0S-Un-BBM">
+                                <rect key="frame" x="52" y="326" width="64" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="698-XK-SqU"/>
+                                    <constraint firstAttribute="width" constant="64" id="s5M-ma-uGx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-Ae-nsn">
+                                <rect key="frame" x="285" y="326" width="38" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="2aC-FA-qlK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDD-PR-DHd">
+                                <rect key="frame" x="285" y="361" width="38" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="PfP-er-mPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최신 버전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIx-b0-sCS">
+                                <rect key="frame" x="52" y="361" width="64" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="1fM-mT-nZl"/>
+                                    <constraint firstAttribute="width" constant="64" id="2qi-Pz-F4e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q9O-t7-ge4" firstAttribute="centerX" secondItem="hB6-JW-yhI" secondAttribute="centerX" id="55a-Gf-wc8"/>
+                            <constraint firstItem="56M-5V-2wf" firstAttribute="leading" secondItem="uIH-fy-k5u" secondAttribute="leadingMargin" constant="36" id="5MH-hC-k4V"/>
+                            <constraint firstItem="sIx-b0-sCS" firstAttribute="leading" secondItem="56M-5V-2wf" secondAttribute="leading" id="BV0-g2-tkN"/>
+                            <constraint firstItem="56M-5V-2wf" firstAttribute="top" secondItem="Q9O-t7-ge4" secondAttribute="bottom" constant="19" id="Cbs-63-qOR"/>
+                            <constraint firstItem="hl7-Ae-nsn" firstAttribute="trailing" secondItem="56M-5V-2wf" secondAttribute="trailing" id="HgL-IN-ST8"/>
+                            <constraint firstItem="C3o-ey-Gwd" firstAttribute="top" secondItem="hB6-JW-yhI" secondAttribute="top" constant="57" id="K6J-8O-BLN"/>
+                            <constraint firstItem="CDD-PR-DHd" firstAttribute="centerY" secondItem="sIx-b0-sCS" secondAttribute="centerY" id="LNm-38-2Bf"/>
+                            <constraint firstItem="Q9O-t7-ge4" firstAttribute="top" secondItem="C3o-ey-Gwd" secondAttribute="bottom" constant="11" id="Sih-Zx-bBy"/>
+                            <constraint firstItem="sIx-b0-sCS" firstAttribute="top" secondItem="s0S-Un-BBM" secondAttribute="bottom" constant="18" id="Tny-PS-D89"/>
+                            <constraint firstItem="hl7-Ae-nsn" firstAttribute="centerY" secondItem="s0S-Un-BBM" secondAttribute="centerY" id="Uir-bP-mHa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="56M-5V-2wf" secondAttribute="trailing" constant="36" id="YLB-HB-asN"/>
+                            <constraint firstItem="C3o-ey-Gwd" firstAttribute="centerX" secondItem="hB6-JW-yhI" secondAttribute="centerX" id="gTS-PX-BZS"/>
+                            <constraint firstItem="s0S-Un-BBM" firstAttribute="leading" secondItem="56M-5V-2wf" secondAttribute="leading" id="ige-NQ-Ou7"/>
+                            <constraint firstItem="s0S-Un-BBM" firstAttribute="top" secondItem="56M-5V-2wf" secondAttribute="bottom" constant="18" id="njj-RJ-Zq0"/>
+                            <constraint firstItem="CDD-PR-DHd" firstAttribute="trailing" secondItem="56M-5V-2wf" secondAttribute="trailing" id="xSf-vT-ypA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hB6-JW-yhI"/>
                     </view>
+                    <connections>
+                        <outlet property="currentVersion" destination="hl7-Ae-nsn" id="Umc-yr-jAp"/>
+                        <outlet property="latestVersion" destination="CDD-PR-DHd" id="OQe-90-pmv"/>
+                        <outlet property="versionStatus" destination="Q9O-t7-ge4" id="yoB-qe-vWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaM-b7-EZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="489" y="-1666"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1nA-XK-z5B">
-            <objects>
-                <viewController id="uvu-48-0eD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Y3m-fp-267">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plusPic8" translatesAutoresizingMaskIntoConstraints="NO" id="Y2n-Fq-9bt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="R5q-w3-9zM" firstAttribute="trailing" secondItem="Y2n-Fq-9bt" secondAttribute="trailing" id="GPH-aM-cRD"/>
-                            <constraint firstItem="Y2n-Fq-9bt" firstAttribute="leading" secondItem="R5q-w3-9zM" secondAttribute="leading" id="hOa-cc-Wr0"/>
-                            <constraint firstItem="R5q-w3-9zM" firstAttribute="bottom" secondItem="Y2n-Fq-9bt" secondAttribute="bottom" id="jGg-3L-UjK"/>
-                            <constraint firstItem="Y2n-Fq-9bt" firstAttribute="top" secondItem="R5q-w3-9zM" secondAttribute="top" constant="-20" id="tUQ-bj-90R"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="R5q-w3-9zM"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VUI-El-mZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1150" y="-1670"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Agl-L2-lIz">
@@ -453,10 +515,10 @@
             </objects>
             <point key="canvasLocation" x="1181.5999999999999" y="-2492.2038980509747"/>
         </scene>
-        <!--Plus Alert SettingVC-->
+        <!--알림 설정-->
         <scene sceneID="9br-i3-Yph">
             <objects>
-                <viewController id="TZh-7N-nGz" customClass="PlusAlertSettingVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="알림 설정" id="TZh-7N-nGz" customClass="PlusAlertSettingVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RLb-1Z-nI6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,10 +530,10 @@
             </objects>
             <point key="canvasLocation" x="2085" y="-2486"/>
         </scene>
-        <!--Plus Profile EditVC-->
+        <!--프로필 편집-->
         <scene sceneID="RYT-cH-llw">
             <objects>
-                <viewController id="yFi-45-YE1" customClass="PlusProfileEditVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="프로필 편집" id="yFi-45-YE1" customClass="PlusProfileEditVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SVo-ei-Htc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -504,10 +566,10 @@
             </objects>
             <point key="canvasLocation" x="2585" y="-3313"/>
         </scene>
-        <!--Plus Account SecurityVC-->
+        <!--계정/보안-->
         <scene sceneID="r8G-Of-TAO">
             <objects>
-                <viewController id="9BC-39-KjT" customClass="PlusAccountSecurityVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="계정/보안" id="9BC-39-KjT" customClass="PlusAccountSecurityVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PIZ-2e-T3c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -525,11 +587,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FQa-Ai-JBm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TkU-mb-jLk" customClass="CustomNavigationBar" customModule="flower" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="20" width="375" height="63"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -542,6 +601,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconLauncher" width="139" height="139"/>
         <image name="plusPic10" width="240" height="428"/>
         <image name="plusPic11" width="242" height="427"/>
         <image name="plusPic2" width="240" height="426"/>
@@ -549,7 +609,6 @@
         <image name="plusPic4" width="240" height="428"/>
         <image name="plusPic5" width="240" height="426"/>
         <image name="plusPic7" width="239" height="428"/>
-        <image name="plusPic8" width="241" height="428"/>
         <image name="plusPic9" width="240" height="429"/>
     </resources>
 </document>

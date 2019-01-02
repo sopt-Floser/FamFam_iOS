@@ -14,7 +14,7 @@
 		4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */; };
 		4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB0CD3921D62E3800105EAE /* PostFullVC.swift */; };
 		4DC7111E21DCFA04001FACB6 /* PlusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7111D21DCFA04001FACB6 /* PlusData.swift */; };
-		4DC7112021DD07D0001FACB6 /* PlusVersionInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7111F21DD07D0001FACB6 /* PlusVersionInfoVC.swift */; };
+		4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7111F21DD07D0001FACB6 /* PlusVersionVC.swift */; };
 		4DC7112221DD07F0001FACB6 /* PlusProfileEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7112121DD07F0001FACB6 /* PlusProfileEditVC.swift */; };
 		4DC7112421DD086B001FACB6 /* PlusAccountSecurityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7112321DD086B001FACB6 /* PlusAccountSecurityVC.swift */; };
 		4DC7112621DD08C5001FACB6 /* PlusAlertSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC7112521DD08C5001FACB6 /* PlusAlertSettingVC.swift */; };
@@ -75,7 +75,7 @@
 		4DB0CD3721D60D3C00105EAE /* TodayFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFeedVC.swift; sourceTree = "<group>"; };
 		4DB0CD3921D62E3800105EAE /* PostFullVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFullVC.swift; sourceTree = "<group>"; };
 		4DC7111D21DCFA04001FACB6 /* PlusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusData.swift; sourceTree = "<group>"; };
-		4DC7111F21DD07D0001FACB6 /* PlusVersionInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusVersionInfoVC.swift; sourceTree = "<group>"; };
+		4DC7111F21DD07D0001FACB6 /* PlusVersionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusVersionVC.swift; sourceTree = "<group>"; };
 		4DC7112121DD07F0001FACB6 /* PlusProfileEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusProfileEditVC.swift; sourceTree = "<group>"; };
 		4DC7112321DD086B001FACB6 /* PlusAccountSecurityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusAccountSecurityVC.swift; sourceTree = "<group>"; };
 		4DC7112521DD08C5001FACB6 /* PlusAlertSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusAlertSettingVC.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			children = (
 				9B453EE421CE014B001BD091 /* PlusBoard.storyboard */,
 				4D39CA0D21DCD2F80092CD9C /* PlusVC.swift */,
-				4DC7111F21DD07D0001FACB6 /* PlusVersionInfoVC.swift */,
+				4DC7111F21DD07D0001FACB6 /* PlusVersionVC.swift */,
 				4DC7112121DD07F0001FACB6 /* PlusProfileEditVC.swift */,
 				4DC7112321DD086B001FACB6 /* PlusAccountSecurityVC.swift */,
 				4DC7112521DD08C5001FACB6 /* PlusAlertSettingVC.swift */,
@@ -514,7 +514,7 @@
 				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
 				9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */,
 				9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */,
-				4DC7112021DD07D0001FACB6 /* PlusVersionInfoVC.swift in Sources */,
+				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
 				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
