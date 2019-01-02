@@ -11,6 +11,7 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'PasswordTextField'
 pod 'DLRadioButton', '~> 1.4'
+pod 'BetterSegmentedControl', '~> 1.0'
 
   # Pods for flower
 

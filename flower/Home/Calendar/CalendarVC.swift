@@ -9,13 +9,16 @@
 import UIKit
 import JTAppleCalendar
 
-typealias DateString = String
 
+/** 전역 변수 */
 var filter:[CalendarModel] = [] // 선택한 날짜의 할일을 보관하는 배열
 var selectDate = Date()
+var searchedData:[CalendarModel] = [] // 검색어에 따른 목록
 
-/** calendar 다루는 곳 */
-class CalendarVC: UIViewController, UISearchBarDelegate {
+
+/** calendar 다루는 VC */
+class CalendarVC: UIViewController {
+    @IBOutlet weak var searchTV: UITableView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month: UILabel!
@@ -29,8 +32,9 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     }
     @IBOutlet weak var searchbar: UISearchBar!
     
+    /** 지역 변수 */
     let todayDate = Date()
-    
+    var eventsFromTheServer: [String:String] = [:]
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
     
     /** 날,월,일 변환기 */
@@ -42,6 +46,7 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
         return dateFormatter
     }()
     
+    /** 터치 인식기 */
     let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gesture:)))
     
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer){
@@ -51,8 +56,6 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
         }
     }
     
-    var eventsFromTheServer: [String:String] = [:]
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -60,12 +63,14 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchbar.delegate = self
+        searchTV.delegate = self
+        searchTV.dataSource = self
         
         /** 서버 정보 가져오기 */
+        // \서버에서 Date 형식의 날짜 받아올 시 띄울 예정
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
-            let serverObject = self.getServerEvents()
-            for (date) in serverObject{
-                let stringDate = self.formatter.string(from: date)
+            for (date) in CalendarDatabase.CalendarDateArray{
+                let stringDate = date
                 self.eventsFromTheServer[stringDate] = ""
             }
             DispatchQueue.main.async {
@@ -82,21 +87,8 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
         calendarView.reloadData(withanchor: switchDate){
             let visibleDates = self.calendarView.visibleDates()
         }
-
-        
     }
 
-    
-//    func switchCalendar(){
-//        print("running")
-//        if (didSwitchDate == true){
-//            calendarView.scrollToDate(takeDate)
-//            print("didswitchDate is true")
-//            didSwitchDate = false
-//        }
-////        calendarView.scrollToDate(takeDate)
-//    }
-    
     func setupCalendarView(dateSegment: DateSegmentInfo){
         guard let date = dateSegment.monthDates.first?.date else {return}
         
@@ -124,17 +116,6 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
         handleCellThisMonth(cell: myCalendarCell, cellState: cellState)
         handleCellEvent(cell: myCalendarCell, cellState: cellState)
     }
-    
-//    func setInitialPostDatesOnCalendarView() {
-//        guard let post = MyObjects.sharedInstance.workingPostViewModel?.post,
-//            let prep = post.prepDate,
-//            let deliver = post.deliverDate,
-//            let dateRange = self.calendarView?.generateDateRange(from: prep, to: deliver) else {
-//                return
-//        }
-//        calendarView?.scrollToDate(deliver, animateScroll:false)
-//        calendarView?.selectDates(dateRange)
-//    }
     
     /** 달력 일 색갈 변환기 */
     func handleCellTextColor(cell: CalendarCell, cellState: CellState){
@@ -167,6 +148,8 @@ class CalendarVC: UIViewController, UISearchBarDelegate {
     }
  
 }
+
+
 
 extension CalendarVC:JTAppleCalendarViewDataSource{
     /** 달력 셀 지정, day 세팅 */
@@ -210,13 +193,9 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
         configureCell(cell: cell, cellState: cellState)
         calendarView.allowsMultipleSelection = false
         
-        var stringSelectDate = formatter.string(from: cellState.date)
+        let stringSelectDate = formatter.string(from: cellState.date)
         selectDate = cellState.date
-        print("selectDate = \(selectDate)")
         filter = CalendarDatabase.CalendarDataArray.filter{$0.date == stringSelectDate  }
-        print("filter = \(filter)")
-        
-        
         cell?.bounce()
     }
     
@@ -240,28 +219,69 @@ extension CalendarVC:JTAppleCalendarViewDelegate {
     func calendarSizeForMonths(_ calendar: JTAppleCalendarView?) -> MonthSize? {
         return MonthSize(defaultSize: 50)
     }
+}
+
+/** 서치 바 */
+extension CalendarVC:UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchedData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchTV.dequeueReusableCell(withIdentifier: "calendarSearchCell", for: indexPath) as! CalendarSearchCell
+        let item = searchedData[indexPath.row]
+        
+        cell.searchDate.text = item.date
+        cell.searchLunarDate.text = "음력"
+        cell.searchMemo.text = item.memo
+        cell.searchColor.backgroundColor = UIColor.init(hex: item.color)
+        
+        return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchedData = searchText.isEmpty ? searchedData : CalendarDatabase.CalendarDataArray.filter{ $0.memo.range(of: searchText) != nil
+        }
+        searchTV.reloadData()
+    }
     
     // 취소버튼 클릭 시 키보드 닫히고 검색어 초기화
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchbar.text = ""
         searchbar.resignFirstResponder()
-        
+        searchTV.isHidden = true
+    }
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchTV.isHidden = false
+        searchBar.showsCancelButton = true
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchbar.showsCancelButton = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchbar.resignFirstResponder()
+        searchbar.endEditing(true)
     }
 }
 
 // 임시 서버 정보 받아오기
-extension CalendarVC {
-    func getServerEvents() -> [Date]{
-        formatter.dateFormat = "yyyy MM dd"
-
-        return [
-            formatter.date(from:dateList[0]) ?? Date(),
-            formatter.date(from:dateList[1]) ?? Date(),
-            formatter.date(from:dateList[2]) ?? Date(),
-            formatter.date(from:dateList[3]) ?? Date(),
-        ]
-    }
-}
+//extension CalendarVC {
+//    func getServerEvents() -> [Date]{
+//        formatter.dateFormat = "yyyy MM dd"
+//        var rValue = [Date]()
+//        let count = dateList.count
+//
+//        for i in dateList {
+//            rValue.append(formatter.date(from: dateList[i]) ?? Date())
+//        }
+//
+//
+//    }
+//}
 
 /** 클릭 시 뛰어오르는 이벤트 */
 extension UIView {
