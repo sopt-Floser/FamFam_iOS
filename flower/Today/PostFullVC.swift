@@ -32,39 +32,27 @@ class PostFullVC: UIViewController {
     //댓글 달기 테이블
 
     
-    
-    
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         postFullTable.delegate = self
         postFullTable.dataSource = self
-    
-        // Do any additional setup after loading the view.
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        
     }
 
-    
-    
 }
 
 extension PostFullVC: UITableViewDataSource {
     //게시글
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,9 +61,9 @@ extension PostFullVC: UITableViewDataSource {
         case 0 :
             return 1
         case 1 :
-            print("replyCuont = \(replyCount)")
+            print("replyCount = \(replyCount)")
             return Int(replyCount!)!
-        default :
+        default:
             return 1
         }
         
@@ -108,30 +96,31 @@ extension PostFullVC: UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+    }
+}
        // if indexPath.row == 0 {
-
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: "PostFullCell") as! PostFullCell
-            
-            
-            cell.postProfileImageView?.image = UIImage(named: postProfileImage!)
-            
-            cell.postNameView.text = postName
-            cell.postDateView.text = postDate
         
-            cell.postImageView?.image = UIImage(named: postImage!)
             
-
-            cell.emotionImageView?.image = UIImage(named: emotionImage!)
-           
-            cell.emotionNameView.text = emotionName
-            
-            cell.postContentView.text = postContent
-            cell.replyCountView.text = replyCount
-           
-            
-            return cell
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "PostFullCell") as! PostFullCell
+//
+//
+//            cell.postProfileImageView?.image = UIImage(named: postProfileImage!)
+//
+//            cell.postNameView.text = postName
+//            cell.postDateView.text = postDate
+//
+//            cell.postImageView?.image = UIImage(named: postImage!)
+//
+//
+//            cell.emotionImageView?.image = UIImage(named: emotionImage!)
+//
+//            cell.emotionNameView.text = emotionName
+//
+//            cell.postContentView.text = postContent
+//            cell.replyCountView.text = replyCount
+//
+//
+//            return cell
 //        } else if indexPath.row == 1 {
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "PostReplyCell") as! PostReplyCell
 //
@@ -141,16 +130,6 @@ extension PostFullVC: UITableViewDataSource {
 //
 //            return cell
 //        }
-        
-        
-        
-        
-        
-    }
-    
-    
-}
-
 
 
 extension PostFullVC: UITableViewDelegate {

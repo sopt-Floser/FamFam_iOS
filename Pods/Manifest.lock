@@ -1,5 +1,5 @@
 PODS:
-  - BetterSegmentedControl (1.0.1)
+  - BetterSegmentedControl (1.0.3)
   - DLRadioButton (1.4.12)
   - Firebase/Core (5.15.0):
     - Firebase/CoreOnly
@@ -91,7 +91,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  BetterSegmentedControl: 8cac1f243b5cc747f44c9da655c975d5322243fa
+  BetterSegmentedControl: 4e3bd0bd517b0f6077c9e17f5663a01cff48e2c5
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
   FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
