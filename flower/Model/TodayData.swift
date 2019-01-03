@@ -15,7 +15,7 @@ class TodayFeedData {
     var postDate: String //date로 바꿔야함
     
     var postImage: String? //UIImage?
-    var postImagePagecontrol: Int = 0
+    var postImagePagecontrol: Int
     
     var emotionImage: String? //UIImage?
     var emotionName: String
@@ -44,13 +44,13 @@ class TodayFeedData {
 
 // 오늘의 하루 - 댓글 보기 데이터
 class PostReplyData {
-    var replyImage: UIImage?
+    var replyImage: String? //UIImage?
     var replyName: String
     var replyContent: String
     
-    init(profile: String,replier: String,memo:String){
-        self.replyImage = UIImage(named: profile)
+    init(profile: String,replier: String,comment:String){
+        self.replyImage = profile
         self.replyName = replier
-        self.replyContent = memo
+        self.replyContent = comment
     }
 }

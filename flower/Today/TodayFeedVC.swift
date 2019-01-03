@@ -17,10 +17,13 @@ class TodayFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTodayFeedData()
+        getTodayFeedData() //모델에서 피드 데이터 받아오는 함수
+        //cellForRowAt 에서 데이터 Set
         
         todayFeedTable.delegate = self
         todayFeedTable.dataSource = self
+        
+//        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -85,7 +88,7 @@ extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
         checkimage = post.postImage
         cell.postImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
     
-        cell.postImagePagecontrol.currentPage = post.postImagePagecontrol
+        cell.postImagePagecontrol.numberOfPages = post.postImagePagecontrol
         // 중간 (감정)
        
         checkimage = post.emotionImage
@@ -125,15 +128,17 @@ extension TodayFeedVC: UITableViewDelegate {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "PostFullVC") as! PostFullVC
         let post = todayFeedList[indexPath.row]
         
-        nextVC.postProfileImage = post.postProfileImage!
+        
+        
+        nextVC.postProfileImage = post.postProfileImage
         nextVC.postName = post.postName
         nextVC.postDate = post.postDate
         // 중간 (게시글)
-        nextVC.postImage = post.postImage!
+        nextVC.postImage =  post.postImage
         nextVC.postImagePageControl = post.postImagePagecontrol
         // 중간 (감정)
         
-        nextVC.emotionImage = post.emotionImage!
+        nextVC.emotionImage = post.emotionImage
         nextVC.emotionName = post.emotionName
         // 중간 (게시글)
         
@@ -141,7 +146,8 @@ extension TodayFeedVC: UITableViewDelegate {
         
         // 하단 (댓글)
         
-        nextVC.replyCount = String(post.replyCount)
+        nextVC.replyCount = post.replyCount
+        
         navigationController?.pushViewController(nextVC, animated: true)
     } //여기까지 보셨다면 잠깐 다시 위의 viewWillApear로!
     
@@ -151,11 +157,12 @@ extension TodayFeedVC: UITableViewDelegate {
 
 
 extension TodayFeedVC {
-    func setTodayFeedData() {
-        let post1 = TodayFeedData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "family", pPage: 3, eImage: "emotionSmile", eName: "딸", pContent: "졸리다", rCount: 3)
-        let post2 = TodayFeedData(pPImage: "cakeImg", pName: "딸", pDate: "20181225", pImage: "cakeImg", pPage: 5, eImage: "cakeImg", eName: "막내", pContent: "배고프다", rCount: 5)
+    func getTodayFeedData() {
+        let post1 = TodayFeedData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "family", pPage: 3, eImage: "emotionSmile", eName: "엄마", pContent: "날씨 맑다", rCount: 2)
+        let post2 = TodayFeedData(pPImage: "momPic", pName: "엄마", pDate: "20181225", pImage: "cakeImg", pPage: 5, eImage: "emotionSmile", eName: "막내", pContent: "케이크 먹고싶네", rCount: 4)
         todayFeedList = [post1,post2]
         
     }
 
 }
+
