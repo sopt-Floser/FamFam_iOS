@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 
+
 class CalendarPopVC: UIViewController {
     @IBOutlet weak var popView: UIView!
     @IBOutlet weak var outsideView: UIView!
@@ -34,6 +35,11 @@ class CalendarPopVC: UIViewController {
         outsideView.addGestureRecognizer(tapGesture)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+    }
+    
     /** 터치 리스너, 화면 내리기 */
     @objc func handleTap(sender: UITapGestureRecognizer){
         dismiss(animated: true, completion: nil)
@@ -52,6 +58,8 @@ class CalendarPopVC: UIViewController {
         let finalString = "\(tempString)월 \(tempString2)일 \(tempString3)"
         dateLabel.text = finalString
     }
+    
+    
 }
 
 extension CalendarPopVC: UITableViewDelegate, UITableViewDataSource {

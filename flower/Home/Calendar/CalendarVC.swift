@@ -15,6 +15,12 @@ var filter:[CalendarModel] = [] // 선택한 날짜의 할일을 보관하는 �
 var selectDate = Date()
 var searchedData:[CalendarModel] = [] // 검색어에 따른 목록
 
+protocol IAPDelegate {
+    func purchaseSuccessful()
+    func purchaseCancelled()
+    func purchaseFailed()
+}
+
 
 /** calendar 다루는 VC */
 class CalendarVC: UIViewController {
@@ -29,6 +35,11 @@ class CalendarVC: UIViewController {
     @IBAction func switchButton(_ sender: UIButton) {
         let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
         present(dvc, animated: true, completion: nil)
+//        if (dvc.isBeingDismissed == true){
+//            calendarView.reloadData(withanchor: selectDate, completionHandler: {
+//                let visibleDate = self.calendarView.visibleDates()
+//            })
+//        }
     }
     @IBOutlet weak var searchbar: UISearchBar!
     
@@ -36,7 +47,7 @@ class CalendarVC: UIViewController {
     let todayDate = Date()
     var eventsFromTheServer: [String:String] = [:]
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
-    
+
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -56,8 +67,18 @@ class CalendarVC: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popupSegue" {
+            
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("calendarview will appear")
+//        calendarView.reloadData(withanchor: switchDate, completionHandler: {
+//            let visibleDates = self.calendarView.visibleDates()
+//        })
     }
     
     override func viewDidLoad() {
@@ -89,9 +110,7 @@ class CalendarVC: UIViewController {
         }
     }
 
-    func setupCalendarView(dateSegment: DateSegmentInfo){
-        guard let date = dateSegment.monthDates.first?.date else {return}
-        
+    func setCalendarView(date:Date){
         formatter.dateFormat = "MM"
         month.text = formatter.string(from: date) + "월"
         
@@ -103,7 +122,23 @@ class CalendarVC: UIViewController {
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
         calendarView.isRangeSelectionUsed = true
-        //calendarView.sectionInset = UIEdgeInsets(top: 22, left: 22, bottom: 22, right: 22)
+        calendarView.reloadData()
+    }
+    
+    func setupCalendarView(dateSegment: DateSegmentInfo){
+            guard let date = dateSegment.monthDates.first?.date else {return}
+            
+            formatter.dateFormat = "MM"
+            month.text = formatter.string(from: date) + "월"
+            
+            formatter.dateFormat = "yyyy"
+            year.text = formatter.string(from: date) + "년"
+            
+            calendarView.ibCalendarDelegate = self
+            calendarView.ibCalendarDataSource = self
+            calendarView.minimumLineSpacing = 0
+            calendarView.minimumInteritemSpacing = 0
+            calendarView.isRangeSelectionUsed = true
     }
     
     
@@ -146,7 +181,6 @@ class CalendarVC: UIViewController {
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
         cell.eventLabel.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
     }
- 
 }
 
 
@@ -319,4 +353,5 @@ extension UIColor{
     }
     
 }
+
 

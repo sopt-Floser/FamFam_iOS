@@ -18,17 +18,14 @@ class CalendarAddVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var perseonView: UIView!
     @IBOutlet weak var personTitleTF: UITextField!
     @IBOutlet weak var personDateLabel: UILabel!
-    @IBOutlet weak var personEatStack: UIStackView!
-    @IBOutlet weak var personHomeStack: UIStackView!
     
     // familyView outlet
     @IBOutlet weak var familyView: UIView!
-    @IBOutlet weak var familyKindStack: UIStackView!
-    
     @IBOutlet weak var familyTitleTF: UITextField!
     @IBOutlet weak var familyDateLabel: UILabel!
     @IBOutlet weak var familyAlarmOutlet: UISwitch!
     @IBAction func familyAlarm(_ sender: Any) {
+        //알람 설정 없음
     }
     
     @IBOutlet weak var saveBtnOutlet: UIButton!

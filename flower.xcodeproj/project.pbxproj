@@ -35,6 +35,7 @@
 		9B096B1321D4B75B00442A68 /* StatisticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1221D4B75B00442A68 /* StatisticCell.swift */; };
 		9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1421D4B76C00442A68 /* NoticeCell.swift */; };
 		9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1E21D4B81200442A68 /* FamilyCell.swift */; };
+		9B09D63821DDB4F100AE1E6F /* InviteCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D63721DDB4F100AE1E6F /* InviteCodeVC.swift */; };
 		9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9B821CF550E0020371E /* CalendarCell.swift */; };
 		9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9BA21CF56360020371E /* CalendarVC.swift */; };
 		9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */; };
@@ -98,6 +99,7 @@
 		9B096B1221D4B75B00442A68 /* StatisticCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticCell.swift; sourceTree = "<group>"; };
 		9B096B1421D4B76C00442A68 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
 		9B096B1E21D4B81200442A68 /* FamilyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyCell.swift; sourceTree = "<group>"; };
+		9B09D63721DDB4F100AE1E6F /* InviteCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeVC.swift; sourceTree = "<group>"; };
 		9B0DE9B821CF550E0020371E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		9B0DE9BA21CF56360020371E /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopVC.swift; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 			path = Family;
 			sourceTree = "<group>";
 		};
+		9B09D63621DDB4CD00AE1E6F /* InviteCode */ = {
+			isa = PBXGroup;
+			children = (
+				9B09D63721DDB4F100AE1E6F /* InviteCodeVC.swift */,
+			);
+			path = InviteCode;
+			sourceTree = "<group>";
+		};
 		9B41DB4821DB52E400FC6ED6 /* Anniversary */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +285,7 @@
 		9B44BEE121CF33F700EB5C17 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9B09D63621DDB4CD00AE1E6F /* InviteCode */,
 				9B096B1B21D4B7F200442A68 /* Family */,
 				9B096B0F21D4B67800442A68 /* Calendar */,
 				9B096B1021D4B69600442A68 /* Statistic */,
@@ -539,6 +550,7 @@
 				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
 				9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */,
 				9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */,
+				9B09D63821DDB4F100AE1E6F /* InviteCodeVC.swift in Sources */,
 				4DC7112021DD07D0001FACB6 /* PlusVersionInfoVC.swift in Sources */,
 				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
