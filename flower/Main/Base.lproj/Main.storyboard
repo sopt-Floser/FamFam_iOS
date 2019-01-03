@@ -821,8 +821,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="joinComplete:" destination="V8q-1u-hLu" eventType="touchUpInside" id="idE-im-Nex"/>
-                                            <segue destination="e5D-n9-hNN" kind="show" identifier="joinComplete" id="qcQ-Ne-RSx"/>
+                                            <segue destination="e5D-n9-hNN" kind="show" id="KSL-Wu-Pzq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -922,7 +921,6 @@
                         <outlet property="idCheck" destination="6RJ-KT-yv0" id="fcs-S1-3N3"/>
                         <outlet property="idTF" destination="nEw-SU-bY2" id="vWM-Ic-NZq"/>
                         <outlet property="idWarn" destination="1qv-Ow-2WY" id="SWt-sO-0Du"/>
-                        <outlet property="joinCompleteBtn" destination="HV3-Sx-zbr" id="pUE-yq-vkk"/>
                         <outlet property="nickNameCheck" destination="cPy-IS-MrJ" id="rba-66-GKw"/>
                         <outlet property="nickNameTF" destination="KYs-ey-3ba" id="Kr0-H6-AQ4"/>
                         <outlet property="nickNameWarn" destination="oLe-dO-Gpy" id="CYK-Ja-U7l"/>
@@ -1179,11 +1177,10 @@
         <!--오늘의 하루-->
         <scene sceneID="9ni-KK-P2V">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s6Y-Lc-ZOC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s6Y-Lc-ZOC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="오늘의 하루" id="M21-lO-QTg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iu5-su-U6w">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

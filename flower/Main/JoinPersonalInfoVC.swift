@@ -159,16 +159,16 @@ class JoinPersonalInfoVC: UIViewController {
     
     //
     
-    @IBOutlet var joinCompleteBtn: UIButton!
-    @IBAction func joinComplete(_ sender: Any) {
-    
-        if(pwSameCheck.isHidden == true) {
-            joinCompleteBtn.layer.backgroundColor = UIColor(red: 54, green: 108, blue: 226, alpha: 1.0).cgColor
-            self.performSegue(withIdentifier: "CreateEnter", sender: self)
-        } else {
-            joinCompleteBtn.layer.backgroundColor = UIColor(red: 54, green: 108, blue: 226, alpha: 1.0).cgColor
-        }
-    }
+//    @IBOutlet var joinCompleteBtn: UIButton!
+//    @IBAction func joinComplete(_ sender: Any) {
+//    
+//        if(pwSameCheck.isHidden == true) {
+//            joinCompleteBtn.layer.backgroundColor = UIColor(red: 54, green: 108, blue: 226, alpha: 1.0).cgColor
+//            self.performSegue(withIdentifier: "CreateEnter", sender: self)
+//        } else {
+//            joinCompleteBtn.layer.backgroundColor = UIColor(red: 54, green: 108, blue: 226, alpha: 1.0).cgColor
+//        }
+//    }
     
 }
 
