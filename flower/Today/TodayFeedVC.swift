@@ -33,6 +33,17 @@ class TodayFeedVC: UIViewController {
             todayFeedTable.deselectRow(at: index, animated: true)
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.hidesBottomBarWhenPushed = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hidesBottomBarWhenPushed = true
+    }
+    
 }
     
     

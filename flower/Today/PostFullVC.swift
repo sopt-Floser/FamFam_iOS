@@ -167,8 +167,8 @@ extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
 extension PostFullVC {
     func setPostReplyData() {
         let reply1 = PostReplyData(profile: "sampleProfile", replier: "승수", comment: "완전 추워")
-        let reply2 = PostReplyData(profile: "momPic", replier: "엄마", comment: "따듯하게 입어")
-        let reply3 = PostReplyData(profile: "cakeImg", replier: "케이크", comment: "케이크 드세요")
+        let reply2 = PostReplyData(profile: "cakeImg", replier: "케이크", comment: "케이크 드세요")
+        let reply3 = PostReplyData(profile: "momPic", replier: "엄마", comment: "케이크 맛있다")
         let reply4 = PostReplyData(profile: "emotionAdd", replier: "막내", comment: "웃으세요")
         postReplyList = [reply1,reply2,reply3,reply4]
         
