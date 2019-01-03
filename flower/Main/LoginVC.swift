@@ -17,19 +17,10 @@ class LoginVC: UIViewController {
         guard let id = idTF.text else {return}
         guard let password = passwordTF.text else {return}
         
-        
-        if(!(id == "" && password == "")) {
-            LoginService.shared.login(id: id, password: password){
-                (data) in print(data.token)
-            }
-            moveToTaps()
+        LoginService.shared.login(id: id, password: password){
+            (data) in print("데이터 토큰 = \(data.token)")
         }
-        else if (id == "admin" && password == "admin") {
-            moveToTaps()
-        }
-        else {
-            print("id, password 입력해주세용")
-        }
+        //moveToTaps()
         
     }
     
