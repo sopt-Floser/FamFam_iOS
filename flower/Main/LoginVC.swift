@@ -10,40 +10,38 @@ import UIKit
 
 class LoginVC: UIViewController {
     
-    @IBOutlet var emailTF: UITextField!
+    @IBOutlet var idTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
 
     @IBAction func loginAction(_ sender: Any) {
-        guard let email = emailTF.text else {return}
+        guard let id = idTF.text else {return}
         guard let password = passwordTF.text else {return}
         
         
+        if(!(id == "" && password == "")) {
+            LoginService.shared.login(id: id, password: password){
+                (data) in print(data.token)
+            }
+            moveToTaps()
+        }
+        else if (id == "admin" && password == "admin") {
+            moveToTaps()
+        }
+        else {
+            print("id, password 입력해주세용")
+        }
         
-        //탭바로 넘기는 코드
-        //If you don't want to navigate from Login page to TabbarController, you can also set it as rootViewController after successful Login. To do this, set an identifier to TabbarController (Say "tabbar")
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    func moveToTaps(){
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

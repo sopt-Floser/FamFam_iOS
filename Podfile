@@ -12,7 +12,10 @@ pod 'Firebase/Database'
 pod 'PasswordTextField'
 pod 'DLRadioButton', '~> 1.4'
 pod 'BetterSegmentedControl', '~> 1.0'
-
+pod 'Alamofire'
+pod 'AlamofireObjectMapper'
+pod 'ObjectMapper'
+pod 'Kingfisher'
   # Pods for flower
 
 end
