@@ -10,31 +10,57 @@ import UIKit
 
 class CustomNavigationBar: UINavigationBar {
     
-    // NavigationBar height
-    var customHeight : CGFloat = 63
+    @IBInspectable var customHeight : CGFloat = 63
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
+        
         return CGSize(width: UIScreen.main.bounds.width, height: customHeight)
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let y = UIApplication.shared.statusBarFrame.height
-        frame = CGRect(x: frame.origin.x, y:  y, width: frame.size.width, height: customHeight)
+        print("It called")
+        
+//        self.tintColor = .black
+//        self.backgroundColor = .red
+        
+        
         
         for subview in self.subviews {
             var stringFromClass = NSStringFromClass(subview.classForCoder)
-            if stringFromClass.contains("BarBackground") {
+            if stringFromClass.contains("UIBarBackground") {
+                
                 subview.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: customHeight)
-                subview.backgroundColor = self.backgroundColor
+                
+//                subview.backgroundColor = .green
+                subview.sizeToFit()
             }
             
+            stringFromClass = NSStringFromClass(subview.classForCoder)
+            
+            //Can't set height of the UINavigationBarContentView
+            if stringFromClass.contains("UINavigationBarContentView") {
+                
+                //Set Center Y
+                let centerY = (customHeight - subview.frame.height) / 2.0
+                subview.frame = CGRect(x: 0, y: centerY, width: self.frame.width, height: subview.frame.height)
+//                subview.backgroundColor = .yellow
+                subview.sizeToFit()
+                
+            }
+            
+            //글씨 가운데에서 내리는 코드임
             stringFromClass = NSStringFromClass(subview.classForCoder)
             if stringFromClass.contains("BarContent") {
                 subview.frame = CGRect(x: subview.frame.origin.x, y: 20, width: subview.frame.width, height: customHeight)
                 subview.backgroundColor = self.backgroundColor
             }
         }
+        
+        
     }
+    
+    
 }

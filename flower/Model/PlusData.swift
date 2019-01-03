@@ -30,3 +30,22 @@ class PlusData {
     
     }
 }
+
+// 더보기 버전 정보 데이터
+
+class PlusVersionData {
+    var currentVersion: String
+    var latestVersion: String
+    
+    init(currentVs : String, latestVs : String){
+        self.currentVersion = currentVs
+        self.latestVersion = latestVs
+    }
+    
+}
+
+// 더보기 프로필 편집 데이터
+
+// 더보기 계정 보안 데이터
+
+// 더보기 알람 데이터
