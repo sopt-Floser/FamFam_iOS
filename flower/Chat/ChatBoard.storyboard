@@ -250,6 +250,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZyC-E7-f7d"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Em7-gc-ZCQ"/>
                     <connections>
                         <outlet property="ChatTableView" destination="TIB-fS-wGv" id="U0w-Cr-OVF"/>
                         <outlet property="chatTF" destination="R4q-QX-PTX" id="gsI-wE-LFQ"/>
@@ -257,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30x-aa-mKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.60000000000002" y="-118.29085457271366"/>
+            <point key="canvasLocation" x="1216.8" y="-118.29085457271366"/>
         </scene>
     </scenes>
     <resources>

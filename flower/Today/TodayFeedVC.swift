@@ -159,7 +159,8 @@ extension TodayFeedVC: UITableViewDelegate {
         
         nextVC.replyCount = post.replyCount
         
-        navigationController?.pushViewController(nextVC, animated: true)
+        present(nextVC, animated: true, completion: nil)
+        //navigationController?.pushViewController(nextVC, animated: true)
     } //여기까지 보셨다면 잠깐 다시 위의 viewWillApear로!
     
     

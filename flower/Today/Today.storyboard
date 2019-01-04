@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SfA-5N-z6N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XOF-0n-qzp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -341,30 +341,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbD-kA-yYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378.39999999999998" y="-702.54872563718152"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="eT4-Ax-MGj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SfA-5N-z6N" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UoS-fw-8Ed">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XOF-0n-qzp" kind="relationship" relationship="rootViewController" id="HFG-zP-oap"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5di-hM-6W7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1210.4000000000001" y="-1594.4527736131936"/>
+            <point key="canvasLocation" x="-271" y="-747"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cakeImg" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="emotionAdd" width="33" height="30"/>
+        <image name="cakeImg" width="512" height="512"/>
+        <image name="emotionAdd" width="66" height="60"/>
         <image name="댓글 프사" width="16" height="16"/>
     </resources>
 </document>

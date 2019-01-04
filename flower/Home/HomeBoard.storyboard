@@ -347,7 +347,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ug0-E6-Jmc">
-                                <rect key="frame" x="130" y="39" width="63" height="24"/>
+                                <rect key="frame" x="130" y="83" width="63" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -364,7 +364,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPk-Rr-0j6">
-                                <rect key="frame" x="202" y="41" width="68" height="19.5"/>
+                                <rect key="frame" x="202" y="85" width="68" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="0G4-vN-Kzn"/>
                                     <constraint firstAttribute="height" constant="19.5" id="cTd-eL-zjE"/>
@@ -374,7 +374,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZc-2M-5Z5">
-                                <rect key="frame" x="16" y="28" width="40" height="44"/>
+                                <rect key="frame" x="16" y="72" width="40" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="EHD-sM-FfM"/>
                                     <constraint firstAttribute="width" constant="40" id="ctP-7w-ZbE"/>
@@ -385,7 +385,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWm-xr-WNA">
-                                <rect key="frame" x="246" y="29" width="41" height="43"/>
+                                <rect key="frame" x="246" y="73" width="41" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="41" id="VH8-IQ-ou9"/>
                                     <constraint firstAttribute="height" constant="43" id="hd6-eY-hX7"/>
@@ -405,7 +405,7 @@
                                 <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mhm-Ne-t8W">
-                                <rect key="frame" x="0.0" y="137" width="375" height="443.5"/>
+                                <rect key="frame" x="0.0" y="181" width="375" height="443.5"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pwg-gX-Jrb" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="443.5"/>
@@ -549,7 +549,7 @@
                                 </constraints>
                             </stackView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-42-4fH">
-                                <rect key="frame" x="0.0" y="76" width="311" height="56"/>
+                                <rect key="frame" x="0.0" y="120" width="311" height="56"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="6Ue-ZI-ID7"/>
@@ -678,7 +678,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MgP-D7-YIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="m0z-9G-o8m"/>
             </objects>
-            <point key="canvasLocation" x="176.80000000000001" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="1116" y="-255.02248875562222"/>
         </scene>
         <!--Invite CodeVC-->
         <scene sceneID="y35-oZ-AXn">
@@ -967,7 +967,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzz-t9-UHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="yCP-d7-Eo4"/>
             </objects>
-            <point key="canvasLocation" x="861.60000000000002" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="1800.8" y="-255.02248875562222"/>
         </scene>
         <!--Home CollectionVC-->
         <scene sceneID="ZJ0-TX-OIz">
@@ -1156,7 +1156,7 @@
                                                             <rect key="frame" x="0.0" y="28" width="311" height="60"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F53-k8-vbE" id="KTl-ca-R6C">
-                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="59.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-FJ-aRt">
@@ -1200,7 +1200,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7wT-4s-yQL">
-                                <rect key="frame" x="25.5" y="136" width="351" height="72"/>
+                                <rect key="frame" x="25.5" y="180" width="351" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7wT-4s-yQL" secondAttribute="height" multiplier="39:8" id="31c-EJ-gIB"/>
@@ -1261,7 +1261,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리 가족" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7V-lZ-tYR">
-                                <rect key="frame" x="36" y="102" width="85" height="19"/>
+                                <rect key="frame" x="36" y="146" width="85" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="85" id="Ric-Vk-UvD"/>
                                     <constraint firstAttribute="height" constant="19" id="Wro-gT-hVQ"/>
@@ -1271,14 +1271,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="W3h-AS-t8v">
-                                <rect key="frame" x="95.5" y="30" width="184" height="56"/>
+                                <rect key="frame" x="95.5" y="74" width="184" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="DSm-yZ-cv8"/>
                                     <constraint firstAttribute="width" constant="184" id="jnc-l3-bMy"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-ZP-iSP">
-                                <rect key="frame" x="276" y="90" width="72" height="43"/>
+                                <rect key="frame" x="276" y="134" width="72" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="hCa-vZ-5j1"/>
                                     <constraint firstAttribute="width" constant="72" id="jwZ-hz-1aE"/>
@@ -1314,6 +1314,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YSI-FB-a0e"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pHs-ra-bkC"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="mainCollectionView" destination="c3l-dz-Oaj" id="ZDM-DW-9P4"/>
@@ -1322,7 +1323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zes-RX-yPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719.20000000000005" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="220" y="-255.02248875562222"/>
         </scene>
         <!--Calendar AddVC-->
         <scene sceneID="E3q-ef-Ord">
@@ -1645,7 +1646,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMF-tB-Ois" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541.5999999999999" y="-255.02248875562222"/>
+            <point key="canvasLocation" x="2480.8000000000002" y="-255.02248875562222"/>
         </scene>
     </scenes>
     <resources>
