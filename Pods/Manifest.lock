@@ -1,4 +1,8 @@
 PODS:
+  - Alamofire (4.8.0)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - BetterSegmentedControl (1.0.3)
   - DLRadioButton (1.4.12)
   - Firebase/Core (5.15.0):
@@ -54,26 +58,34 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.6):
     - GoogleUtilities/Logger
   - JTAppleCalendar (7.1.6)
+  - Kingfisher (5.0.1)
   - leveldb-library (1.20)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - ObjectMapper (3.4.2)
   - PasswordTextField (1.2.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireObjectMapper
   - BetterSegmentedControl (~> 1.0)
   - DLRadioButton (~> 1.4)
   - Firebase/Core
   - Firebase/Database
   - JTAppleCalendar (~> 7.0)
+  - Kingfisher
+  - ObjectMapper
   - PasswordTextField
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
     - BetterSegmentedControl
     - DLRadioButton
     - Firebase
@@ -85,12 +97,16 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - JTAppleCalendar
+    - Kingfisher
     - leveldb-library
     - nanopb
+    - ObjectMapper
     - PasswordTextField
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   BetterSegmentedControl: 4e3bd0bd517b0f6077c9e17f5663a01cff48e2c5
   DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
@@ -102,11 +118,13 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
   GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   JTAppleCalendar: abb30678f42a4ef8a340a932b1dcb8c85a33dac2
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   PasswordTextField: 2548de43f150fc90a014da47b0d97e31aada4b94
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 95492f9f00eecae2655e07a71855862eb030c0f3
+PODFILE CHECKSUM: 46156b86c0736c956f1688dae2e84fcd7583a468
 
 COCOAPODS: 1.5.3
