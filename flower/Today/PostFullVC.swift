@@ -16,16 +16,16 @@ class PostFullVC: UIViewController {
         super.viewDidLoad()
         
         getsetPostData() //게시글 데이터 앞 페이지에서 받아오고 세팅하는 함수
+        cropPostImage() //게시글 이미지 크롭하는 함수
         setPostReplyData()//댓글 데이터 받아오는 함수
         //게시글에 적용은 cellForRowAt 에서 set
-        newReplyViewShadow() // 댓글 달기창 그림자 설정 함수
         
         postFullTable.delegate = self
         postFullTable.dataSource = self
     
 //        self.tabBarController?.tabBar.isHidden = true
     }
-
+    
     
     //게시글
     var postProfileImage: String?
@@ -44,6 +44,10 @@ class PostFullVC: UIViewController {
     @IBOutlet var postNameView: UILabel!
     @IBOutlet var postDateView: UILabel!
     @IBOutlet var postImageView: UIImageView!
+    func cropPostImage(){
+        postImageView?.layer.masksToBounds = true
+        postImageView?.clipsToBounds = true
+    }
     @IBOutlet var postImagePageControlView: UIPageControl!
     @IBOutlet var emotionImageView: UIImageView!
     @IBOutlet var emotionNameView: UILabel!
@@ -62,6 +66,7 @@ class PostFullVC: UIViewController {
         postContentView.text = postContent
         replyCountView.text = String(replyCount)
     }
+    
 
 
     //댓글 보기
@@ -72,26 +77,16 @@ class PostFullVC: UIViewController {
     
     //// 현재 임시로 스토리보드에서 위치 -값을 주는 형식으로 댓글 다는 창 위치를 탭바 위치로 옮겼는데 문제 생길 수도 있으니까 파트장님꼐 여쭤봐야함
     
-    @IBOutlet var newReplyView: UIView!
     
-    func newReplyViewShadow(){
-    newReplyView.layer.shadowColor = UIColor.darkGray.cgColor
-    newReplyView.layer.shadowOpacity = 10
-    newReplyView.layer.shadowOffset = CGSize.zero
-    newReplyView.layer.shadowRadius = 5
-    newReplyView.layer.shadowPath = UIBezierPath(rect: newReplyView.bounds).cgPath
-    newReplyView.layer.shouldRasterize = true
-    }
-    
-    
-    ///
-    
+    //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
     }
 
 }
+
+
 
 extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
     //게시글
@@ -110,31 +105,6 @@ extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
             return 0
         }
     }
-    
-//    func tableView(_ tablaView: UITableView, heightForSectionAt indexPath: IndexPath) -> CGFloat {
-//
-//        switch indexPath.section {
-//        case 0 :
-//            return 527
-//        case 1 :
-//            return 55
-//        default:
-//            return 55
-//        }
-//    }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        switch indexPath.section {
-//        case 0 :
-//            return 527
-//        case 1 :
-//            return 55
-//        default:
-//            return 55
-//        }
-//
-//    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
@@ -167,7 +137,7 @@ extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
 extension PostFullVC {
     func setPostReplyData() {
         let reply1 = PostReplyData(profile: "sampleProfile", replier: "승수", comment: "완전 추워")
-        let reply2 = PostReplyData(profile: "cakeImg", replier: "케이크", comment: "케이크 드세요")
+        let reply2 = PostReplyData(profile: "cakeImg", replier: "케이크", comment: "한스 케잌 산딸기 무스 케이크 드세요 제발 드세요 진짜 맛있어요 드세요 드세요 어쩌구 저쩌구 케이크 케이크")
         let reply3 = PostReplyData(profile: "momPic", replier: "엄마", comment: "케이크 맛있다")
         let reply4 = PostReplyData(profile: "emotionAdd", replier: "막내", comment: "웃으세요")
         postReplyList = [reply1,reply2,reply3,reply4]

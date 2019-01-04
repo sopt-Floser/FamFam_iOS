@@ -14,15 +14,23 @@ import Foundation
 class TodayFeedCell: UITableViewCell {
     // 상단 (프로필)
     @IBOutlet var postProfileImage: UIImageView?
+    func roundProfileImage(){
+        postProfileImage?.clipsToBounds = true
+        postProfileImage?.layer.cornerRadius = (postProfileImage?.frame.height)!/2
+    }
+    
     @IBOutlet var postName: UILabel!
     @IBOutlet var postDate: UILabel!
     
     // 중간 (게시글)
     @IBOutlet var postImage: UIImageView?
+    func cropPostImage(){
+        postImage?.layer.masksToBounds = true
+        postImage?.clipsToBounds = true
+    }
+    
     @IBOutlet var postImagePagecontrol: UIPageControl!
-    
 
-    
     // 중간 (감정)
     @IBAction func emotionAddBtn(_ sender: Any) {
     }
@@ -46,8 +54,9 @@ class TodayFeedCell: UITableViewCell {
     //
     override func awakeFromNib() {
         super.awakeFromNib()
-//        postProfileImage.layer.cornerRadius = 25
-//        postProfileImage.layer.masksToBounds = true
+        
+        roundProfileImage() //프로필 이미지 둥글게
+        cropPostImage() //게시글 이미지 위아래 커트
         // Initialization code
     }
 
@@ -56,15 +65,5 @@ class TodayFeedCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-//    var delegate: TodayFeedDelegate!
-//
-//    @IBOutlet var showReplyBtn: UIButton!
-//    var indexPath:IndexPath!
-//    @IBAction func showReplyAction(_ sender: UIButton) {
-//        print("btnd")
-//        self.delegate?.showReplyTapped(at: indexPath)
-//        print("btn")
-//    }
 
 }
