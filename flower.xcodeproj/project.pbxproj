@@ -282,6 +282,7 @@
 		9B09D63B21DE0F2C00AE1E6F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4DC7112721DD0F51001FACB6 /* CustomNavigationBar.swift */,
 				9B09D63D21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift */,
 				9B09D65521DE1F5E00AE1E6F /* UIViewController+Extension.swift */,
 			);
@@ -336,7 +337,6 @@
 				4DC7111F21DD07D0001FACB6 /* PlusVersionVC.swift */,
 				4DC7112521DD08C5001FACB6 /* PlusAlertSettingVC.swift */,
 				4DC7112321DD086B001FACB6 /* PlusAccountSecurityVC.swift */,
-				4DC7112721DD0F51001FACB6 /* CustomNavigationBar.swift */,
 			);
 			path = Plus;
 			sourceTree = "<group>";
