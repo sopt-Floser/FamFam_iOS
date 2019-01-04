@@ -25,6 +25,10 @@
 		4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */; };
 		4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */; };
 		4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */; };
+		6EC10008E751CAC4BF2FA460 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30EA048945D7118F501EB01 /* Pods_flower.framework */; };
+		9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */; };
+		9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */; };
+		9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */; };
 		9B0592AC21DBC07400F390DA /* AnniversaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0592AB21DBC07400F390DA /* AnniversaryData.swift */; };
 		9B064F9421DC7B9000AEF947 /* CalendarSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B064F9321DC7B9000AEF947 /* CalendarSearchCell.swift */; };
 		9B064F9821DC82DD00AEF947 /* CalendarSearchTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B064F9721DC82DD00AEF947 /* CalendarSearchTV.swift */; };
@@ -57,7 +61,6 @@
 		9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4D21DB532D00FC6ED6 /* marriageAnniversaryCell.swift */; };
 		9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */; };
 		9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */; };
-		9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECE21CDFD3A001BD091 /* ViewController.swift */; };
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
 		9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED321CDFD3B001BD091 /* Assets.xcassets */; };
 		9B453ED721CDFD3B001BD091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED521CDFD3B001BD091 /* LaunchScreen.storyboard */; };
@@ -74,13 +77,10 @@
 		9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1321DBB3BE00A3688F /* TodayData.swift */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
 		9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF705AC21D8631800212766 /* FamilyModel.swift */; };
-		FDDC38C5131D208AFCAE52A8 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDB18806E50FCBDFDEC3C05 /* Pods_flower.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BDB18806E50FCBDFDEC3C05 /* Pods_flower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		246EAE64FE4D6F81931180B1 /* Pods-flower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.release.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.release.xcconfig"; sourceTree = "<group>"; };
-		49FA21D43248AA584B4C9B15 /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
+		4A8ED83C4685AC060B8E1F76 /* Pods-flower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.release.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.release.xcconfig"; sourceTree = "<group>"; };
 		4D2B85FE21D4642A00268906 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		4D39CA0921DC6F180092CD9C /* genderSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genderSelection.swift; sourceTree = "<group>"; };
 		4D39CA0D21DCD2F80092CD9C /* PlusVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusVC.swift; sourceTree = "<group>"; };
@@ -99,6 +99,9 @@
 		4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bordered.swift"; sourceTree = "<group>"; };
 		4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCellPhoneVC.swift; sourceTree = "<group>"; };
 		4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPersonalInfoVC.swift; sourceTree = "<group>"; };
+		9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
+		9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatCell.swift; sourceTree = "<group>"; };
+		9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatPlusCell.swift; sourceTree = "<group>"; };
 		9B0592AB21DBC07400F390DA /* AnniversaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryData.swift; sourceTree = "<group>"; };
 		9B064F9321DC7B9000AEF947 /* CalendarSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSearchCell.swift; sourceTree = "<group>"; };
 		9B064F9721DC82DD00AEF947 /* CalendarSearchTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSearchTV.swift; sourceTree = "<group>"; };
@@ -132,7 +135,6 @@
 		9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryVC.swift; sourceTree = "<group>"; };
 		9B453EC921CDFD3A001BD091 /* flower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B453ECE21CDFD3A001BD091 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B453ED121CDFD3A001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B453ED321CDFD3B001BD091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B453ED621CDFD3B001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,8 @@
 		9BD13B1321DBB3BE00A3688F /* TodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayData.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
 		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
+		C30EA048945D7118F501EB01 /* Pods_flower.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flower.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F33B179F526467F56FAE72D7 /* Pods-flower.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flower.debug.xcconfig"; path = "Pods/Target Support Files/Pods-flower/Pods-flower.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,26 +161,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDDC38C5131D208AFCAE52A8 /* Pods_flower.framework in Frameworks */,
+				6EC10008E751CAC4BF2FA460 /* Pods_flower.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E42D29C75B35AB3AD870070 /* Frameworks */ = {
+		36030B8E3CD17260EA4A3D3E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BDB18806E50FCBDFDEC3C05 /* Pods_flower.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		91BB015BF21A0DBC6EC489BE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				49FA21D43248AA584B4C9B15 /* Pods-flower.debug.xcconfig */,
-				246EAE64FE4D6F81931180B1 /* Pods-flower.release.xcconfig */,
+				F33B179F526467F56FAE72D7 /* Pods-flower.debug.xcconfig */,
+				4A8ED83C4685AC060B8E1F76 /* Pods-flower.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -365,6 +361,9 @@
 			children = (
 				9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */,
 				9B6A647321D34A34004A3F5C /* ChatVC.swift */,
+				9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */,
+				9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */,
+				9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -386,8 +385,8 @@
 			children = (
 				9B453ECB21CDFD3A001BD091 /* flower */,
 				9B453ECA21CDFD3A001BD091 /* Products */,
-				91BB015BF21A0DBC6EC489BE /* Pods */,
-				7E42D29C75B35AB3AD870070 /* Frameworks */,
+				36030B8E3CD17260EA4A3D3E /* Pods */,
+				D7CE9B0F3CDCFC9BCD1B12A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -409,21 +408,12 @@
 				9B44BEE121CF33F700EB5C17 /* Home */,
 				9B44BEE021CF33EA00EB5C17 /* Plus */,
 				9B44BEDF21CF33DE00EB5C17 /* Main */,
-				9B453EE921CE1839001BD091 /* ViewController */,
 				9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */,
 				9B453ED321CDFD3B001BD091 /* Assets.xcassets */,
 				9B453ED521CDFD3B001BD091 /* LaunchScreen.storyboard */,
 				9B453ED821CDFD3B001BD091 /* Info.plist */,
 			);
 			path = flower;
-			sourceTree = "<group>";
-		};
-		9B453EE921CE1839001BD091 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				9B453ECE21CDFD3A001BD091 /* ViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9BEFFFC621D4CAB9007B2167 /* WeekCalendar */ = {
@@ -434,6 +424,14 @@
 			path = WeekCalendar;
 			sourceTree = "<group>";
 		};
+		D7CE9B0F3CDCFC9BCD1B12A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C30EA048945D7118F501EB01 /* Pods_flower.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,11 +439,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B453EDB21CDFD3B001BD091 /* Build configuration list for PBXNativeTarget "flower" */;
 			buildPhases = (
-				CCB0FA2FF9B0AB45FFB0EE75 /* [CP] Check Pods Manifest.lock */,
+				CB41AC3314F255441B575A99 /* [CP] Check Pods Manifest.lock */,
 				9B453EC521CDFD3A001BD091 /* Sources */,
 				9B453EC621CDFD3A001BD091 /* Frameworks */,
 				9B453EC721CDFD3A001BD091 /* Resources */,
-				F6360E3BDFDB169F2150A766 /* [CP] Embed Pods Frameworks */,
+				70173DFD0A6BDA7F713EDB22 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -507,29 +505,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CCB0FA2FF9B0AB45FFB0EE75 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-flower-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6360E3BDFDB169F2150A766 /* [CP] Embed Pods Frameworks */ = {
+		70173DFD0A6BDA7F713EDB22 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -573,6 +549,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-flower/Pods-flower-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CB41AC3314F255441B575A99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-flower-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -596,7 +594,6 @@
 				4D2B85FF21D4642A00268906 /* LoginVC.swift in Sources */,
 				4D39CA0A21DC6F180092CD9C /* genderSelection.swift in Sources */,
 				9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */,
-				9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B09D64521DE0FD600AE1E6F /* Requestable.swift in Sources */,
@@ -623,15 +620,16 @@
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B064F9821DC82DD00AEF947 /* CalendarSearchTV.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
+				9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */,
 				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
 				9B09D64921DE105400AE1E6F /* SignService.swift in Sources */,
 				9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */,
+				9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */,
 				9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */,
 				9B09D63821DDB4F100AE1E6F /* InviteCodeVC.swift in Sources */,
 				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
 				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
 				9B09D63E21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift in Sources */,
-				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				9B09D65421DE16C100AE1E6F /* Token.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
@@ -641,6 +639,7 @@
 				9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */,
 				9B09D64021DE0FA400AE1E6F /* NetworkResult.swift in Sources */,
 				4DF54A5821DB92A40081B9C7 /* JoinCreateEnterVC.swift in Sources */,
+				9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */,
 				9B09D64721DE104300AE1E6F /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,7 +784,7 @@
 		};
 		9B453EDC21CDFD3B001BD091 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 49FA21D43248AA584B4C9B15 /* Pods-flower.debug.xcconfig */;
+			baseConfigurationReference = F33B179F526467F56FAE72D7 /* Pods-flower.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -806,7 +805,7 @@
 		};
 		9B453EDD21CDFD3B001BD091 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 246EAE64FE4D6F81931180B1 /* Pods-flower.release.xcconfig */;
+			baseConfigurationReference = 4A8ED83C4685AC060B8E1F76 /* Pods-flower.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
