@@ -110,29 +110,15 @@ class CalendarVC: UIViewController {
         }
     }
 
-    func setCalendarView(date:Date){
-        formatter.dateFormat = "MM"
-        month.text = formatter.string(from: date) + "월"
-        
-        formatter.dateFormat = "yyyy"
-        year.text = formatter.string(from: date) + "년"
-        
-        calendarView.ibCalendarDelegate = self
-        calendarView.ibCalendarDataSource = self
-        calendarView.minimumLineSpacing = 0
-        calendarView.minimumInteritemSpacing = 0
-        calendarView.isRangeSelectionUsed = true
-        calendarView.reloadData()
-    }
     
     func setupCalendarView(dateSegment: DateSegmentInfo){
             guard let date = dateSegment.monthDates.first?.date else {return}
             
-            formatter.dateFormat = "MM"
-            month.text = formatter.string(from: date) + "월"
+            formatter.dateFormat = "MM 월"
+            month.text = formatter.string(from: date)
             
-            formatter.dateFormat = "yyyy"
-            year.text = formatter.string(from: date) + "년"
+            formatter.dateFormat = "yyyy 년"
+            year.text = formatter.string(from: date)
             
             calendarView.ibCalendarDelegate = self
             calendarView.ibCalendarDataSource = self
