@@ -10,6 +10,7 @@ import UIKit
 
 var todayFeedList: [TodayFeedData] = []
 
+
 class TodayFeedVC: UIViewController {
     
     @IBOutlet var todayFeedTable: UITableView!
@@ -22,8 +23,7 @@ class TodayFeedVC: UIViewController {
         
         todayFeedTable.delegate = self
         todayFeedTable.dataSource = self
-        
-//        self.tabBarController?.tabBar.isHidden = false
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -46,21 +46,9 @@ class TodayFeedVC: UIViewController {
     
 }
     
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        cell.isUserInteractionEnabled = false
-//    }
- 
 
-extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
-    
-//    func showReplyTapped(at Index: IndexPath) {
-//        print("button tapped at index:\(index)")
-//        let storyboard = UIStoryboard(name: "Today", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "PostFull")
-//
-//        self.present(vc, animated: true, completion: nil)
-//    }
+
+extension TodayFeedVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todayFeedList.count
@@ -96,6 +84,7 @@ extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
         cell.postDate.text = post.postDate
         // 중간 (게시글)
         
+    
         checkimage = post.postImage
         cell.postImage?.image = UIImage(named: stringOptionalUnwork(checkimage))
     
@@ -116,8 +105,7 @@ extension TodayFeedVC: UITableViewDataSource { //},TodayFeedDelegate{
         //위의 과정을 마친 cell 객체를 반환합니다.
         
         //showReply
-//        cell.delegate = self
-//        cell.indexPath = indexPath
+
 //
         return cell
     }
@@ -169,7 +157,7 @@ extension TodayFeedVC: UITableViewDelegate {
 
 extension TodayFeedVC {
     func getTodayFeedData() {
-        let post1 = TodayFeedData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "family", pPage: 3, eImage: "emotionSmile", eName: "엄마", pContent: "날씨 맑다", rCount: 2)
+        let post1 = TodayFeedData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "tempImg", pPage: 3, eImage: "emotionSmile", eName: "엄마", pContent: "엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구!", rCount: 2)
         let post2 = TodayFeedData(pPImage: "momPic", pName: "엄마", pDate: "20181225", pImage: "cakeImg", pPage: 5, eImage: "emotionSmile", eName: "막내", pContent: "케이크 먹고싶네", rCount: 4)
         todayFeedList = [post1,post2]
         

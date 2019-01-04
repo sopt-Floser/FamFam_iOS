@@ -20,7 +20,7 @@ class LoginVC: UIViewController {
         LoginService.shared.login(id: id, password: password){
             (data) in print("데이터 토큰 = \(data.token)")
         }
-        //moveToTaps()
+        moveToTaps()
         
     }
     

@@ -631,7 +631,6 @@
 				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
 				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
 				9B09D63E21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift in Sources */,
-				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				9B09D65421DE16C100AE1E6F /* Token.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,

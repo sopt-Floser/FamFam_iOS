@@ -1106,10 +1106,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="s6Y-Lc-ZOC" kind="relationship" relationship="viewControllers" id="ghe-TA-dLO"/>
                         <segue destination="wiw-1U-w2n" kind="relationship" relationship="viewControllers" id="AV6-o2-Q2N"/>
                         <segue destination="4ma-wn-QWu" kind="relationship" relationship="viewControllers" id="wRe-GB-YQF"/>
                         <segue destination="hnc-QP-J3f" kind="relationship" relationship="viewControllers" id="mS0-k5-5iZ"/>
+                        <segue destination="H2v-a7-hbu" kind="relationship" relationship="viewControllers" id="2Rk-3c-UWD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRD-hT-iLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1130,6 +1130,7 @@
         <scene sceneID="cwG-h5-d4q">
             <objects>
                 <viewControllerPlaceholder storyboardName="Today" id="H2v-a7-hbu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SF8-6o-pUT"/>
                     <navigationItem key="navigationItem" id="z61-Jd-jlR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW4-nk-jW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1174,24 +1175,6 @@
             </objects>
             <point key="canvasLocation" x="622" y="-1162"/>
         </scene>
-        <!--오늘의 하루-->
-        <scene sceneID="9ni-KK-P2V">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="s6Y-Lc-ZOC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="오늘의 하루" id="M21-lO-QTg"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iu5-su-U6w">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="H2v-a7-hbu" kind="relationship" relationship="rootViewController" id="Cmu-mq-7Di"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vMx-sg-bFF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1664.8" y="-1352.473763118441"/>
-        </scene>
         <!--홈-->
         <scene sceneID="q4d-Z4-ylX">
             <objects>
@@ -1235,14 +1218,14 @@
     <resources>
         <image name="homeIcon2" width="24" height="24"/>
         <image name="icon_id" width="24" height="24"/>
-        <image name="icon_lock" width="18" height="21"/>
+        <image name="icon_lock" width="18.5" height="21"/>
         <image name="imgBlueCheck" width="16" height="11"/>
         <image name="imgCreat" width="320" height="197"/>
-        <image name="imgJoin" width="316" height="199"/>
+        <image name="imgJoin" width="316.5" height="199"/>
         <image name="imgLogoBlueSmall" width="99" height="19"/>
         <image name="imgNumberStage1" width="159" height="34"/>
         <image name="imgNumberStage2" width="159" height="34"/>
         <image name="imgNumberStage3" width="159" height="34"/>
-        <image name="logo_log_in" width="197" height="68"/>
+        <image name="logo_log_in" width="197" height="68.5"/>
     </resources>
 </document>
