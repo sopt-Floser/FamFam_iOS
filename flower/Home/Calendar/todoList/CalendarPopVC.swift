@@ -47,18 +47,10 @@ class CalendarPopVC: UIViewController {
     
     // nn월 nn일 요일
     func setSelectDate(){
-        formatter.dateFormat = "MM"
+        formatter.dateFormat = "MM월 dd일 E"
         formatter.locale = Locale(identifier: "ko_KR")
-        let tempString = formatter.string(from: selectDate)
-        formatter.dateFormat = "dd"
-        let tempString2 = formatter.string(from: selectDate)
-        formatter.dateFormat = "E"
-        let tempString3 = formatter.string(from: selectDate)
-        
-        let finalString = "\(tempString)월 \(tempString2)일 \(tempString3)"
-        dateLabel.text = finalString
+        dateLabel.text = formatter.string(from: selectDate)
     }
-    
     
 }
 

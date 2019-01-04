@@ -211,20 +211,11 @@ extension CalendarAddVC {
         familyAlarmOutlet.onTintColor = UIColor.init(hex: "#366CE2")
     }
     
-    //날짜 ~~년 ~~월 ~~일 변환기
+    //날짜 ~~년 ~~월 ~~일 변환
     func setDateLabel() -> String{
         let formatter = DateFormatter()
-        
-        formatter.dateFormat = "yyyy"
-        let temp = formatter.string(from: selectDate)
-        formatter.dateFormat = "MM"
-        let temp2 = formatter.string(from: selectDate)
-        formatter.dateFormat = "dd"
-        let temp3 = formatter.string(from: selectDate)
-        
-        let rValue = "\(temp)년 \(temp2)월 \(temp3)일"
-        return rValue
-        
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        return formatter.string(from: selectDate)
     }
     
     // 가족 일정 데이터 입력 확인

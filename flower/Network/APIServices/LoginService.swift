@@ -8,17 +8,17 @@
 
 import Alamofire
 
-
 /** 로그인 */
 struct LoginService: APIManager, Requestable {
+    
     typealias NetworkData = ResponseObject<Token>
     static let shared = LoginService()
     let loginURL = url("/login")
     let headers: HTTPHeaders = [
-        "Content-type" : "application/json"
+        "Content-Type" : "application/json"
     ]
     
-    func login(id: String, password:String, completion: @escaping(Token) -> Void){
+    func login(id: String, password:String, completion: @escaping(NetworkData) -> Void){
         let body = [
             "userId" : id,
             "userPw" : password
@@ -27,11 +27,11 @@ struct LoginService: APIManager, Requestable {
         postable(loginURL, body: body, header: headers) { res in
             switch res {
             case .success(let value):
-                guard let token = value.data else {return}
-                completion(token)
+                completion(value)
                 print("login success")
-            case .error(let error):
-                print("login failed : \(error)")
+            case .error(let value):
+                completion(value)
+                print("login failed")
             }
         }
     }

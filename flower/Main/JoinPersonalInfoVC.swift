@@ -8,6 +8,7 @@
 
 import UIKit
 import PasswordTextField
+import BetterSegmentedControl
 
 class JoinPersonalInfoVC: UIViewController {
     
@@ -17,12 +18,8 @@ class JoinPersonalInfoVC: UIViewController {
         nickNameWarn.isHidden = true
         nickNameCheck.isHidden = true
         
-        //성별
-        //생년월일
         dateTF.inputView = datePicker
-        //        female?.buttonArray = [male!]
-        //        male?.buttonArray = [female!]
-        //ID
+
         idWarn.isHidden = true
         idCheck.isHidden = true
         //PW
@@ -48,23 +45,6 @@ class JoinPersonalInfoVC: UIViewController {
             nickNameCheck.isHidden = false
         }
     }
-    
-//성별 선택 못하겠어요
-
-//    @IBOutlet var female: genderSelection!
-//    @IBOutlet var male: genderSelection!
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        female.isSelected = true
-//        male.isSelected = false
-//    }
-//
-
-    
-    
-//생년월일
-//    var placeholder = NSAttributedString(string: "               년               월                 일", attributes: [NSAttributedString.Key.foregroundColor : UIColor.darkGray])
     
     @IBOutlet var dateTF: UITextField!
     
@@ -172,3 +152,19 @@ class JoinPersonalInfoVC: UIViewController {
     
 }
 
+extension JoinPersonalInfoVC : UITextFieldDelegate {
+    /*
+     let selectAnniversary = BetterSegmentedControl(
+     frame: CGRect(x: (view.frame.width - 303) / 2 - 3, y: 73, width: 314, height: 83),
+     segments: LabelSegment.segments(withTitles: ["", ""], normalFont: UIFont(name: "HelveticaNeue-Light", size: 14.0)!, normalTextColor: .lightGray, selectedFont: UIFont(name: "HelveticaNeue-Bold", size: 14.0)!, selectedTextColor: .white),
+     index: 1, options: [.backgroundColor(UIColor.init(hex: "#E4E4E4")),
+     .indicatorViewBackgroundColor(UIColor.init(hex: "#366CE2"))])
+     selectAnniversary.layer.cornerRadius = 5
+     
+     selectAnniversary.addTarget(self, action: #selector(CalendarAddVC.familycontrolValueChanged(_:)), for: .valueChanged)
+     
+     selectAnniversary.announcesValueImmediately = true
+     familyView.addSubview(selectAnniversary)
+     */
+  
+}
