@@ -8,7 +8,6 @@
 
 import Alamofire
 
-
 /** 회원가입 */
 struct SignService : APIManager, Requestable {
     typealias NetworkData = ResponseObject<Token>
@@ -19,7 +18,7 @@ struct SignService : APIManager, Requestable {
         "Content-Type" : "application/json"
     ]
     
-    func signUp(name:String, id:String, password:String, phone:String, birthday: Date, sextype:Int, completion: @escaping () -> Void) {
+    func signUp(name:String, id:String, password:String, phone:String, birthday: Date, sextype:Int, completion: @escaping (Int) -> Void) {
         
         let body = [
             "userName" : name,
@@ -34,9 +33,13 @@ struct SignService : APIManager, Requestable {
         postable(userURL, body: body, header: headers){ res in
             switch res {
             case .success(let value):
-                completion()
+                guard let rValue = value.status else {return}
+                completion(rValue)
+                print("sign up success")
             case .error(let error):
-                print("sign up failed : \(error)")
+                guard let rValue = error.status else {return}
+                completion(rValue)
+                print("sign up failed")
             }
         }
     }

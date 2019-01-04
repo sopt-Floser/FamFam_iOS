@@ -11,32 +11,14 @@ import PasswordTextField
 import BetterSegmentedControl
 
 class JoinPersonalInfoVC: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //닉네임
-        nickNameWarn.isHidden = true
-        nickNameCheck.isHidden = true
-        
-        dateTF.inputView = datePicker
-
-        idWarn.isHidden = true
-        idCheck.isHidden = true
-        //PW
-        pwWarn.isHidden = true
-        pwCheck.isHidden = true
-        //PW 확인
-        pwSameWarn.isHidden = false
-        pwSameCheck.isHidden = true
-    }
-    
-    
+    var selectSexTypeResult = 0 // 성별 구별
 //닉네임
     @IBOutlet var nickNameTF: UITextField!
     @IBOutlet var nickNameWarn: UILabel!
     @IBOutlet var nickNameCheck: UIImageView!
     @IBAction func nickNameEdit(_ sender: Any) {
         
+        //경고창
         if nickNameTF.text?.isEmpty ?? true {
             nickNameWarn.isHidden = false
             nickNameCheck.isHidden = true
@@ -45,16 +27,18 @@ class JoinPersonalInfoVC: UIViewController {
             nickNameCheck.isHidden = false
         }
     }
-    
     @IBOutlet var dateTF: UITextField!
     
     lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.datePickerMode = .date
         picker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
-//        dateTF.attributedPlaceholder = placeholder;
         return picker
     }()
+    
+    @objc func datePickerChanged(sender:UIDatePicker) {
+        dateTF.text = dateFormatter.string(from: sender.date)
+    }
     
     lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -64,42 +48,34 @@ class JoinPersonalInfoVC: UIViewController {
         return formatter
     }()
     
-    @objc func datePickerChanged(sender:UIDatePicker) {
-        dateTF.text = dateFormatter.string(from: sender.date)
-
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
     //ID
-    
     @IBOutlet var idTF: UITextField!
     @IBOutlet var idWarn: UILabel!
     @IBOutlet var idCheck: UIImageView!
     @IBAction func idEdit(_ sender: Any) {
-       
+        
+        // 경고창
         if idTF.text?.isEmpty ?? true {
             idWarn.isHidden = false
         } else {
             idWarn.isHidden = true
         }
-        
     }
     //ID 서버와의 중복체크 기능
-
+    
     //PW
     @IBOutlet var pwTF: PasswordTextField!
     @IBOutlet var pwWarn: UILabel!
     @IBOutlet var pwCheck: UIImageView!
     @IBAction func pwEdit(_ sender: Any) {
         
-        
-        //regex 뒤쪽 수정하면 비번 규칙 수정 가능
-        let validationRule = RegexRule(regex:"^(?=.*?[0-9]).{6,}$")
-        pwTF.validationRule = validationRule
-        
+        //regex 뒤쪽 수정하면 비번 규칙 수정 가능, 경고창
+//        let validationRule = RegexRule(regex:"^(?=.*?[0-9]).{6,}$")
+//        pwTF.validationRule = validationRule
         if pwTF.text?.isEmpty ?? true{
             pwWarn.text = "*PW 항목은 필수입력입니다."
             pwWarn.isHidden = false
@@ -113,27 +89,73 @@ class JoinPersonalInfoVC: UIViewController {
                 pwWarn.isHidden = true
                 pwCheck.isHidden = false
             }
-            
         }
         //패스워드 입력 유무, 조건 충족 유무
         //지금은 6글자 이상의 숫자포함 비번으로 임시설정
     }
-    
     //PW확인
     @IBOutlet var pwSameTF: PasswordTextField!
     @IBOutlet var pwSameWarn: UILabel!
     @IBOutlet var pwSameCheck: UIImageView!
     @IBAction func pwSameEdit(_ sender: Any) {
-       
         if pwSameTF.text == pwTF.text {
             pwSameWarn.isHidden = true
             pwSameCheck.isHidden = false
         } else {
             pwSameWarn.isHidden = false
             pwSameCheck.isHidden = true
-    
         }
     }
+    
+    @IBOutlet weak var sexType0: UIButton!
+    @IBOutlet weak var sexType1: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        nickNameWarn.isHidden = true
+        nickNameCheck.isHidden = true
+        
+        dateTF.inputView = datePicker
+        
+        idWarn.isHidden = true
+        idCheck.isHidden = true
+        //PW
+        pwWarn.isHidden = true
+        pwCheck.isHidden = true
+        //PW 확인
+        pwSameWarn.isHidden = false
+        pwSameCheck.isHidden = true
+        
+    }
+    
+    func setNewUserData(){
+        guard let nickname = nickNameTF.text else {return}
+        
+        guard let birth = dateTF.text else {return}
+        guard let id = idTF.text else {return}
+        guard let pw = pwTF.text else {return}
+        
+        // signService에 데이터 전달
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        
+        //setSelectSexType()
+    }
+//
+//    func setSelectSexType(){
+//        let selectSexTypeSC = BetterSegmentedControl(frame: CGRect(x: (view.frame.width - 302 ) / 2 - 4, y: (view.frame.height)/2 - 100, width: 306, height: 38), segments: LabelSegment.segments(withTitles: ["같이 먹어요!", "먹고 올게요!"], normalBackgroundColor: .white, normalTextColor: UIColor.init(hex: "#656565"), selectedBackgroundColor: .white, selectedTextColor: UIColor.init(hex: "#366CE2")), index: 1, options: [.backgroundColor(UIColor.init(hex: "#656565")), .indicatorViewBackgroundColor(UIColor.init(hex: "#366CE2")) ])
+//
+//        selectSexTypeSC.addTarget(self, action: #selector(JoinPersonalInfoVC.selectSexTypeControl(_:)), for: .valueChanged)
+//    }
+//    @objc func selectSexTypeControl(_ sender: BetterSegmentedControl){
+//        selectSexTypeResult = Int(sender.index)
+//        print("select SexType = \(selectSexTypeResult)")
+//    }
+    
     
     //가입완료 창 활성화 하려면 모든 경고창 isHidden 이 true, 모든 체크 이미지 isHidden이 false 일때 가입완료 창이 파란색이 되면서 활성화 됨
     
@@ -150,21 +172,4 @@ class JoinPersonalInfoVC: UIViewController {
 //        }
 //    }
     
-}
-
-extension JoinPersonalInfoVC : UITextFieldDelegate {
-    /*
-     let selectAnniversary = BetterSegmentedControl(
-     frame: CGRect(x: (view.frame.width - 303) / 2 - 3, y: 73, width: 314, height: 83),
-     segments: LabelSegment.segments(withTitles: ["", ""], normalFont: UIFont(name: "HelveticaNeue-Light", size: 14.0)!, normalTextColor: .lightGray, selectedFont: UIFont(name: "HelveticaNeue-Bold", size: 14.0)!, selectedTextColor: .white),
-     index: 1, options: [.backgroundColor(UIColor.init(hex: "#E4E4E4")),
-     .indicatorViewBackgroundColor(UIColor.init(hex: "#366CE2"))])
-     selectAnniversary.layer.cornerRadius = 5
-     
-     selectAnniversary.addTarget(self, action: #selector(CalendarAddVC.familycontrolValueChanged(_:)), for: .valueChanged)
-     
-     selectAnniversary.announcesValueImmediately = true
-     familyView.addSubview(selectAnniversary)
-     */
-  
 }
