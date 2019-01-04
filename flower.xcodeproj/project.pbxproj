@@ -34,6 +34,18 @@
 		9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1421D4B76C00442A68 /* NoticeCell.swift */; };
 		9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B096B1E21D4B81200442A68 /* FamilyCell.swift */; };
 		9B09D63821DDB4F100AE1E6F /* InviteCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D63721DDB4F100AE1E6F /* InviteCodeVC.swift */; };
+		9B09D63E21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D63D21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift */; };
+		9B09D64021DE0FA400AE1E6F /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D63F21DE0FA400AE1E6F /* NetworkResult.swift */; };
+		9B09D64221DE0FB900AE1E6F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D64121DE0FB900AE1E6F /* APIManager.swift */; };
+		9B09D64521DE0FD600AE1E6F /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D64421DE0FD600AE1E6F /* Requestable.swift */; };
+		9B09D64721DE104300AE1E6F /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D64621DE104300AE1E6F /* LoginService.swift */; };
+		9B09D64921DE105400AE1E6F /* SignService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D64821DE105400AE1E6F /* SignService.swift */; };
+		9B09D65021DE161100AE1E6F /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D64F21DE161100AE1E6F /* ResponseObject.swift */; };
+		9B09D65221DE167300AE1E6F /* ResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65121DE167300AE1E6F /* ResponseArray.swift */; };
+		9B09D65421DE16C100AE1E6F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65321DE16C100AE1E6F /* Token.swift */; };
+		9B09D65621DE1F5E00AE1E6F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65521DE1F5E00AE1E6F /* UIViewController+Extension.swift */; };
+		9B09D65821DE1FFC00AE1E6F /* TodayService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65721DE1FFC00AE1E6F /* TodayService.swift */; };
+		9B09D65A21DE20BB00AE1E6F /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65921DE20BB00AE1E6F /* Today.swift */; };
 		9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9B821CF550E0020371E /* CalendarCell.swift */; };
 		9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9BA21CF56360020371E /* CalendarVC.swift */; };
 		9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */; };
@@ -96,6 +108,18 @@
 		9B096B1421D4B76C00442A68 /* NoticeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeCell.swift; sourceTree = "<group>"; };
 		9B096B1E21D4B81200442A68 /* FamilyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyCell.swift; sourceTree = "<group>"; };
 		9B09D63721DDB4F100AE1E6F /* InviteCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCodeVC.swift; sourceTree = "<group>"; };
+		9B09D63D21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+imageFromUrl.swift"; sourceTree = "<group>"; };
+		9B09D63F21DE0FA400AE1E6F /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		9B09D64121DE0FB900AE1E6F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9B09D64421DE0FD600AE1E6F /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		9B09D64621DE104300AE1E6F /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		9B09D64821DE105400AE1E6F /* SignService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignService.swift; sourceTree = "<group>"; };
+		9B09D64F21DE161100AE1E6F /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		9B09D65121DE167300AE1E6F /* ResponseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseArray.swift; sourceTree = "<group>"; };
+		9B09D65321DE16C100AE1E6F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		9B09D65521DE1F5E00AE1E6F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		9B09D65721DE1FFC00AE1E6F /* TodayService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayService.swift; sourceTree = "<group>"; };
+		9B09D65921DE20BB00AE1E6F /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		9B0DE9B821CF550E0020371E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		9B0DE9BA21CF56360020371E /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopVC.swift; sourceTree = "<group>"; };
@@ -236,6 +260,49 @@
 			path = InviteCode;
 			sourceTree = "<group>";
 		};
+		9B09D63921DE0DB700AE1E6F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9B09D64A21DE126400AE1E6F /* NetworkModel */,
+				9B09D63B21DE0F2C00AE1E6F /* Extension */,
+				9B09D63A21DE0DC900AE1E6F /* APIServices */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9B09D63A21DE0DC900AE1E6F /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				9B09D63F21DE0FA400AE1E6F /* NetworkResult.swift */,
+				9B09D64121DE0FB900AE1E6F /* APIManager.swift */,
+				9B09D64421DE0FD600AE1E6F /* Requestable.swift */,
+				9B09D64621DE104300AE1E6F /* LoginService.swift */,
+				9B09D64821DE105400AE1E6F /* SignService.swift */,
+				9B09D65721DE1FFC00AE1E6F /* TodayService.swift */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		9B09D63B21DE0F2C00AE1E6F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9B09D63D21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift */,
+				9B09D65521DE1F5E00AE1E6F /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9B09D64A21DE126400AE1E6F /* NetworkModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B09D64F21DE161100AE1E6F /* ResponseObject.swift */,
+				9B09D65121DE167300AE1E6F /* ResponseArray.swift */,
+				9B09D65321DE16C100AE1E6F /* Token.swift */,
+				9B09D65921DE20BB00AE1E6F /* Today.swift */,
+			);
+			path = NetworkModel;
+			sourceTree = "<group>";
+		};
 		9B41DB4821DB52E400FC6ED6 /* Anniversary */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +402,7 @@
 		9B453ECB21CDFD3A001BD091 /* flower */ = {
 			isa = PBXGroup;
 			children = (
+				9B09D63921DE0DB700AE1E6F /* Network */,
 				9B096B0C21D472AF00442A68 /* Model */,
 				9B44BEE321CF341300EB5C17 /* Today */,
 				9B44BEE221CF33FF00EB5C17 /* Chat */,
@@ -531,36 +599,49 @@
 				9B453ECF21CDFD3A001BD091 /* ViewController.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
+				9B09D64521DE0FD600AE1E6F /* Requestable.swift in Sources */,
 				4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */,
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
 				4DC7112821DD0F51001FACB6 /* CustomNavigationBar.swift in Sources */,
+				9B09D65221DE167300AE1E6F /* ResponseArray.swift in Sources */,
 				9B41DB4C21DB531600FC6ED6 /* listAnniversaryCell.swift in Sources */,
+				9B09D65621DE1F5E00AE1E6F /* UIViewController+Extension.swift in Sources */,
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
 				9B0592AC21DBC07400F390DA /* AnniversaryData.swift in Sources */,
 				9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */,
 				4DC7111E21DCFA04001FACB6 /* PlusData.swift in Sources */,
 				4DF54A5A21DB92C10081B9C7 /* JoinEnterVC.swift in Sources */,
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
+				9B09D64221DE0FB900AE1E6F /* APIManager.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
+				9B09D65821DE1FFC00AE1E6F /* TodayService.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */,
 				4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */,
+				9B09D65021DE161100AE1E6F /* ResponseObject.swift in Sources */,
 				9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */,
+				9B09D65A21DE20BB00AE1E6F /* Today.swift in Sources */,
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B064F9821DC82DD00AEF947 /* CalendarSearchTV.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
 				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
+				9B09D64921DE105400AE1E6F /* SignService.swift in Sources */,
 				9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */,
 				9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */,
 				9B09D63821DDB4F100AE1E6F /* InviteCodeVC.swift in Sources */,
 				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
 				4DC7112021DD07D0001FACB6 /* PlusVersionVC.swift in Sources */,
+				9B09D63E21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift in Sources */,
+				4D9B502E21D764D60032F541 /* PostFullCell.swift in Sources */,
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
+				9B09D65421DE16C100AE1E6F /* Token.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
 				9B064F9421DC7B9000AEF947 /* CalendarSearchCell.swift in Sources */,
 				9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
 				9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */,
+				9B09D64021DE0FA400AE1E6F /* NetworkResult.swift in Sources */,
 				4DF54A5821DB92A40081B9C7 /* JoinCreateEnterVC.swift in Sources */,
+				9B09D64721DE104300AE1E6F /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
