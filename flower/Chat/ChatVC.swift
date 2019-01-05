@@ -17,14 +17,24 @@ class ChatVC: UIViewController, UITextFieldDelegate {
 
 
     override func viewDidAppear(_ animated: Bool) {
-        self.chatTF.becomeFirstResponder() // 텍스트 필드에 포커스
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         chatTF.delegate = self
     }
+    
+//    func writtingKeyboardGoUp(){
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification , object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+//    }
+    
+   
 }
 
 extension ChatVC : UITableViewDelegate{
@@ -46,6 +56,3 @@ extension ChatVC : UITableViewDataSource {
     }
 }
 
-extension ChatVC {
-//    func text
-}

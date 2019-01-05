@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseAuth
 
-var phoneNumber:String?
 
 class JoinCellPhoneVC: UIViewController {
     @IBOutlet weak var phoneTF: UITextField!
@@ -21,6 +20,8 @@ class JoinCellPhoneVC: UIViewController {
     @IBOutlet weak var bottomBtn: UIButton!
     @IBOutlet weak var timer: UILabel!
     
+    var sendPhoneNumber:SignUpPhoneNumber?
+    var phoneNumber:String? // 프로토콜 안먹혀서 임시로 전역변수로 씀
     var time: Timer?
     var totalTime = 60
     var verificationID : String?
@@ -30,6 +31,10 @@ class JoinCellPhoneVC: UIViewController {
         phoneTF.becomeFirstResponder()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO - 번호인지 확인하는 함수 들어가야함
@@ -37,25 +42,22 @@ class JoinCellPhoneVC: UIViewController {
         bottomBtn.addTarget(self, action: #selector(changeButton), for: .touchUpInside)
         reAskBtn.addTarget(self, action: #selector(resetAsking), for: .touchUpInside)
     }
+    
 }
 
 extension JoinCellPhoneVC {
-    
-    
     func test(){
         
         verificationID = "111111"
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneTF.text!, uiDelegate: nil ){ (verificationID, error) in
-            if let success = verificationID {
-                print("test success~")
-            }
-            if let error = error {
-                print(error)
-                return
+            if error != nil {
+                print("error\(String(describing: error?.localizedDescription))")
+            } else {
+                let defaults = UserDefaults.standard
+                defaults.set(verificationID, forKey: "autoVID")
             }
         }
-        UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
         //Auth.auth().languageCode = "kr"
     }
     
@@ -98,14 +100,26 @@ extension JoinCellPhoneVC {
         timeLabel.text = "분 내 미입력시 재인증하셔야합니다."
         reAskBtn.isHidden = false
         
+//        let defaults = UserDefaults.standard
+//        let credential : PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "autoVID")!, verificationCode:  codeTF.text!)
+//            Auth.auth().signInAndRetrieveData(with: credential){ (user, error) in
+//                if error != nil {
+//                    print("error\(String(describing: error?.localizedDescription))")
+//                } else {
+//                   print("phoneNum")
+//                }
+//        }
      
         if (codeTF.text! == verificationID){
             bottomBtn.setTitle("완료", for: .normal)
-            timer.text = "03:00"
+            timeLabel.isHidden = true
+            timer.isHidden = true
             reAskBtn.isHidden = true
             codeTF.isEnabled = false
             bottomBtn.addTarget(self, action: #selector(clearAuthor), for: .touchUpInside)
             print("same code")
+            
+            sendPhoneNumber?.userPhoneNumber(PhoneNumber: phoneTF.text!)
         }
     }
     

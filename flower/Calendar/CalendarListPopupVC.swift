@@ -26,7 +26,6 @@ class CalendarListPopupVC: UIViewController {
         
     }
     @IBAction func dismissPopup(_ sender: Any) {
-        
         dismiss(animated: true, completion: nil)
     }
 

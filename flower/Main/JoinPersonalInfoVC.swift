@@ -12,12 +12,17 @@ import BetterSegmentedControl
 
 class JoinPersonalInfoVC: UIViewController {
     var selectSexTypeResult = 0 // 성별 구별
-//닉네임
+    var uPhoneNumber = ""
+    var selectBirthDay = ""
+ 
+    @IBOutlet weak var sexType_1: UIButton!
+    @IBOutlet weak var sexType_0: UIButton!
+    @IBOutlet weak var finishWritingBtn: UIButton!
+    //닉네임
     @IBOutlet var nickNameTF: UITextField!
     @IBOutlet var nickNameWarn: UILabel!
     @IBOutlet var nickNameCheck: UIImageView!
     @IBAction func nickNameEdit(_ sender: Any) {
-        
         //경고창
         if nickNameTF.text?.isEmpty ?? true {
             nickNameWarn.isHidden = false
@@ -37,6 +42,9 @@ class JoinPersonalInfoVC: UIViewController {
     }()
     
     @objc func datePickerChanged(sender:UIDatePicker) {
+        let birthFormatter = DateFormatter()
+        birthFormatter.dateFormat = "yyyy-MM-ddTHH:mm"
+        selectBirthDay = birthFormatter.string(from: sender.date)
         dateTF.text = dateFormatter.string(from: sender.date)
     }
     
@@ -48,16 +56,12 @@ class JoinPersonalInfoVC: UIViewController {
         return formatter
     }()
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        view.endEditing(true)
-    }
-    
     //ID
     @IBOutlet var idTF: UITextField!
     @IBOutlet var idWarn: UILabel!
     @IBOutlet var idCheck: UIImageView!
     @IBAction func idEdit(_ sender: Any) {
-        
+        checkID()
         // 경고창
         if idTF.text?.isEmpty ?? true {
             idWarn.isHidden = false
@@ -73,22 +77,19 @@ class JoinPersonalInfoVC: UIViewController {
     @IBOutlet var pwCheck: UIImageView!
     @IBAction func pwEdit(_ sender: Any) {
         
-        //regex 뒤쪽 수정하면 비번 규칙 수정 가능, 경고창
-//        let validationRule = RegexRule(regex:"^(?=.*?[0-9]).{6,}$")
-//        pwTF.validationRule = validationRule
         if pwTF.text?.isEmpty ?? true{
             pwWarn.text = "*PW 항목은 필수입력입니다."
             pwWarn.isHidden = false
             pwCheck.isHidden = true
         } else {
-            if pwTF.isInvalid() {
-                pwWarn.text = "*PW는 한글/영문+숫자 조합의 최소 6글자입니다."
-                pwWarn.isHidden = false
-                pwCheck.isHidden = true
-            } else {
-                pwWarn.isHidden = true
-                pwCheck.isHidden = false
-            }
+//            if pwTF.isInvalid() {
+//                pwWarn.text = "*PW는 한글/영문+숫자 조합의 최소 6글자입니다."
+//                pwWarn.isHidden = false
+//                pwCheck.isHidden = true
+//            } else {
+//                pwWarn.isHidden = true
+//                pwCheck.isHidden = false
+//            }
         }
         //패스워드 입력 유무, 조건 충족 유무
         //지금은 6글자 이상의 숫자포함 비번으로 임시설정
@@ -107,12 +108,13 @@ class JoinPersonalInfoVC: UIViewController {
         }
     }
     
+    // 성별 확인
     @IBOutlet weak var sexType0: UIButton!
     @IBOutlet weak var sexType1: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        finishWritingBtn.backgroundColor = UIColor.gray
         nickNameWarn.isHidden = true
         nickNameCheck.isHidden = true
         
@@ -129,47 +131,108 @@ class JoinPersonalInfoVC: UIViewController {
         
     }
     
-    func setNewUserData(){
-        guard let nickname = nickNameTF.text else {return}
-        
-        guard let birth = dateTF.text else {return}
-        guard let id = idTF.text else {return}
-        guard let pw = pwTF.text else {return}
-        
-        // signService에 데이터 전달
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        //setSelectSexType()
+        setSexType()
+        finishWritingBtn.addTarget(self, action: #selector(checkData), for: .touchUpInside)
     }
-//
-//    func setSelectSexType(){
-//        let selectSexTypeSC = BetterSegmentedControl(frame: CGRect(x: (view.frame.width - 302 ) / 2 - 4, y: (view.frame.height)/2 - 100, width: 306, height: 38), segments: LabelSegment.segments(withTitles: ["같이 먹어요!", "먹고 올게요!"], normalBackgroundColor: .white, normalTextColor: UIColor.init(hex: "#656565"), selectedBackgroundColor: .white, selectedTextColor: UIColor.init(hex: "#366CE2")), index: 1, options: [.backgroundColor(UIColor.init(hex: "#656565")), .indicatorViewBackgroundColor(UIColor.init(hex: "#366CE2")) ])
-//
-//        selectSexTypeSC.addTarget(self, action: #selector(JoinPersonalInfoVC.selectSexTypeControl(_:)), for: .valueChanged)
-//    }
-//    @objc func selectSexTypeControl(_ sender: BetterSegmentedControl){
-//        selectSexTypeResult = Int(sender.index)
-//        print("select SexType = \(selectSexTypeResult)")
-//    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        datePicker.endEditing(true)
+    }
     
+    func checkID(){
+        idTF.addTarget(self, action: #selector(isSameId), for: .editingDidEnd)
+    }
     
-    //가입완료 창 활성화 하려면 모든 경고창 isHidden 이 true, 모든 체크 이미지 isHidden이 false 일때 가입완료 창이 파란색이 되면서 활성화 됨
+    @objc func isSameId(){
+        guard let id = idTF.text else {return}
+        
+        SignIdService.shared.signUp(id: id){
+            (data) in guard let response = data.status else {return}
+            switch response {
+            case 200:
+                self.idCheck.isHidden = false
+                print("success! 사용할 수 있는 아이디입니다.")
+            case 204:
+                print("아이디 중복 에러")
+            case 500:
+                print("서버 내부 에러")
+            case 600:
+                print("데이터베이스 에러")
+            default:
+                print("중복 ID 체크")
+            }
+        }
+    }
     
-    //
+    func setNewUserData(){
+        guard let nickname = nickNameTF.text else {return}
+        guard let id = idTF.text else {return}
+        guard let pw = pwTF.text else {return}
+        guard let birth = dateTF.text else {return}
+        let sexType = selectSexTypeResult
+        
+        SignService.shared.signUp(name: nickname, id: id, password: pw, phone: uPhoneNumber, birthday: selectBirthDay, sextype: sexType){
+            (data) in guard let status = data.status else {return}
+            switch status {
+            case 201:
+                print("회원가입 성공")
+                guard let token = data.data?.token else {return}
+                self.finishWritingBtn.isEnabled = false
+                self.finishWritingBtn.addTarget(self, action: #selector(self.goNextVC), for: .touchUpInside)
+            case 400:
+                print("아이디 중복")
+            case 500:
+                print("서버 내부 에러")
+            case 600:
+                print("데이터베이스 에러")
+            default:
+                print("Sign to Server")
+            }
+        }
+    }
     
-//    @IBOutlet var joinCompleteBtn: UIButton!
-//    @IBAction func joinComplete(_ sender: Any) {
-//    
-//        if(pwSameCheck.isHidden == true) {
-//            joinCompleteBtn.layer.backgroundColor = UIColor(red: 54, green: 108, blue: 226, alpha: 1.0).cgColor
-//            self.performSegue(withIdentifier: "CreateEnter", sender: self)
-//        } else {
-//            joinCompleteBtn.layer.backgroundColor = UIColor(red: 54, green: 108, blue: 226, alpha: 1.0).cgColor
-//        }
-//    }
+    @objc func goNextVC(){
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "JoinOrCreateStoryBoard") as! JoinCreateEnterVC
+        present(dvc, animated: true, completion: nil)
+    }
     
+    @objc func checkData(){
+        if (!(idTF.text == "" || pwTF.text == "" || nickNameTF.text == "")){
+            finishWritingBtn.backgroundColor = UIColor.init(hex: "#366ce2")
+            setNewUserData()
+        }
+        else {
+            print("data not set")
+        }
+    }
+    
+    func setSexType(){
+        sexType_0.addTarget(self, action: #selector(changeSexTypeTo0), for: .touchUpInside)
+        sexType_1.addTarget(self, action: #selector(changeSexTypeTo1), for: .touchUpInside)
+    }
+    
+    @objc func changeSexTypeTo0(){
+        selectSexTypeResult = 0
+        sexType_0.setTitleColor(UIColor.init(hex: "#366ce2"), for: .normal)
+        sexType_0.borderColor = UIColor.init(hex: "#366ce2")
+        
+        sexType_1.setTitleColor(UIColor.init(hex: "#707070"), for: .normal)
+        sexType_1.borderColor = UIColor.init(hex: "#707070")
+    }
+    @objc func changeSexTypeTo1(){
+        selectSexTypeResult = 1
+        sexType_1.setTitleColor(UIColor.init(hex: "#366ce2"), for: .normal)
+        sexType_1.borderColor = UIColor.init(hex: "#366ce2")
+        
+        sexType_0.setTitleColor(UIColor.init(hex: "#707070"), for: .normal)
+        sexType_0.borderColor = UIColor.init(hex: "#707070")
+    }
+}
+
+extension JoinPersonalInfoVC : SignUpPhoneNumber {
+    func userPhoneNumber(PhoneNumber: String) {
+        self.uPhoneNumber = PhoneNumber
+    }
 }

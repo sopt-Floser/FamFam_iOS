@@ -444,8 +444,8 @@
                                     <constraint firstAttribute="bottom" secondItem="bbY-J2-bWS" secondAttribute="bottom" id="wle-3N-hW7"/>
                                 </constraints>
                             </stackView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-cd-Ifp">
-                                <rect key="frame" x="0.0" y="76" width="311" height="56"/>
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4K-cd-Ifp">
+                                <rect key="frame" x="0.0" y="76" width="270" height="56"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="6H5-I2-7j3"/>

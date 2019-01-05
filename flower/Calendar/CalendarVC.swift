@@ -68,12 +68,6 @@ class CalendarVC: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "popupSegue" {
-            
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("calendarview will appear")
@@ -290,8 +284,6 @@ extension CalendarVC: PopupPickerSelectDelegate {
         print("selected date: \(date)")
         calendarView.reloadData(withanchor: date)
     }
-    
-    
 }
 
 // 임시 서버 정보 받아오기

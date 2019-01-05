@@ -8,14 +8,16 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
-    
+class LoginVC: UIViewController , UITextFieldDelegate{
     @IBOutlet var idTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        idTF.resignFirstResponder()
+//        idTF.delegate = self
+//        passwordTF.delegate = self
         loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
     }
     
@@ -44,10 +46,15 @@ class LoginVC: UIViewController {
             }
         }
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+   
     
     func moveToTaps(){
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
+        self.view.endEditing(true)
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }

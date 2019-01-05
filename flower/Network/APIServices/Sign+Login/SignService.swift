@@ -18,7 +18,7 @@ struct SignService : APIManager, Requestable {
         "Content-Type" : "application/json"
     ]
     
-    func signUp(name:String, id:String, password:String, phone:String, birthday: Date, sextype:Int, completion: @escaping (Int) -> Void) {
+    func signUp(name:String, id:String, password:String, phone:String, birthday: String, sextype:Int, completion: @escaping (NetworkData) -> Void) {
         
         let body = [
             "userName" : name,
@@ -33,12 +33,10 @@ struct SignService : APIManager, Requestable {
         postable(userURL, body: body, header: headers){ res in
             switch res {
             case .success(let value):
-                guard let rValue = value.status else {return}
-                completion(rValue)
+                completion(value)
                 print("sign up success")
-            case .error(let error):
-                guard let rValue = error.status else {return}
-                completion(rValue)
+            case .error(let value):
+                completion(value)
                 print("sign up failed")
             }
         }

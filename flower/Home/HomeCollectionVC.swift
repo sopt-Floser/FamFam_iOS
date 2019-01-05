@@ -143,7 +143,7 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         if (collectionView == mainCollectionView){
-            return CGSize(width: 311, height: 367)
+            return CGSize(width: 311, height: view.frame.height)
         }
         else {
             return CGSize(width: 45, height: 69)

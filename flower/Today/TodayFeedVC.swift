@@ -18,6 +18,7 @@ class TodayFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.endEditing(true)
         getTodayFeedData() //모델에서 피드 데이터 받아오는 함수
         //cellForRowAt 에서 데이터 Set
         
