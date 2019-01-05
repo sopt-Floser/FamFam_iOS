@@ -292,14 +292,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="팜팜 이용약관 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awt-bJ-zR3">
-                                <rect key="frame" x="30" y="302" width="105" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 수집 및 이용에 대한 안내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-FT-lfD">
-                                <rect key="frame" x="30" y="331" width="189" height="17"/>
+                                <rect key="frame" x="30" y="291" width="105" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -379,6 +372,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인정보 수집 및 이용에 대한 안내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-FT-lfD">
+                                <rect key="frame" x="30" y="336" width="189" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -450,10 +450,10 @@
                                 <rect key="frame" x="44.5" y="379" width="286" height="44.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-HL-z0l">
-                                        <rect key="frame" x="18.5" y="3.5" width="249" height="37"/>
+                                        <rect key="frame" x="18.5" y="4" width="249" height="37"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="249" id="BOq-V5-Zgk"/>
-                                            <constraint firstAttribute="height" constant="37" id="VL3-f2-Ete"/>
+                                            <constraint firstAttribute="width" constant="249" id="MKm-2z-FoS"/>
+                                            <constraint firstAttribute="height" constant="37" id="oeQ-kC-YLG"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -462,10 +462,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="286" id="5LS-g4-mIU"/>
-                                    <constraint firstItem="dfe-HL-z0l" firstAttribute="centerY" secondItem="iCA-Wz-5Hj" secondAttribute="centerY" id="HBp-Ef-WxZ"/>
-                                    <constraint firstAttribute="height" constant="44.5" id="mRF-6C-YTm"/>
-                                    <constraint firstItem="dfe-HL-z0l" firstAttribute="centerX" secondItem="iCA-Wz-5Hj" secondAttribute="centerX" id="vCl-eI-HdV"/>
+                                    <constraint firstItem="dfe-HL-z0l" firstAttribute="centerX" secondItem="iCA-Wz-5Hj" secondAttribute="centerX" id="77b-0H-u6z"/>
+                                    <constraint firstItem="dfe-HL-z0l" firstAttribute="centerY" secondItem="iCA-Wz-5Hj" secondAttribute="centerY" id="MOa-hS-BF4"/>
+                                    <constraint firstAttribute="width" constant="286" id="Phk-q8-bHR"/>
+                                    <constraint firstAttribute="height" constant="44.5" id="RCS-LU-fhY"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -526,22 +526,21 @@
                             <constraint firstItem="fZA-ah-EDg" firstAttribute="leading" secondItem="8Eq-Mj-XxW" secondAttribute="leading" id="3CL-Ia-Ia4"/>
                             <constraint firstItem="qtz-F4-LPf" firstAttribute="width" secondItem="ww4-6C-7no" secondAttribute="height" multiplier="40:667" id="5IT-jl-JCS"/>
                             <constraint firstItem="8Eq-Mj-XxW" firstAttribute="trailing" secondItem="8e6-z1-qMF" secondAttribute="trailing" constant="34" id="63e-ai-Kvh"/>
-                            <constraint firstItem="iCA-Wz-5Hj" firstAttribute="width" secondItem="ww4-6C-7no" secondAttribute="height" multiplier="286:667" id="9Uk-hX-1d2"/>
                             <constraint firstItem="5fR-22-zEx" firstAttribute="width" secondItem="ww4-6C-7no" secondAttribute="height" multiplier="142:667" id="AmC-BS-UEr"/>
-                            <constraint firstItem="8e6-z1-qMF" firstAttribute="top" secondItem="iCA-Wz-5Hj" secondAttribute="bottom" constant="8.5" id="Bqa-r1-YSc"/>
-                            <constraint firstItem="qtz-F4-LPf" firstAttribute="top" secondItem="dfe-HL-z0l" secondAttribute="bottom" constant="13.5" id="Gur-rW-YJv"/>
+                            <constraint firstItem="iCA-Wz-5Hj" firstAttribute="centerX" secondItem="8Eq-Mj-XxW" secondAttribute="centerX" id="Kb7-tu-eDe"/>
                             <constraint firstItem="Bql-RL-kBp" firstAttribute="top" secondItem="8Eq-Mj-XxW" secondAttribute="top" constant="79" id="Mtk-lM-kiN"/>
                             <constraint firstItem="8e6-z1-qMF" firstAttribute="leading" secondItem="qtz-F4-LPf" secondAttribute="trailing" constant="3" id="S3G-Vd-BKj"/>
+                            <constraint firstItem="qtz-F4-LPf" firstAttribute="top" secondItem="iCA-Wz-5Hj" secondAttribute="bottom" constant="9.5" id="SK7-tg-9pl"/>
                             <constraint firstItem="Bql-RL-kBp" firstAttribute="centerX" secondItem="8Eq-Mj-XxW" secondAttribute="centerX" id="Vnm-li-ja4"/>
                             <constraint firstItem="5fR-22-zEx" firstAttribute="centerX" secondItem="8Eq-Mj-XxW" secondAttribute="centerX" id="YK5-3f-FRO"/>
                             <constraint firstItem="ps0-Y7-vOy" firstAttribute="centerY" secondItem="8Eq-Mj-XxW" secondAttribute="centerY" id="cnq-gQ-mNb"/>
-                            <constraint firstItem="iCA-Wz-5Hj" firstAttribute="top" secondItem="ps0-Y7-vOy" secondAttribute="bottom" constant="13" id="eXa-ug-OhP"/>
+                            <constraint firstItem="8e6-z1-qMF" firstAttribute="top" secondItem="iCA-Wz-5Hj" secondAttribute="bottom" constant="8.5" id="gh5-d9-qTN"/>
                             <constraint firstAttribute="trailing" secondItem="fZA-ah-EDg" secondAttribute="trailing" id="lIl-iV-YaQ"/>
                             <constraint firstItem="RXN-lO-61h" firstAttribute="top" secondItem="Bql-RL-kBp" secondAttribute="bottom" constant="20" id="m9P-v0-D2I"/>
                             <constraint firstItem="8Eq-Mj-XxW" firstAttribute="bottom" secondItem="fZA-ah-EDg" secondAttribute="bottom" id="rpD-c8-Dos"/>
                             <constraint firstItem="fZA-ah-EDg" firstAttribute="top" secondItem="5fR-22-zEx" secondAttribute="bottom" constant="101" id="s6U-kB-0SN"/>
                             <constraint firstItem="pIH-8Z-RnH" firstAttribute="centerX" secondItem="8Eq-Mj-XxW" secondAttribute="centerX" id="tia-bL-KPL"/>
-                            <constraint firstItem="iCA-Wz-5Hj" firstAttribute="centerX" secondItem="8Eq-Mj-XxW" secondAttribute="centerX" id="tkH-HU-ZjM"/>
+                            <constraint firstItem="iCA-Wz-5Hj" firstAttribute="top" secondItem="ObF-yS-sFH" secondAttribute="bottom" constant="17" id="tus-1M-zeN"/>
                             <constraint firstItem="RXN-lO-61h" firstAttribute="centerX" secondItem="8Eq-Mj-XxW" secondAttribute="centerX" id="uTN-8S-MKZ"/>
                             <constraint firstItem="8e6-z1-qMF" firstAttribute="width" secondItem="ww4-6C-7no" secondAttribute="height" multiplier="104:667" constant="78" id="yda-nS-cPh"/>
                             <constraint firstItem="pIH-8Z-RnH" firstAttribute="top" secondItem="RXN-lO-61h" secondAttribute="bottom" constant="30" id="yu3-oa-caS"/>

@@ -34,6 +34,7 @@ class CalendarVC: UIViewController {
     }
     @IBAction func switchButton(_ sender: UIButton) {
         let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
+        dvc.delegate = self
         present(dvc, animated: true, completion: nil)
 //        if (dvc.isBeingDismissed == true){
 //            calendarView.reloadData(withanchor: selectDate, completionHandler: {
@@ -104,10 +105,6 @@ class CalendarVC: UIViewController {
         }
     
         calendarView.addGestureRecognizer(longPressGesture)
-        
-        calendarView.reloadData(withanchor: switchDate){
-            let visibleDates = self.calendarView.visibleDates()
-        }
     }
 
     
@@ -184,7 +181,7 @@ extension CalendarVC:JTAppleCalendarViewDataSource{
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from : "2018 12 02")!
+        let startDate = Date()//formatter.date(from : "2018 12 02")!
         let endDate = formatter.date(from : "2019 12 02")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
@@ -286,6 +283,15 @@ extension CalendarVC:UISearchBarDelegate, UITableViewDelegate, UITableViewDataSo
         searchbar.resignFirstResponder()
         searchbar.endEditing(true)
     }
+}
+
+extension CalendarVC: PopupPickerSelectDelegate {
+    func selectPicker(date: Date?) {
+        print("selected date: \(date)")
+        calendarView.reloadData(withanchor: date)
+    }
+    
+    
 }
 
 // 임시 서버 정보 받아오기
