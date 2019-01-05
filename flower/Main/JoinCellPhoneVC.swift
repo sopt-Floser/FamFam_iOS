@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 var phoneNumber:String?
 
@@ -32,18 +32,35 @@ class JoinCellPhoneVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // TODO - 번호인지 확인하는 함수 들어가야함
-        if (phoneTF.text!.count > 10){
+        
         bottomBtn.addTarget(self, action: #selector(changeButton), for: .touchUpInside)
-        }
-
+        reAskBtn.addTarget(self, action: #selector(resetAsking), for: .touchUpInside)
     }
 }
 
 extension JoinCellPhoneVC {
-   
+    
+    
+    func test(){
+        var verificationID = "821087188705"
+        
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneTF.text!, uiDelegate: nil ){ (verificationID, error) in
+            if let success = verificationID {
+                print("test success~")
+            }
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            
+        }
+        UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+        //Auth.auth().languageCode = "kr"
+    }
     
     private func startOtpTimer() {
-        self.totalTime = 60
+        self.totalTime = 180
         self.time = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
@@ -58,6 +75,10 @@ extension JoinCellPhoneVC {
             }
         }
     }
+    @objc func resetAsking(){
+        startOtpTimer()
+        test()
+    }
     
     func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
@@ -68,14 +89,12 @@ extension JoinCellPhoneVC {
     @objc func changeButton(){
         bottomBtn.setTitle("입력 완료", for: .normal)
         codeView.isHidden = false
+        test()
         startOtpTimer()
         timer.isHidden = false
         timeLabel.isHidden = false
         timeLabel.text = "분 내 미입력시 재인증하셔야합니다."
         reAskBtn.isHidden = false
-        if (phoneTF.text!.count > 11) {
-            bottomBtn.setTitle("완료", for: <#T##UIControl.State#>)
-        }
     }
     
     @objc func clearAuthor(){

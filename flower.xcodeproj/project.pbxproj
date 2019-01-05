@@ -52,6 +52,7 @@
 		9B09D65A21DE20BB00AE1E6F /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65921DE20BB00AE1E6F /* Today.swift */; };
 		9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9B821CF550E0020371E /* CalendarCell.swift */; };
 		9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9BA21CF56360020371E /* CalendarVC.swift */; };
+		9B12401521DFB9AA006A47DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B12401421DFB9AA006A47DA /* GoogleService-Info.plist */; };
 		9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */; };
 		9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */; };
 		9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32102021D6322200995ADD /* NoticeTableCell.swift */; };
@@ -125,6 +126,7 @@
 		9B09D65921DE20BB00AE1E6F /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		9B0DE9B821CF550E0020371E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		9B0DE9BA21CF56360020371E /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		9B12401421DFB9AA006A47DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopVC.swift; sourceTree = "<group>"; };
 		9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekCalendarCell.swift; sourceTree = "<group>"; };
 		9B32102021D6322200995ADD /* NoticeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableCell.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				9B453ED321CDFD3B001BD091 /* Assets.xcassets */,
 				9B453ED521CDFD3B001BD091 /* LaunchScreen.storyboard */,
 				9B453ED821CDFD3B001BD091 /* Info.plist */,
+				9B12401421DFB9AA006A47DA /* GoogleService-Info.plist */,
 			);
 			path = flower;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B453ED721CDFD3B001BD091 /* LaunchScreen.storyboard in Resources */,
+				9B12401521DFB9AA006A47DA /* GoogleService-Info.plist in Resources */,
 				9B453EDF21CDFDFA001BD091 /* Today.storyboard in Resources */,
 				9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */,
 				9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */,
@@ -518,6 +522,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/DLRadioButton/DLRadioButton.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -535,6 +540,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLRadioButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -795,7 +801,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = semina6.flower;
+				PRODUCT_BUNDLE_IDENTIFIER = famfam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -816,7 +822,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = semina6.flower;
+				PRODUCT_BUNDLE_IDENTIFIER = famfam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

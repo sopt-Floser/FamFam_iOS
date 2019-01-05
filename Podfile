@@ -16,6 +16,8 @@ pod 'Alamofire'
 pod 'AlamofireObjectMapper'
 pod 'ObjectMapper'
 pod 'Kingfisher'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
   # Pods for flower
 
 end

@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ChatTableView: UITableView!
     @IBOutlet weak var chatTF: UITextField!
     @IBAction func chatSendBtn(_ sender: UIButton) {
     }
-    
+
+
     override func viewDidAppear(_ animated: Bool) {
         self.chatTF.becomeFirstResponder() // 텍스트 필드에 포커스
     }
