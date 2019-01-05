@@ -565,7 +565,7 @@
         <!--Join Personal InfoVC-->
         <scene sceneID="gXi-i9-Ou9">
             <objects>
-                <viewController id="V8q-1u-hLu" customClass="JoinPersonalInfoVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signupWriteStoryboard" id="V8q-1u-hLu" customClass="JoinPersonalInfoVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2bD-aj-EvI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1002,7 +1002,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b91-9H-b56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839" y="664"/>
+            <point key="canvasLocation" x="868" y="614"/>
         </scene>
         <!--Join Create EnterVC-->
         <scene sceneID="Yse-JY-z5S">
@@ -1174,10 +1174,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wiw-1U-w2n" kind="relationship" relationship="viewControllers" id="AV6-o2-Q2N"/>
-                        <segue destination="4ma-wn-QWu" kind="relationship" relationship="viewControllers" id="wRe-GB-YQF"/>
-                        <segue destination="hnc-QP-J3f" kind="relationship" relationship="viewControllers" id="mS0-k5-5iZ"/>
                         <segue destination="24Z-Mt-Yxj" kind="relationship" relationship="viewControllers" id="2Rk-3c-UWD"/>
+                        <segue destination="4ma-wn-QWu" kind="relationship" relationship="viewControllers" id="wRe-GB-YQF"/>
+                        <segue destination="wiw-1U-w2n" kind="relationship" relationship="viewControllers" id="AV6-o2-Q2N"/>
+                        <segue destination="S3T-wX-TNC" kind="relationship" relationship="viewControllers" id="hdY-u9-i19"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRD-hT-iLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1192,7 +1192,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WvP-zX-qE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2563" y="-254"/>
+            <point key="canvasLocation" x="2490" y="-151"/>
+        </scene>
+        <!--CalendarBoard-->
+        <scene sceneID="1aI-Hu-2FB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CalendarBoard" id="EcL-5q-Xaf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="h8a-eF-r31"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ho-wj-Kob" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2513" y="-255"/>
         </scene>
         <!--Today-->
         <scene sceneID="cwG-h5-d4q">
@@ -1212,7 +1222,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUr-Xe-lX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3247.1999999999998" y="-666.56671664167925"/>
+            <point key="canvasLocation" x="3156" y="-666"/>
         </scene>
         <!--ChatBoard-->
         <scene sceneID="Qxm-ZZ-OUM">
@@ -1222,7 +1232,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dtx-gA-t4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="-1163"/>
+            <point key="canvasLocation" x="2082" y="-1354"/>
         </scene>
         <!--채팅-->
         <scene sceneID="GCZ-2r-1Bs">
@@ -1240,7 +1250,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieQ-u8-E56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622" y="-1162"/>
+            <point key="canvasLocation" x="1620" y="-1353"/>
         </scene>
         <!--홈-->
         <scene sceneID="q4d-Z4-ylX">
@@ -1263,24 +1273,6 @@
             </objects>
             <point key="canvasLocation" x="2604" y="-665.21739130434787"/>
         </scene>
-        <!--더보기-->
-        <scene sceneID="buF-MP-E7F">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="hnc-QP-J3f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="더보기" id="5tw-he-vUI"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sUt-Dx-62G">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="L5Y-Si-N84" kind="relationship" relationship="rootViewController" id="nEk-FQ-X1o"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cIL-ax-6xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1986.4000000000001" y="-253.2233883058471"/>
-        </scene>
         <!--오늘의 하루-->
         <scene sceneID="3if-kW-FnI">
             <objects>
@@ -1297,22 +1289,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHB-IY-tWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="-1353.3733133433284"/>
+            <point key="canvasLocation" x="2604" y="-1353"/>
+        </scene>
+        <!--공유캘린더-->
+        <scene sceneID="A5q-J9-Rtb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AWi-Tn-YVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="S3T-wX-TNC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="공유캘린더" id="tpu-Ma-FLx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C1a-Qr-ZsT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EcL-5q-Xaf" kind="relationship" relationship="rootViewController" id="yf2-8d-2bS"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1930" y="-254"/>
         </scene>
     </scenes>
     <resources>
-        <image name="btnChatting" width="24" height="23.5"/>
-        <image name="btnHome" width="24" height="23.5"/>
+        <image name="btnChatting" width="24" height="23"/>
+        <image name="btnHome" width="24" height="23"/>
         <image name="btnOnedayToday" width="23" height="21"/>
         <image name="icon_id" width="24" height="24"/>
-        <image name="icon_lock" width="18.5" height="21"/>
+        <image name="icon_lock" width="18" height="21"/>
         <image name="imgBlueCheck" width="16" height="11"/>
         <image name="imgCreat" width="320" height="197"/>
-        <image name="imgJoin" width="316.5" height="199"/>
+        <image name="imgJoin" width="316" height="199"/>
         <image name="imgLogoBlueSmall" width="99" height="19"/>
         <image name="imgNumberStage1" width="159" height="34"/>
         <image name="imgNumberStage2" width="159" height="34"/>
         <image name="imgNumberStage3" width="159" height="34"/>
-        <image name="logo_log_in" width="197" height="68.5"/>
+        <image name="logo_log_in" width="197" height="68"/>
     </resources>
 </document>

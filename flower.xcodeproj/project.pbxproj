@@ -52,7 +52,6 @@
 		9B09D65A21DE20BB00AE1E6F /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09D65921DE20BB00AE1E6F /* Today.swift */; };
 		9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9B821CF550E0020371E /* CalendarCell.swift */; };
 		9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0DE9BA21CF56360020371E /* CalendarVC.swift */; };
-		9B12401521DFB9AA006A47DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B12401421DFB9AA006A47DA /* GoogleService-Info.plist */; };
 		9B1A63FD21D0DD5D003F236F /* CalendarPopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */; };
 		9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */; };
 		9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B32102021D6322200995ADD /* NoticeTableCell.swift */; };
@@ -73,6 +72,8 @@
 		9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */; };
 		9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */; };
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
+		9B7C211F21E07B8E0058B456 /* CalendarBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */; };
+		9B7C212121E084CD0058B456 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C212021E084CD0058B456 /* GoogleService-Info.plist */; };
 		9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */; };
 		9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1121DBB32100A3688F /* CalendarData.swift */; };
 		9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1321DBB3BE00A3688F /* TodayData.swift */; };
@@ -126,7 +127,6 @@
 		9B09D65921DE20BB00AE1E6F /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		9B0DE9B821CF550E0020371E /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		9B0DE9BA21CF56360020371E /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
-		9B12401421DFB9AA006A47DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B1A63FC21D0DD5D003F236F /* CalendarPopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPopVC.swift; sourceTree = "<group>"; };
 		9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weekCalendarCell.swift; sourceTree = "<group>"; };
 		9B32102021D6322200995ADD /* NoticeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableCell.swift; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 		9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListPopupVC.swift; sourceTree = "<group>"; };
 		9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddVC.swift; sourceTree = "<group>"; };
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarBoard.storyboard; sourceTree = "<group>"; };
+		9B7C212021E084CD0058B456 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListCell.swift; sourceTree = "<group>"; };
 		9BD13B1121DBB32100A3688F /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		9BD13B1321DBB3BE00A3688F /* TodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayData.swift; sourceTree = "<group>"; };
@@ -206,21 +208,6 @@
 				4DC7111D21DCFA04001FACB6 /* PlusData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		9B096B0F21D4B67800442A68 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				9B064F9A21DC8A0F00AEF947 /* todoList */,
-				9B064F9921DC89DA00AEF947 /* Search */,
-				9B41DB4821DB52E400FC6ED6 /* Anniversary */,
-				9B0DE9BA21CF56360020371E /* CalendarVC.swift */,
-				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
-				9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */,
-				9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */,
-				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
-			);
-			path = Calendar;
 			sourceTree = "<group>";
 		};
 		9B096B1021D4B69600442A68 /* Statistic */ = {
@@ -348,7 +335,6 @@
 			children = (
 				9B09D63621DDB4CD00AE1E6F /* InviteCode */,
 				9B096B1B21D4B7F200442A68 /* Family */,
-				9B096B0F21D4B67800442A68 /* Calendar */,
 				9B096B1021D4B69600442A68 /* Statistic */,
 				9BEFFFC621D4CAB9007B2167 /* WeekCalendar */,
 				9B096B1121D4B6BB00442A68 /* Notice */,
@@ -403,6 +389,7 @@
 		9B453ECB21CDFD3A001BD091 /* flower */ = {
 			isa = PBXGroup;
 			children = (
+				9B7C211D21E07B7F0058B456 /* Calendar */,
 				9B09D63921DE0DB700AE1E6F /* Network */,
 				9B096B0C21D472AF00442A68 /* Model */,
 				9B44BEE321CF341300EB5C17 /* Today */,
@@ -414,9 +401,25 @@
 				9B453ED321CDFD3B001BD091 /* Assets.xcassets */,
 				9B453ED521CDFD3B001BD091 /* LaunchScreen.storyboard */,
 				9B453ED821CDFD3B001BD091 /* Info.plist */,
-				9B12401421DFB9AA006A47DA /* GoogleService-Info.plist */,
+				9B7C212021E084CD0058B456 /* GoogleService-Info.plist */,
 			);
 			path = flower;
+			sourceTree = "<group>";
+		};
+		9B7C211D21E07B7F0058B456 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9B41DB4821DB52E400FC6ED6 /* Anniversary */,
+				9B064F9921DC89DA00AEF947 /* Search */,
+				9B064F9A21DC8A0F00AEF947 /* todoList */,
+				9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */,
+				9B497AB721D0A4D200182C41 /* CalendarHeader.swift */,
+				9B5CC5FB21D9D972001261C8 /* CalendarListPopupVC.swift */,
+				9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */,
+				9B0DE9BA21CF56360020371E /* CalendarVC.swift */,
+				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		9BEFFFC621D4CAB9007B2167 /* WeekCalendar */ = {
@@ -495,8 +498,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B7C211F21E07B8E0058B456 /* CalendarBoard.storyboard in Resources */,
 				9B453ED721CDFD3B001BD091 /* LaunchScreen.storyboard in Resources */,
-				9B12401521DFB9AA006A47DA /* GoogleService-Info.plist in Resources */,
+				9B7C212121E084CD0058B456 /* GoogleService-Info.plist in Resources */,
 				9B453EDF21CDFDFA001BD091 /* Today.storyboard in Resources */,
 				9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */,
 				9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */,
@@ -795,13 +799,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CXVMJWVF32;
 				INFOPLIST_FILE = flower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = famfam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.famfamTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -816,13 +820,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CXVMJWVF32;
 				INFOPLIST_FILE = flower/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = famfam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.famfamTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;

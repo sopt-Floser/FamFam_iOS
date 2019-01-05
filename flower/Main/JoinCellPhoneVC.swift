@@ -23,6 +23,7 @@ class JoinCellPhoneVC: UIViewController {
     
     var time: Timer?
     var totalTime = 60
+    var verificationID : String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,8 +43,9 @@ extension JoinCellPhoneVC {
     
     
     func test(){
-        var verificationID = "821087188705"
         
+        verificationID = "111111"
+        Auth.auth().settings?.isAppVerificationDisabledForTesting = true
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneTF.text!, uiDelegate: nil ){ (verificationID, error) in
             if let success = verificationID {
                 print("test success~")
@@ -52,8 +54,6 @@ extension JoinCellPhoneVC {
                 print(error)
                 return
             }
-            
-            
         }
         UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
         //Auth.auth().languageCode = "kr"
@@ -72,6 +72,8 @@ extension JoinCellPhoneVC {
             if let time = self.time {
                 time.invalidate()
                 self.time = nil
+                // 00:00 시 다시 인증코드 보내기
+                resetAsking()
             }
         }
     }
@@ -95,9 +97,20 @@ extension JoinCellPhoneVC {
         timeLabel.isHidden = false
         timeLabel.text = "분 내 미입력시 재인증하셔야합니다."
         reAskBtn.isHidden = false
+        
+     
+        if (codeTF.text! == verificationID){
+            bottomBtn.setTitle("완료", for: .normal)
+            timer.text = "03:00"
+            reAskBtn.isHidden = true
+            codeTF.isEnabled = false
+            bottomBtn.addTarget(self, action: #selector(clearAuthor), for: .touchUpInside)
+            print("same code")
+        }
     }
     
     @objc func clearAuthor(){
-        
+        let dvc = storyboard?.instantiateViewController(withIdentifier: "signupWriteStoryboard") as! JoinPersonalInfoVC
+        present(dvc, animated: true)
     }
 }
