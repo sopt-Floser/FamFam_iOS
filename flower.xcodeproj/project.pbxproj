@@ -29,6 +29,7 @@
 		9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */; };
 		9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */; };
 		9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */; };
+		9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0417C621E1E024000FB0D4 /* Sign_Model.swift */; };
 		9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */; };
 		9B04F0BA21E0EAFB00457181 /* SignIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B921E0EAFB00457181 /* SignIdService.swift */; };
 		9B04F0BE21E10EC500457181 /* GroupCreateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BD21E10EC500457181 /* GroupCreateService.swift */; };
@@ -118,6 +119,7 @@
 		9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
 		9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatCell.swift; sourceTree = "<group>"; };
 		9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatPlusCell.swift; sourceTree = "<group>"; };
+		9B0417C621E1E024000FB0D4 /* Sign_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_Model.swift; sourceTree = "<group>"; };
 		9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneNumber.swift; sourceTree = "<group>"; };
 		9B04F0B921E0EAFB00457181 /* SignIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIdService.swift; sourceTree = "<group>"; };
 		9B04F0BD21E10EC500457181 /* GroupCreateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreateService.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				9B04F0CF21E11AE500457181 /* Calendar_Month.swift */,
 				9B04F0D121E11BF200457181 /* Today_Feel.swift */,
 				9B04F0D321E11C3A00457181 /* Today_Feel_Types.swift */,
+				9B0417C621E1E024000FB0D4 /* Sign_Model.swift */,
 			);
 			path = NetworkModel;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				9B04F0BA21E0EAFB00457181 /* SignIdService.swift in Sources */,
 				9B064F9421DC7B9000AEF947 /* CalendarSearchCell.swift in Sources */,
 				9B04F0C821E1190600457181 /* Today_Comments_Model.swift in Sources */,
+				9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */,
 				9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
 				9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */,

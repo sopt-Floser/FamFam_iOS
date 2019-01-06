@@ -235,18 +235,12 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-yu-F0M">
-                                                    <rect key="frame" x="16" y="308" width="36" height="36"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26S-On-jPV">
+                                                    <rect key="frame" x="18" y="288" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <state key="normal" image="cakeImg"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
+                                                    <state key="normal" title="Button" image="iconEditBackground"/>
                                                     <connections>
-                                                        <action selector="goCameraBtn:" destination="I4i-o3-auw" eventType="touchUpInside" id="P4i-6l-Mkp"/>
+                                                        <action selector="cameraBtn:" destination="2ZG-cW-Z8j" eventType="touchUpInside" id="CiX-b7-Ojo"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -258,7 +252,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="allLoveCountLabel" destination="hHU-yH-R5n" id="BAm-0T-Bg3"/>
-                                            <outlet property="backgroundImage" destination="5HT-4W-RGW" id="12B-xx-bMV"/>
+                                            <outlet property="backgroundImage" destination="5HT-4W-RGW" id="f2f-xr-Mtg"/>
                                             <outlet property="didLoveCountLabel" destination="40e-uG-7HR" id="VjG-Gz-oWS"/>
                                             <outlet property="newPicCountLabel" destination="TgC-nI-GOe" id="np7-BV-YMX"/>
                                         </connections>
@@ -318,7 +312,7 @@
                                                             <rect key="frame" x="0.0" y="28" width="311" height="60"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F53-k8-vbE" id="KTl-ca-R6C">
-                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="59.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-FJ-aRt">
@@ -489,8 +483,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cakeImg" width="512" height="512"/>
         <image name="family" width="612" height="408"/>
+        <image name="iconEditBackground" width="48" height="48"/>
         <image name="img_code_bar" width="298" height="56"/>
         <image name="main_logo" width="138" height="48"/>
     </resources>

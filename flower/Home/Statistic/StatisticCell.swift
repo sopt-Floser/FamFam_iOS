@@ -13,8 +13,8 @@ class StatisticCell: UICollectionViewCell {
     @IBOutlet weak var didLoveCountLabel: UILabel!
     @IBOutlet weak var newPicCountLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBAction func goCameraBtn(_ sender: Any) {
-    }
+    
+    
     
     /** 효과 씌우기 */
     override func layoutSubviews() {

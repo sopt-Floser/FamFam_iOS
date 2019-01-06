@@ -47,17 +47,21 @@ class JoinCellPhoneVC: UIViewController {
 
 extension JoinCellPhoneVC {
     func test(){
+        // 전화번호 인증코드 보내기
+        let defaults = UserDefaults.standard
         
-        verificationID = "111111"
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneTF.text!, uiDelegate: nil ){ (verificationID, error) in
+        PhoneAuthProvider.provider().verifyPhoneNumber(self.phoneTF.text!, uiDelegate: nil ){ (verificationID, error) in
             if error != nil {
                 print("error\(String(describing: error?.localizedDescription))")
             } else {
                 let defaults = UserDefaults.standard
                 defaults.set(verificationID, forKey: "autoVID")
             }
+            print("phoneNumber = \(self.phoneTF.text!)")
+            print("verificationID = \(verificationID)")
         }
+        
         //Auth.auth().languageCode = "kr"
     }
     
@@ -91,36 +95,48 @@ extension JoinCellPhoneVC {
     }
     
     @objc func changeButton(){
-        bottomBtn.setTitle("입력 완료", for: .normal)
-        codeView.isHidden = false
-        test()
-        startOtpTimer()
-        timer.isHidden = false
-        timeLabel.isHidden = false
-        timeLabel.text = "분 내 미입력시 재인증하셔야합니다."
-        reAskBtn.isHidden = false
-        
-//        let defaults = UserDefaults.standard
-//        let credential : PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "autoVID")!, verificationCode:  codeTF.text!)
-//            Auth.auth().signInAndRetrieveData(with: credential){ (user, error) in
-//                if error != nil {
-//                    print("error\(String(describing: error?.localizedDescription))")
-//                } else {
-//                   print("phoneNum")
-//                }
-//        }
-     
-        if (codeTF.text! == verificationID){
-            bottomBtn.setTitle("완료", for: .normal)
-            timeLabel.isHidden = true
-            timer.isHidden = true
-            reAskBtn.isHidden = true
-            codeTF.isEnabled = false
-            bottomBtn.addTarget(self, action: #selector(clearAuthor), for: .touchUpInside)
-            print("same code")
-            
-            sendPhoneNumber?.userPhoneNumber(PhoneNumber: phoneTF.text!)
+        if (phoneTF.text != ""){
+            bottomBtn.setTitle("입력 완료", for: .normal)
+            codeView.isHidden = false
+            test()
+            startOtpTimer()
+            timer.isHidden = false
+            timeLabel.isHidden = false
+            timeLabel.text = "분 내 미입력시 재인증하셔야합니다."
+            reAskBtn.isHidden = false
         }
+        
+        
+        // 인증코드 맞는지 확인
+        let defaults = UserDefaults.standard
+        let credential : PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "autoVID")!, verificationCode:  codeTF.text!)
+            Auth.auth().signInAndRetrieveData(with: credential){ (user, error) in
+                if error != nil {
+                    print("error\(String(describing: error?.localizedDescription))")
+                } else {
+                    print("phoneNum = \(self.phoneTF.text)")
+                    self.bottomBtn.setTitle("완료", for: .normal)
+                    self.timeLabel.isHidden = true
+                    self.timer.isHidden = true
+                    self.reAskBtn.isHidden = true
+                    self.codeTF.isEnabled = false
+                    print("same code")
+                    self.sendPhoneNumber?.userPhoneNumber(PhoneNumber: self.phoneTF.text!)
+                    self.bottomBtn.addTarget(self, action: #selector(self.clearAuthor), for: .touchUpInside)
+                }
+        }
+//
+//        if (codeTF.text! == verificationID){
+//            bottomBtn.setTitle("완료", for: .normal)
+//            timeLabel.isHidden = true
+//            timer.isHidden = true
+//            reAskBtn.isHidden = true
+//            codeTF.isEnabled = false
+//            bottomBtn.addTarget(self, action: #selector(clearAuthor), for: .touchUpInside)
+//            print("same code")
+//
+//            sendPhoneNumber?.userPhoneNumber(PhoneNumber: phoneTF.text!)
+//        }
     }
     
     @objc func clearAuthor(){

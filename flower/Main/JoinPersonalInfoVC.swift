@@ -43,7 +43,7 @@ class JoinPersonalInfoVC: UIViewController {
     
     @objc func datePickerChanged(sender:UIDatePicker) {
         let birthFormatter = DateFormatter()
-        birthFormatter.dateFormat = "yyyy-MM-ddTHH:mm"
+        birthFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         selectBirthDay = birthFormatter.string(from: sender.date)
         dateTF.text = dateFormatter.string(from: sender.date)
     }
@@ -172,15 +172,20 @@ class JoinPersonalInfoVC: UIViewController {
         guard let pw = pwTF.text else {return}
         guard let birth = dateTF.text else {return}
         let sexType = selectSexTypeResult
+        let testPhoneNumber = "01087188705"
         
-        SignService.shared.signUp(name: nickname, id: id, password: pw, phone: uPhoneNumber, birthday: selectBirthDay, sextype: sexType){
-            (data) in guard let status = data.status else {return}
+        SignService.shared.signUp(name: nickname, id: id, password: pw, phone: testPhoneNumber, birthday: selectBirthDay, sextype: sexType){
+            (data) in
+            guard let status = data.status else {return}
             switch status {
             case 201:
                 print("회원가입 성공")
-                guard let token = data.data?.token else {return}
+                
+                guard let UserId = data.data?.userId else {return}
+                
                 self.finishWritingBtn.isEnabled = false
-                self.finishWritingBtn.addTarget(self, action: #selector(self.goNextVC), for: .touchUpInside)
+                let dvc = self.storyboard?.instantiateViewController(withIdentifier: "JoinOrCreateStoryBoard") as! JoinCreateEnterVC
+                self.present(dvc, animated: true, completion: nil)
             case 400:
                 print("아이디 중복")
             case 500:
@@ -190,12 +195,13 @@ class JoinPersonalInfoVC: UIViewController {
             default:
                 print("Sign to Server")
             }
+            print("name = \(nickname)")
+            print("id = \(id)")
+            print("password = \(pw)")
+            print("phone = \(self.uPhoneNumber)")
+            print("birthday = \(self.selectBirthDay)")
+            print("sexType = \(sexType)")
         }
-    }
-    
-    @objc func goNextVC(){
-        let dvc = storyboard?.instantiateViewController(withIdentifier: "JoinOrCreateStoryBoard") as! JoinCreateEnterVC
-        present(dvc, animated: true, completion: nil)
     }
     
     @objc func checkData(){

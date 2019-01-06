@@ -13,7 +13,6 @@ class HomeCollectionVC: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var profileCollectionView: UICollectionView!
     
-    
     var FamilyMember:[FamilyModel] = []
     
     override func viewDidLoad() {
@@ -39,12 +38,6 @@ class HomeCollectionVC: UIViewController {
         mainCollectionView.dataSource = self
     }
 }
-
-//CGPoint newContentOffset = yourCollectionView.contentOffset;
-//float offset = selectedIndex * (self.view.bounds.size.width + cellSpacing);
-//newContentOffset.x += offset;
-//yourCollectionView.contentOffset = newContentOffset;
-
 
 extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource , UIScrollViewDelegate{
     func scrollToNextItem() {
@@ -141,13 +134,22 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
         cell.frame = CGRect(x: cell.frame.origin.x, y: 0, width: 45, height: 69)
         return cell
     }
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        if (collectionView == mainCollectionView){
+
+    /** 셀 가운데 있는거 크게 보여주기 */
+    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        if collectionView == mainCollectionView {
+            let size = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+            let point = CGPoint(x: size.width/2.0, y: size.height/2.0 )
+            let centerIndex = collectionView.indexPathForItem(at: point) as! Int
+            print("homeCellPoint = \(point)")
+            print("centerIndex = \(centerIndex)")
+            if indexPath.item == centerIndex {
+                return CGSize(width: 320, height: view.frame.height+10)
+            }
             return CGSize(width: 311, height: view.frame.height)
         }
-        else {
-            return CGSize(width: 45, height: 69)
-        }
+        return CGSize(width: 45, height: 69)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -174,3 +176,57 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
 }
 
 
+
+extension HomeCollectionVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    @IBAction func cameraBtn(_ sender: UIButton) {
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        
+        /** 카메라를 사용해서 이미지를 선택하겠다는 옵션을 추가함 */
+        let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.sourceType = .camera
+                picker.allowsEditing = true
+                picker.showsCameraControls = true
+                self.present(picker, animated: true)
+            } else {
+                print("not available")
+            }
+        }))
+        
+        /** 아이폰 내의 이미지를 사용하겠다는 옵션 추가 */
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) in
+            picker.sourceType = .photoLibrary
+            picker.allowsEditing = true
+            self.present(picker, animated: true)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        self.present(actionSheet, animated: true)
+        
+    }
+    
+    //이미지를 선택하지 않고 피커 종료시에 실행되는 delegate 메소드
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //이미지 피커에서 이미지를 선택하였을 때 일어나는 이벤트를 작성하는 메소드
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var newImg = UIImage()
+        
+        if let possibleImg = info[.editedImage] as? UIImage {
+            newImg = possibleImg
+        }
+        else if let possibleImg = info[.originalImage] as? UIImage {
+            newImg = possibleImg
+        }
+        else {
+            return
+        }
+    
+//        back = newImg
+        dismiss(animated: true, completion: nil)
+    }
+}

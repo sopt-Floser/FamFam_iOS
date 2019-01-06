@@ -10,7 +10,7 @@ import Alamofire
 
 /** 회원가입 */
 struct SignService : APIManager, Requestable {
-    typealias NetworkData = ResponseObject<Token>
+    typealias NetworkData = ResponseObject<Sign_Model>
     static let shared = SignService()
     let userURL = url("/users")
     let userDefaults = UserDefaults.standard
@@ -27,7 +27,7 @@ struct SignService : APIManager, Requestable {
             "userPhone" : phone,
             "birthday" : birthday,
             "sexType" : sextype
-
+            
             ] as [String : Any]
         
         postable(userURL, body: body, header: headers){ res in
