@@ -238,7 +238,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26S-On-jPV">
                                                     <rect key="frame" x="18" y="288" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button" image="iconEditBackground"/>
+                                                    <state key="normal" image="iconEditBackground"/>
                                                     <connections>
                                                         <action selector="cameraBtn:" destination="2ZG-cW-Z8j" eventType="touchUpInside" id="CiX-b7-Ojo"/>
                                                     </connections>

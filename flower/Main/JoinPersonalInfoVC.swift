@@ -180,10 +180,8 @@ class JoinPersonalInfoVC: UIViewController {
             switch status {
             case 201:
                 print("회원가입 성공")
-                
-                guard let UserId = data.data?.userId else {return}
-                
                 self.finishWritingBtn.isEnabled = false
+                // 생성 & 참여 창으로
                 let dvc = self.storyboard?.instantiateViewController(withIdentifier: "JoinOrCreateStoryBoard") as! JoinCreateEnterVC
                 self.present(dvc, animated: true, completion: nil)
             case 400:
