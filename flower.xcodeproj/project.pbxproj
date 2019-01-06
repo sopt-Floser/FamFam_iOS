@@ -29,6 +29,7 @@
 		9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */; };
 		9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */; };
 		9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */; };
+		9B0372F321E27C6F003F0C8E /* UploadPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */; };
 		9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0417C621E1E024000FB0D4 /* Sign_Model.swift */; };
 		9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */; };
 		9B04F0BA21E0EAFB00457181 /* SignIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B921E0EAFB00457181 /* SignIdService.swift */; };
@@ -119,6 +120,7 @@
 		9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
 		9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatCell.swift; sourceTree = "<group>"; };
 		9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatPlusCell.swift; sourceTree = "<group>"; };
+		9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostVC.swift; sourceTree = "<group>"; };
 		9B0417C621E1E024000FB0D4 /* Sign_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_Model.swift; sourceTree = "<group>"; };
 		9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneNumber.swift; sourceTree = "<group>"; };
 		9B04F0B921E0EAFB00457181 /* SignIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIdService.swift; sourceTree = "<group>"; };
@@ -209,24 +211,6 @@
 				4A8ED83C4685AC060B8E1F76 /* Pods-flower.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		9B04F0BB21E10E9200457181 /* Sign+Login */ = {
-			isa = PBXGroup;
-			children = (
-				9B04F0B921E0EAFB00457181 /* SignIdService.swift */,
-				9B09D64821DE105400AE1E6F /* SignService.swift */,
-				9B09D64621DE104300AE1E6F /* LoginService.swift */,
-			);
-			path = "Sign+Login";
-			sourceTree = "<group>";
-		};
-		9B04F0BC21E10EA500457181 /* Group */ = {
-			isa = PBXGroup;
-			children = (
-				9B04F0BD21E10EC500457181 /* GroupCreateService.swift */,
-			);
-			path = Group;
 			sourceTree = "<group>";
 		};
 		9B04F0D521E11D9400457181 /* NetworkSetting */ = {
@@ -320,8 +304,10 @@
 		9B09D63A21DE0DC900AE1E6F /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				9B04F0BC21E10EA500457181 /* Group */,
-				9B04F0BB21E10E9200457181 /* Sign+Login */,
+				9B04F0BD21E10EC500457181 /* GroupCreateService.swift */,
+				9B04F0B921E0EAFB00457181 /* SignIdService.swift */,
+				9B09D64821DE105400AE1E6F /* SignService.swift */,
+				9B09D64621DE104300AE1E6F /* LoginService.swift */,
 				9B09D65721DE1FFC00AE1E6F /* TodayService.swift */,
 			);
 			path = APIServices;
@@ -431,6 +417,7 @@
 				9B096B0421D465A500442A68 /* TodayFeedCell.swift */,
 				4DB0CD3921D62E3800105EAE /* PostFullVC.swift */,
 				9B096B0621D465B300442A68 /* PostReplyCell.swift */,
+				9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -683,6 +670,7 @@
 				9B04F0CE21E11A5F00457181 /* Calendar_anniversary.swift in Sources */,
 				4D39CA0A21DC6F180092CD9C /* genderSelection.swift in Sources */,
 				9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */,
+				9B0372F321E27C6F003F0C8E /* UploadPostVC.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B09D64521DE0FD600AE1E6F /* Requestable.swift in Sources */,
