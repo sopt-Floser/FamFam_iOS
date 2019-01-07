@@ -199,16 +199,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7BC-Wv-qcw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="615"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 하루로 가족들과 일상을 공유해보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBW-Dx-YN2">
-                                <rect key="frame" x="63" y="446" width="249.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58s-x3-f0a">
                                 <rect key="frame" x="0.0" y="615" width="187.5" height="52"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -223,14 +213,6 @@
                                     <segue destination="8KF-dM-hRQ" kind="presentation" id="H6E-0x-bY8"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-PH-P8J">
-                                <rect key="frame" x="160" y="488" width="55" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.62745098039215685" green="0.81568627450980391" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="currentPageIndicatorTintColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="pageChanged:" destination="hhL-J6-WtO" eventType="valueChanged" id="JwM-5g-OgD"/>
-                                </connections>
-                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eM-gM-pvU">
                                 <rect key="frame" x="187.5" y="615" width="187.5" height="52"/>
                                 <color key="backgroundColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -245,38 +227,51 @@
                                     <segue destination="iRd-7A-wVp" kind="presentation" id="OEB-hm-5BO"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIB-e4-a7H">
+                                <rect key="frame" x="0.0" y="17" width="375" height="501"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gIB-e4-a7H" secondAttribute="height" multiplier="125:167" id="ixw-8y-OZs"/>
+                                </constraints>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-PH-P8J">
+                                <rect key="frame" x="112.5" y="548" width="150" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="EGy-1v-DWp"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.62745098039215685" green="0.81568627450980391" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="currentPageIndicatorTintColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="hhL-J6-WtO" eventType="valueChanged" id="lgo-gx-qug"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
-                        <color key="backgroundColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dxD-PH-P8J" firstAttribute="centerX" secondItem="7BC-Wv-qcw" secondAttribute="centerX" id="2N0-oC-oa6"/>
                             <constraint firstItem="58s-x3-f0a" firstAttribute="leading" secondItem="azj-rn-E1Q" secondAttribute="leading" id="6Al-fL-33q"/>
-                            <constraint firstItem="7eM-gM-pvU" firstAttribute="top" secondItem="dxD-PH-P8J" secondAttribute="bottom" constant="90" id="BVm-KL-oHv"/>
-                            <constraint firstItem="vBW-Dx-YN2" firstAttribute="centerX" secondItem="7BC-Wv-qcw" secondAttribute="centerX" id="GbJ-av-B5g"/>
-                            <constraint firstItem="7BC-Wv-qcw" firstAttribute="trailing" secondItem="azj-rn-E1Q" secondAttribute="trailing" id="Kht-eT-CBI"/>
-                            <constraint firstItem="7BC-Wv-qcw" firstAttribute="top" secondItem="MOe-gh-CuC" secondAttribute="top" id="Lam-V8-N6x"/>
-                            <constraint firstItem="7eM-gM-pvU" firstAttribute="top" secondItem="7BC-Wv-qcw" secondAttribute="bottom" id="LgL-yk-YB9"/>
+                            <constraint firstItem="7eM-gM-pvU" firstAttribute="top" secondItem="dxD-PH-P8J" secondAttribute="bottom" constant="30" id="BVm-KL-oHv"/>
                             <constraint firstItem="58s-x3-f0a" firstAttribute="width" secondItem="7eM-gM-pvU" secondAttribute="width" id="MG4-vJ-3vi"/>
                             <constraint firstItem="58s-x3-f0a" firstAttribute="bottom" secondItem="azj-rn-E1Q" secondAttribute="bottom" id="Pji-oq-h7i"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="bottom" secondItem="azj-rn-E1Q" secondAttribute="bottom" id="RGb-ln-1Ug"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="leading" secondItem="58s-x3-f0a" secondAttribute="trailing" id="V5L-2S-DeC"/>
+                            <constraint firstItem="gIB-e4-a7H" firstAttribute="leading" secondItem="azj-rn-E1Q" secondAttribute="leading" id="bDN-tc-VRA"/>
                             <constraint firstItem="azj-rn-E1Q" firstAttribute="trailing" secondItem="7eM-gM-pvU" secondAttribute="trailing" id="dGm-is-SBb"/>
-                            <constraint firstItem="dxD-PH-P8J" firstAttribute="top" secondItem="vBW-Dx-YN2" secondAttribute="bottom" constant="25" id="eqg-q1-ytY"/>
-                            <constraint firstItem="7BC-Wv-qcw" firstAttribute="leading" secondItem="azj-rn-E1Q" secondAttribute="leading" id="jKh-QR-Bt8"/>
-                            <constraint firstItem="7eM-gM-pvU" firstAttribute="top" secondItem="7BC-Wv-qcw" secondAttribute="bottom" id="lT7-Wg-2ZD"/>
-                            <constraint firstItem="58s-x3-f0a" firstAttribute="top" secondItem="7BC-Wv-qcw" secondAttribute="bottom" id="qnG-pk-cLF"/>
+                            <constraint firstItem="gIB-e4-a7H" firstAttribute="trailing" secondItem="azj-rn-E1Q" secondAttribute="trailing" id="eoS-yj-gf2"/>
+                            <constraint firstItem="gIB-e4-a7H" firstAttribute="width" secondItem="MOe-gh-CuC" secondAttribute="width" id="hF2-AD-PFe"/>
+                            <constraint firstItem="dxD-PH-P8J" firstAttribute="centerX" secondItem="azj-rn-E1Q" secondAttribute="centerX" id="iXF-a3-So7"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="leading" secondItem="58s-x3-f0a" secondAttribute="trailing" id="sio-tI-so2"/>
+                            <constraint firstItem="dxD-PH-P8J" firstAttribute="top" secondItem="gIB-e4-a7H" secondAttribute="bottom" constant="30" id="uZZ-zv-zR8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="azj-rn-E1Q"/>
                     </view>
                     <navigationItem key="navigationItem" id="bGD-rP-gyy"/>
                     <connections>
-                        <outlet property="introduceImage" destination="7BC-Wv-qcw" id="gv5-Xb-u2U"/>
-                        <outlet property="pageControl" destination="dxD-PH-P8J" id="3V5-Ul-0YA"/>
+                        <outlet property="introduceImage" destination="gIB-e4-a7H" id="b6f-Sk-CpW"/>
+                        <outlet property="pageControl" destination="dxD-PH-P8J" id="gvY-Pp-meA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPO-pD-pn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="-278"/>
+            <point key="canvasLocation" x="-711.20000000000005" y="-278.41079460269867"/>
         </scene>
         <!--Join AgreementVC-->
         <scene sceneID="mue-c7-Zdv">
@@ -1123,7 +1118,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-I0-JDb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-I0-JDb">
                                 <rect key="frame" x="44.5" y="291" width="286" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="RG2-iq-OhW"/>
