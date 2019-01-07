@@ -1157,16 +1157,120 @@
             </objects>
             <point key="canvasLocation" x="2375" y="614"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="kSg-fO-eqM">
             <objects>
-                <viewController id="UZ6-Nr-1Mc" sceneMemberID="viewController">
+                <viewController id="UZ6-Nr-1Mc" customClass="JoinCreateVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g7U-SS-xJ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12u-oa-io6">
+                                <rect key="frame" x="171.5" y="115" width="32" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Nbi-NH-xU7"/>
+                                    <constraint firstAttribute="height" constant="22" id="fpo-ii-d3I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="가족 초대 코드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cz-gT-psj">
+                                <rect key="frame" x="138" y="184" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="DD7-ch-a9c">
+                                <rect key="frame" x="118.5" y="24" width="138" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="57Q-KM-hfC"/>
+                                    <constraint firstAttribute="height" constant="48" id="DMz-1C-lsd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코드 번호는 가족들을 초대할 때 필요합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5k-4D-ga2">
+                                <rect key="frame" x="83.5" y="218" width="208" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vup-Go-Kv4">
+                                <rect key="frame" x="44.5" y="291" width="286" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="286" id="Auc-86-d5b"/>
+                                    <constraint firstAttribute="height" constant="44" id="tQq-a5-4E7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mT5-yT-JqF">
+                                <rect key="frame" x="0.0" y="566" width="375" height="52"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="mhr-Be-hH8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 미입력시 재발급해야 합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-vT-i72">
+                                <rect key="frame" x="184.5" y="348" width="146" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="co3-sC-RRn"/>
+                                    <constraint firstAttribute="height" constant="13" id="l1D-wv-uwS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6P-fS-S4J">
+                                <rect key="frame" x="147.5" y="348" width="34" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="ATZ-mh-Bht"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c5k-4D-ga2" firstAttribute="top" secondItem="1cz-gT-psj" secondAttribute="bottom" constant="13" id="3FE-Hr-5Yj"/>
+                            <constraint firstItem="c5k-4D-ga2" firstAttribute="centerX" secondItem="0HO-pM-jHJ" secondAttribute="centerX" id="D7l-DL-Tvn"/>
+                            <constraint firstItem="0HO-pM-jHJ" firstAttribute="bottom" secondItem="mT5-yT-JqF" secondAttribute="bottom" id="FEh-Zi-q95"/>
+                            <constraint firstItem="Tzx-vT-i72" firstAttribute="trailing" secondItem="vup-Go-Kv4" secondAttribute="trailing" id="Mqv-vE-syu"/>
+                            <constraint firstItem="12u-oa-io6" firstAttribute="centerX" secondItem="0HO-pM-jHJ" secondAttribute="centerX" id="RXb-jD-i1C"/>
+                            <constraint firstItem="vup-Go-Kv4" firstAttribute="centerX" secondItem="0HO-pM-jHJ" secondAttribute="centerX" id="Sa6-GK-MUc"/>
+                            <constraint firstItem="12u-oa-io6" firstAttribute="top" secondItem="DD7-ch-a9c" secondAttribute="bottom" constant="43" id="V6Z-8g-QaU"/>
+                            <constraint firstItem="P6P-fS-S4J" firstAttribute="centerY" secondItem="Tzx-vT-i72" secondAttribute="centerY" id="VOS-A0-QQj"/>
+                            <constraint firstItem="0HO-pM-jHJ" firstAttribute="trailing" secondItem="mT5-yT-JqF" secondAttribute="trailing" id="YIN-Dd-n9N"/>
+                            <constraint firstItem="vup-Go-Kv4" firstAttribute="top" secondItem="c5k-4D-ga2" secondAttribute="bottom" constant="58" id="eq5-1b-k6M"/>
+                            <constraint firstItem="mT5-yT-JqF" firstAttribute="leading" secondItem="0HO-pM-jHJ" secondAttribute="leading" id="ev1-53-C7s"/>
+                            <constraint firstItem="1cz-gT-psj" firstAttribute="top" secondItem="12u-oa-io6" secondAttribute="bottom" constant="47" id="iVG-0e-A2S"/>
+                            <constraint firstItem="DD7-ch-a9c" firstAttribute="centerX" secondItem="0HO-pM-jHJ" secondAttribute="centerX" id="lYQ-F4-drq"/>
+                            <constraint firstItem="Tzx-vT-i72" firstAttribute="leading" secondItem="P6P-fS-S4J" secondAttribute="trailing" constant="3" id="loW-gm-hdI"/>
+                            <constraint firstItem="Tzx-vT-i72" firstAttribute="top" secondItem="vup-Go-Kv4" secondAttribute="bottom" constant="13" id="yp5-aU-jwE"/>
+                            <constraint firstItem="vup-Go-Kv4" firstAttribute="centerY" secondItem="0HO-pM-jHJ" secondAttribute="centerY" constant="-6" id="z5E-k1-Soc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0HO-pM-jHJ"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="21B-fB-Qav"/>
+                    <connections>
+                        <outlet property="codeLabel" destination="vup-Go-Kv4" id="YEA-iI-v3o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO7-zk-0UP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1187,6 +1291,7 @@
                         <segue destination="4ma-wn-QWu" kind="relationship" relationship="viewControllers" id="wRe-GB-YQF"/>
                         <segue destination="wiw-1U-w2n" kind="relationship" relationship="viewControllers" id="AV6-o2-Q2N"/>
                         <segue destination="S3T-wX-TNC" kind="relationship" relationship="viewControllers" id="hdY-u9-i19"/>
+                        <segue destination="UZ6-Nr-1Mc" kind="relationship" relationship="viewControllers" id="r3X-6a-Rbf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRD-hT-iLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1334,5 +1439,6 @@
         <image name="imgNumberStage2" width="159" height="34"/>
         <image name="imgNumberStage3" width="159" height="34"/>
         <image name="logo_log_in" width="197" height="68.5"/>
+        <image name="main_logo" width="138.5" height="48.5"/>
     </resources>
 </document>
