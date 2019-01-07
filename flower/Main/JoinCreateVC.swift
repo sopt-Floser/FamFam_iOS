@@ -2,7 +2,7 @@
 //  JoinCreateVC.swift
 //  flower
 //
-//  Created by 김지민 on 01/01/2019.
+//  Created by 김지민 on 07/01/2019.
 //  Copyright © 2019 성다연. All rights reserved.
 //
 
@@ -26,16 +26,5 @@ class JoinCreateVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func CreateCode(_ sender: Any) {
-        
-        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
-        appDelegate.window?.rootViewController = initialViewController
-        appDelegate.window?.makeKeyAndVisible()
-        
-    }
-    
-    
 
 }
