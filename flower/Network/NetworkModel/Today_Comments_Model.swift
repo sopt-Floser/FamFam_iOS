@@ -7,12 +7,24 @@
 //
 
 import Foundation
-
+import ObjectMapper
 // 오늘의 하루 - 댓글 하나 양식
-struct Today_Comment_Model {
+struct Today_Comment_Model : Mappable {
     var commentIdx: Int?
     var content: String?
     var createdDate: Date?
     var contentIdx: Int?
     var userIdx: Int?
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        commentIdx <- map["commentIdx"]
+        content <- map["content"]
+        createdDate <- map["createDate"]
+        contentIdx <- map["contentIdx"]
+        userIdx <- map["userIdx"]
+    }
 }

@@ -17,14 +17,18 @@ struct LoginService: APIManager, Requestable {
     let headers: HTTPHeaders = [
         "Content-Type" : "application/json"
     ]
+    let uploadHeader: HTTPHeaders = [
+        "Authorization": UserDefaults.standard.string(forKey: "token") ?? "no Token"
+    ]
     
+    // 로그인
     func login(id: String, password:String, completion: @escaping(NetworkData) -> Void){
         let body = [
             "userId" : id,
             "userPw" : password
         ]
         
-        postable(loginURL, body: body, header: headers) { res in
+        post(loginURL, body: body, header: headers) { res in
             switch res {
             case .success(let value):
                 completion(value)
@@ -34,5 +38,9 @@ struct LoginService: APIManager, Requestable {
                 print("login failed")
             }
         }
+    }
+    
+    func autoLogin(){
+        
     }
 }

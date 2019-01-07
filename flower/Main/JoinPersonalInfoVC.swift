@@ -148,7 +148,7 @@ class JoinPersonalInfoVC: UIViewController {
     @objc func isSameId(){
         guard let id = idTF.text else {return}
         
-        SignIdService.shared.signUp(id: id){
+        SignService.shared.signUpId(id: id){
             (data) in guard let response = data.status else {return}
             switch response {
             case 200:
@@ -181,7 +181,8 @@ class JoinPersonalInfoVC: UIViewController {
             case 201:
                 print("회원가입 성공")
                 self.finishWritingBtn.isEnabled = false
-                // 생성 & 참여 창으로
+                //UserDefaults.standard.set(token, forKey: "token")
+                // 생성 , 참여 창으로
                 let dvc = self.storyboard?.instantiateViewController(withIdentifier: "JoinOrCreateStoryBoard") as! JoinCreateEnterVC
                 self.present(dvc, animated: true, completion: nil)
             case 400:

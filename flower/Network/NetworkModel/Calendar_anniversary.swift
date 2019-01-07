@@ -7,12 +7,23 @@
 //
 
 import Foundation
+import ObjectMapper
 
 // 공유캘린더 - 기념일 양식
-struct Calendar_anniversary {
+struct Calendar_anniversary : Mappable{
     var anniversaryIdx: Int?
     var content: String?
     var date : Date?
     var anniversaryType: Int?
     var groupIdx: Int?
+    
+    init?(map: Map) {
+    }
+    mutating func mapping(map: Map) {
+        anniversaryIdx <- map["anniversaryIdx"]
+        content <- map["content"]
+        date <- map["date"]
+        anniversaryIdx <- map["anniversaryType"]
+        groupIdx <- map["groupIdx"]
+    }
 }

@@ -27,7 +27,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
         LoginService.shared.login(id: id, password: password){
             (data) in guard let status = data.status else {return}
-            print("\n\nstatus = \(status)")
+        
             switch status {
             case 200:
                 print("로그인 성공")

@@ -18,6 +18,26 @@ struct SignService : APIManager, Requestable {
         "Content-Type" : "application/json"
     ]
     
+    // id 중복 체크
+    func signUpId(id:String, completion: @escaping (NetworkData) -> Void) {
+        let queryURL = userURL + "/id"
+        let body = [
+            "userId" : id,
+            ]
+        
+        post(queryURL, body: body, header: headers){ res in
+            switch res {
+            case .success(let value):
+                completion(value)
+                print("sign ID check success")
+            case .error(let value):
+                completion(value)
+                print("sign ID check failed")
+            }
+        }
+    }
+    
+    // 회원가입
     func signUp(name:String, id:String, password:String, phone:String, birthday: String, sextype:Int, completion: @escaping (NetworkData) -> Void) {
         
         let body = [
@@ -30,7 +50,7 @@ struct SignService : APIManager, Requestable {
             
             ] as [String : Any]
         
-        postable(userURL, body: body, header: headers){ res in
+        post(userURL, body: body, header: headers){ res in
             switch res {
             case .success(let value):
                 completion(value)

@@ -45,11 +45,11 @@ class TodayFeedVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.hidesBottomBarWhenPushed = true
-        TodayService.shared.getBoardList(offset: nil, limit: nil){[weak self] (data) in guard let `self` = self else {return}
-            self.todayFeedList = data
-            self.todayFeedTable.reloadData()
-            
-        }
+//        TodayService.shared.getBoardList(offset: nil, limit: nil){[weak self] (data) in guard let `self` = self else {return}
+//            self.todayFeedList = data
+//            self.todayFeedTable.reloadData()
+//            
+//        }
     }
     
 }

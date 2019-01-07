@@ -30,11 +30,11 @@ class UploadPostVC: UIViewController {
         guard contentTextView.text?.isEmpty != true else {return}
         
         // 작성된 api를 사용하여 게시글을 작성하고 만약 완료되었다면
-        TodayService.shared.postBoard(content: gsno(contentTextView.text), photos: contentImage.image!) {
-            self.simpleAlert("글 작성", "게시글이 작성되었습니다.", completion: { (action) in
-                self.navigationController?.popViewController(animated: true)
-            })
-        }
+//        TodayService.shared.postBoard(content: gsno(contentTextView.text), photos: contentImage.image!) {
+//            self.simpleAlert("글 작성", "게시글이 작성되었습니다.", completion: { (action) in
+//                self.navigationController?.popViewController(animated: true)
+//            })
+//        }
     }
     
     // 텍스트필드나 텍스트 뷰의 edit 모드를 해제하기 위한, 즉, 키보드를 내리기 위한 탭 제스처와
