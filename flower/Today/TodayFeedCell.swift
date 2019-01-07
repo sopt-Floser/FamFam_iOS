@@ -12,6 +12,15 @@ import Foundation
 
 
 class TodayFeedCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        roundProfileImage() //프로필 이미지 둥글게
+        cropPostImage() //게시글 이미지 위아래 커트
+        // Initialization code
+    }
+    
     // 상단 (프로필)
     @IBOutlet var postProfileImage: UIImageView?
     func roundProfileImage(){
@@ -47,18 +56,6 @@ class TodayFeedCell: UITableViewCell {
    
     
     @IBOutlet weak var replyCount: UILabel!
-    
-    //
-    
-    
-    //
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        roundProfileImage() //프로필 이미지 둥글게
-        cropPostImage() //게시글 이미지 위아래 커트
-        // Initialization code
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

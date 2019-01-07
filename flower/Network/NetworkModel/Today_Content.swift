@@ -13,6 +13,7 @@ struct Today_Content {
     var contentIdx : Int?
     var content : String?
     var createDate : Date?
+    var commentCount: Int?
     var userIdx : Int?
     var groupIdx : Int?
 }

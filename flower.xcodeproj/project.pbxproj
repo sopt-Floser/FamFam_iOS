@@ -30,10 +30,10 @@
 		9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */; };
 		9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */; };
 		9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */; };
+		9B0372F321E27C6F003F0C8E /* UploadPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */; };
 		9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0417C621E1E024000FB0D4 /* Sign_Model.swift */; };
 		9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */; };
-		9B04F0BA21E0EAFB00457181 /* SignIdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B921E0EAFB00457181 /* SignIdService.swift */; };
-		9B04F0BE21E10EC500457181 /* GroupCreateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BD21E10EC500457181 /* GroupCreateService.swift */; };
+		9B04F0BE21E10EC500457181 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BD21E10EC500457181 /* GroupService.swift */; };
 		9B04F0C021E1138900457181 /* Today_Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BF21E1138900457181 /* Today_Photo.swift */; };
 		9B04F0C221E114BF00457181 /* Today_Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C121E114BF00457181 /* Today_Contents.swift */; };
 		9B04F0C421E1153300457181 /* Today_Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C321E1153300457181 /* Today_Content.swift */; };
@@ -75,6 +75,13 @@
 		9B41DB4C21DB531600FC6ED6 /* listAnniversaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4B21DB531600FC6ED6 /* listAnniversaryCell.swift */; };
 		9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4D21DB532D00FC6ED6 /* marriageAnniversaryCell.swift */; };
 		9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */; };
+		9B42BFF821E2F5EE00DFF0D9 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42BFF721E2F5EE00DFF0D9 /* CalendarService.swift */; };
+		9B42BFFA21E31C3E00DFF0D9 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42BFF921E31C3E00DFF0D9 /* HomeService.swift */; };
+		9B42BFFC21E31EAA00DFF0D9 /* AnniversaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42BFFB21E31EAA00DFF0D9 /* AnniversaryService.swift */; };
+		9B42C00021E32B6100DFF0D9 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42BFFF21E32B6100DFF0D9 /* CommentService.swift */; };
+		9B42C00221E334BC00DFF0D9 /* Group_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00121E334BC00DFF0D9 /* Group_code.swift */; };
+		9B42C00421E3381100DFF0D9 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00321E3381100DFF0D9 /* PhotoService.swift */; };
+		9B42C00621E3390800DFF0D9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00521E3390800DFF0D9 /* Photo.swift */; };
 		9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */; };
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
 		9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED321CDFD3B001BD091 /* Assets.xcassets */; };
@@ -121,10 +128,10 @@
 		9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
 		9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatCell.swift; sourceTree = "<group>"; };
 		9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatPlusCell.swift; sourceTree = "<group>"; };
+		9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostVC.swift; sourceTree = "<group>"; };
 		9B0417C621E1E024000FB0D4 /* Sign_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_Model.swift; sourceTree = "<group>"; };
 		9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneNumber.swift; sourceTree = "<group>"; };
-		9B04F0B921E0EAFB00457181 /* SignIdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIdService.swift; sourceTree = "<group>"; };
-		9B04F0BD21E10EC500457181 /* GroupCreateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreateService.swift; sourceTree = "<group>"; };
+		9B04F0BD21E10EC500457181 /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		9B04F0BF21E1138900457181 /* Today_Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Photo.swift; sourceTree = "<group>"; };
 		9B04F0C121E114BF00457181 /* Today_Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Contents.swift; sourceTree = "<group>"; };
 		9B04F0C321E1153300457181 /* Today_Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Content.swift; sourceTree = "<group>"; };
@@ -166,6 +173,13 @@
 		9B41DB4B21DB531600FC6ED6 /* listAnniversaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listAnniversaryCell.swift; sourceTree = "<group>"; };
 		9B41DB4D21DB532D00FC6ED6 /* marriageAnniversaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = marriageAnniversaryCell.swift; sourceTree = "<group>"; };
 		9B41DB4F21DB544B00FC6ED6 /* AnniversaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryVC.swift; sourceTree = "<group>"; };
+		9B42BFF721E2F5EE00DFF0D9 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		9B42BFF921E31C3E00DFF0D9 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		9B42BFFB21E31EAA00DFF0D9 /* AnniversaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnniversaryService.swift; sourceTree = "<group>"; };
+		9B42BFFF21E32B6100DFF0D9 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		9B42C00121E334BC00DFF0D9 /* Group_code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_code.swift; sourceTree = "<group>"; };
+		9B42C00321E3381100DFF0D9 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		9B42C00521E3390800DFF0D9 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		9B453EC921CDFD3A001BD091 /* flower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B453ED121CDFD3A001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -211,24 +225,6 @@
 				4A8ED83C4685AC060B8E1F76 /* Pods-flower.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		9B04F0BB21E10E9200457181 /* Sign+Login */ = {
-			isa = PBXGroup;
-			children = (
-				9B04F0B921E0EAFB00457181 /* SignIdService.swift */,
-				9B09D64821DE105400AE1E6F /* SignService.swift */,
-				9B09D64621DE104300AE1E6F /* LoginService.swift */,
-			);
-			path = "Sign+Login";
-			sourceTree = "<group>";
-		};
-		9B04F0BC21E10EA500457181 /* Group */ = {
-			isa = PBXGroup;
-			children = (
-				9B04F0BD21E10EC500457181 /* GroupCreateService.swift */,
-			);
-			path = Group;
 			sourceTree = "<group>";
 		};
 		9B04F0D521E11D9400457181 /* NetworkSetting */ = {
@@ -322,9 +318,15 @@
 		9B09D63A21DE0DC900AE1E6F /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				9B04F0BC21E10EA500457181 /* Group */,
-				9B04F0BB21E10E9200457181 /* Sign+Login */,
+				9B04F0BD21E10EC500457181 /* GroupService.swift */,
+				9B09D64821DE105400AE1E6F /* SignService.swift */,
+				9B09D64621DE104300AE1E6F /* LoginService.swift */,
 				9B09D65721DE1FFC00AE1E6F /* TodayService.swift */,
+				9B42BFF721E2F5EE00DFF0D9 /* CalendarService.swift */,
+				9B42BFF921E31C3E00DFF0D9 /* HomeService.swift */,
+				9B42BFFB21E31EAA00DFF0D9 /* AnniversaryService.swift */,
+				9B42BFFF21E32B6100DFF0D9 /* CommentService.swift */,
+				9B42C00321E3381100DFF0D9 /* PhotoService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -354,6 +356,8 @@
 				9B04F0D121E11BF200457181 /* Today_Feel.swift */,
 				9B04F0D321E11C3A00457181 /* Today_Feel_Types.swift */,
 				9B0417C621E1E024000FB0D4 /* Sign_Model.swift */,
+				9B42C00121E334BC00DFF0D9 /* Group_code.swift */,
+				9B42C00521E3390800DFF0D9 /* Photo.swift */,
 			);
 			path = NetworkModel;
 			sourceTree = "<group>";
@@ -434,6 +438,7 @@
 				9B096B0421D465A500442A68 /* TodayFeedCell.swift */,
 				4DB0CD3921D62E3800105EAE /* PostFullVC.swift */,
 				9B096B0621D465B300442A68 /* PostReplyCell.swift */,
+				9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -674,6 +679,7 @@
 				4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */,
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
 				4DF78BC421D8B488004D2D62 /* JoinAgreementVC.swift in Sources */,
+				9B42C00221E334BC00DFF0D9 /* Group_code.swift in Sources */,
 				9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */,
 				4DC7112421DD086B001FACB6 /* PlusAccountSecurityVC.swift in Sources */,
 				4D39CA0E21DCD2F80092CD9C /* PlusVC.swift in Sources */,
@@ -686,12 +692,15 @@
 				9B04F0CE21E11A5F00457181 /* Calendar_anniversary.swift in Sources */,
 				4D39CA0A21DC6F180092CD9C /* genderSelection.swift in Sources */,
 				9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */,
+				9B0372F321E27C6F003F0C8E /* UploadPostVC.swift in Sources */,
+				9B42C00421E3381100DFF0D9 /* PhotoService.swift in Sources */,
 				9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */,
 				9B0DE9BB21CF56360020371E /* CalendarVC.swift in Sources */,
 				9B09D64521DE0FD600AE1E6F /* Requestable.swift in Sources */,
 				4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */,
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
 				4DC7112821DD0F51001FACB6 /* CustomNavigationBar.swift in Sources */,
+				9B42C00021E32B6100DFF0D9 /* CommentService.swift in Sources */,
 				9B04F0C021E1138900457181 /* Today_Photo.swift in Sources */,
 				9B04F0CC21E11A1600457181 /* Calendar_family.swift in Sources */,
 				9B09D65221DE167300AE1E6F /* ResponseArray.swift in Sources */,
@@ -709,8 +718,10 @@
 				9B0DE9B921CF550E0020371E /* CalendarCell.swift in Sources */,
 				4D7E1BFA21E34E0800CA7942 /* JoinCreateVC.swift in Sources */,
 				9B09D64221DE0FB900AE1E6F /* APIManager.swift in Sources */,
+				9B42C00621E3390800DFF0D9 /* Photo.swift in Sources */,
 				9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */,
-				9B04F0BE21E10EC500457181 /* GroupCreateService.swift in Sources */,
+				9B04F0BE21E10EC500457181 /* GroupService.swift in Sources */,
+				9B42BFF821E2F5EE00DFF0D9 /* CalendarService.swift in Sources */,
 				9B04F0C421E1153300457181 /* Today_Content.swift in Sources */,
 				9B09D65821DE1FFC00AE1E6F /* TodayService.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */,
@@ -721,6 +732,8 @@
 				9B7C212421E099470058B456 /* PopupPickerSelectDelegate.swift in Sources */,
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B064F9821DC82DD00AEF947 /* CalendarSearchTV.swift in Sources */,
+				9B42BFFC21E31EAA00DFF0D9 /* AnniversaryService.swift in Sources */,
+				9B42BFFA21E31C3E00DFF0D9 /* HomeService.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
 				9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */,
 				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
@@ -736,7 +749,6 @@
 				9B497AB821D0A4D200182C41 /* CalendarHeader.swift in Sources */,
 				9B09D65421DE16C100AE1E6F /* Token.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
-				9B04F0BA21E0EAFB00457181 /* SignIdService.swift in Sources */,
 				9B064F9421DC7B9000AEF947 /* CalendarSearchCell.swift in Sources */,
 				9B04F0C821E1190600457181 /* Today_Comments_Model.swift in Sources */,
 				9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */,
