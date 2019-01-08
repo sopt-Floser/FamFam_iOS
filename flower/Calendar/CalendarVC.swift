@@ -21,7 +21,6 @@ protocol IAPDelegate {
     func purchaseFailed()
 }
 
-
 /** calendar 다루는 VC */
 class CalendarVC: UIViewController {
     @IBOutlet weak var searchTV: UITableView!
@@ -44,14 +43,15 @@ class CalendarVC: UIViewController {
     let todayDate = Date()
     var eventsFromTheServer: [String:String] = [:]
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
-    var serverAllDate:[String] = []
+    var serverAllDate:Calendar_Month?
+    
 
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = Calendar.current.timeZone
         dateFormatter.locale = Calendar.current.locale
-        dateFormatter.dateFormat = "yyyy MM dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         return dateFormatter
     }()
     
@@ -67,20 +67,19 @@ class CalendarVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("calendarview will appear")
-    
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         let bringDate = formatter.string(from: Date())
         
         CalendarService.shared.getCalendarMonthList(dateStr: bringDate){ (data) in
             guard let value = data.status else {return}
+            print("value = \(value)")
             switch value {
             case 200 :
                 guard let familyList = data.data?.familys else {return}
                 guard let anniversaryList = data.data?.anniversarys else {return}
                 guard let individualList = data.data?.individuals else {return}
-               
+                
                 print("일정 조회 성공")
             case 500 :
                 print("서버 내부 에러")
@@ -90,6 +89,8 @@ class CalendarVC: UIViewController {
                 print("서버통신 - 월별 일정 가져오기")
             }
         }
+        
+        print("calendarview will appear = \(bringDate)")
         
     }
     
@@ -105,6 +106,8 @@ class CalendarVC: UIViewController {
             for (date) in CalendarDatabase.CalendarDateArray{
                 let stringDate = date
                 self.eventsFromTheServer[stringDate] = ""
+                
+                //CalendarDatabase.CalendarMemoArray.contains{ $0.key == formatter.string(from: )}
             }
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
@@ -138,7 +141,7 @@ class CalendarVC: UIViewController {
     
     func configureCell(cell: JTAppleCell?, cellState: CellState){
         guard let myCalendarCell = cell as? CalendarCell else {return}
-        formatter.dateFormat = "yyyy MM dd"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         
         handleCellTextColor(cell: myCalendarCell, cellState: cellState)
         handleCellSelected(cell: myCalendarCell, cellState: cellState)
@@ -173,7 +176,10 @@ class CalendarVC: UIViewController {
     
     /** 서버에서 받아오는 정보 달력에 보여주기 (할일) */
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
+        var eventCount = eventsFromTheServer
+        
         cell.eventLabel.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
+        
     }
 }
 
@@ -188,12 +194,12 @@ extension CalendarVC:JTAppleCalendarViewDataSource{
     
     /** 달력 시작과 끝 설정 */
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        formatter.dateFormat = "yyyy MM dd"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
         let startDate = Date()//formatter.date(from : "2018 12 02")!
-        let endDate = formatter.date(from : "2019 12 02")!
+        let endDate = formatter.date(from : "2019-12-02T00:00")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
@@ -268,7 +274,6 @@ extension CalendarVC:UISearchBarDelegate, UITableViewDelegate, UITableViewDataSo
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         searchedData = searchText.isEmpty ? searchedData : CalendarDatabase.CalendarDataArray.filter{ $0.memo.range(of: searchText) != nil
         }
         searchTV.reloadData()
