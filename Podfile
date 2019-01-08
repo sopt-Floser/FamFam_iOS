@@ -18,6 +18,7 @@ pod 'ObjectMapper'
 pod 'Kingfisher'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+pod 'lottie-ios'
   # Pods for flower
 
 end

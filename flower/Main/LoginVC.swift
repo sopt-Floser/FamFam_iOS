@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LoginVC: UIViewController , UITextFieldDelegate{
     @IBOutlet var idTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
@@ -33,6 +34,8 @@ class LoginVC: UIViewController , UITextFieldDelegate{
                 print("로그인 성공")
                 guard let token = data.data?.token else { return }
                 UserDefaults.standard.set(token, forKey: "token")
+                
+                //FirebaseDataService.instance.groupRef
                 self.moveToTaps()
             case 400:
                 print("로그인 실패")

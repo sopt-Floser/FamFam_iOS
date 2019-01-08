@@ -26,9 +26,6 @@
 		4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */; };
 		4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */; };
 		6EC10008E751CAC4BF2FA460 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30EA048945D7118F501EB01 /* Pods_flower.framework */; };
-		9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */; };
-		9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */; };
-		9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */; };
 		9B0372F321E27C6F003F0C8E /* UploadPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */; };
 		9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0417C621E1E024000FB0D4 /* Sign_Model.swift */; };
 		9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */; };
@@ -81,6 +78,9 @@
 		9B42C00221E334BC00DFF0D9 /* Group_code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00121E334BC00DFF0D9 /* Group_code.swift */; };
 		9B42C00421E3381100DFF0D9 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00321E3381100DFF0D9 /* PhotoService.swift */; };
 		9B42C00621E3390800DFF0D9 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00521E3390800DFF0D9 /* Photo.swift */; };
+		9B42C00821E38DF000DFF0D9 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00721E38DF000DFF0D9 /* FirebaseDataService.swift */; };
+		9B42C00A21E38FAF00DFF0D9 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */; };
+		9B42C00C21E3972A00DFF0D9 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */; };
 		9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */; };
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
 		9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED321CDFD3B001BD091 /* Assets.xcassets */; };
@@ -123,9 +123,6 @@
 		4DF78BC521D8B5C8004D2D62 /* UIView+Bordered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bordered.swift"; sourceTree = "<group>"; };
 		4DF78BC721D8BA84004D2D62 /* JoinCellPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCellPhoneVC.swift; sourceTree = "<group>"; };
 		4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPersonalInfoVC.swift; sourceTree = "<group>"; };
-		9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatCell.swift; sourceTree = "<group>"; };
-		9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatCell.swift; sourceTree = "<group>"; };
-		9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherChatPlusCell.swift; sourceTree = "<group>"; };
 		9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostVC.swift; sourceTree = "<group>"; };
 		9B0417C621E1E024000FB0D4 /* Sign_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_Model.swift; sourceTree = "<group>"; };
 		9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneNumber.swift; sourceTree = "<group>"; };
@@ -178,6 +175,9 @@
 		9B42C00121E334BC00DFF0D9 /* Group_code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group_code.swift; sourceTree = "<group>"; };
 		9B42C00321E3381100DFF0D9 /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		9B42C00521E3390800DFF0D9 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9B42C00721E38DF000DFF0D9 /* FirebaseDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
+		9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		9B453EC921CDFD3A001BD091 /* flower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B453ED121CDFD3A001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -263,6 +263,7 @@
 				9BD13B1321DBB3BE00A3688F /* TodayData.swift */,
 				9B0592AB21DBC07400F390DA /* AnniversaryData.swift */,
 				4DC7111D21DCFA04001FACB6 /* PlusData.swift */,
+				9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,9 +421,8 @@
 			children = (
 				9B453EE621CE01EA001BD091 /* ChatBoard.storyboard */,
 				9B6A647321D34A34004A3F5C /* ChatVC.swift */,
-				9B01BAE121DF269D000F7CD9 /* MyChatCell.swift */,
-				9B01BAE321DF26B1000F7CD9 /* OtherChatCell.swift */,
-				9B01BAE521DF26BE000F7CD9 /* OtherChatPlusCell.swift */,
+				9B42C00721E38DF000DFF0D9 /* FirebaseDataService.swift */,
+				9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -616,6 +616,7 @@
 				"${BUILT_PRODUCTS_DIR}/PasswordTextField/PasswordTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -634,6 +635,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PasswordTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -676,6 +678,7 @@
 				4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */,
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
 				4DF78BC421D8B488004D2D62 /* JoinAgreementVC.swift in Sources */,
+				9B42C00821E38DF000DFF0D9 /* FirebaseDataService.swift in Sources */,
 				9B42C00221E334BC00DFF0D9 /* Group_code.swift in Sources */,
 				9B096B0721D465B300442A68 /* PostReplyCell.swift in Sources */,
 				4DC7112421DD086B001FACB6 /* PlusAccountSecurityVC.swift in Sources */,
@@ -705,6 +708,7 @@
 				9B41DB4C21DB531600FC6ED6 /* listAnniversaryCell.swift in Sources */,
 				9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */,
 				9B09D65621DE1F5E00AE1E6F /* UIViewController+Extension.swift in Sources */,
+				9B42C00C21E3972A00DFF0D9 /* ChatMessageCell.swift in Sources */,
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
 				9B0592AC21DBC07400F390DA /* AnniversaryData.swift in Sources */,
 				9B04F0C221E114BF00457181 /* Today_Contents.swift in Sources */,
@@ -719,6 +723,7 @@
 				9B04F0BE21E10EC500457181 /* GroupService.swift in Sources */,
 				9B42BFF821E2F5EE00DFF0D9 /* CalendarService.swift in Sources */,
 				9B04F0C421E1153300457181 /* Today_Content.swift in Sources */,
+				9B42C00A21E38FAF00DFF0D9 /* ChatModel.swift in Sources */,
 				9B09D65821DE1FFC00AE1E6F /* TodayService.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */,
 				4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */,
@@ -731,11 +736,9 @@
 				9B42BFFC21E31EAA00DFF0D9 /* AnniversaryService.swift in Sources */,
 				9B42BFFA21E31C3E00DFF0D9 /* HomeService.swift in Sources */,
 				9B2BCA0C21D5F53400FDF211 /* weekCalendarCell.swift in Sources */,
-				9B01BAE421DF26B1000F7CD9 /* OtherChatCell.swift in Sources */,
 				9B41DB5021DB544B00FC6ED6 /* AnniversaryVC.swift in Sources */,
 				9B09D64921DE105400AE1E6F /* SignService.swift in Sources */,
 				9B41DB4A21DB530700FC6ED6 /* addAnniversaryCell.swift in Sources */,
-				9B01BAE221DF269D000F7CD9 /* MyChatCell.swift in Sources */,
 				9B41DB4E21DB532D00FC6ED6 /* marriageAnniversaryCell.swift in Sources */,
 				9B04F0CA21E119C100457181 /* Calendar_individual.swift in Sources */,
 				9B09D63821DDB4F100AE1E6F /* InviteCodeVC.swift in Sources */,
@@ -753,7 +756,6 @@
 				9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */,
 				9B09D64021DE0FA400AE1E6F /* NetworkResult.swift in Sources */,
 				4DF54A5821DB92A40081B9C7 /* JoinCreateEnterVC.swift in Sources */,
-				9B01BAE621DF26BE000F7CD9 /* OtherChatPlusCell.swift in Sources */,
 				9B09D64721DE104300AE1E6F /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

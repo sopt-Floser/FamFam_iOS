@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 struct CalendarService: APIManager, Requestable {
-    typealias NetworkData = ResponseArray<Calendar_Month>
+    typealias NetworkData = ResponseObject<Calendar_Month>
     static let shared = CalendarService()
     let calendarURL = url("/calendar")
     let header: HTTPHeaders = [
@@ -24,14 +24,13 @@ struct CalendarService: APIManager, Requestable {
     
     
     // 월별 일정 조회 api
-    func getCalendarMonthList(dateStr:String? = "" , completion: @escaping ([Calendar_Month]) -> Void){
+    func getCalendarMonthList(dateStr:String? = "" , completion: @escaping (NetworkData) -> Void){
         let queryURL = calendarURL + "/month/\(dateStr)"
         
         get(queryURL, body: nil, header: uploadHeaders){ (res) in
             switch res {
             case .success(let value):
-                guard let calendarMonthList = value.data else {return}
-                completion(calendarMonthList)
+                completion(value)
             case .error(let error):
                 print(error)
             }
@@ -40,14 +39,13 @@ struct CalendarService: APIManager, Requestable {
     
     
     // 일별 일정 조회 api
-    func getCalendarDayList(dateStr:String? = "", completion: @escaping ([Calendar_Month]) -> Void){
+    func getCalendarDayList(dateStr:String? = "", completion: @escaping (NetworkData) -> Void){
         let queryURL = calendarURL + "/oneday/\(dateStr)"
         
         get(queryURL, body: nil, header: uploadHeaders){ (res) in
             switch res {
             case .success(let value):
-                guard let calendarDayList = value.data else {return}
-                completion(calendarDayList)
+                completion(value)
             case .error(let error):
                 print(error)
             }
@@ -57,7 +55,7 @@ struct CalendarService: APIManager, Requestable {
     
    
     // 일정 검색 api
-    func getCalendarSearchList(content:String, completion: @escaping([Calendar_Month]) -> Void){
+    func getCalendarSearchList(content:String, completion: @escaping(NetworkData) -> Void){
         let queryURL = calendarURL + "/search"
         
         let body = [
@@ -66,8 +64,7 @@ struct CalendarService: APIManager, Requestable {
         get(queryURL, body: body, header: uploadHeaders){ (res) in
             switch res {
             case .success(let value):
-                guard let calendarSearchList = value.data else {return}
-                completion(calendarSearchList)
+                completion(value)
             case .error(let error):
                 print(error)
             }
