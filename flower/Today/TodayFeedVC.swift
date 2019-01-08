@@ -75,7 +75,10 @@ extension TodayFeedVC: UITableViewDataSource {
         
         cell.postName.text = String(post.content?.userIdx ?? 0)
         cell.postDate.text = post.content?.createDate
-        cell.postImage?.imageFromUrl(gsno(post.photos), defaultImgPath: "")
+        var imgURL : String! = ""
+        cell.postImage.image = UIImage(named: imgURL)
+        imgURL = post.photos![0].PhotoName
+        //cell.postImage?.imageFromUrl(gsno(post.photos[0].PhotoName), defaultImgPath: "")
         cell.postContent.text = post.content?.content
         cell.replyCount.text = String(post.content?.commentCount ?? 0)
  
@@ -170,8 +173,10 @@ extension TodayFeedVC: UITableViewDelegate {
         nextVC.postName = String(post.content?.userIdx ?? 0)
         nextVC.postDate = post.content?.createDate
         // 중간 (게시글)
-        nextVC.postImage?.imageFromUrl(gsno(post.content.photoName), defaultImgPath: "")
-        nextVC.postImagePageControl = post.postImagePagecontrol
+        nextVC.postImage = post.photos![0].PhotoName
+        //nextVC.postImage = "cakeImg"
+        //nextVC.postImage?.imageFromUrl(gsno(post.content.photoName), defaultImgPath: "")
+       // nextVC.postImagePageControl = post.postImagePagecontrol
         // 중간 (감정)
         
         
