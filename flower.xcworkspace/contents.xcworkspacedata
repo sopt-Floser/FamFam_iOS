@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kimjimin/SOPT/FamFam_iOS-master/flower/Main/introduceSubView.swift">
-   </FileRef>
-   <FileRef
       location = "group:flower.xcodeproj">
    </FileRef>
    <FileRef

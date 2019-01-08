@@ -36,18 +36,15 @@ class CalendarVC: UIViewController {
         let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
         dvc.delegate = self
         present(dvc, animated: true, completion: nil)
-//        if (dvc.isBeingDismissed == true){
-//            calendarView.reloadData(withanchor: selectDate, completionHandler: {
-//                let visibleDate = self.calendarView.visibleDates()
-//            })
-//        }
     }
+    
     @IBOutlet weak var searchbar: UISearchBar!
     
     /** 지역 변수 */
     let todayDate = Date()
     var eventsFromTheServer: [String:String] = [:]
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
+    var serverAllDate:[String] = []
 
     /** 날,월,일 변환기 */
     let formatter: DateFormatter = {
@@ -71,9 +68,29 @@ class CalendarVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("calendarview will appear")
-//        calendarView.reloadData(withanchor: switchDate, completionHandler: {
-//            let visibleDates = self.calendarView.visibleDates()
-//        })
+    
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        let bringDate = formatter.string(from: Date())
+        
+        CalendarService.shared.getCalendarMonthList(dateStr: bringDate){ (data) in
+            guard let value = data.status else {return}
+            switch value {
+            case 200 :
+                guard let familyList = data.data?.familys else {return}
+                guard let anniversaryList = data.data?.anniversarys else {return}
+                guard let individualList = data.data?.individuals else {return}
+               
+                print("일정 조회 성공")
+            case 500 :
+                print("서버 내부 에러")
+            case 600 :
+                print("데이터베이스 에러")
+            default :
+                print("서버통신 - 월별 일정 가져오기")
+            }
+        }
+        
     }
     
     override func viewDidLoad() {

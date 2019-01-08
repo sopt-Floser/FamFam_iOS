@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTA-43-IyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="448.42578710644682"/>
+            <point key="canvasLocation" x="220" y="466"/>
         </scene>
         <!--Home CollectionVC-->
         <scene sceneID="ZJ0-TX-OIz">
@@ -251,34 +251,83 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="allLoveCountLabel" destination="hHU-yH-R5n" id="BAm-0T-Bg3"/>
                                             <outlet property="backgroundImage" destination="5HT-4W-RGW" id="f2f-xr-Mtg"/>
-                                            <outlet property="didLoveCountLabel" destination="40e-uG-7HR" id="VjG-Gz-oWS"/>
-                                            <outlet property="newPicCountLabel" destination="TgC-nI-GOe" id="np7-BV-YMX"/>
+                                            <outlet property="newCommentLabel" destination="TgC-nI-GOe" id="66D-lb-3Xu"/>
+                                            <outlet property="newContentLabel" destination="hHU-yH-R5n" id="Zhw-X7-S72"/>
+                                            <outlet property="newFeelLabel" destination="40e-uG-7HR" id="0Ro-6N-cMN"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weekCalendarCell" id="9OO-Zd-Nx9" customClass="weekCalendarCell" customModule="flower" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="missionCell" id="9OO-Zd-Nx9" customClass="missionCell" customModule="flower" customModuleProvider="target">
                                         <rect key="frame" x="321" y="22.5" width="311" height="367"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="311" height="367"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="메모...?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvX-Uw-TnA">
-                                                    <rect key="frame" x="121" y="173" width="52" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 당신의 미션은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIJ-Ja-6ll">
+                                                    <rect key="frame" x="77.5" y="28" width="156" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="156" id="YpV-Gp-Vzt"/>
+                                                        <constraint firstAttribute="height" constant="28" id="hZa-op-472"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누구님께" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fp-X9-jLl">
+                                                    <rect key="frame" x="117" y="82" width="77" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="77" id="Hq3-cK-iPG"/>
+                                                        <constraint firstAttribute="height" constant="27" id="mb5-z8-MfF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHug" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-Ia-8jr">
+                                                    <rect key="frame" x="73" y="155" width="165" height="165"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="165" id="ivY-n2-qao"/>
+                                                        <constraint firstAttribute="width" constant="165" id="vfM-87-Y4Y"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="미션 내용" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV9-wj-Dl5">
+                                                    <rect key="frame" x="41" y="112" width="228" height="47"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="228" id="Gp5-Ps-ehF"/>
+                                                        <constraint firstAttribute="height" constant="47" id="YHb-jk-cas"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.90364583330000003" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="KsN-Ia-8jr" firstAttribute="top" secondItem="CV9-wj-Dl5" secondAttribute="bottom" constant="4" id="BLw-Mz-2t6"/>
+                                            <constraint firstItem="UIJ-Ja-6ll" firstAttribute="top" secondItem="9OO-Zd-Nx9" secondAttribute="top" constant="28" id="RJI-Xv-0fc"/>
+                                            <constraint firstItem="KsN-Ia-8jr" firstAttribute="width" secondItem="9OO-Zd-Nx9" secondAttribute="height" multiplier="165:367" id="Zuq-eX-OXK"/>
+                                            <constraint firstItem="CV9-wj-Dl5" firstAttribute="top" secondItem="UIJ-Ja-6ll" secondAttribute="bottom" constant="48" id="bKq-uC-Xhi"/>
+                                            <constraint firstItem="KsN-Ia-8jr" firstAttribute="centerX" secondItem="9OO-Zd-Nx9" secondAttribute="centerX" id="cOQ-CA-YOf"/>
+                                            <constraint firstItem="CV9-wj-Dl5" firstAttribute="centerX" secondItem="9OO-Zd-Nx9" secondAttribute="centerX" id="d5j-6d-EPq"/>
+                                            <constraint firstItem="0Fp-X9-jLl" firstAttribute="centerX" secondItem="9OO-Zd-Nx9" secondAttribute="centerX" id="dyN-yy-GK8"/>
+                                            <constraint firstItem="CV9-wj-Dl5" firstAttribute="width" secondItem="9OO-Zd-Nx9" secondAttribute="height" multiplier="228:367" id="jJK-rt-xZh"/>
+                                            <constraint firstItem="UIJ-Ja-6ll" firstAttribute="centerX" secondItem="9OO-Zd-Nx9" secondAttribute="centerX" id="s54-UB-V0G"/>
+                                            <constraint firstItem="UIJ-Ja-6ll" firstAttribute="width" secondItem="9OO-Zd-Nx9" secondAttribute="height" multiplier="156:367" id="u7P-m4-owG"/>
+                                            <constraint firstItem="0Fp-X9-jLl" firstAttribute="top" secondItem="UIJ-Ja-6ll" secondAttribute="bottom" constant="26" id="xo0-ue-yHF"/>
+                                            <constraint firstItem="0Fp-X9-jLl" firstAttribute="width" secondItem="9OO-Zd-Nx9" secondAttribute="height" multiplier="77:367" id="zom-hS-9Ur"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="missionImage" destination="KsN-Ia-8jr" id="Mno-F4-vof"/>
+                                            <outlet property="missionLabel" destination="CV9-wj-Dl5" id="iUl-zb-1WW"/>
+                                            <outlet property="missionPerson" destination="0Fp-X9-jLl" id="Cno-Ht-aDr"/>
+                                        </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="noticeCell" id="yfv-MH-eGB" customClass="NoticeCell" customModule="flower" customModuleProvider="target">
                                         <rect key="frame" x="642" y="22.5" width="311" height="367"/>
@@ -485,6 +534,7 @@
     <resources>
         <image name="family" width="612" height="408"/>
         <image name="iconEditBackground" width="48" height="48"/>
+        <image name="imgHug" width="165" height="164"/>
         <image name="img_code_bar" width="298" height="56"/>
         <image name="main_logo" width="138" height="48"/>
     </resources>

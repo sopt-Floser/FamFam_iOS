@@ -9,9 +9,9 @@
 import UIKit
 
 class StatisticCell: UICollectionViewCell {
-    @IBOutlet weak var allLoveCountLabel: UILabel!
-    @IBOutlet weak var didLoveCountLabel: UILabel!
-    @IBOutlet weak var newPicCountLabel: UILabel!
+    @IBOutlet weak var newContentLabel: UILabel!
+    @IBOutlet weak var newFeelLabel: UILabel!
+    @IBOutlet weak var newCommentLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     
     
@@ -23,7 +23,6 @@ class StatisticCell: UICollectionViewCell {
         layer.shadowRadius = 10
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 5, height: 10)
-        
         
         backgroundImage.layer.masksToBounds = true
         backgroundImage.layer.cornerRadius = 15

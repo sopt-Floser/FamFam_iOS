@@ -2,17 +2,17 @@
   "images" : [
     {
       "scale" : "1x",
-      "filename" : "btnHome.png",
+      "filename" : "imgHug.png",
       "idiom" : "universal"
     },
     {
       "scale" : "2x",
-      "filename" : "btnHome@2x.png",
+      "filename" : "imgHug@2x.png",
       "idiom" : "universal"
     },
     {
       "scale" : "3x",
-      "filename" : "btnHome@3x.png",
+      "filename" : "imgHug@3x.png",
       "idiom" : "universal"
     }
   ],

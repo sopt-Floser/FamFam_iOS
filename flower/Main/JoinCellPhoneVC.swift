@@ -110,10 +110,12 @@ extension JoinCellPhoneVC {
         // 인증코드 맞는지 확인
         let defaults = UserDefaults.standard
         let credential : PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "autoVID")!, verificationCode:  codeTF.text!)
+            
             Auth.auth().signInAndRetrieveData(with: credential){ (user, error) in
                 if error != nil {
                     print("error\(String(describing: error?.localizedDescription))")
                 } else {
+                    
                     print("phoneNum = \(self.phoneTF.text)")
                     self.bottomBtn.setTitle("완료", for: .normal)
                     self.timeLabel.isHidden = true
@@ -125,18 +127,6 @@ extension JoinCellPhoneVC {
                     self.bottomBtn.addTarget(self, action: #selector(self.clearAuthor), for: .touchUpInside)
                 }
         }
-//
-//        if (codeTF.text! == verificationID){
-//            bottomBtn.setTitle("완료", for: .normal)
-//            timeLabel.isHidden = true
-//            timer.isHidden = true
-//            reAskBtn.isHidden = true
-//            codeTF.isEnabled = false
-//            bottomBtn.addTarget(self, action: #selector(clearAuthor), for: .touchUpInside)
-//            print("same code")
-//
-//            sendPhoneNumber?.userPhoneNumber(PhoneNumber: phoneTF.text!)
-//        }
     }
     
     @objc func clearAuthor(){
