@@ -1425,11 +1425,10 @@
         <!--오늘의 하루-->
         <scene sceneID="3if-kW-FnI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="24Z-Mt-Yxj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="24Z-Mt-Yxj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="오늘의 하루" image="btnOnedayToday" id="SF8-6o-pUT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EEw-8g-Ile">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1461,20 +1460,20 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnCalendar" width="18" height="22"/>
-        <image name="btnChatting" width="24" height="23"/>
-        <image name="btnHome" width="24" height="23"/>
+        <image name="btnCalendar" width="18.5" height="22"/>
+        <image name="btnChatting" width="24" height="23.5"/>
+        <image name="btnHome" width="24" height="23.5"/>
         <image name="btnOnedayToday" width="23" height="21"/>
         <image name="icon_id" width="24" height="24"/>
-        <image name="icon_lock" width="18" height="21"/>
+        <image name="icon_lock" width="18.5" height="21"/>
         <image name="imgBlueCheck" width="16" height="11"/>
         <image name="imgCreat" width="320" height="197"/>
-        <image name="imgJoin" width="316" height="199"/>
+        <image name="imgJoin" width="316.5" height="199"/>
         <image name="imgLogoBlueSmall" width="99" height="19"/>
         <image name="imgNumberStage1" width="159" height="34"/>
         <image name="imgNumberStage2" width="159" height="34"/>
         <image name="imgNumberStage3" width="159" height="34"/>
-        <image name="logo_log_in" width="197" height="68"/>
-        <image name="main_logo" width="138" height="48"/>
+        <image name="logo_log_in" width="197" height="68.5"/>
+        <image name="main_logo" width="138.5" height="48.5"/>
     </resources>
 </document>
