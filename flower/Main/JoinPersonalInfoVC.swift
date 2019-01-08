@@ -153,6 +153,7 @@ class JoinPersonalInfoVC: UIViewController {
             switch response {
             case 200:
                 self.idCheck.isHidden = false
+                UserDefaults.standard.set(Token.self, forKey: "token")
                 print("success! 사용할 수 있는 아이디입니다.")
             case 204:
                 print("아이디 중복 에러")
