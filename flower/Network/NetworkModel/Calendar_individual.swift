@@ -11,9 +11,9 @@ import Foundation
 // 공유캘린더 - 개인 일정 양식
 struct Calendar_individual {
     var calendarIdx: Int?
-    var startDate: Date?
-    var endDate: Date?
-    var allDate: [Date]?
+    var startDate: String?
+    var endDate: String?
+    var allDate: [String]?
     var content: String?
     var returningTime: Int?
     var dinner: Int?

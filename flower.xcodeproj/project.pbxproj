@@ -83,6 +83,7 @@
 		9B42C00A21E38FAF00DFF0D9 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */; };
 		9B42C00C21E3972A00DFF0D9 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */; };
 		9B42C00E21E44B9600DFF0D9 /* CountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00D21E44B9600DFF0D9 /* CountModel.swift */; };
+		9B42C01021E4B39900DFF0D9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00F21E4B39900DFF0D9 /* UserService.swift */; };
 		9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */; };
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
 		9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED321CDFD3B001BD091 /* Assets.xcassets */; };
@@ -182,6 +183,7 @@
 		9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		9B42C00D21E44B9600DFF0D9 /* CountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountModel.swift; sourceTree = "<group>"; };
+		9B42C00F21E4B39900DFF0D9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		9B453EC921CDFD3A001BD091 /* flower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B453ED121CDFD3A001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				9B42BFFB21E31EAA00DFF0D9 /* AnniversaryService.swift */,
 				9B42BFFF21E32B6100DFF0D9 /* CommentService.swift */,
 				9B42C00321E3381100DFF0D9 /* PhotoService.swift */,
+				9B42C00F21E4B39900DFF0D9 /* UserService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				4DF78BC821D8BA84004D2D62 /* JoinCellPhoneVC.swift in Sources */,
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
 				4DC7112821DD0F51001FACB6 /* CustomNavigationBar.swift in Sources */,
+				9B42C01021E4B39900DFF0D9 /* UserService.swift in Sources */,
 				9B42C00021E32B6100DFF0D9 /* CommentService.swift in Sources */,
 				9B04F0C021E1138900457181 /* Today_Photo.swift in Sources */,
 				9B04F0CC21E11A1600457181 /* Calendar_family.swift in Sources */,
