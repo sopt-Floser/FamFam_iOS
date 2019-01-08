@@ -22,7 +22,7 @@ class TodayFeedCell: UITableViewCell {
     }
     
     // 상단 (프로필)
-    @IBOutlet var postProfileImage: UIImageView?
+    @IBOutlet var postProfileImage: UIImageView!
     func roundProfileImage(){
         postProfileImage?.clipsToBounds = true
         postProfileImage?.layer.cornerRadius = (postProfileImage?.frame.height)!/2
@@ -32,7 +32,7 @@ class TodayFeedCell: UITableViewCell {
     @IBOutlet var postDate: UILabel!
     
     // 중간 (게시글)
-    @IBOutlet var postImage: UIImageView?
+    @IBOutlet var postImage: UIImageView!
     func cropPostImage(){
         postImage?.layer.masksToBounds = true
         postImage?.clipsToBounds = true

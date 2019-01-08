@@ -12,7 +12,7 @@ import Foundation
 struct Today_Content {
     var contentIdx : Int?
     var content : String?
-    var createDate : Date?
+    var createDate : String?
     var commentCount: Int?
     var userIdx : Int?
     var groupIdx : Int?
