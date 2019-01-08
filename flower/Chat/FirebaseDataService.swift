@@ -39,6 +39,9 @@ class FirebaseDataService {
         userRef.child(uid).updateChildValues(userData)
     }
     
+    // 가입 절차 추가
+}
+    
 //    func signIn(phone withEmail:String, password:String, completion: @escaping() -> Void){
 //        Auth.auth().signIn(withEmail: withEmail, password: password, completion: { (user, error) in
 //            guard error == nil else {
@@ -48,4 +51,4 @@ class FirebaseDataService {
 //            completion()
 //        })
 //   }
-}
+

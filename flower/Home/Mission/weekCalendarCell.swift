@@ -8,8 +8,12 @@
 
 import UIKit
 
-class weekCalendarCell: UICollectionViewCell {
-
+class missionCell: UICollectionViewCell {
+    @IBOutlet weak var missionPerson: UILabel!
+    @IBOutlet weak var missionLabel: UILabel!
+    @IBOutlet weak var missionImage: UIImageView!
+    
+    
     /** 효과 씌우기 */
     override func layoutSubviews() {
         super.layoutSubviews()

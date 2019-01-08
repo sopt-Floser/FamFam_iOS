@@ -411,7 +411,7 @@
 				9B09D63621DDB4CD00AE1E6F /* InviteCode */,
 				9B096B1B21D4B7F200442A68 /* Family */,
 				9B096B1021D4B69600442A68 /* Statistic */,
-				9BEFFFC621D4CAB9007B2167 /* WeekCalendar */,
+				9BEFFFC621D4CAB9007B2167 /* Mission */,
 				9B096B1121D4B6BB00442A68 /* Notice */,
 				9B453EE021CDFEF9001BD091 /* HomeBoard.storyboard */,
 				9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */,
@@ -507,12 +507,12 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		9BEFFFC621D4CAB9007B2167 /* WeekCalendar */ = {
+		9BEFFFC621D4CAB9007B2167 /* Mission */ = {
 			isa = PBXGroup;
 			children = (
 				9B2BCA0B21D5F53400FDF211 /* weekCalendarCell.swift */,
 			);
-			path = WeekCalendar;
+			path = Mission;
 			sourceTree = "<group>";
 		};
 		D7CE9B0F3CDCFC9BCD1B12A5 /* Frameworks */ = {
