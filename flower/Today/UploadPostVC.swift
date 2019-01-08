@@ -12,7 +12,13 @@ class UploadPostVC: UIViewController {
     
     @IBOutlet var contentImage: UIImageView!
     @IBOutlet var contentTextView: UITextView!
+    @IBAction func backBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
+    @IBAction func completeBtn(_ sender: Any) {
+        completeWrite()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
