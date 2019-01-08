@@ -347,8 +347,8 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="highlightedColor" red="0.49019607843137253" green="0.6705882352941176" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-Rp-lyp">
-                                                            <rect key="frame" x="6.5" y="43" width="55" height="12"/>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-Rp-lyp">
+                                                            <rect key="frame" x="7.5" y="46" width="55" height="12"/>
                                                             <color key="backgroundColor" red="0.58039215686274503" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="12" id="BHB-oi-V4f"/>
@@ -1042,7 +1042,7 @@
                                 <rect key="frame" x="0.0" y="615" width="375" height="52"/>
                                 <color key="backgroundColor" red="0.45882352939999999" green="0.45098039220000002" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="pd0-HW-qdT"/>
+                                    <constraint firstAttribute="height" constant="52" id="jXf-RG-5jd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="저장">
@@ -1055,22 +1055,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="f6g-Qs-LG1" firstAttribute="bottom" secondItem="yMV-lE-02N" secondAttribute="bottom" id="31o-cy-ks5"/>
                             <constraint firstItem="oCO-3g-hxQ" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="height" multiplier="48:667" id="3d0-Ju-Hfs"/>
                             <constraint firstItem="P5Z-E1-kMm" firstAttribute="centerX" secondItem="f6g-Qs-LG1" secondAttribute="centerX" id="4dv-z7-ard"/>
                             <constraint firstItem="f6g-Qs-LG1" firstAttribute="bottom" secondItem="5tG-i7-0FX" secondAttribute="bottom" constant="50" id="B22-yb-ggB"/>
-                            <constraint firstItem="yMV-lE-02N" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="height" multiplier="375:667" id="FLo-as-3tW"/>
                             <constraint firstItem="5tG-i7-0FX" firstAttribute="centerX" secondItem="f6g-Qs-LG1" secondAttribute="centerX" id="I7g-pq-6TB"/>
                             <constraint firstItem="LUu-Lg-ttT" firstAttribute="top" secondItem="f6g-Qs-LG1" secondAttribute="top" constant="6" id="Ijt-jE-gWt"/>
                             <constraint firstItem="P5Z-E1-kMm" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="height" multiplier="375:667" id="OTa-Pr-L8O"/>
                             <constraint firstItem="P5Z-E1-kMm" firstAttribute="bottom" secondItem="f6g-Qs-LG1" secondAttribute="bottom" constant="2" id="OXG-mC-zov"/>
-                            <constraint firstItem="yMV-lE-02N" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="width" id="QnK-S9-vCg"/>
                             <constraint firstItem="LUu-Lg-ttT" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="height" multiplier="54:667" id="SfA-Rd-nNr"/>
-                            <constraint firstItem="yMV-lE-02N" firstAttribute="centerX" secondItem="f6g-Qs-LG1" secondAttribute="centerX" id="VBg-kb-gzb"/>
                             <constraint firstItem="oCO-3g-hxQ" firstAttribute="top" secondItem="f6g-Qs-LG1" secondAttribute="top" constant="-1" id="Z1e-Bl-Zb2"/>
                             <constraint firstItem="LUu-Lg-ttT" firstAttribute="centerX" secondItem="f6g-Qs-LG1" secondAttribute="centerX" id="gNa-Mp-65a"/>
                             <constraint firstItem="oCO-3g-hxQ" firstAttribute="leading" secondItem="f6g-Qs-LG1" secondAttribute="leading" constant="19" id="irc-8q-CWZ"/>
                             <constraint firstItem="5tG-i7-0FX" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="height" multiplier="375:667" id="kDi-Zz-3cd"/>
-                            <constraint firstItem="f6g-Qs-LG1" firstAttribute="bottom" secondItem="yMV-lE-02N" secondAttribute="bottom" id="o1f-QQ-Qu9"/>
+                            <constraint firstItem="yMV-lE-02N" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="width" id="qlS-bl-PYS"/>
+                            <constraint firstItem="yMV-lE-02N" firstAttribute="centerX" secondItem="f6g-Qs-LG1" secondAttribute="centerX" id="qxC-fO-eLE"/>
                             <constraint firstItem="P5Z-E1-kMm" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="width" id="x04-vm-vdq"/>
                             <constraint firstItem="5tG-i7-0FX" firstAttribute="width" secondItem="9cK-1E-Pkq" secondAttribute="width" id="xVD-2T-GaY"/>
                         </constraints>
@@ -1199,6 +1198,6 @@
         <image name="switchBtn" width="350" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dnQ-gU-RYv"/>
+        <segue reference="c55-w4-WXc"/>
     </inferredMetricsTieBreakers>
 </document>

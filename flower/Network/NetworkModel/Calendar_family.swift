@@ -11,9 +11,9 @@ import Foundation
 // 공유캘린더 - 가족 일정 양식
 struct Calendar_family {
     var calendarIdx: Int?
-    var startDate: Date?
-    var endDate: Date?
-    var allDate: [Date]?
+    var startDate: String?
+    var endDate: String?
+    var allDate: [String]?
     var content: String?
     var userIdx: Int?
 }

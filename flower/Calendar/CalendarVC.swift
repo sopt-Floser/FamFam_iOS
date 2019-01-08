@@ -73,13 +73,9 @@ class CalendarVC: UIViewController {
         
         CalendarService.shared.getCalendarMonthList(dateStr: bringDate){ (data) in
             guard let value = data.status else {return}
-            print("value = \(value)")
+            print("============ calendar value = \(value)===========")
             switch value {
             case 200 :
-                guard let familyList = data.data?.familys else {return}
-                guard let anniversaryList = data.data?.anniversarys else {return}
-                guard let individualList = data.data?.individuals else {return}
-                
                 print("일정 조회 성공")
             case 500 :
                 print("서버 내부 에러")

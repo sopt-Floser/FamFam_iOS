@@ -13,7 +13,7 @@ import ObjectMapper
 struct Calendar_anniversary : Mappable{
     var anniversaryIdx: Int?
     var content: String?
-    var date : Date?
+    var date : String?
     var anniversaryType: Int?
     var groupIdx: Int?
     
