@@ -251,7 +251,7 @@ extension HomeCollectionVC {
             guard let res = data.status else {return}
             switch res {
             case 200:
-                self.contentCountData = data.data?.count ?? 0
+                self.contentCountData = data.data?.count ?? -1
                 print("이번주 게시물 개수 조회 성공")
             case 404:
                 print("회원을 찾을 수 없습니다")
@@ -270,7 +270,7 @@ extension HomeCollectionVC {
             guard let res = data.status else {return}
             switch res {
             case 200:
-                self.commentCountData = data.data?.count ?? 0
+                self.commentCountData = data.data?.count ?? -1
                 print("이번주 댓글 개수 조회 성공")
             case 500:
                 print("서버 내부 에러")
@@ -287,7 +287,7 @@ extension HomeCollectionVC {
             guard let res = data.status else {return}
             switch res {
             case 200:
-                self.feelCountData = data.data?.count ?? 0
+                self.feelCountData = data.data?.count ?? -1
                 print("이번주 감정표현 개수 조회 성공")
             case 404:
                 print("회원을 찾을 수 없습니다")
