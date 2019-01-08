@@ -93,6 +93,7 @@ struct GroupService :APIManager, Requestable{
         get(queryURL, body: nil, header: headers){ res in
             switch res {
             case .success(let value):
+                print("그룹 초대 코드 조회 중 : \(value.status),\(value.data)")
                 completion(value)
             case .error(let error):
                 print(error)

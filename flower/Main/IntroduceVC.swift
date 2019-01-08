@@ -5,7 +5,6 @@
 //  Created by 김지민 on 27/12/2018.
 //  Copyright © 2018 성다연. All rights reserved.
 //
-
 import UIKit
 
 class IntroduceVC: UIViewController {
@@ -13,17 +12,17 @@ class IntroduceVC: UIViewController {
     @IBOutlet var introduceImage: UIImageView!
     @IBOutlet var pageControl: UIPageControl!
     
-
-    var images = ["todayPic2.png","plusPic.png","plusPic2","plusPic3"] //소개 이미지들
+    
+    var images = ["imgIntro1","imgIntro2","imgIntro3","imgIntro4"] //소개 이미지들
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pageControl.numberOfPages = images.count
         pageControl.currentPage = 0
-        //introduceImage.image = UIImage(named: images[0])
-    
-
+        introduceImage.image = UIImage(named: images[0])
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -47,16 +46,15 @@ class IntroduceVC: UIViewController {
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
