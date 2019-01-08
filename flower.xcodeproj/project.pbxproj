@@ -82,6 +82,7 @@
 		9B42C00821E38DF000DFF0D9 /* FirebaseDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00721E38DF000DFF0D9 /* FirebaseDataService.swift */; };
 		9B42C00A21E38FAF00DFF0D9 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */; };
 		9B42C00C21E3972A00DFF0D9 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */; };
+		9B42C00E21E44B9600DFF0D9 /* CountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B42C00D21E44B9600DFF0D9 /* CountModel.swift */; };
 		9B453ECD21CDFD3A001BD091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */; };
 		9B453ED221CDFD3A001BD091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED021CDFD3A001BD091 /* Main.storyboard */; };
 		9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B453ED321CDFD3B001BD091 /* Assets.xcassets */; };
@@ -180,6 +181,7 @@
 		9B42C00721E38DF000DFF0D9 /* FirebaseDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDataService.swift; sourceTree = "<group>"; };
 		9B42C00921E38FAF00DFF0D9 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		9B42C00B21E3972A00DFF0D9 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		9B42C00D21E44B9600DFF0D9 /* CountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountModel.swift; sourceTree = "<group>"; };
 		9B453EC921CDFD3A001BD091 /* flower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B453ECC21CDFD3A001BD091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B453ED121CDFD3A001BD091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				9B0417C621E1E024000FB0D4 /* Sign_Model.swift */,
 				9B42C00121E334BC00DFF0D9 /* Group_code.swift */,
 				9B42C00521E3390800DFF0D9 /* Photo.swift */,
+				9B42C00D21E44B9600DFF0D9 /* CountModel.swift */,
 			);
 			path = NetworkModel;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				9B0592AC21DBC07400F390DA /* AnniversaryData.swift in Sources */,
 				9B04F0C221E114BF00457181 /* Today_Contents.swift in Sources */,
 				9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */,
+				9B42C00E21E44B9600DFF0D9 /* CountModel.swift in Sources */,
 				4DC7111E21DCFA04001FACB6 /* PlusData.swift in Sources */,
 				4DF54A5A21DB92C10081B9C7 /* JoinEnterVC.swift in Sources */,
 				9B04F0D421E11C3A00457181 /* Today_Feel_Types.swift in Sources */,

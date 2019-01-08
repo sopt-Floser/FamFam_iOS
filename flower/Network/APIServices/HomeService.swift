@@ -9,6 +9,65 @@
 import Foundation
 import Alamofire
 
-struct HomeService {
-//    typealias NetworkData = ResponseArray<>
+struct HomeService : APIManager, Requestable {
+    typealias NetworkData = ResponseObject<CountModel>
+    static let shared = HomeService()
+    let homeURL = url("")
+    let header : HTTPHeaders = [
+        "Authorization": UserDefaults.standard.string(forKey: "token") ?? "no Token"
+    ]
+    
+    // 이번주 댓글 수 조회
+    func getCommentcount(completion: @escaping(NetworkData)->Void){
+        let query = homeURL + "/comments/count/week"
+        
+        get(query, body: nil, header: header){ res in
+            switch res {
+            case .success(let value):
+                completion(value)
+            case .error(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // 이번주 감정 수 조회
+    func getFeelCount(completion: @escaping(NetworkData)-> Void){
+        let query = homeURL + "/feels/count/week"
+        
+        get(query, body: nil, header: header){ res in
+            switch res {
+            case .success(let value):
+                completion(value)
+            case .error(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // 이번주 게시물 수 조회
+    func getContentCount(completion:@escaping(NetworkData) -> Void){
+        let query = homeURL + "/contents/count/week"
+        
+        get(query, body: nil, header: header){ res in
+            switch res {
+            case .success(let value):
+                completion(value)
+            case .error(let error):
+                print(error)
+            }
+        }
+    }
+    
+    // 미션 가져오기 (api 아직 안나옴)
+    func getMission(completion:@escaping(NetworkData) -> Void){
+        let query = homeURL
+        
+    }
+    
+    // 알림 가져오기 (api 아직 안나옴)
+    func getAlarm(completion:@escaping(NetworkData) -> Void){
+        let query = homeURL
+    }
+    
 }

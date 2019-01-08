@@ -14,6 +14,13 @@ class HomeCollectionVC: UIViewController {
     @IBOutlet weak var profileCollectionView: UICollectionView!
     
     var FamilyMember:[FamilyModel] = []
+    var feelCountData :Int = 0
+    var commentCountData : Int = 0
+    var contentCountData : Int = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +35,10 @@ class HomeCollectionVC: UIViewController {
         var family2 = FamilyModel(image: "cakeImg", name: "아빠")
         var family3 = FamilyModel(image: "sampleProfile", name: "이승수")
         FamilyMember = [family, family2, family3, family, family2]
+    }
+    
+    func reloading(){
+        mainCollectionView.reloadData()
     }
     
     func collectionViewDD(){
@@ -89,6 +100,7 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
             //layout.headerReferenceSize = CGSize(width: 0, height: 0)
             
             layout.scrollDirection = .horizontal
+            
             if FamilyMember.count > 5 {
                 layout.minimumLineSpacing = 15
                 layout.minimumInteritemSpacing = 15
@@ -96,8 +108,8 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
             else {
                 layout.minimumLineSpacing = 30
                 layout.minimumInteritemSpacing = 30
-
             }
+            
             collectionView.collectionViewLayout = layout
             
             return familyCellSetting(profileCollectionView,indexPath:indexPath)
@@ -108,12 +120,16 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
     /** 통계 cell 데이터 세팅 */
     func firstCellSetting(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "statisticCell", for: indexPath) as! StatisticCell
+        cell.newContentLabel.text = String(contentCountData)
+        cell.newFeelLabel.text = String(feelCountData)
+        cell.newCommentLabel.text = String(commentCountData)
+        
         return cell
     }
     
     /** 일주일 cell 데이터 세팅 */
     func secondCellSetting(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekCalendarCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "missionCell", for: indexPath)
         
         return cell
     }
@@ -142,8 +158,7 @@ extension HomeCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
             let size = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
             let point = CGPoint(x: size.width/2.0, y: size.height/2.0 )
             let centerIndex = collectionView.indexPathForItem(at: point) as! Int
-            print("homeCellPoint = \(point)")
-            print("centerIndex = \(centerIndex)")
+            
             if indexPath.item == centerIndex {
                 return CGSize(width: 320, height: view.frame.height+10)
             }
@@ -225,8 +240,76 @@ extension HomeCollectionVC : UIImagePickerControllerDelegate, UINavigationContro
         else {
             return
         }
-    
-//        back = newImg
         dismiss(animated: true, completion: nil)
     }
+}
+
+// 통계 셀 통신
+extension HomeCollectionVC {
+    func contentCount(){
+        HomeService.shared.getContentCount{ data in
+            guard let res = data.status else {return}
+            switch res {
+            case 200:
+                self.contentCountData = data.data?.count ?? 0
+                print("이번주 게시물 개수 조회 성공")
+            case 404:
+                print("회원을 찾을 수 없습니다")
+            case 500:
+                print("서버 내부 에러")
+            case 600:
+                print("데이터베이스 에러")
+            default :
+                print("게시물 개수 조회 시도")
+            }
+        }
+    }
+    
+    func commentCount(){
+        HomeService.shared.getCommentcount { data in
+            guard let res = data.status else {return}
+            switch res {
+            case 200:
+                self.commentCountData = data.data?.count ?? 0
+                print("이번주 댓글 개수 조회 성공")
+            case 500:
+                print("서버 내부 에러")
+            case 600:
+                print("데이터베이스 에러")
+            default :
+                print("댓글 개수 조회 시도")
+            }
+        }
+    }
+    
+    func feelCount() {
+        HomeService.shared.getFeelCount{ data in
+            guard let res = data.status else {return}
+            switch res {
+            case 200:
+                self.feelCountData = data.data?.count ?? 0
+                print("이번주 감정표현 개수 조회 성공")
+            case 404:
+                print("회원을 찾을 수 없습니다")
+            case 500:
+                print("서버 내부 에러")
+            case 600:
+                print("데이터베이스 에러")
+            default :
+                print("감정표현 개수 조회 시도")
+            }
+        }
+    }
+}
+
+// 미션 셀 통신
+extension HomeCollectionVC {
+    func getMission(){
+        
+    }
+}
+
+// 알림 셀 통신
+extension HomeCollectionVC {
+    
 }

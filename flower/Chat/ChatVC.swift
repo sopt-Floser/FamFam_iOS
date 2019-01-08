@@ -42,6 +42,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, U
         let message = messages[indexPath.item]
         cell.textLabel.text = message.message
         setupChatCell(cell: cell, message: message)
+        
         if message.message.characters.count > 0 {
             cell.containerViewWidthAnchor?.constant = measuredFrameHeightForEachMessage(message: message.message).width + 32
         }

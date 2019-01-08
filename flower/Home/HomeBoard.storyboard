@@ -251,13 +251,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="allLoveCountLabel" destination="hHU-yH-R5n" id="BAm-0T-Bg3"/>
                                             <outlet property="backgroundImage" destination="5HT-4W-RGW" id="f2f-xr-Mtg"/>
-                                            <outlet property="didLoveCountLabel" destination="40e-uG-7HR" id="VjG-Gz-oWS"/>
-                                            <outlet property="newPicCountLabel" destination="TgC-nI-GOe" id="np7-BV-YMX"/>
+                                            <outlet property="newCommentLabel" destination="TgC-nI-GOe" id="66D-lb-3Xu"/>
+                                            <outlet property="newContentLabel" destination="hHU-yH-R5n" id="Zhw-X7-S72"/>
+                                            <outlet property="newFeelLabel" destination="40e-uG-7HR" id="0Ro-6N-cMN"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weekCalendarCell" id="9OO-Zd-Nx9" customClass="missionCell" customModule="flower" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="missionCell" id="9OO-Zd-Nx9" customClass="missionCell" customModule="flower" customModuleProvider="target">
                                         <rect key="frame" x="321" y="22.5" width="311" height="367"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -265,7 +265,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 당신의 미션은" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIJ-Ja-6ll">
-                                                    <rect key="frame" x="77" y="38" width="156" height="28"/>
+                                                    <rect key="frame" x="77.5" y="28" width="156" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="156" id="YpV-Gp-Vzt"/>
                                                         <constraint firstAttribute="height" constant="28" id="hZa-op-472"/>
@@ -275,7 +275,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누구님께" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fp-X9-jLl">
-                                                    <rect key="frame" x="117" y="93" width="77" height="27"/>
+                                                    <rect key="frame" x="117" y="82" width="77" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="77" id="Hq3-cK-iPG"/>
                                                         <constraint firstAttribute="height" constant="27" id="mb5-z8-MfF"/>
@@ -285,7 +285,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHug" translatesAutoresizingMaskIntoConstraints="NO" id="KsN-Ia-8jr">
-                                                    <rect key="frame" x="73" y="171" width="165" height="165"/>
+                                                    <rect key="frame" x="73" y="155" width="165" height="165"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="165" id="ivY-n2-qao"/>
                                                         <constraint firstAttribute="width" constant="165" id="vfM-87-Y4Y"/>
