@@ -11,8 +11,7 @@ import Alamofire
 
 /** 오늘의 하루 */
 struct TodayService: APIManager, Requestable {
-    
-    typealias NetworkData = ResponseObject<Today_Contents> //ResponseArray
+    typealias NetworkData = ResponseArray<Today_Contents>    //typealias NetworkData = ResponseObject<Today_Contents> //ResponseArray
     static let shared = TodayService()
     let todayURL = url("/contents")
     let header: HTTPHeaders = [
@@ -48,14 +47,13 @@ struct TodayService: APIManager, Requestable {
     
     
     // 모든 컨텐츠 조회
-    func getAllContent(page_no : Int? = 0, page_size : Int? = 5, completion: @escaping ([Today_Contents])-> Void){
+    func getAllContent(page_no : Int? = 0, page_size : Int? = 5, completion: @escaping (NetworkData)-> Void){
         let queryURL = todayURL + "?page=\(page_no ?? 0)&size=\(page_size ?? 0)"
         
         get(queryURL, body: nil, header: uploadHeader){ res in
             switch res {
             case .success(let value):
-                guard let contentsList = value.data else {return}
-                completion([contentsList])
+                completion(value)
             case .error(let error):
                 print(error)
             }
@@ -63,23 +61,51 @@ struct TodayService: APIManager, Requestable {
     }
     
     // 해당 컨텐츠 조회
-    func getOneContent(contentIdx:Int? = 0, completion: @escaping(Today_Contents) -> Void){
-        let queryURL = todayURL + "/\(contentIdx)"
-        
-        get(queryURL, body: nil, header: uploadHeader){ res in
-            switch res {
-            case .success(let value):
-                guard let contents = value.data else {return}
-                completion(contents)
-            case .error(let error):
-                print(error)
-            }
-            
-        }
-    }
+//    func getOneContent(contentIdx:Int? = 0, completion: @escaping(Today_Contents) -> Void){
+//        let queryURL = todayURL + "/\(contentIdx)"
+//
+//        get(queryURL, body: nil, header: uploadHeader){ res in
+//            switch res {
+//            case .success(let value):
+//                guard let contents = value.data else {return}
+//                completion(contents)
+//            case .error(let error):
+//                print(error)
+//            }
+//
+//        }
+//    }
     
     // 게시글 작성
-    func writeContent(content:String? = "", photos:[Today_Photo]?, completion: @escaping(NetworkData) -> Void){
+    func writeContent(content:String, photos: [Today_Photo], completion: @escaping(NetworkData) -> Void){
+        
+//        Alamofire.upload(multipartFormData: { (multipart) in
+//            multipart.append(content.data(using: .utf8)!, withName: "contents")
+//            for i in 0..<photos.count {
+//                let rotatedImage = photos[i]
+//            multipartFormData.append(rotatedImage.jpegData(compressionQuality: 0.5)!, withName: "files",fileName: "rotatedImage.jpg", mimeType: "image/jpg")
+//            }, withName: "photo", fileName: "image.jpeg", mimeType: "image/jpeg")}, to: todayURL, headers: uploadDataHeader) { (result) in
+//
+//            //멀티파트로 성공적으로 인코딩 되었다면 success, 아니라면 failure 입니다.
+//            switch result {
+//            case .success(let upload, _, _):
+//
+//                // 성공 하였다면 아래의 과정으로 응답 리스폰스에 대한 처리를 합니다.
+//                // 여기부터는 request 함수와 동일합니다.
+//                upload.responseObject { (res: DataResponse<ResponseArray<Today_Contents>>) in
+//                    switch res.result {
+//                    case .success:
+//                        completion()
+//                    case .failure(let err):
+//                        print(err)
+//                    }
+//                }
+//
+//            case .failure(let err):
+//                print(err)
+//            }
+//        }
+        //
         let queryURL = todayURL
         
         let body = [

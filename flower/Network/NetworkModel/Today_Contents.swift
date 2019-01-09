@@ -11,6 +11,7 @@ import ObjectMapper
 
 // 오늘의 하루 - 게시글 양식
 struct Today_Contents : Mappable {
+    var userName : String?
     var photos : [Today_Photo]?
     var content : Today_Content?
    

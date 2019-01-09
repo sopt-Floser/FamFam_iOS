@@ -10,9 +10,11 @@ import Foundation
 
 // 오늘의 하루 - 게시글 - 사진 양식
 struct Today_Photo {
-    var photoIdx : Int?
+    
     var PhotoName : String?
-    var createDate: Date?
-    var contentIdx: Int?
-    var userIdx : Int?
+//    var photoIdx : Int?
+//    var PhotoName : String?
+//    var createDate: Date?
+//    var contentIdx: Int?
+//    var userIdx : Int?
 }

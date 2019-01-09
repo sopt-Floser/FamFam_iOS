@@ -13,18 +13,19 @@ import UIKit
 
 class TodayFeedVC: UIViewController {
     
-//    @IBOutlet var todayFeedTable: UITableView!
     @IBOutlet var todayFeedTable: UITableView!
+    
     
     
     var todayFeedList = [Today_Contents]()
     var cellHeight : CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.endEditing(true)
 //        getTodayFeedData() //모델에서 피드 데이터 받아오는 함수
         //cellForRowAt 에서 데이터 Set
+        
         
         todayFeedTable.delegate = self
         todayFeedTable.dataSource = self
@@ -38,19 +39,40 @@ class TodayFeedVC: UIViewController {
         if let index = todayFeedTable.indexPathForSelectedRow{
             todayFeedTable.deselectRow(at: index, animated: true)
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.hidesBottomBarWhenPushed = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.hidesBottomBarWhenPushed = true
-        TodayService.shared.getAllContent(page_no: 5, page_size: 5){[weak self] (data) in guard let `self` = self else {return}
-            self.todayFeedList = data
-            self.todayFeedTable.reloadData()
+        self.hidesBottomBarWhenPushed = false
+        
+        
+        
+        
+        TodayService.shared.getAllContent(page_no: 2, page_size: 5){ jimin in
+            guard let jimin2 = jimin.status else {return}
+            guard let jimin3 = jimin.data else {return}
+            switch jimin2{
+            case 200 :
+                self.todayFeedList = jimin3.
+                self.todayFeedTable.reloadData()
+                print ("성공")
+            case 204 :
+                print ("")
+            case 400 :
+                print ("초대코드 생성 실패")
+            case 500 :
+                print ("서버 내부 에러")
+            case 600 :
+                print ("DB 에러")
+            default :
+                print ("그룹 초대 코드 생성/조회")
+                
+            }
         }
     }
     
@@ -69,16 +91,23 @@ extension TodayFeedVC: UITableViewDataSource {
         
         //cell 객체를 선언합니다. reusable identifier를 제대로 설정해주는거 잊지마세요!
         let cell = todayFeedTable.dequeueReusableCell(withIdentifier: "TodayFeedCell") as! TodayFeedCell
+        
+        print("셀 객체")
         //각 row에 해당하는 cell의 데이터를 넣어주기위해 모델에서 post 데이터 하나를 선언합니다.
         let post = todayFeedList[indexPath.row]
         
         
-        cell.postName.text = String(post.content?.userIdx ?? 0)
+        cell.postName.text = post.userName
         cell.postDate.text = post.content?.createDate
-        var imgURL : String! = ""
-        cell.postImage.image = UIImage(named: imgURL)
-        imgURL = post.photos![0].PhotoName
-        //cell.postImage?.imageFromUrl(gsno(post.photos[0].PhotoName), defaultImgPath: "")
+   //     guard let photoCount = post.photos else {return}
+   //     cell.imageList = post.photos[i].PhotoName
+    
+//        cell.imageList.append(post.photos[0].PhotoName)
+//        var iimage = imageFromUrl(gsno(post.photos[0].PhotoName), defaultImgPath: "")
+//        
+//        
+//        cell.postImage?.imageFromUrl(gsno(post.photos![0].PhotoName), defaultImgPath: "")
+       
         cell.postContent.text = post.content?.content
         cell.replyCount.text = String(post.content?.commentCount ?? 0)
  
@@ -130,6 +159,7 @@ extension TodayFeedVC: UITableViewDataSource {
 //        //showReply
 
 //
+        print("셀이 떴다")
         return cell
     }
 
@@ -170,10 +200,10 @@ extension TodayFeedVC: UITableViewDelegate {
         
         
         //nextVC.postProfileImage = post.postProfileImage
-        nextVC.postName = String(post.content?.userIdx ?? 0)
+        nextVC.postName = post.userName
         nextVC.postDate = post.content?.createDate
         // 중간 (게시글)
-        nextVC.postImage = post.photos![0].PhotoName
+ //       nextVC.postImage = post.photos![0].PhotoName
         //nextVC.postImage = "cakeImg"
         //nextVC.postImage?.imageFromUrl(gsno(post.content.photoName), defaultImgPath: "")
        // nextVC.postImagePageControl = post.postImagePagecontrol
@@ -191,7 +221,7 @@ extension TodayFeedVC: UITableViewDelegate {
         // 하단 (댓글)
         
         nextVC.replyCount = post.content?.commentCount
-        
+        self.hidesBottomBarWhenPushed = true
 //        present(nextVC, animated: true, completion: nil)
         navigationController?.pushViewController(nextVC, animated: true)
     } //여기까지 보셨다면 잠깐 다시 위의 viewWillApear로!

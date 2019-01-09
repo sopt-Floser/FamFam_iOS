@@ -1,5 +1,5 @@
 //
-//  LaunchVC.swift
+//  ShowAllVC.swift
 //  flower
 //
 //  Created by 김지민 on 08/01/2019.
@@ -8,7 +8,11 @@
 
 import UIKit
 
-class LaunchVC: UIViewController {
+class ShowAllVC: UIViewController {
+    
+    @IBAction func backBtn(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

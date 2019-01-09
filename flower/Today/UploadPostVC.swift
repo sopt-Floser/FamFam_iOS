@@ -12,12 +12,13 @@ class UploadPostVC: UIViewController {
     
     @IBOutlet var contentImage: UIImageView!
     @IBOutlet var contentTextView: UITextView!
+    
     @IBAction func backBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func completeBtn(_ sender: Any) {
-        completeWrite()
+   //     completeWrite()
     }
     
     override func viewDidLoad() {
@@ -29,19 +30,19 @@ class UploadPostVC: UIViewController {
     // 인터페이스 빌더에서 네비게이션 바에 버튼이 추가가 안될 경우 (세그로 연결되어 있는 뷰)
     // 아래의 코드작성을 통해 버튼을 추가할 수 있습니다.
     
-    @objc func completeWrite() {
-        // 아래의 guard 문법은 guard 의 조건이 참 이라면 조건을 통과하고 그렇지 않다면 else로 넘어가 예외처리를 하게되는 문법입니다.
-        // 여기서는 제목과 내용의 text가 존재하지 않으면 통과하지 못하는 방식으로 사용되었습니다.
-        // guard let 구문을 항상 써왔으니 금방 이해하실겁니다!
-        guard contentTextView.text?.isEmpty != true else {return}
-        
-        // 작성된 api를 사용하여 게시글을 작성하고 만약 완료되었다면
-//        TodayService.shared.postBoard(content: gsno(contentTextView.text), photos: contentImage.image!) {
+//    @objc func completeWrite() {
+//        // 아래의 guard 문법은 guard 의 조건이 참 이라면 조건을 통과하고 그렇지 않다면 else로 넘어가 예외처리를 하게되는 문법입니다.
+//        // 여기서는 제목과 내용의 text가 존재하지 않으면 통과하지 못하는 방식으로 사용되었습니다.
+//        // guard let 구문을 항상 써왔으니 금방 이해하실겁니다!
+//        guard contentTextView.text?.isEmpty != true else {return}
+//
+//        // 작성된 api를 사용하여 게시글을 작성하고 만약 완료되었다면
+//        TodayService.shared.writeContent(content: gsno(contentTextView.text), photos: [contentImage.image!]) {
 //            self.simpleAlert("글 작성", "게시글이 작성되었습니다.", completion: { (action) in
 //                self.navigationController?.popViewController(animated: true)
 //            })
 //        }
-    }
+//    }
     
     // 텍스트필드나 텍스트 뷰의 edit 모드를 해제하기 위한, 즉, 키보드를 내리기 위한 탭 제스처와
     // 이미지 뷰를 탭하면 이미지를 추가할 수 있는 탭 제스처 설정
