@@ -22,7 +22,6 @@ class AnniversaryVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        
         anniversaryTableView.delegate = self
         anniversaryTableView.dataSource = self
         

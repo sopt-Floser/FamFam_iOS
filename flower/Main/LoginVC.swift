@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import Firebase
 
 class LoginVC: UIViewController , UITextFieldDelegate{
     @IBOutlet var idTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBAction func backBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +37,15 @@ class LoginVC: UIViewController , UITextFieldDelegate{
                 print("로그인 성공")
                 guard let token = data.data?.token else { return }
                 UserDefaults.standard.set(token, forKey: "token")
-                
-                //FirebaseDataService.instance.groupRef
+               
+//                Auth.auth().sign
+//                Auth.auth().signIn(withCustomToken: UserDefaults.standard.data(forKey: "token"), completion: {(user, error) in
+//                    guard error == nil else {
+//                        print("Error Occured durign sign in")
+//                        return
+//                    } completion()
+//                })
+               
                 self.moveToTaps()
             case 400:
                 print("로그인 실패")

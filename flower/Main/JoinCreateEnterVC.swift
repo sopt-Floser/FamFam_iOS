@@ -10,24 +10,41 @@ import UIKit
 
 class JoinCreateEnterVC: UIViewController {
 
+    @IBOutlet weak var createBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createBtn.addTarget(self, action: #selector(createGroupSelector), for: .touchUpInside)
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func createGroupSelector(){
+        createGroup()
     }
-    */
     
-    @IBAction func CreateFamily(_ sender: Any) {
+    func createGroup(){
+        GroupService.shared.createGroup{ res in
+            switch res.status {
+            case 201 :
+                print("그룹 생성 성공~")
+                self.moveViews()
+            case 204:
+                print("이미 가입된 그룹이 있습니다.")
+            case 400 :
+                print("회원을 찾을 수 없습니다")
+            case 500:
+                print("사버 내부 에러")
+            case 600 :
+                print("DB 에러")
+            default:
+                print("그룹 생성 시도 중")
+            }
+        }
+    }
+    
+    func moveViews(){
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
         appDelegate.window?.rootViewController = initialViewController

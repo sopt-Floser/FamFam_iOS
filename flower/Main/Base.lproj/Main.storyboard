@@ -154,6 +154,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVh-gx-J5S">
+                                <rect key="frame" x="15" y="29" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="2KF-V5-Br5"/>
+                                    <constraint firstAttribute="height" constant="45" id="T58-Hv-1Rn"/>
+                                </constraints>
+                                <state key="normal" image="btnBackLogin"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="iRd-7A-wVp" eventType="touchUpInside" id="7xU-cU-bMk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -168,10 +179,13 @@
                             <constraint firstItem="15w-Yy-n3q" firstAttribute="width" secondItem="mYa-hi-sax" secondAttribute="height" multiplier="1:667" id="Vff-cJ-G4y"/>
                             <constraint firstItem="Cjn-JN-oWY" firstAttribute="centerX" secondItem="gZd-Jh-eRq" secondAttribute="centerX" id="W8f-IY-CdK"/>
                             <constraint firstItem="WgB-Ak-h2p" firstAttribute="centerX" secondItem="gZd-Jh-eRq" secondAttribute="centerX" id="Y6I-ht-2pv"/>
+                            <constraint firstItem="SVh-gx-J5S" firstAttribute="width" secondItem="mYa-hi-sax" secondAttribute="height" multiplier="45:667" id="dUp-Xl-6nt"/>
+                            <constraint firstItem="SVh-gx-J5S" firstAttribute="leading" secondItem="gZd-Jh-eRq" secondAttribute="leading" constant="15" id="ds0-uv-y5S"/>
                             <constraint firstItem="E9Q-NI-K88" firstAttribute="width" secondItem="mYa-hi-sax" secondAttribute="height" multiplier="122:667" id="h5d-rz-g3p"/>
                             <constraint firstItem="sEW-MU-uag" firstAttribute="width" secondItem="mYa-hi-sax" secondAttribute="height" multiplier="260:667" id="ljL-Td-Hxs"/>
                             <constraint firstItem="oUA-Qt-gmq" firstAttribute="top" secondItem="sEW-MU-uag" secondAttribute="bottom" constant="7" id="pXW-pD-ubW"/>
                             <constraint firstItem="sEW-MU-uag" firstAttribute="centerX" secondItem="gZd-Jh-eRq" secondAttribute="centerX" id="q78-AP-qHZ"/>
+                            <constraint firstItem="SVh-gx-J5S" firstAttribute="top" secondItem="gZd-Jh-eRq" secondAttribute="top" constant="9" id="qKc-Ez-fxE"/>
                             <constraint firstItem="4Oq-PG-AZu" firstAttribute="top" secondItem="WgB-Ak-h2p" secondAttribute="bottom" constant="12" id="rWz-u1-wXD"/>
                             <constraint firstItem="sEW-MU-uag" firstAttribute="top" secondItem="Cjn-JN-oWY" secondAttribute="bottom" constant="83" id="u01-26-vLa"/>
                             <constraint firstItem="E9Q-NI-K88" firstAttribute="top" secondItem="WgB-Ak-h2p" secondAttribute="bottom" constant="12" id="wMy-2l-MZv"/>
@@ -1023,9 +1037,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytz-AD-dqg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <color key="backgroundColor" red="0.62745098039215685" green="0.81568627450980391" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="CreateFamily:" destination="e5D-n9-hNN" eventType="touchUpInside" id="PWD-Ai-Q3t"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCreat" translatesAutoresizingMaskIntoConstraints="NO" id="UK2-D1-6U0">
                                 <rect key="frame" x="27.5" y="136.5" width="320" height="197"/>
@@ -1080,6 +1091,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XIq-OZ-wbz"/>
                     </view>
+                    <connections>
+                        <outlet property="createBtn" destination="ytz-AD-dqg" id="507-pk-FPv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaQ-wk-Vzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1473,20 +1487,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="btnCalendar" width="18.5" height="22"/>
-        <image name="btnChatting" width="24" height="23.5"/>
-        <image name="btnHome" width="24" height="23.5"/>
+        <image name="btnBackLogin" width="48" height="48"/>
+        <image name="btnCalendar" width="18" height="22"/>
+        <image name="btnChatting" width="24" height="23"/>
+        <image name="btnHome" width="24" height="23"/>
         <image name="btnOnedayToday" width="23" height="21"/>
         <image name="icon_id" width="24" height="24"/>
-        <image name="icon_lock" width="18.5" height="21"/>
+        <image name="icon_lock" width="18" height="21"/>
         <image name="imgBlueCheck" width="16" height="11"/>
         <image name="imgCreat" width="320" height="197"/>
-        <image name="imgJoin" width="316.5" height="199"/>
+        <image name="imgJoin" width="316" height="199"/>
         <image name="imgLogoBlueSmall" width="99" height="19"/>
         <image name="imgNumberStage1" width="159" height="34"/>
         <image name="imgNumberStage2" width="159" height="34"/>
         <image name="imgNumberStage3" width="159" height="34"/>
-        <image name="logo_log_in" width="197" height="68.5"/>
-        <image name="main_logo" width="138.5" height="48.5"/>
+        <image name="logo_log_in" width="197" height="68"/>
+        <image name="main_logo" width="138" height="48"/>
     </resources>
 </document>

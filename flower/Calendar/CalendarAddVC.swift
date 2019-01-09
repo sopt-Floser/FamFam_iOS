@@ -98,14 +98,12 @@ class CalendarAddVC: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.3, animations: {
                 self.perseonView.isHidden = true
                 self.familyView.isHidden = false
-                self.familycheckData()
             })
         }
         else {
             UIView.animate(withDuration: 0.3, animations: {
                 self.perseonView.isHidden = false
                 self.familyView.isHidden = true
-                self.personCheckData()
             })
         }
     }
@@ -236,6 +234,7 @@ extension CalendarAddVC {
         if !(personTitleTF.text?.isEmpty == true || personEatBsegmentSelectedNum == nil || personBackBsegmentSelectedNum == nil){
             print("person all data set")
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "#366CE2")
+            perseonView.reloadInputViews()
         }
         else {
             saveBtnOutlet.isUserInteractionEnabled = false
@@ -246,13 +245,16 @@ extension CalendarAddVC {
     @objc func familycontrolValueChanged(_ sender: BetterSegmentedControl){
         print("b = \(sender.index)")
         familyBsegmentSeletedNum = Int(sender.index)
+        personCheckData()
     }
     @objc func personEatSegmentControl(_ sender: BetterSegmentedControl){
         personEatBsegmentSelectedNum = Int(sender.index)
         print("personEat Se = \(personEatBsegmentSelectedNum)")
+        familycheckData()
     }
     @objc func personBackSegmentControl(_ sender: BetterSegmentedControl){
         personBackBsegmentSelectedNum = Int(sender.index)
         print("personBack Se = \(personBackBsegmentSelectedNum)")
+        familycheckData()
     }
 }

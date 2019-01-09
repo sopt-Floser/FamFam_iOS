@@ -11,7 +11,7 @@ import Foundation
 // 말풍선 하나
 struct ChatMessage {
     var fromUserId:String
-    var message :String
+    var text:String
     var timestamp: NSNumber
 }
 
