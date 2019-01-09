@@ -332,6 +332,16 @@ extension CalendarVC: PopupPickerSelectDelegate {
     }
 }
 
+extension CalendarVC {
+    // 날짜 사이의 날짜 가져오기
+    func daysBetweenDates(startDate: Date, endDate: Date) -> Int
+    {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+        return components.day!
+    }
+}
+
 // 임시 서버 정보 받아오기
 //extension CalendarVC {
 //    func getServerEvents() -> [Date]{
