@@ -11,12 +11,16 @@ import Firebase
 
 class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var chatView: UIView!
+    @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var item: UINavigationItem!
     @IBOutlet weak var chatCollectionView: UICollectionView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var chatTF:UITextField!
     
     var messages : [ChatMessage] = [ChatMessage(fromUserId: "", message: "", timestamp: 0)]
+    var keyboardShown:Bool = false
+    var originY:CGFloat? // 오브젝트의 기본 위치
     
     var groupKey: String? {
         didSet {
@@ -124,13 +128,78 @@ class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, U
             })
         }
     }
+    
+    @objc func plusButton(){
+        
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        registerForKeyboardNotifications()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         chatTF.delegate = self
+        chatTF.resignFirstResponder()
+        //chatTF.addTarget(self, action: #selector(keyboardShown), for: .touchUpInside)
+        plusBtn.addTarget(self, action: #selector(plusButton), for: .touchUpInside)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterForKeyboardNotifications()
+    }
+
+}
+
+extension ChatVC {
+    
+    func registerForKeyboardNotifications() {
+        // 옵저버 등록
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func unregisterForKeyboardNotifications() {
+        // 옵저버 등록 해제
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(note: NSNotification) {
+        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size {
+            if keyboardSize.height == 0.0 || keyboardShown == true {
+                return
+            }
+            
+            print("keyboard will show")
+            UIView.animate(withDuration: 0.33, animations: { () -> Void in
+                
+//                if self.originY == nil { self.originY = self.chatView.frame.origin.y }
+//                self.chatView.frame.origin.y = self.originY! - keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height
+            })
+            keyboardShown = true
+        }
+    }
+    @objc func keyboardWillHide(note: NSNotification) {
+        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                if keyboardShown == false {
+                    return
+                }
+            
+                print("keyboard will hide")
+                UIView.animate(withDuration: 0.33, animations: { () -> Void in
+//                    guard let originY = self.originY else { return }
+//                    self.chatView.frame.origin.y = originY
+                    self.view.frame.origin.y = 0
+                })
+                keyboardShown = false
+            }
+        }
 }

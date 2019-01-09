@@ -28,9 +28,7 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var year : UILabel!
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var switchBtn:UIButton!
-    @IBAction func backButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
+    
     @IBAction func switchButton(_ sender: UIButton) {
         let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
         dvc.delegate = self
@@ -41,7 +39,7 @@ class CalendarVC: UIViewController {
     
     /** 지역 변수 */
     let todayDate = Date()
-    var eventsFromTheServer: [String:String] = [:]
+    var eventsFromTheServer: [String] = []
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
     var serverAllDate:Calendar_Month?
     
@@ -76,6 +74,8 @@ class CalendarVC: UIViewController {
             print("============ calendar value = \(value)===========")
             switch value {
             case 200 :
+                guard let calendar = data.data else { return }
+                self.serverAllDate = calendar
                 print("일정 조회 성공")
             case 500 :
                 print("서버 내부 에러")
@@ -99,11 +99,15 @@ class CalendarVC: UIViewController {
         /** 서버 정보 가져오기 */
         // \서버에서 Date 형식의 날짜 받아올 시 띄울 예정
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
+            guard let serverDates = self.serverAllDate else {return}
+            let familydate = self.serverAllDate
+            
+//            var list:[String] = familydate?.familys.map({ (dates:[String]) -> [String] in
+//                return dates
+//            })
+            
             for (date) in CalendarDatabase.CalendarDateArray{
-                let stringDate = date
-                self.eventsFromTheServer[stringDate] = ""
-                
-                //CalendarDatabase.CalendarMemoArray.contains{ $0.key == formatter.string(from: )}
+                self.eventsFromTheServer.append(date)
             }
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
@@ -172,9 +176,33 @@ class CalendarVC: UIViewController {
     
     /** 서버에서 받아오는 정보 달력에 보여주기 (할일) */
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
-        var eventCount = eventsFromTheServer
+        var eventCount = 0
+        //eventsFromTheServer.map(formatter.string(from: cellState.date))
+        if (eventsFromTheServer.contains(formatter.string(from: cellState.date))){
+            eventCount += 1
+        }
+       
         
-        cell.eventLabel.isHidden = !eventsFromTheServer.contains { $0.key == formatter.string(from: cellState.date)}
+        
+        switch eventCount {
+        case 1:
+            cell.eventLabel.isHidden = false
+            cell.eventLabel2.isHidden = true
+            cell.eventLabel3.isHidden = true
+        case 2:
+            cell.eventLabel.isHidden = false
+            cell.eventLabel2.isHidden = false
+            cell.eventLabel3.isHidden = true
+        case 3:
+            cell.eventLabel.isHidden = false
+            cell.eventLabel2.isHidden = false
+            cell.eventLabel3.isHidden = false
+        default:
+            cell.eventLabel.isHidden = true
+            cell.eventLabel2.isHidden = true
+            cell.eventLabel3.isHidden = true
+        }
+        
         
     }
 }

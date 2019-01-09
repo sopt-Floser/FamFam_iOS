@@ -13,6 +13,9 @@ class LoginVC: UIViewController , UITextFieldDelegate{
     @IBOutlet var idTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBAction func backBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,6 @@ class LoginVC: UIViewController , UITextFieldDelegate{
                 print("로그인 성공")
                 guard let token = data.data?.token else { return }
                 UserDefaults.standard.set(token, forKey: "token")
-                
                 //FirebaseDataService.instance.groupRef
                 self.moveToTaps()
             case 400:
