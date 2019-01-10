@@ -11,6 +11,8 @@ import UIKit
 class JoinCreateEnterVC: UIViewController {
 
     @IBOutlet weak var createBtn: UIButton!
+    @IBOutlet weak var joinBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
