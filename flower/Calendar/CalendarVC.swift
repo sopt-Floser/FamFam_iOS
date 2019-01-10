@@ -15,11 +15,6 @@ var filter:[CalendarModel] = [] // 선택한 날짜의 할일을 보관하는 �
 var selectDate = Date()
 var searchedData:[CalendarModel] = [] // 검색어에 따른 목록
 
-protocol IAPDelegate {
-    func purchaseSuccessful()
-    func purchaseCancelled()
-    func purchaseFailed()
-}
 
 /** calendar 다루는 VC */
 class CalendarVC: UIViewController {
@@ -177,7 +172,7 @@ class CalendarVC: UIViewController {
     /** 서버에서 받아오는 정보 달력에 보여주기 (할일) */
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
         var eventCount = 0
-        //eventsFromTheServer.map(formatter.string(from: cellState.date))
+//        eventsFromTheServer.map(formatter.string(from: cellState.date))
         if (eventsFromTheServer.contains(formatter.string(from: cellState.date))){
             eventCount += 1
         }
@@ -342,56 +337,6 @@ extension CalendarVC {
     }
 }
 
-// 임시 서버 정보 받아오기
-//extension CalendarVC {
-//    func getServerEvents() -> [Date]{
-//        formatter.dateFormat = "yyyy MM dd"
-//        var rValue = [Date]()
-//        let count = dateList.count
-//
-//        for i in dateList {
-//            rValue.append(formatter.date(from: dateList[i]) ?? Date())
-//        }
-//
-//
-//    }
-//}
 
-/** 클릭 시 뛰어오르는 이벤트 */
-extension UIView {
-    func bounce(){
-        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        UIView.animate(
-            withDuration: 0.5,
-            delay: 0, usingSpringWithDamping: 0.3,
-            initialSpringVelocity: 0.1,
-            options: UIView.AnimationOptions.beginFromCurrentState,
-            animations: {
-            self.transform = CGAffineTransform(scaleX: 1, y: 1)
-        })
-    }
-}
-
-
-/** 색 변환기 */
-extension UIColor{
-    convenience init(hex: String){
-        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        var rgbValue:UInt32 = 0
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        Scanner(string:cString).scanHexInt32(&rgbValue)
-        
-        self.init(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
-    
-}
 
 

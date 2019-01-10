@@ -32,10 +32,8 @@ struct LoginService: APIManager, Requestable {
             switch res {
             case .success(let value):
                 completion(value)
-                print("login success")
             case .error(let value):
                 completion(value)
-                print("login failed")
             }
         }
     }

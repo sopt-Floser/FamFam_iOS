@@ -12,8 +12,8 @@ import Alamofire
 /** 오늘의 하루 */
 struct TodayService: APIManager, Requestable {
     //typealias NetworkData = ResponseArray<Today_Contents>
-    typealias NetworkData = ResponseObject<TodayFeed>
     
+    typealias NetworkData = ResponseObject<Today_Contents> //ResponseArray
     static let shared = TodayService()
     let todayURL = url("/contents")
     let header: HTTPHeaders = [
@@ -49,13 +49,14 @@ struct TodayService: APIManager, Requestable {
     
     
     // 모든 컨텐츠 조회
-    func getAllContent(page_no : Int? = 0, page_size : Int? = 5, completion: @escaping (NetworkData)-> Void){
+    func getAllContent(page_no : Int? = 0, page_size : Int? = 5, completion: @escaping ([Today_Contents])-> Void){
         let queryURL = todayURL + "?page=\(page_no ?? 0)&size=\(page_size ?? 0)"
         
         get(queryURL, body: nil, header: uploadHeader){ res in
             switch res {
             case .success(let value):
-                completion(value)
+                guard let contentsList = value.data else {return}
+                completion([contentsList])
             case .error(let error):
                 print(error)
             }
@@ -63,6 +64,20 @@ struct TodayService: APIManager, Requestable {
     }
     
     // 해당 컨텐츠 조회
+    func getOneContent(contentIdx:Int? = 0, completion: @escaping(NetworkData) -> Void){
+        let queryURL = todayURL + "/\(contentIdx)"
+        
+        get(queryURL, body: nil, header: uploadHeader){ res in
+            switch res {
+            case .success(let value):
+                guard let contents = value.data else {return}
+                completion(value)
+            case .error(let error):
+                print(error)
+            }
+            
+        }
+    }
     //    func getOneContent(contentIdx:Int? = 0, completion: @escaping(Today_Contents) -> Void){
     //        let queryURL = todayURL + "/\(contentIdx)"
     //

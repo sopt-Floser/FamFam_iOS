@@ -24,7 +24,6 @@ class JoinCellPhoneVC: UIViewController {
     var phoneNumber:String? // 프로토콜 안먹혀서 임시로 전역변수로 씀
     var time: Timer?
     var totalTime = 60
-    var verificationID : String?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,20 +48,32 @@ extension JoinCellPhoneVC {
     func test(){
         // 전화번호 인증코드 보내기
         let defaults = UserDefaults.standard
+        let testVerificationCode : String = String(UInt32(arc4random_uniform(1000000)))
         
+        print("test Num = \(testVerificationCode)")
         Auth.auth().settings?.isAppVerificationDisabledForTesting = true
-        PhoneAuthProvider.provider().verifyPhoneNumber(self.phoneTF.text!, uiDelegate: nil ){ (verificationID, error) in
-            if error != nil {
-                print("error\(String(describing: error?.localizedDescription))")
-            } else {
-                let defaults = UserDefaults.standard
-                defaults.set(verificationID, forKey: "autoVID")
-            }
-            print("phoneNumber = \(self.phoneTF.text!)")
-            print("verificationID = \(verificationID)")
-        }
         
-        //Auth.auth().languageCode = "kr"
+        PhoneAuthProvider.provider().verifyPhoneNumber(self.phoneTF.text!, uiDelegate:nil) {
+            verificationID, error in
+            if (error != nil) {
+                // Handles error
+                
+                ToastView.shared.short(self.view, txt_msg: "인증번호를 요청했습니다.")
+                return
+            }
+            guard let verificationID = verificationID else { return }
+             // TODO: get SMS verification code from user.
+            if let verificationCode = self.codeTF.text {
+                let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+                }
+            } else {
+                ToastView.shared.short(self.view, txt_msg: "인증번호가 다릅니다.")
+            }
+            
+        };
+        Auth.auth().languageCode = "kr"
     }
     
     private func startOtpTimer() {
@@ -98,38 +109,86 @@ extension JoinCellPhoneVC {
         if (phoneTF.text != ""){
             bottomBtn.setTitle("입력 완료", for: .normal)
             codeView.isHidden = false
-            test()
+            //test()
             startOtpTimer()
             timer.isHidden = false
             timeLabel.isHidden = false
             timeLabel.text = "분 내 미입력시 재인증하셔야합니다."
             reAskBtn.isHidden = false
-        }
-        
-        
-        // 인증코드 맞는지 확인
-        let defaults = UserDefaults.standard
-        let credential : PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "autoVID")!, verificationCode:  codeTF.text!)
-            
-            Auth.auth().signInAndRetrieveData(with: credential){ (user, error) in
-                if error != nil {
-                    print("error\(String(describing: error?.localizedDescription))")
-                } else {
-                    
-                    print("phoneNum = \(self.phoneTF.text)")
-                    self.bottomBtn.setTitle("완료", for: .normal)
-                    self.timeLabel.isHidden = true
-                    self.timer.isHidden = true
-                    self.reAskBtn.isHidden = true
-                    self.codeTF.isEnabled = false
-                    print("same code")
-                    self.sendPhoneNumber?.userPhoneNumber(PhoneNumber: self.phoneTF.text!)
-                    self.bottomBtn.addTarget(self, action: #selector(self.clearAuthor), for: .touchUpInside)
-                }
+            bottomBtn.addTarget(self, action: #selector(clearAuthor), for: .touchUpInside)
         }
     }
     
+    
+    
     @objc func clearAuthor(){
+        
+        // 인증코드 맞는지 확인
+        let defaults = UserDefaults.standard
+        
+        let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
+        
+        let credential : PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID ?? "no verificationID", verificationCode:  codeTF.text!)
+        
+        Auth.auth().signInAndRetrieveData(with: credential){ (user, error) in
+            if error != nil {
+                print("error\(String(describing: error?.localizedDescription))")
+            } else {
+                
+                print("phoneNum = \(self.phoneTF.text)")
+                self.bottomBtn.setTitle("완료", for: .normal)
+                self.timeLabel.isHidden = true
+                self.timer.isHidden = true
+                self.reAskBtn.isHidden = true
+                self.codeTF.isEnabled = false
+                print("same code, Signin complete")
+                self.sendPhoneNumber?.userPhoneNumber(PhoneNumber: self.phoneTF.text!)
+                self.bottomBtn.addTarget(self, action: #selector(self.moveView), for: .touchUpInside)
+            }
+        }
+    }
+    
+    func firebaseLogin(_ credential: AuthCredential) {
+            if let user = Auth.auth().currentUser {
+                // [START link_credential]
+                user.linkAndRetrieveData(with: credential) { (authResult, error) in
+                    // [START_EXCLUDE]
+                    
+                        if let error = error {
+                            print(error)
+                            return
+                        }
+//                        self.tableView.reloadData()
+                    
+                    // [END_EXCLUDE]
+                }
+                // [END link_credential]
+            } else {
+                // [START signin_credential]
+                Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                    // [START_EXCLUDE silent]
+                   
+                        // [END_EXCLUDE]
+                        if let error = error {
+                            // [START_EXCLUDE]
+                            print(error)
+                            // [END_EXCLUDE]
+                            return
+                        
+                        // User is signed in
+                        // [START_EXCLUDE]
+                        // Merge prevUser and currentUser accounts and data
+                        // ...
+                        // [END_EXCLUDE]
+                        // [START_EXCLUDE silent]
+                    }
+                    // [END_EXCLUDE]
+                }
+                // [END signin_credential]
+            }
+    }
+    
+    @objc func moveView(){
         let dvc = storyboard?.instantiateViewController(withIdentifier: "signupWriteStoryboard") as! JoinPersonalInfoVC
         present(dvc, animated: true)
     }

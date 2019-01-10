@@ -70,6 +70,7 @@ PODS:
   - Kingfisher (5.0.1)
   - leveldb-library (1.20)
   - lottie-ios (2.5.2)
+  - M13Checkbox (3.3.2)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -90,6 +91,7 @@ DEPENDENCIES:
   - JTAppleCalendar (~> 7.0)
   - Kingfisher
   - lottie-ios
+  - M13Checkbox
   - ObjectMapper
   - PasswordTextField
   - SwiftyJSON (~> 4.0)
@@ -114,6 +116,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - lottie-ios
+    - M13Checkbox
     - nanopb
     - ObjectMapper
     - PasswordTextField
@@ -138,11 +141,12 @@ SPEC CHECKSUMS:
   Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
+  M13Checkbox: d75dca81d61c9903e7f091f32b35a3254bc97dce
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   PasswordTextField: 2548de43f150fc90a014da47b0d97e31aada4b94
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: b02d091d127627777c73338d03a9376d8b70238c
+PODFILE CHECKSUM: 726de73cd7e856033101ca582cc179bf2ce27a72
 
 COCOAPODS: 1.5.3

@@ -11,6 +11,7 @@ import PasswordTextField
 import BetterSegmentedControl
 
 class JoinPersonalInfoVC: UIViewController {
+
     var selectSexTypeResult = 0 // 성별 구별
     var uPhoneNumber = ""
     var selectBirthDay = ""
@@ -154,7 +155,7 @@ class JoinPersonalInfoVC: UIViewController {
             case 200:
                 self.idCheck.isHidden = false
                 UserDefaults.standard.set(Token.self, forKey: "token")
-                print("success! 사용할 수 있는 아이디입니다.")
+                ToastView.shared.short(self.view, txt_msg: "사용할 수 있는 아이디입니다.")
             case 204:
                 print("아이디 중복 에러")
             case 500:
@@ -187,7 +188,7 @@ class JoinPersonalInfoVC: UIViewController {
                 let dvc = self.storyboard?.instantiateViewController(withIdentifier: "JoinOrCreateStoryBoard") as! JoinCreateEnterVC
                 self.present(dvc, animated: true, completion: nil)
             case 400:
-                print("아이디 중복")
+                ToastView.shared.short(self.view, txt_msg: "중복된 아이디가 존재합니다.")
             case 500:
                 print("서버 내부 에러")
             case 600:
@@ -210,7 +211,7 @@ class JoinPersonalInfoVC: UIViewController {
             setNewUserData()
         }
         else {
-            print("data not set")
+            ToastView.shared.long(self.view, txt_msg: "입력되지 않은 정보가 있습니다.")
         }
     }
     
