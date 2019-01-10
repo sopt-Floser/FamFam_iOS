@@ -31,7 +31,6 @@
 		6EC10008E751CAC4BF2FA460 /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30EA048945D7118F501EB01 /* Pods_flower.framework */; };
 		9B0372F321E27C6F003F0C8E /* UploadPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */; };
 		9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0417C621E1E024000FB0D4 /* Sign_Model.swift */; };
-		9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */; };
 		9B04F0BE21E10EC500457181 /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BD21E10EC500457181 /* GroupService.swift */; };
 		9B04F0C021E1138900457181 /* Today_Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BF21E1138900457181 /* Today_Photo.swift */; };
 		9B04F0C221E114BF00457181 /* Today_Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C121E114BF00457181 /* Today_Contents.swift */; };
@@ -100,7 +99,10 @@
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
 		9B7C211F21E07B8E0058B456 /* CalendarBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */; };
 		9B7C212121E084CD0058B456 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C212021E084CD0058B456 /* GoogleService-Info.plist */; };
-		9B7C212421E099470058B456 /* PopupPickerSelectDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C212321E099470058B456 /* PopupPickerSelectDelegate.swift */; };
+		9BC0589721E73B2000B6D8A2 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589621E73B2000B6D8A2 /* ToastView.swift */; };
+		9BC0589921E7697200B6D8A2 /* appAgreementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589821E7697200B6D8A2 /* appAgreementVC.swift */; };
+		9BC0589B21E76A0600B6D8A2 /* userAgreementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589A21E76A0600B6D8A2 /* userAgreementVC.swift */; };
+		9BC0589F21E7BB0300B6D8A2 /* ProtocolFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589E21E7BB0300B6D8A2 /* ProtocolFile.swift */; };
 		9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */; };
 		9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1121DBB32100A3688F /* CalendarData.swift */; };
 		9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1321DBB3BE00A3688F /* TodayData.swift */; };
@@ -133,7 +135,6 @@
 		4DF78BC921D8BC95004D2D62 /* JoinPersonalInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPersonalInfoVC.swift; sourceTree = "<group>"; };
 		9B0372F221E27C6F003F0C8E /* UploadPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostVC.swift; sourceTree = "<group>"; };
 		9B0417C621E1E024000FB0D4 /* Sign_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign_Model.swift; sourceTree = "<group>"; };
-		9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPhoneNumber.swift; sourceTree = "<group>"; };
 		9B04F0BD21E10EC500457181 /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		9B04F0BF21E1138900457181 /* Today_Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Photo.swift; sourceTree = "<group>"; };
 		9B04F0C121E114BF00457181 /* Today_Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Contents.swift; sourceTree = "<group>"; };
@@ -204,7 +205,10 @@
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarBoard.storyboard; sourceTree = "<group>"; };
 		9B7C212021E084CD0058B456 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9B7C212321E099470058B456 /* PopupPickerSelectDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPickerSelectDelegate.swift; sourceTree = "<group>"; };
+		9BC0589621E73B2000B6D8A2 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		9BC0589821E7697200B6D8A2 /* appAgreementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appAgreementVC.swift; sourceTree = "<group>"; };
+		9BC0589A21E76A0600B6D8A2 /* userAgreementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userAgreementVC.swift; sourceTree = "<group>"; };
+		9BC0589E21E7BB0300B6D8A2 /* ProtocolFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolFile.swift; sourceTree = "<group>"; };
 		9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListCell.swift; sourceTree = "<group>"; };
 		9BD13B1121DBB32100A3688F /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		9BD13B1321DBB3BE00A3688F /* TodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayData.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 				4DC7112721DD0F51001FACB6 /* CustomNavigationBar.swift */,
 				9B09D63D21DE0F5A00AE1E6F /* UIImage+imageFromUrl.swift */,
 				9B09D65521DE1F5E00AE1E6F /* UIViewController+Extension.swift */,
+				9BC0589621E73B2000B6D8A2 /* ToastView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -398,6 +403,8 @@
 				4DF54A5721DB92A40081B9C7 /* JoinCreateEnterVC.swift */,
 				4D7E1BF921E34E0800CA7942 /* JoinCreateVC.swift */,
 				4DF54A5921DB92C10081B9C7 /* JoinEnterVC.swift */,
+				9BC0589821E7697200B6D8A2 /* appAgreementVC.swift */,
+				9BC0589A21E76A0600B6D8A2 /* userAgreementVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -513,8 +520,7 @@
 		9B7C212221E098DF0058B456 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				9B7C212321E099470058B456 /* PopupPickerSelectDelegate.swift */,
-				9B04F0B721E0CF9900457181 /* SignUpPhoneNumber.swift */,
+				9BC0589E21E7BB0300B6D8A2 /* ProtocolFile.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -628,6 +634,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PasswordTextField/PasswordTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -647,6 +654,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PasswordTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -693,6 +701,7 @@
 				9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */,
 				4DF78BC621D8B5C8004D2D62 /* UIView+Bordered.swift in Sources */,
 				9B32102121D6322200995ADD /* NoticeTableCell.swift in Sources */,
+				9BC0589F21E7BB0300B6D8A2 /* ProtocolFile.swift in Sources */,
 				4DF78BC421D8B488004D2D62 /* JoinAgreementVC.swift in Sources */,
 				9B42C00821E38DF000DFF0D9 /* FirebaseDataService.swift in Sources */,
 				9B42C00221E334BC00DFF0D9 /* Group_code.swift in Sources */,
@@ -722,8 +731,8 @@
 				9B04F0CC21E11A1600457181 /* Calendar_family.swift in Sources */,
 				9B09D65221DE167300AE1E6F /* ResponseArray.swift in Sources */,
 				9B04F0D221E11BF200457181 /* Today_Feel.swift in Sources */,
+				9BC0589721E73B2000B6D8A2 /* ToastView.swift in Sources */,
 				9B41DB4C21DB531600FC6ED6 /* listAnniversaryCell.swift in Sources */,
-				9B04F0B821E0CF9900457181 /* SignUpPhoneNumber.swift in Sources */,
 				9B09D65621DE1F5E00AE1E6F /* UIViewController+Extension.swift in Sources */,
 				9B42C00C21E3972A00DFF0D9 /* ChatMessageCell.swift in Sources */,
 				9B096B1521D4B76C00442A68 /* NoticeCell.swift in Sources */,
@@ -749,7 +758,7 @@
 				9B04F0C621E1187100457181 /* Today_Comment.swift in Sources */,
 				9B09D65021DE161100AE1E6F /* ResponseObject.swift in Sources */,
 				9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */,
-				9B7C212421E099470058B456 /* PopupPickerSelectDelegate.swift in Sources */,
+				9BC0589921E7697200B6D8A2 /* appAgreementVC.swift in Sources */,
 				9B096B0521D465A500442A68 /* TodayFeedCell.swift in Sources */,
 				9B064F9821DC82DD00AEF947 /* CalendarSearchTV.swift in Sources */,
 				9B42BFFC21E31EAA00DFF0D9 /* AnniversaryService.swift in Sources */,
@@ -770,6 +779,7 @@
 				9B064F9421DC7B9000AEF947 /* CalendarSearchCell.swift in Sources */,
 				9B04F0C821E1190600457181 /* Today_Comments_Model.swift in Sources */,
 				9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */,
+				9BC0589B21E76A0600B6D8A2 /* userAgreementVC.swift in Sources */,
 				9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */,
 				9B096B1F21D4B81200442A68 /* FamilyCell.swift in Sources */,
 				9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */,

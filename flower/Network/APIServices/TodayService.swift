@@ -12,7 +12,7 @@ import Alamofire
 /** 오늘의 하루 */
 struct TodayService: APIManager, Requestable {
     
-    typealias NetworkData = ResponseObject<Today_Contents> //ResponseArray
+    typealias NetworkData = ResponseArray<Today_Contents> //ResponseArray
     static let shared = TodayService()
     let todayURL = url("/contents")
     let header: HTTPHeaders = [
@@ -55,7 +55,7 @@ struct TodayService: APIManager, Requestable {
             switch res {
             case .success(let value):
                 guard let contentsList = value.data else {return}
-                completion([contentsList])
+                completion(contentsList)
             case .error(let error):
                 print(error)
             }
@@ -63,14 +63,14 @@ struct TodayService: APIManager, Requestable {
     }
     
     // 해당 컨텐츠 조회
-    func getOneContent(contentIdx:Int? = 0, completion: @escaping(Today_Contents) -> Void){
+    func getOneContent(contentIdx:Int? = 0, completion: @escaping(NetworkData) -> Void){
         let queryURL = todayURL + "/\(contentIdx)"
         
         get(queryURL, body: nil, header: uploadHeader){ res in
             switch res {
             case .success(let value):
                 guard let contents = value.data else {return}
-                completion(contents)
+                completion(value)
             case .error(let error):
                 print(error)
             }

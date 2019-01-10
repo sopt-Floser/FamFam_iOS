@@ -22,6 +22,7 @@ class JoinCreateEnterVC: UIViewController {
 
     @objc func createGroupSelector(){
         createGroup()
+        enjoyGroup()
     }
     
     func createGroup(){
@@ -31,7 +32,7 @@ class JoinCreateEnterVC: UIViewController {
                 print("그룹 생성 성공~")
                 self.moveViews()
             case 204:
-                print("이미 가입된 그룹이 있습니다.")
+                ToastView.shared.short(self.view, txt_msg: "이미 가입된 그룹이 있습니다.")
             case 400 :
                 print("회원을 찾을 수 없습니다")
             case 500:
@@ -44,14 +45,35 @@ class JoinCreateEnterVC: UIViewController {
         }
     }
     
+    func enjoyGroup(){
+        var tempcode = "" // 빌드용 임시 변수
+        
+        GroupService.shared.joinGroup(code: tempcode){ res in
+            switch res.status {
+            case 200:
+                print("그룹 참여 성공")
+                self.moveViews()
+            case 204:
+                print("이미 가입된 그룹이 있습니다.")
+            case 401:
+                print("초대 코드가 유호하지 않습니다.")
+            case 404:
+                print("회원을 찾을 수 없습니다.")
+            case 500:
+                print("서버 내부 에러")
+            case 600:
+                print("데이터베이스 에러")
+            default:
+                print("그룹 참여 시도중")
+
+            }
+        }
+    }
+    
     func moveViews(){
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }
-    
-    
-    
-
 }

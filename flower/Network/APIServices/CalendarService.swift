@@ -86,10 +86,8 @@ struct CalendarService: APIManager, Requestable {
         post(queryURL, body: body, header: uploadHeaders){ res in
             switch res {
             case .success(let value):
-                print("일정 추가 완료")
                 completion(value)
             case .error(let error):
-                print("일정 추가 실패")
                 completion(error)
             }
         }
@@ -110,10 +108,8 @@ struct CalendarService: APIManager, Requestable {
         put(queryURL, body: body, header: uploadHeaders){ res in
             switch res {
             case .success(let value):
-                print("일정 수정 완료")
                 completion(value)
             case .error(let error):
-                print("일정 수정 실패")
                 completion(error)
             }
         }
@@ -127,10 +123,8 @@ struct CalendarService: APIManager, Requestable {
         delete(queryURL, body: nil, header: uploadHeaders){ res in
             switch res {
             case .success(let value):
-                print("일정 삭제 완료")
                 completion(value)
             case .error(let error):
-                print("일정 삭제 실패")
                 completion(error)
             }
         }

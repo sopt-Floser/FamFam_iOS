@@ -48,3 +48,41 @@ extension UIViewController {
         return value_
     }//func gfno
 }
+
+
+/** 클릭 시 뛰어오르는 이벤트 */
+extension UIView {
+    func bounce(){
+        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0, usingSpringWithDamping: 0.3,
+            initialSpringVelocity: 0.1,
+            options: UIView.AnimationOptions.beginFromCurrentState,
+            animations: {
+                self.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+    }
+}
+
+
+/** 색 변환기 */
+extension UIColor{
+    convenience init(hex: String){
+        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var rgbValue:UInt32 = 0
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        Scanner(string:cString).scanHexInt32(&rgbValue)
+        
+        self.init(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+}
