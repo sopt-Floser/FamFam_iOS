@@ -12,17 +12,23 @@ import Foundation
 
 
 class TodayFeedCell: UITableViewCell, UIScrollViewDelegate{
-    
-    var imageList = [String]()
 
+    var images = [String]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        pageControl.numberOfPages = images.count
+        pageControl.currentPage = 0
         roundProfileImage() //프로필 이미지 둥글게
         cropPostImage() //게시글 이미지 위아래 커트
         //이미지 페이지 컨트로
-        swipeImage()
-        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        pageControl.subviews.forEach {
+            $0.transform = CGAffineTransform(scaleX: 1.7, y: 1.7)
+        }
     }
     
     // 상단 (프로필)
@@ -36,66 +42,22 @@ class TodayFeedCell: UITableViewCell, UIScrollViewDelegate{
     @IBOutlet var postDate: UILabel!
     
     // 중간 (게시글)
+    
+    
     @IBOutlet var postImage: UIImageView!
-    
     func cropPostImage(){
-        
-        scrollView?.layer.masksToBounds = true
-        scrollView?.clipsToBounds = true
-    }
-    @IBOutlet var scrollView: UIScrollView!
-    
-    func swipeImage() {
-        //view.layoutIfNeeded()
-        scrollView.delegate = self
-        for i in 0..<imageList.count {
-            let xOrigin = self.scrollView.frame.width * CGFloat(i)
-            let imageView = UIImageView(frame: CGRect(x: xOrigin, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height))
-            imageView.isUserInteractionEnabled = true
-            let imgStr = imageList[i]
-            imageView.image = UIImage(named: imgStr)
-            imageView.contentMode = .scaleAspectFit
-            self.scrollView.addSubview(imageView)
-        }
-        self.scrollView.isPagingEnabled = true
-        self.scrollView.bounces = false
-        self.scrollView.showsVerticalScrollIndicator = false
-        self.scrollView.showsHorizontalScrollIndicator = false
-        self.scrollView.contentSize = CGSize(width:
-            self.scrollView.frame.width * CGFloat(imageList.count), height: self.scrollView.frame.height)
-        pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControl.Event.valueChanged)
-        
-        self.pageControl.numberOfPages = imageList.count
-        self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.red
-        self.pageControl.pageIndicatorTintColor = UIColor.black
-        self.pageControl.currentPageIndicatorTintColor = UIColor.blue
+        postImage?.layer.masksToBounds = true
+        postImage?.clipsToBounds = true
     }
     
-    
-    @objc func changePage(sender: AnyObject) {
-        let x = CGFloat(pageControl.currentPage) * scrollView.frame.width
-        scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        let pageNumber = floor(scrollView.contentOffset.x / scrollView.frame.width)
-        pageControl.currentPage = Int(pageNumber)
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     @IBOutlet var pageControl: UIPageControl!
+    @IBAction func pageChanged(_ sender: UIPageControl) {
+        
+        //페이지 컨트롤의 현재 페이지를 가져와서 uiimage타입의 이미지를 만들고 만든이미지를 뷰에 할당
+        postImage.image = UIImage(named: images[pageControl.currentPage])
+        
+    }
 
     // 중간 (감정)
     @IBAction func emotionAddBtn(_ sender: Any) {

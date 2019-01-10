@@ -37,8 +37,8 @@ class JoinEnterVC: UIViewController,UITextFieldDelegate {
     @objc func joinGroup(){
         guard let code = codeTF.text else {return}
         
-         GroupService.shared.joinGroup(code: code){
-            jimin in guard let jimin2 = jimin.status else {return}
+         GroupService.shared.joinGroup(code: code){ jimin in
+            guard let jimin2 = jimin.status else {return}
             print(jimin.status)
             
             switch jimin2 {

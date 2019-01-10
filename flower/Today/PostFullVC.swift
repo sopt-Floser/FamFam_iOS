@@ -9,7 +9,24 @@
 import UIKit
 
 var postReplyList: [PostReplyData] = []
-class PostFullVC: UIViewController {
+class PostFullVC: UIViewController, UIScrollViewDelegate {
+    
+    
+    var viewHeight: CGFloat!
+    var postProfileImage: String?
+    var postName: String?
+    var postDate: String?
+//    var postImage: String?
+    var postImagePageControl: Int!
+    var emotionImage: String?
+    var emotionName: String?
+    var postContent: String?
+    var replyCount: Int!
+    
+    var images = [String]()
+    
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var postImagePageControlView: UIPageControl!
     
     override func viewDidLoad() {
         
@@ -26,7 +43,71 @@ class PostFullVC: UIViewController {
     
         self.postFullTable.allowsSelection = false; //선택 안되게 하기
 //        self.tabBarController?.tabBar.isHidden = true
+        
+        postImagePageControlView.currentPage = 0
+        
+        print("이미지 리스트 : >> \(images)")
+        
+        imageScroll()
     }
+    
+    func imageScroll(){
+        view.layoutIfNeeded()
+        scrollView.delegate = self
+        for i in 0..<images.count {
+            let xOrigin = self.scrollView.frame.width * CGFloat(i)
+            let imageView = UIImageView(frame: CGRect(x: xOrigin, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height))
+            imageView.isUserInteractionEnabled = true
+            imageView.imageFromUrl(images[i], defaultImgPath: "")
+            imageView.contentMode = .scaleAspectFill
+            self.scrollView.addSubview(imageView)
+        }
+        
+        self.scrollView.isPagingEnabled = true
+        self.scrollView.bounces = false
+        self.scrollView.showsVerticalScrollIndicator = false
+        self.scrollView.showsHorizontalScrollIndicator = false
+        self.scrollView.contentSize = CGSize(width:
+            self.scrollView.frame.width * CGFloat(images.count), height: self.scrollView.frame.height)
+        postImagePageControlView.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControl.Event.valueChanged)
+        
+        self.postImagePageControlView.numberOfPages = images.count
+        self.postImagePageControlView.currentPage = 0
+        self.postImagePageControlView.tintColor = UIColor.red
+        self.postImagePageControlView.pageIndicatorTintColor = UIColor.black
+        self.postImagePageControlView.currentPageIndicatorTintColor = UIColor.blue
+    }
+    
+    @objc func changePage(sender: AnyObject) {
+        let x = CGFloat(postImagePageControlView.currentPage) * scrollView.frame.width
+        scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        let pageNumber = floor(scrollView.contentOffset.x / scrollView.frame.width)
+        postImagePageControlView.currentPage = Int(pageNumber)
+    }
+
+    
+    
+    
+    /*
+    override func viewDidLayoutSubviews() {
+        postImagePageControlView.subviews.forEach {
+            $0.transform = CGAffineTransform(scaleX: 1.7, y: 1.7)
+        }
+    }
+ 
+    
+    @IBAction func pageChanged(_ sender: UIPageControl) {
+        
+        //페이지 컨트롤의 현재 페이지를 가져와서 uiimage타입의 이미지를 만들고 만든이미지를 뷰에 할당
+        postImageView.imageFromUrl(images[postImagePageControlView.currentPage], defaultImgPath: "")
+
+        
+    }
+ */
     
     @IBAction func backBtn(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -34,17 +115,6 @@ class PostFullVC: UIViewController {
     
     //게시글
     @IBOutlet var postView: UIView!
-    
-    var viewHeight: CGFloat!
-    var postProfileImage: String?
-    var postName: String?
-    var postDate: String?
-    var postImage: String?
-    var postImagePageControl: Int!
-    var emotionImage: String?
-    var emotionName: String?
-    var postContent: String?
-    var replyCount: Int!
     
     @IBOutlet var postFullTable: UITableView!
     
@@ -56,12 +126,12 @@ class PostFullVC: UIViewController {
     
     @IBOutlet var postNameView: UILabel!
     @IBOutlet var postDateView: UILabel!
-    @IBOutlet var postImageView: UIImageView!
+//    @IBOutlet var postImageView: UIImageView!
     func cropPostImage(){
-        postImageView?.layer.masksToBounds = true
-        postImageView?.clipsToBounds = true
+//        postImageView?.layer.masksToBounds = true
+//        postImageView?.clipsToBounds = true
     }
-    @IBOutlet var postImagePageControlView: UIPageControl!
+  //  @IBOutlet var postImagePageControlView: UIPageControl!
     @IBOutlet var emotionImageView: UIImageView!
     @IBOutlet var emotionNameView: UILabel!
     @IBOutlet var postContentView: UILabel!
@@ -84,15 +154,15 @@ class PostFullVC: UIViewController {
     
     func getsetPostData(){
         postView.bounds.size.height = viewHeight
-        postProfileImageView.image = UIImage(named:postProfileImage!)
+        postProfileImageView.imageFromUrl(postProfileImage, defaultImgPath: "")
         postNameView.text = postName
         postDateView.text = postDate
-        postImageView.image = UIImage(named:postImage!)
         postImagePageControlView.numberOfPages = postImagePageControl
-        emotionImageView.image = UIImage(named:emotionImage!)
-        emotionNameView.text = emotionName
+//        postImageView.imageFromUrl(images[0], defaultImgPath: "")
+//        emotionImageView.image = UIImage(named:emotionImage!)
+//        emotionNameView.text = emotionName
         postContentView.text = postContent
-        replyCountView.text = String(replyCount) + "개"
+        replyCountView.text = String(replyCount ?? 0) + "개"
     }
     
 

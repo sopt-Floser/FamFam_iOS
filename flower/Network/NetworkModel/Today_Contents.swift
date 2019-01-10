@@ -20,6 +20,7 @@ struct Today_Contents : Mappable {
     }
     
     mutating func mapping(map: Map) {
+        userName  <- map["userName"]
         photos <- map["photos"]
         content <- map["content"]
     }

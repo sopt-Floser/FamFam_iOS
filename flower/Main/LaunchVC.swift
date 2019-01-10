@@ -14,14 +14,17 @@ class LaunchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let animationView = LOTAnimationView(name: "splash_3second")
+        let animationView = LOTAnimationView(name: "splash_3second 2")
             animationView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: 800)
             animationView.center = self.view.center
             animationView.contentMode = .scaleAspectFill
-            animationView.animationSpeed = 0.5
         
             view.addSubview(animationView)
             
-            animationView.play()
+        animationView.play { (finish) in
+            if finish {
+                
+            }
+        }
     }
 }
