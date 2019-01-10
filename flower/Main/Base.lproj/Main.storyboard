@@ -205,10 +205,28 @@
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="-279.31034482758622"/>
         </scene>
+        <!--LaunchVC-->
+        <scene sceneID="UC9-vG-yel">
+            <objects>
+                <viewController id="0jM-Nm-1zQ" customClass="LaunchVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a5z-uf-uoh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0Im-QI-Cew"/>
+                    </view>
+                    <connections>
+                        <segue destination="hhL-J6-WtO" kind="show" id="JcI-4H-kSA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlY-Hm-KfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1503" y="-281"/>
+        </scene>
         <!--IntroduceVC-->
         <scene sceneID="MLl-IR-vvx">
             <objects>
-                <viewController id="hhL-J6-WtO" customClass="IntroduceVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroduceVC" id="hhL-J6-WtO" customClass="IntroduceVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOe-gh-CuC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,12 +259,6 @@
                                     <segue destination="iRd-7A-wVp" kind="presentation" id="OEB-hm-5BO"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIB-e4-a7H">
-                                <rect key="frame" x="0.0" y="17" width="375" height="501"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gIB-e4-a7H" secondAttribute="height" multiplier="125:167" id="ixw-8y-OZs"/>
-                                </constraints>
-                            </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-PH-P8J">
                                 <rect key="frame" x="112.5" y="548" width="150" height="37"/>
                                 <constraints>
@@ -254,33 +266,34 @@
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="0.62745098039215685" green="0.81568627450980391" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="currentPageIndicatorTintColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="pageChanged:" destination="hhL-J6-WtO" eventType="valueChanged" id="lgo-gx-qug"/>
-                                </connections>
                             </pageControl>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rl0-c3-TfW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="501"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rl0-c3-TfW" firstAttribute="top" secondItem="azj-rn-E1Q" secondAttribute="top" id="18I-xg-kh1"/>
+                            <constraint firstItem="rl0-c3-TfW" firstAttribute="width" secondItem="MOe-gh-CuC" secondAttribute="width" id="1xS-if-E3m"/>
                             <constraint firstItem="58s-x3-f0a" firstAttribute="leading" secondItem="azj-rn-E1Q" secondAttribute="leading" id="6Al-fL-33q"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="top" secondItem="dxD-PH-P8J" secondAttribute="bottom" constant="30" id="BVm-KL-oHv"/>
                             <constraint firstItem="58s-x3-f0a" firstAttribute="width" secondItem="7eM-gM-pvU" secondAttribute="width" id="MG4-vJ-3vi"/>
                             <constraint firstItem="58s-x3-f0a" firstAttribute="bottom" secondItem="azj-rn-E1Q" secondAttribute="bottom" id="Pji-oq-h7i"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="bottom" secondItem="azj-rn-E1Q" secondAttribute="bottom" id="RGb-ln-1Ug"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="leading" secondItem="58s-x3-f0a" secondAttribute="trailing" id="V5L-2S-DeC"/>
-                            <constraint firstItem="gIB-e4-a7H" firstAttribute="leading" secondItem="azj-rn-E1Q" secondAttribute="leading" id="bDN-tc-VRA"/>
+                            <constraint firstItem="rl0-c3-TfW" firstAttribute="trailing" secondItem="azj-rn-E1Q" secondAttribute="trailing" id="VqQ-gl-JLA"/>
+                            <constraint firstItem="dxD-PH-P8J" firstAttribute="top" secondItem="rl0-c3-TfW" secondAttribute="bottom" constant="27" id="WXo-z9-4xR"/>
                             <constraint firstItem="azj-rn-E1Q" firstAttribute="trailing" secondItem="7eM-gM-pvU" secondAttribute="trailing" id="dGm-is-SBb"/>
-                            <constraint firstItem="gIB-e4-a7H" firstAttribute="trailing" secondItem="azj-rn-E1Q" secondAttribute="trailing" id="eoS-yj-gf2"/>
-                            <constraint firstItem="gIB-e4-a7H" firstAttribute="width" secondItem="MOe-gh-CuC" secondAttribute="width" id="hF2-AD-PFe"/>
                             <constraint firstItem="dxD-PH-P8J" firstAttribute="centerX" secondItem="azj-rn-E1Q" secondAttribute="centerX" id="iXF-a3-So7"/>
                             <constraint firstItem="7eM-gM-pvU" firstAttribute="leading" secondItem="58s-x3-f0a" secondAttribute="trailing" id="sio-tI-so2"/>
-                            <constraint firstItem="dxD-PH-P8J" firstAttribute="top" secondItem="gIB-e4-a7H" secondAttribute="bottom" constant="30" id="uZZ-zv-zR8"/>
+                            <constraint firstItem="rl0-c3-TfW" firstAttribute="leading" secondItem="azj-rn-E1Q" secondAttribute="leading" id="yi3-7f-xWv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="azj-rn-E1Q"/>
                     </view>
                     <navigationItem key="navigationItem" id="bGD-rP-gyy"/>
                     <connections>
-                        <outlet property="introduceImage" destination="gIB-e4-a7H" id="b6f-Sk-CpW"/>
-                        <outlet property="pageControl" destination="dxD-PH-P8J" id="gvY-Pp-meA"/>
+                        <outlet property="pageControl" destination="dxD-PH-P8J" id="3l3-LV-QEx"/>
+                        <outlet property="scrollView" destination="rl0-c3-TfW" id="L8s-OH-AB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPO-pD-pn8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2130,15 +2143,15 @@ FamFam은 변경된 약관을 게시한 날로부터 효력이 발생되는는 �
         <image name="btnHome" width="24" height="23"/>
         <image name="btnOnedayToday" width="23" height="21"/>
         <image name="icon_id" width="24" height="24"/>
-        <image name="icon_lock" width="18" height="21"/>
+        <image name="icon_lock" width="18.5" height="21"/>
         <image name="imgBlueCheck" width="16" height="11"/>
         <image name="imgCreat" width="320" height="197"/>
-        <image name="imgJoin" width="316" height="199"/>
+        <image name="imgJoin" width="316.5" height="199"/>
         <image name="imgLogoBlueSmall" width="99" height="19"/>
         <image name="imgNumberStage1" width="159" height="34"/>
         <image name="imgNumberStage2" width="159" height="34"/>
         <image name="imgNumberStage3" width="159" height="34"/>
-        <image name="logo_log_in" width="197" height="68"/>
-        <image name="main_logo" width="138" height="48"/>
+        <image name="logo_log_in" width="197" height="68.5"/>
+        <image name="main_logo" width="138.5" height="48.5"/>
     </resources>
 </document>
