@@ -6,7 +6,7 @@
 //  Copyright © 2018 성다연. All rights reserved.
 //
 import UIKit
-import Lottie
+
 
 class IntroduceVC: UIViewController, UIScrollViewDelegate {
     
