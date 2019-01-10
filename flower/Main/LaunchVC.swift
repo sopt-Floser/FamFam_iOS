@@ -11,20 +11,30 @@ import Lottie
 
 class LaunchVC: UIViewController {
     
+    @IBOutlet var logoImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let animationView = LOTAnimationView(name: "launchSplash")
-            animationView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: 800)
+        let animationView = LOTAnimationView(name: "splash_ios")
+            animationView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: 600)
             animationView.center = self.view.center
-            animationView.contentMode = .scaleAspectFill
+            animationView.contentMode = .scaleAspectFit
         
             view.addSubview(animationView)
+        
+        logoImage.frame = CGRect(x: 0, y: 0, width: self.view.frame.width - 10, height: 590)
+        logoImage.center = self.view.center
+        logoImage.contentMode = .scaleAspectFit
+        logoImage.layer.zPosition = 1
             
         animationView.play { (finish) in
             if finish {
-                
+                print("끝")
             }
+
+                
         }
     }
 }
+
