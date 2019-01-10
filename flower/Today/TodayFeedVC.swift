@@ -17,7 +17,7 @@ class TodayFeedVC: UIViewController {
     
     var images = [String]()
     var todayFeedList = [Today_Contents]()
-    var todayPhotos = [Today_Photo]()
+   // var todayPhotos = [Today_Photo]()
     var cellHeight : CGFloat = 0.0
     
     override func viewDidLoad() {
@@ -57,15 +57,13 @@ class TodayFeedVC: UIViewController {
         TodayService.shared.getAllContent(page_no: 0, page_size: 10){ jimin in
             guard let jimin2 = jimin.status else {return}
             guard let jimin3 = jimin.data else {
-                print(jimin.data)
                 return}
             guard let jimin4 = jimin3.contents else {return}
             switch jimin2{
             case 200 :
                 self.todayFeedList = jimin4
                 self.todayFeedTable.reloadData()
-                print(self.todayFeedList)
-                print ("성공")
+                print ("오늘의 하루 피드 조회 성공")
             case 204 :
                 print ("게시글을 찾을 수 없습니다.")
             case 404 :
@@ -125,7 +123,6 @@ extension TodayFeedVC: UITableViewDataSource {
         //pagecontrol, emotion image, emotion name
         
 
-        print("셀 생성")
         return cell
     }
 

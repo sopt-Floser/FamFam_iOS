@@ -14,7 +14,7 @@ class LaunchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let animationView = LOTAnimationView(name: "splash_3second 2")
+        let animationView = LOTAnimationView(name: "launchSplash")
             animationView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: 800)
             animationView.center = self.view.center
             animationView.contentMode = .scaleAspectFill

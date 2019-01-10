@@ -11,7 +11,7 @@ import Foundation
 
 
 
-class TodayFeedCell: UITableViewCell, UIScrollViewDelegate{
+class TodayFeedCell: UITableViewCell {
 
     var images = [String]()
     
