@@ -5,7 +5,6 @@
 //  Created by 김지민 on 08/01/2019.
 //  Copyright © 2019 성다연. All rights reserved.
 //
-
 import UIKit
 
 class ShowAllVC: UIViewController {
@@ -15,12 +14,12 @@ class ShowAllVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-print ("가나다1")
+        print ("가나다1")
         // Do any additional setup after loading the view.
     }
     
@@ -51,14 +50,23 @@ print ("가나다1")
             }
         }
     }
-
+    
 }
 
 extension ShowAllVC: UICollectionViewDataSource {
     
+    internal func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print ("가나다4")
-        return PhotoList.count
+        if section == 0 {
+            return PhotoList.count
+        } else if section == 1 {    // this is going to be the last section with just 1 cell which will show the loading indicator
+            return 1
+        }
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,6 +84,7 @@ extension ShowAllVC: UICollectionViewDataSource {
 }
 
 extension ShowAllVC: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 9) / 3
         let height: CGFloat = (view.frame.width - 9) / 3
@@ -97,6 +106,5 @@ extension ShowAllVC: UICollectionViewDelegateFlowLayout {
     
     
 }
-
 
 
