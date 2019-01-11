@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 struct CommentService : APIManager, Requestable {
-    typealias NetworkData = ResponseArray<Today_Comment_Model>
+    typealias NetworkData = ResponseArray<TodayComment>
     
     static let shared = CommentService()
     let commentURL = url("/comments")
@@ -23,14 +23,12 @@ struct CommentService : APIManager, Requestable {
     ]
     
     // 댓글 조회
-    func getComment(contentIdx:Int? = 0, completion:@escaping([Today_Comment_Model])->Void){
+    func getComment(contentIdx:Int, completion:@escaping (NetworkData)-> Void){
         let queryURL = commentURL + "/contents/\(contentIdx)"
-        
         get(queryURL, body: nil, header: uploadheader){ res in
             switch res {
             case .success(let value):
-                guard let comments = value.data else {return}
-                completion(comments)
+                completion(value)
             case .error(let error):
                 print(error)
             }
@@ -39,8 +37,11 @@ struct CommentService : APIManager, Requestable {
         
     }
     
+    
+    
     // 댓글 등록
-    func writeComment(contentIdx:Int?, content:String?, completion:@escaping(NetworkData) -> Void){
+    func writeComment(contentIdx:Int, content:String?, completion:@escaping(NetworkData) -> Void){
+        
         let queryURL = commentURL + "/contents/\(contentIdx)"
         
         let body = [

@@ -8,25 +8,81 @@
 
 import UIKit
 
-var postReplyList: [PostReplyData] = []
 class PostFullVC: UIViewController, UIScrollViewDelegate {
-    
-    
+   
+    @IBOutlet var postFullTable: UITableView!
+///게시글
+
     var viewHeight: CGFloat!
     var postProfileImage: String?
     var postName: String?
     var postDate: String?
-//    var postImage: String?
     var postImagePageControl: Int!
     var emotionImage: String?
     var emotionName: String?
     var postContent: String?
     var replyCount: Int!
-    
     var images = [String]()
+    var contentIdx: Int!
     
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+       //navigationController?.popViewController(animated: true)
+    }
+    
+    @IBOutlet var postView: UIView!
+    @IBOutlet var postProfileImageView: UIImageView!
+    func roundProfileImageView(){
+        postProfileImageView?.clipsToBounds = true
+        postProfileImageView?.layer.cornerRadius = (postProfileImageView.frame.height)/2
+    }
+    @IBOutlet var postNameView: UILabel!
+    @IBOutlet var postDateView: UILabel!
+    func cropPostImage(){
+        //        postImageView?.layer.masksToBounds = true
+        //        postImageView?.clipsToBounds = true
+    }
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var postImagePageControlView: UIPageControl!
+    @IBOutlet var emotionImageView: UIImageView!
+    @IBOutlet var emotionNameView: UILabel!
+    @IBOutlet var postContentView: UILabel!
+    
+///댓글 보기
+    var postReplyList = [TodayComment]()
+    
+    
+///댓글 달기
+
+    @IBOutlet var replyTextView: UITextView!
+    @IBOutlet var writeReply: UITextField!
+    @IBAction func completeReply(_ sender: Any) {
+        guard writeReply.text?.isEmpty != true else {return}
+        guard let content = writeReply.text else {return}
+        // 작성된 api를 사용하여 게시글을 작성하고 만약 완료되었다면
+        CommentService.shared.writeComment(contentIdx: contentIdx, content: content){ jimin in
+            guard let status = jimin.status else {return}
+            switch status {
+            case 201 :
+                self.simpleAlert("댓글 작성", "댓글이 작성되었습니다.", completion: { (action) in
+                   self.navigationController?.popViewController(animated: true)
+                })
+                self.postFullTable.reloadData()
+                print("댓글 등록 성공")
+            case 404 :
+                print("게시글을 찾을 수 없습니다")
+            case 500 :
+                print("서버 내부 에러")
+            case 600 :
+                print("db 에러")
+            default :
+                print(status)
+                print("댓글 등록 디폴트")
+            }
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         
@@ -34,21 +90,20 @@ class PostFullVC: UIViewController, UIScrollViewDelegate {
         
         getsetPostData() //게시글 데이터 앞 페이지에서 받아오고 세팅하는 함수
         roundProfileImageView() // 프사 원형으로 보여주는 함수
-        cropPostImage() //게시글 이미지 크롭하는 함수
-        setPostReplyData()//댓글 데이터 받아오는 함수
+        //cropPostImage() //게시글 이미지 크롭하는 함수
         //게시글에 적용은 cellForRowAt 에서 set
         
         postFullTable.delegate = self
         postFullTable.dataSource = self
-    
+        
         self.postFullTable.allowsSelection = false; //선택 안되게 하기
-//        self.tabBarController?.tabBar.isHidden = true
         
         postImagePageControlView.currentPage = 0
         
         print("이미지 리스트 : >> \(images)")
-        
+        print("댓글 리스트 : \(postReplyList)")
         imageScroll()
+        self.postFullTable.reloadData()
     }
     
     func imageScroll(){
@@ -84,57 +139,9 @@ class PostFullVC: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
         let pageNumber = floor(scrollView.contentOffset.x / scrollView.frame.width)
         postImagePageControlView.currentPage = Int(pageNumber)
     }
-
-    
-    
-    
-    /*
-    override func viewDidLayoutSubviews() {
-        postImagePageControlView.subviews.forEach {
-            $0.transform = CGAffineTransform(scaleX: 1.7, y: 1.7)
-        }
-    }
- 
-    
-    @IBAction func pageChanged(_ sender: UIPageControl) {
-        
-        //페이지 컨트롤의 현재 페이지를 가져와서 uiimage타입의 이미지를 만들고 만든이미지를 뷰에 할당
-        postImageView.imageFromUrl(images[postImagePageControlView.currentPage], defaultImgPath: "")
-
-        
-    }
- */
-    
-    @IBAction func backBtn(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    //게시글
-    @IBOutlet var postView: UIView!
-    
-    @IBOutlet var postFullTable: UITableView!
-    
-    @IBOutlet var postProfileImageView: UIImageView!
-    func roundProfileImageView(){
-        postProfileImageView?.clipsToBounds = true
-        postProfileImageView?.layer.cornerRadius = (postProfileImageView.frame.height)/2
-    }
-    
-    @IBOutlet var postNameView: UILabel!
-    @IBOutlet var postDateView: UILabel!
-//    @IBOutlet var postImageView: UIImageView!
-    func cropPostImage(){
-//        postImageView?.layer.masksToBounds = true
-//        postImageView?.clipsToBounds = true
-    }
-  //  @IBOutlet var postImagePageControlView: UIPageControl!
-    @IBOutlet var emotionImageView: UIImageView!
-    @IBOutlet var emotionNameView: UILabel!
-    @IBOutlet var postContentView: UILabel!
     
     var textHeightConstraint: NSLayoutConstraint?
     
@@ -158,32 +165,36 @@ class PostFullVC: UIViewController, UIScrollViewDelegate {
         postNameView.text = postName
         postDateView.text = postDate
         postImagePageControlView.numberOfPages = postImagePageControl
-//        postImageView.imageFromUrl(images[0], defaultImgPath: "")
-//        emotionImageView.image = UIImage(named:emotionImage!)
-//        emotionNameView.text = emotionName
         postContentView.text = postContent
         replyCountView.text = String(replyCount ?? 0) + "개"
     }
     
-
-
-    //댓글 보기
+//댓글 보기
     
-    
-    //댓글 달기
-    
-    
-    
-    
-    
-    //
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
+        print("댓글 보기 전")
+        super.viewWillAppear(animated)
+        CommentService.shared.getComment(contentIdx: contentIdx) {data in
+            guard let status = data.status else {return}
+            guard let reply = data.data else {return}
+            switch status{
+            case 200 :
+                self.postReplyList = reply
+                self.postFullTable.reloadData()
+                print ("댓글 조회 성공")
+            case 204 :
+                print ("댓글을 찾을 수 없습니다.")
+            case 500 :
+                print ("서버 내부 에러")
+            case 600 :
+                print ("DB 에러")
+            default :
+                print(status)
+                print ("댓글 조회 default")
+            }
+        }
     }
-
 }
-
 
 
 extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
@@ -192,40 +203,31 @@ extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-        
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0 :
             return 0
         case 1 :
-            return Int(replyCount)
+            print("postReplyList: \(postReplyList)")
+            return postReplyList.count
         default :
             return 0
         }
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = postFullTable.dequeueReusableCell(withIdentifier: "PostReplyCell", for: indexPath) as! PostReplyCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = postFullTable.dequeueReusableCell(withIdentifier: "PostReplyCell") as! PostReplyCell
+        print("리스트\(postReplyList)")
         //각 row에 해당하는 cell의 데이터를 넣어주기위해 모델에서 reply 데이터 하나를 선언합니다.
         let reply = postReplyList[indexPath.row]
         //위에서 가져온 데이터를 각 cell에 넣어줍니다.
-        var checkimage = reply.replyImage
-        cell.replyImage?.image = UIImage(named:stringOptionalUnwork(checkimage))
+        cell.replyImage.imageFromUrl(gsno(reply.userProfile), defaultImgPath: "")
+        cell.replyName.text = reply.userName
+        cell.replyContent.text = reply.content
         
-        cell.replyName.text = reply.replyName
-        cell.replyContent.text = reply.replyContent
-        // 중간 (게시글)
-        
-        //위의 과정을 마친 cell 객체를 반환합니다.
         return cell
-    }
-    
-    func stringOptionalUnwork(_ value: String?) -> String{
-        guard let value_ = value else {
-            return ""
-        }
-        return value_
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -237,23 +239,4 @@ extension PostFullVC: UITableViewDataSource,UITableViewDelegate {
     }
     
 }
-
-extension PostFullVC {
-    func setPostReplyData() {
-        let reply1 = PostReplyData(profile: "sampleProfile", replier: "이승수", comment: "완전 추워")
-        let reply2 = PostReplyData(profile: "cakeImg", replier: "케이크", comment: "한스 케잌 산딸기 무스 케이크 드세요 제발 드세요 진짜 맛있어요 드세요 드세요 어쩌구 저쩌구 케이크 케이크")
-        let reply3 = PostReplyData(profile: "momPic", replier: "엄마아아아", comment: "케이크 맛있다아아아아아ㅏ아아아아아아ㅏ아아아아ㅏㅏ아아ㅏ아아아ㅏ아아아아아ㅏ아아아아아ㅏ아아ㅏㅏ아아아아아아ㅏ아아아아아ㅏ아아아아ㅏ아아아아ㅏ아아ㅏ아아아아ㅏ아아아ㅏ아")
-        let reply4 = PostReplyData(profile: "emotionAdd", replier: "막내", comment: "웃으세요")
-        let reply5 = PostReplyData(profile: "tempImg", replier: "스누피", comment: "스누피")
-        let reply6 = PostReplyData(profile: "tempImg", replier: "스누피", comment: "스누피")
-        let reply7 = PostReplyData(profile: "tempImg", replier: "스누피", comment: "스누피")
-        let reply8 = PostReplyData(profile: "tempImg", replier: "스누피", comment: "스누피")
-        let reply9 = PostReplyData(profile: "tempImg", replier: "스누피", comment: "스누피")
-        let reply10 = PostReplyData(profile: "tempImg", replier: "스누피", comment: "스누피")
-        postReplyList = [reply1,reply2,reply3,reply4,reply5,reply6,reply7,reply8,reply9,reply10]
-    }
-    
-}
-
-
 

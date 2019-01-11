@@ -21,6 +21,7 @@ struct Today_Content : Mappable {
     init?(map: Map) {
         
     }
+
     
     mutating func mapping(map: Map) {
         contentIdx  <- map["contentIdx"]

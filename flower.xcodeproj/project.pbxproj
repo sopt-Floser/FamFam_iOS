@@ -39,8 +39,7 @@
 		9B04F0C021E1138900457181 /* Today_Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0BF21E1138900457181 /* Today_Photo.swift */; };
 		9B04F0C221E114BF00457181 /* Today_Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C121E114BF00457181 /* Today_Contents.swift */; };
 		9B04F0C421E1153300457181 /* Today_Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C321E1153300457181 /* Today_Content.swift */; };
-		9B04F0C621E1187100457181 /* Today_Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C521E1187100457181 /* Today_Comment.swift */; };
-		9B04F0C821E1190600457181 /* Today_Comments_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C721E1190600457181 /* Today_Comments_Model.swift */; };
+		9B04F0C821E1190600457181 /* TodayComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C721E1190600457181 /* TodayComment.swift */; };
 		9B04F0CA21E119C100457181 /* Calendar_individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0C921E119C100457181 /* Calendar_individual.swift */; };
 		9B04F0CC21E11A1600457181 /* Calendar_family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0CB21E11A1600457181 /* Calendar_family.swift */; };
 		9B04F0CE21E11A5F00457181 /* Calendar_anniversary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B04F0CD21E11A5F00457181 /* Calendar_anniversary.swift */; };
@@ -151,8 +150,7 @@
 		9B04F0BF21E1138900457181 /* Today_Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Photo.swift; sourceTree = "<group>"; };
 		9B04F0C121E114BF00457181 /* Today_Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Contents.swift; sourceTree = "<group>"; };
 		9B04F0C321E1153300457181 /* Today_Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Content.swift; sourceTree = "<group>"; };
-		9B04F0C521E1187100457181 /* Today_Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Comment.swift; sourceTree = "<group>"; };
-		9B04F0C721E1190600457181 /* Today_Comments_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today_Comments_Model.swift; sourceTree = "<group>"; };
+		9B04F0C721E1190600457181 /* TodayComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayComment.swift; sourceTree = "<group>"; };
 		9B04F0C921E119C100457181 /* Calendar_individual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_individual.swift; sourceTree = "<group>"; };
 		9B04F0CB21E11A1600457181 /* Calendar_family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_family.swift; sourceTree = "<group>"; };
 		9B04F0CD21E11A5F00457181 /* Calendar_anniversary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_anniversary.swift; sourceTree = "<group>"; };
@@ -383,8 +381,7 @@
 				9B42C00521E3390800DFF0D9 /* Photo.swift */,
 				9B04F0BF21E1138900457181 /* Today_Photo.swift */,
 				9B04F0C321E1153300457181 /* Today_Content.swift */,
-				9B04F0C521E1187100457181 /* Today_Comment.swift */,
-				9B04F0C721E1190600457181 /* Today_Comments_Model.swift */,
+				9B04F0C721E1190600457181 /* TodayComment.swift */,
 				9B04F0C921E119C100457181 /* Calendar_individual.swift */,
 				9B04F0CB21E11A1600457181 /* Calendar_family.swift */,
 				9B04F0CD21E11A5F00457181 /* Calendar_anniversary.swift */,
@@ -771,7 +768,6 @@
 				9B09D65821DE1FFC00AE1E6F /* TodayService.swift in Sources */,
 				4DB0CD3A21D62E3800105EAE /* PostFullVC.swift in Sources */,
 				4DF78BCA21D8BC95004D2D62 /* JoinPersonalInfoVC.swift in Sources */,
-				9B04F0C621E1187100457181 /* Today_Comment.swift in Sources */,
 				9B09D65021DE161100AE1E6F /* ResponseObject.swift in Sources */,
 				9B5CC5FC21D9D972001261C8 /* CalendarListPopupVC.swift in Sources */,
 				9BC0589921E7697200B6D8A2 /* appAgreementVC.swift in Sources */,
@@ -793,7 +789,7 @@
 				9B09D65421DE16C100AE1E6F /* Token.swift in Sources */,
 				4DB0CD3821D60D3C00105EAE /* TodayFeedVC.swift in Sources */,
 				9B064F9421DC7B9000AEF947 /* CalendarSearchCell.swift in Sources */,
-				9B04F0C821E1190600457181 /* Today_Comments_Model.swift in Sources */,
+				9B04F0C821E1190600457181 /* TodayComment.swift in Sources */,
 				4D00926121E4E2DB00EF179C /* ShowAllVC.swift in Sources */,
 				9B0417C721E1E024000FB0D4 /* Sign_Model.swift in Sources */,
 				9BC0589B21E76A0600B6D8A2 /* userAgreementVC.swift in Sources */,

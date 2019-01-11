@@ -28,9 +28,17 @@ class LaunchVC: UIViewController {
         logoImage.contentMode = .scaleAspectFit
         logoImage.layer.zPosition = 1
 
-       
-                
-        
+            
+        animationView.play { (finish) in
+            if finish {
+                print("끝")
+                let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+                let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "IntroduceVC")
+                appDelegate.window?.rootViewController = initialViewController
+                appDelegate.window?.makeKeyAndVisible()
+            }
+        }
+
     }
 }
 

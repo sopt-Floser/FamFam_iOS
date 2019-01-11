@@ -55,19 +55,23 @@ class ShowAllVC: UIViewController {
 
 extension ShowAllVC: UICollectionViewDataSource {
     
+
 //    internal func numberOfSectionsInTableView(tableView: UITableView) -> Int
 //    {
 //        return 2
 //    }
+
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
 //        if section == 0 {
 //            return PhotoList.count
 //        } else if section == 1 {    // this is going to be the last section with just 1 cell which will show the loading indicator
 //            return 1
 //        }
         return PhotoList.count
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,8 +84,6 @@ extension ShowAllVC: UICollectionViewDataSource {
         print ("가나다5")
         return cell
     }
-    
-    
 }
 
 extension ShowAllVC: UICollectionViewDelegateFlowLayout {
@@ -107,5 +109,4 @@ extension ShowAllVC: UICollectionViewDelegateFlowLayout {
     
     
 }
-
 

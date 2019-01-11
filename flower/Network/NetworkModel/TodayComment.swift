@@ -9,12 +9,14 @@
 import Foundation
 import ObjectMapper
 // 오늘의 하루 - 댓글 하나 양식
-struct Today_Comment_Model : Mappable {
+struct TodayComment : Mappable {
     var commentIdx: Int?
     var content: String?
-    var createdDate: Date?
+    var createdAt: String?
     var contentIdx: Int?
     var userIdx: Int?
+    var userName: String?
+    var userProfile: String?
     
     init?(map: Map) {
         
@@ -23,8 +25,10 @@ struct Today_Comment_Model : Mappable {
     mutating func mapping(map: Map) {
         commentIdx <- map["commentIdx"]
         content <- map["content"]
-        createdDate <- map["createDate"]
+        createdAt <- map["createAt"]
         contentIdx <- map["contentIdx"]
         userIdx <- map["userIdx"]
+        userName <- map["userName"]
+        userProfile <- map["userProfile"]
     }
 }
