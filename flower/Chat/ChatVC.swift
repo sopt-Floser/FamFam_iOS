@@ -11,6 +11,8 @@ import Firebase
 
 class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var emoticonBtn: UIButton!
     @IBOutlet weak var chatView: UIView!
     @IBOutlet weak var plusBtn: UIButton!
     @IBOutlet weak var item: UINavigationItem!
@@ -76,35 +78,6 @@ class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, U
     }
     
     // 메시지를 보내면 파베 데이터베이스에 채팅 메시지가 기록되어야함
-    @IBAction func sendButtonTapped(_ sender: UIButton) {
-        print("send Tapped!")
-        print("currentUserId = \(FirebaseDataService.instance.currentUserUid)")
-        print("currentGroupId = \(FirebaseDataService.instance.groupRef)")
-        
-        let ref = FirebaseDataService.instance.messageRef.childByAutoId()
-        guard let fromUserId = FirebaseDataService.instance.currentUserUid else {
-            return
-        }
-        print("user = \(fromUserId)")
-        
-        let data: Dictionary<String, AnyObject> = [
-            "fromUserId": fromUserId as AnyObject,
-            "text": chatTF.text! as AnyObject,
-            "timestamp": NSNumber(value: Date().timeIntervalSince1970)
-        ]
-        
-        ref.updateChildValues(data) { (err, ref) in
-            guard err == nil else {
-                print(err as Any)
-                return
-            }
-            
-            self.chatTF.text = nil
-            if let groupId = self.groupKey {
-                FirebaseDataService.instance.groupRef.child(groupId).child("messages").updateChildValues([ref.key: 1])
-            }
-        }
-    }
     
     func handleSend(){
         let ref = FirebaseDataService.instance.messageRef.child("message")
@@ -154,6 +127,37 @@ class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, U
         // 이모티콘
     }
     
+    // 메시지를 보내면 파베 데이터베이스에 채팅 메시지가 기록되어야함
+    @objc func sendButton(){
+        print("send Tapped!")
+        print("currentUserId = \(FirebaseDataService.instance.currentUserUid)")
+        print("currentGroupId = \(FirebaseDataService.instance.groupRef)")
+        
+        let ref = FirebaseDataService.instance.messageRef.childByAutoId()
+        guard let fromUserId = FirebaseDataService.instance.currentUserUid else {
+            return
+        }
+        print("user = \(fromUserId)")
+        
+        let data: Dictionary<String, AnyObject> = [
+            "fromUserId": fromUserId as AnyObject,
+            "text": chatTF.text! as AnyObject,
+            "timestamp": NSNumber(value: Date().timeIntervalSince1970)
+        ]
+        
+        ref.updateChildValues(data) { (err, ref) in
+            guard err == nil else {
+                print(err as Any)
+                return
+            }
+            
+            self.chatTF.text = nil
+            if let groupId = self.groupKey {
+                FirebaseDataService.instance.groupRef.child(groupId).child("messages").updateChildValues([ref.key: 1])
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -169,6 +173,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UICollectionViewDelegate, U
         chatTF.resignFirstResponder()
         //chatTF.addTarget(self, action: #selector(keyboardShown), for: .touchUpInside)
         plusBtn.addTarget(self, action: #selector(plusButton), for: .touchUpInside)
+        sendBtn.addTarget(self, action: #selector(sendButton), for: .touchUpInside)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

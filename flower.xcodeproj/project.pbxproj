@@ -109,6 +109,8 @@
 		9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1121DBB32100A3688F /* CalendarData.swift */; };
 		9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1321DBB3BE00A3688F /* TodayData.swift */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
+		9BF2B93D21E878FE00ADD721 /* MissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2B93C21E878FE00ADD721 /* MissionService.swift */; };
+		9BF2B93F21E8796A00ADD721 /* Mission_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2B93E21E8796A00ADD721 /* Mission_Model.swift */; };
 		9BF705AD21D8631800212766 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF705AC21D8631800212766 /* FamilyModel.swift */; };
 		DEE6578A84EAEF66E576579A /* Pods_flower.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC8C9A652200A9722099FC8 /* Pods_flower.framework */; };
 /* End PBXBuildFile section */
@@ -221,6 +223,8 @@
 		9BD13B1121DBB32100A3688F /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		9BD13B1321DBB3BE00A3688F /* TodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayData.swift; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
+		9BF2B93C21E878FE00ADD721 /* MissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionService.swift; sourceTree = "<group>"; };
+		9BF2B93E21E8796A00ADD721 /* Mission_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_Model.swift; sourceTree = "<group>"; };
 		9BF705AC21D8631800212766 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -355,6 +359,7 @@
 				9B42BFFF21E32B6100DFF0D9 /* CommentService.swift */,
 				9B42C00321E3381100DFF0D9 /* PhotoService.swift */,
 				9B42C00F21E4B39900DFF0D9 /* UserService.swift */,
+				9BF2B93C21E878FE00ADD721 /* MissionService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				9B0417C621E1E024000FB0D4 /* Sign_Model.swift */,
 				9B42C00121E334BC00DFF0D9 /* Group_code.swift */,
 				9B42C00D21E44B9600DFF0D9 /* CountModel.swift */,
+				9BF2B93E21E8796A00ADD721 /* Mission_Model.swift */,
 			);
 			path = NetworkModel;
 			sourceTree = "<group>";
@@ -735,6 +741,7 @@
 				9B32102521D6341B00995ADD /* NoticeModel.swift in Sources */,
 				4DC7112821DD0F51001FACB6 /* CustomNavigationBar.swift in Sources */,
 				9B42C01021E4B39900DFF0D9 /* UserService.swift in Sources */,
+				9BF2B93F21E8796A00ADD721 /* Mission_Model.swift in Sources */,
 				9B42C00021E32B6100DFF0D9 /* CommentService.swift in Sources */,
 				9B04F0C021E1138900457181 /* Today_Photo.swift in Sources */,
 				9B04F0CC21E11A1600457181 /* Calendar_family.swift in Sources */,
@@ -797,6 +804,7 @@
 				4DF54A5821DB92A40081B9C7 /* JoinCreateEnterVC.swift in Sources */,
 				9B09D64721DE104300AE1E6F /* LoginService.swift in Sources */,
 				4D7E1C2821E4948C00CA7942 /* LaunchVC.swift in Sources */,
+				9BF2B93D21E878FE00ADD721 /* MissionService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
