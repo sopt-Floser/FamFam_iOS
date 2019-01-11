@@ -37,8 +37,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-xo-O9b">
-                                        <rect key="frame" x="71" y="95" width="48" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABg-xo-O9b">
+                                        <rect key="frame" x="75" y="95" width="48" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="LF7-EG-7eg"/>
                                             <constraint firstAttribute="height" constant="18" id="yPH-Jd-zEf"/>
@@ -70,7 +70,7 @@
                                     <constraint firstItem="JLA-8o-nNr" firstAttribute="centerX" secondItem="Sli-Tt-98f" secondAttribute="centerX" id="g2y-0b-GQF"/>
                                     <constraint firstAttribute="height" constant="131" id="vkw-Aq-wJl"/>
                                     <constraint firstItem="Sli-Tt-98f" firstAttribute="centerY" secondItem="9ja-bl-s0s" secondAttribute="centerY" id="vzM-lY-Wbs"/>
-                                    <constraint firstItem="mxn-PD-Ilv" firstAttribute="leading" secondItem="ABg-xo-O9b" secondAttribute="trailing" constant="-6" id="wkc-4a-B62"/>
+                                    <constraint firstItem="mxn-PD-Ilv" firstAttribute="leading" secondItem="ABg-xo-O9b" secondAttribute="trailing" constant="-10" id="wkc-4a-B62"/>
                                     <constraint firstItem="JLA-8o-nNr" firstAttribute="centerY" secondItem="Sli-Tt-98f" secondAttribute="centerY" id="yrb-27-Yvz"/>
                                     <constraint firstItem="Sli-Tt-98f" firstAttribute="width" secondItem="9ja-bl-s0s" secondAttribute="width" id="z8M-rG-5ZC"/>
                                 </constraints>

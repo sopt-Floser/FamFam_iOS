@@ -525,6 +525,17 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38K-0p-tMh">
+                                <rect key="frame" x="11" y="39" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="gnX-Cd-nsV"/>
+                                    <constraint firstAttribute="width" constant="48" id="q3n-dn-Duj"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="btnBackGray"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="8KF-dM-hRQ" eventType="touchUpInside" id="UlB-ce-7vu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -532,11 +543,14 @@
                             <constraint firstItem="U0d-5g-lHo" firstAttribute="centerX" secondItem="124-U4-UMx" secondAttribute="centerX" id="DN4-sl-Pd3"/>
                             <constraint firstItem="cxM-gL-M7H" firstAttribute="centerX" secondItem="124-U4-UMx" secondAttribute="centerX" id="EOe-SD-sYg"/>
                             <constraint firstItem="FJJ-BE-43c" firstAttribute="centerX" secondItem="124-U4-UMx" secondAttribute="centerX" id="GFy-Fa-gfj"/>
+                            <constraint firstItem="38K-0p-tMh" firstAttribute="top" secondItem="124-U4-UMx" secondAttribute="top" constant="19" id="Hm0-X0-Nke"/>
                             <constraint firstItem="FJJ-BE-43c" firstAttribute="top" secondItem="cxM-gL-M7H" secondAttribute="bottom" constant="19" id="K4x-xz-x3m"/>
                             <constraint firstItem="cjO-kv-qv7" firstAttribute="leading" secondItem="124-U4-UMx" secondAttribute="leading" id="LtQ-e2-4GE"/>
                             <constraint firstItem="124-U4-UMx" firstAttribute="bottom" secondItem="U0d-5g-lHo" secondAttribute="bottom" constant="94" id="X9C-PM-DfR"/>
+                            <constraint firstItem="38K-0p-tMh" firstAttribute="width" secondItem="Mqw-id-Anu" secondAttribute="height" multiplier="53:667" constant="-5" id="efJ-SL-NCo"/>
                             <constraint firstItem="124-U4-UMx" firstAttribute="bottom" secondItem="cjO-kv-qv7" secondAttribute="bottom" id="i10-i8-GBW"/>
                             <constraint firstItem="cxM-gL-M7H" firstAttribute="top" secondItem="124-U4-UMx" secondAttribute="top" constant="20" id="wC4-VL-3pT"/>
+                            <constraint firstItem="p6T-z9-WAs" firstAttribute="leading" secondItem="38K-0p-tMh" secondAttribute="trailing" constant="64.5" id="xIK-cQ-T62"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="124-U4-UMx"/>
                     </view>
@@ -2199,6 +2213,7 @@ FamFam은 변경된 약관을 게시한 날로부터 효력이 발생되는는 �
     </scenes>
     <resources>
         <image name="btnBackBlue" width="48" height="48"/>
+        <image name="btnBackGray" width="48" height="48"/>
         <image name="btnBackLogin" width="48" height="48"/>
         <image name="btnCalendar" width="18.5" height="22"/>
         <image name="btnChatting" width="24" height="23.5"/>

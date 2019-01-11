@@ -17,6 +17,9 @@ class JoinAgreementVC: UIViewController, sendBtnDataDelegate, sendBtn2DataDelega
     @IBOutlet weak var sixthBtn: UIButton!
     @IBOutlet weak var completeBtn: UIButton!
     
+    @IBAction func backBtn(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.reloadInputViews()

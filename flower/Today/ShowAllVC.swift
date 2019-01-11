@@ -60,10 +60,11 @@ extension ShowAllVC: UICollectionViewDataSource {
 //    {
 //        return 2
 //    }
-//
+
+    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        
+
 //        if section == 0 {
 //            return PhotoList.count
 //        } else if section == 1 {    // this is going to be the last section with just 1 cell which will show the loading indicator
@@ -108,3 +109,4 @@ extension ShowAllVC: UICollectionViewDelegateFlowLayout {
     
     
 }
+

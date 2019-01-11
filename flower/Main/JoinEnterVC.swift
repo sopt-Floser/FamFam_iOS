@@ -27,8 +27,14 @@ class JoinEnterVC: UIViewController,UITextFieldDelegate {
         if (codeTF.text != ""){
             sendCodeBtn.isEnabled = true
             self.sendCodeBtn.backgroundColor = UIColor.init(hex: "#366ce2")
-            sendCodeBtn.addTarget(self, action: #selector(joinGroup), for: .touchUpInside)
-        } else {
+            
+            if (codeTF.text == groupInviteCode){
+                sendCodeBtn.isEnabled = true
+                self.sendCodeBtn.backgroundColor = UIColor.init(hex: "#366ce2")
+                sendCodeBtn.addTarget(self, action: #selector(joinGroup), for: .touchUpInside)
+            }
+        }
+        else {
             sendCodeBtn.isEnabled = false
             self.sendCodeBtn.backgroundColor = UIColor.init(hex: "#808080")
         }

@@ -81,6 +81,12 @@ extension JoinCellPhoneVC {
         self.time = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
     @objc func updateTimer() {
         self.timer.text = self.timeFormatted(self.totalTime)
         if totalTime != 0 {
@@ -94,16 +100,13 @@ extension JoinCellPhoneVC {
             }
         }
     }
+    
     @objc func resetAsking(){
         startOtpTimer()
         test()
     }
     
-    func timeFormatted(_ totalSeconds: Int) -> String {
-        let seconds: Int = totalSeconds % 60
-        let minutes: Int = (totalSeconds / 60) % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
+    
     
     @objc func changeButton(){
         if (phoneTF.text != ""){

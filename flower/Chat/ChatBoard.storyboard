@@ -265,7 +265,7 @@
                                         </constraints>
                                         <state key="normal" image="icon_send_arrow"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTq-6G-Ho0" userLabel="emoticonBtn">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTq-6G-Ho0" userLabel="emoticonBtn">
                                         <rect key="frame" x="268" y="1.5" width="48" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="48" id="0k5-eZ-Rg7"/>
@@ -297,7 +297,7 @@
                                     <constraint firstItem="Ww6-OM-LRE" firstAttribute="width" secondItem="tKz-Oi-ayW" secondAttribute="height" multiplier="52:55" id="yYy-h8-1vf"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-cm-c7w">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-cm-c7w">
                                 <rect key="frame" x="3" y="44" width="369" height="566"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

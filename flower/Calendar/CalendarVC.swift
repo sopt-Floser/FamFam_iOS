@@ -35,6 +35,7 @@ class CalendarVC: UIViewController {
     /** 지역 변수 */
     let todayDate = Date()
     var eventsFromTheServer: [String] = []
+    var eventsFromTheLocal: [String:String] = [:]
     var dateList:[String] = CalendarDatabase.CalendarDateArray // Date(string)만 보관하고 있는 배열
     var serverAllDate:Calendar_Month?
     
@@ -44,7 +45,8 @@ class CalendarVC: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = Calendar.current.timeZone
         dateFormatter.locale = Calendar.current.locale
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        dateFormatter.dateFormat = "yyyy MM dd"
+//        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm"
         return dateFormatter
     }()
     
@@ -61,7 +63,8 @@ class CalendarVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        formatter.dateFormat = "yyyy MM dd"
+//        formatter.dateFormat = "yyyy-MM-dd'T'hh:mm"
         let bringDate = formatter.string(from: Date())
         
         CalendarService.shared.getCalendarMonthList(dateStr: bringDate){ (data) in
@@ -94,15 +97,9 @@ class CalendarVC: UIViewController {
         /** 서버 정보 가져오기 */
         // \서버에서 Date 형식의 날짜 받아올 시 띄울 예정
         DispatchQueue.global().asyncAfter(deadline: .now() /* 양이 많을 시 시간 추가 + 1 */ ){
-            guard let serverDates = self.serverAllDate else {return}
-            let familydate = self.serverAllDate
-            
-//            var list:[String] = familydate?.familys.map({ (dates:[String]) -> [String] in
-//                return dates
-//            })
-            
             for (date) in CalendarDatabase.CalendarDateArray{
-                self.eventsFromTheServer.append(date)
+                let stringDate = date
+                self.eventsFromTheLocal[stringDate] = ""
             }
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
@@ -111,6 +108,10 @@ class CalendarVC: UIViewController {
     
         calendarView.visibleDates { dateSegment in
             self.setupCalendarView(dateSegment: dateSegment)
+        }
+        
+        calendarView.reloadData(withanchor: switchDate){
+            let visibleDates = self.calendarView.visibleDates()
         }
     
         calendarView.addGestureRecognizer(longPressGesture)
@@ -136,7 +137,8 @@ class CalendarVC: UIViewController {
     
     func configureCell(cell: JTAppleCell?, cellState: CellState){
         guard let myCalendarCell = cell as? CalendarCell else {return}
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        formatter.dateFormat = "yyyy MM dd"
+//        formatter.dateFormat = "yyyy-MM-dd'T'hh:mm"
         
         handleCellTextColor(cell: myCalendarCell, cellState: cellState)
         handleCellSelected(cell: myCalendarCell, cellState: cellState)
@@ -172,31 +174,37 @@ class CalendarVC: UIViewController {
     /** 서버에서 받아오는 정보 달력에 보여주기 (할일) */
     func handleCellEvent(cell: CalendarCell, cellState: CellState){
         var eventCount = 0
+        
+        cell.eventLabel.isHidden = !eventsFromTheLocal.contains{ $0.key == formatter.string(from: cellState.date)}
 //        eventsFromTheServer.map(formatter.string(from: cellState.date))
-        if (eventsFromTheServer.contains(formatter.string(from: cellState.date))){
-            eventCount += 1
-        }
+//        if (eventsFromTheServer.contains(formatter.string(from: cellState.date))){
+//            eventCount += 1
+//        }
        
-        
-        
-        switch eventCount {
-        case 1:
-            cell.eventLabel.isHidden = false
-            cell.eventLabel2.isHidden = true
-            cell.eventLabel3.isHidden = true
-        case 2:
-            cell.eventLabel.isHidden = false
-            cell.eventLabel2.isHidden = false
-            cell.eventLabel3.isHidden = true
-        case 3:
-            cell.eventLabel.isHidden = false
-            cell.eventLabel2.isHidden = false
-            cell.eventLabel3.isHidden = false
-        default:
-            cell.eventLabel.isHidden = true
-            cell.eventLabel2.isHidden = true
-            cell.eventLabel3.isHidden = true
-        }
+//
+//        var isValue = !eventsFromTheLocal.contains{ $0.key == formatter.string(from: cellState.da
+    
+//
+//
+//
+//        switch eventCount {
+//        case 1:
+//            cell.eventLabel.isHidden = false
+//            cell.eventLabel2.isHidden = true
+//            cell.eventLabel3.isHidden = true
+//        case 2:
+//            cell.eventLabel.isHidden = false
+//            cell.eventLabel2.isHidden = false
+//            cell.eventLabel3.isHidden = true
+//        case 3:
+//            cell.eventLabel.isHidden = false
+//            cell.eventLabel2.isHidden = false
+//            cell.eventLabel3.isHidden = false
+//        default:
+//            cell.eventLabel.isHidden = true
+//            cell.eventLabel2.isHidden = true
+//            cell.eventLabel3.isHidden = true
+//        }
         
         
     }
@@ -213,12 +221,13 @@ extension CalendarVC:JTAppleCalendarViewDataSource{
     
     /** 달력 시작과 끝 설정 */
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        formatter.dateFormat = "yyyy MM dd"
+//        formatter.dateFormat = "yyyy-MM-dd'T'hh:mm"
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
         let startDate = Date()//formatter.date(from : "2018 12 02")!
-        let endDate = formatter.date(from : "2019-12-02T00:00")!
+        let endDate = formatter.date(from: "2019 12 02")!//formatter.date(from : "2019-12-02T00:00")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
@@ -325,17 +334,16 @@ extension CalendarVC: PopupPickerSelectDelegate {
         print("selected date: \(date)")
         calendarView.reloadData(withanchor: date)
     }
+    
+     //날짜 사이의 날짜 가져오기
+        func daysBetweenDates(startDate: Date, endDate: Date) -> Int
+        {
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+            return components.day!
+        }
 }
 
-extension CalendarVC {
-    // 날짜 사이의 날짜 가져오기
-    func daysBetweenDates(startDate: Date, endDate: Date) -> Int
-    {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
-        return components.day!
-    }
-}
 
 
 
