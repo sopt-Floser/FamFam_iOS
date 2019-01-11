@@ -24,6 +24,8 @@ class CalendarVC: UIViewController {
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var switchBtn:UIButton!
     
+    var eventsFromTheLocal: [String:String] = [:]
+    
     @IBAction func switchButton(_ sender: UIButton) {
         let dvc = storyboard?.instantiateViewController(withIdentifier: "selectPopup") as! CalendarListPopupVC
         dvc.delegate = self
@@ -101,9 +103,11 @@ class CalendarVC: UIViewController {
 //                return dates
 //            })
             
-            for (date) in CalendarDatabase.CalendarDateArray{
-                self.eventsFromTheServer.append(date)
-            }
+//            for (date) in CalendarDatabase.CalendarDateArray{
+//                let localObject = self.getServerEvents()
+//                self.eventsFromTheLocal[localObject] = event
+//                self.eventsFromTheServer.append(date)
+//            }
             DispatchQueue.main.async {
                 self.calendarView.reloadData()
             }
@@ -176,6 +180,9 @@ class CalendarVC: UIViewController {
         if (eventsFromTheServer.contains(formatter.string(from: cellState.date))){
             eventCount += 1
         }
+       
+        
+        var isValue = !eventsFromTheLocal.contains{ $0.key == formatter.string(from: cellState.date)}
        
         
         

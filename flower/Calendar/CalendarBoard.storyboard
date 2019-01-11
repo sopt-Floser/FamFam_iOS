@@ -367,8 +367,8 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1in-b4-fsN">
-                                                            <rect key="frame" x="7.5" y="58" width="55" height="12"/>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1in-b4-fsN">
+                                                            <rect key="frame" x="8" y="62" width="55" height="12"/>
                                                             <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="12" id="cHN-dt-0tH"/>
@@ -411,11 +411,11 @@
                                                 <constraints>
                                                     <constraint firstItem="9a7-9u-2S9" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" id="Blb-5x-oxG"/>
                                                     <constraint firstItem="1in-b4-fsN" firstAttribute="width" secondItem="cMW-m0-RGg" secondAttribute="height" multiplier="55:81" id="CfA-zR-mSB"/>
+                                                    <constraint firstItem="1in-b4-fsN" firstAttribute="top" secondItem="dO5-Rp-lyp" secondAttribute="bottom" constant="3" id="HVB-zd-Gf9"/>
                                                     <constraint firstItem="1in-b4-fsN" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" id="T12-XA-9Yo"/>
                                                     <constraint firstItem="dO5-Rp-lyp" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" id="XY8-u2-on5"/>
                                                     <constraint firstItem="9a7-9u-2S9" firstAttribute="top" secondItem="UVU-qx-LvT" secondAttribute="bottom" id="YZy-sb-4ZN"/>
                                                     <constraint firstItem="cMW-m0-RGg" firstAttribute="centerX" secondItem="wGE-6H-eW8" secondAttribute="centerX" id="ZXK-HO-Cqo"/>
-                                                    <constraint firstItem="1in-b4-fsN" firstAttribute="top" secondItem="dO5-Rp-lyp" secondAttribute="bottom" id="eLV-df-ngU"/>
                                                     <constraint firstItem="UVU-qx-LvT" firstAttribute="centerX" secondItem="wGE-6H-eW8" secondAttribute="centerX" id="pJy-Ok-kj4"/>
                                                     <constraint firstItem="cMW-m0-RGg" firstAttribute="centerY" secondItem="wGE-6H-eW8" secondAttribute="centerY" id="vKt-pW-6wL"/>
                                                     <constraint firstItem="9a7-9u-2S9" firstAttribute="width" secondItem="cMW-m0-RGg" secondAttribute="height" multiplier="55:81" id="wxd-wl-Dl1"/>

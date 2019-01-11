@@ -20,7 +20,8 @@ struct Mission_Model : Mappable{
     }
     
     mutating func mapping(map: Map) {
-        missionIdx <- map["missionIdx"]
+        missionType <- map["missionType"]
+        suffixType <- map["suffixType"]
         content <- map["content"]
     }
 }
@@ -35,5 +36,6 @@ struct MissionModel : Mappable {
     mutating func mapping(map: Map) {
         mission <- map["mission"]
         target <- map["target"]
+        
     }
 }
