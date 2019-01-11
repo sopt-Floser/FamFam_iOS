@@ -100,7 +100,6 @@
 		9B6A647221D32D24004A3F5C /* CalendarAddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */; };
 		9B6A647421D34A34004A3F5C /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6A647321D34A34004A3F5C /* ChatVC.swift */; };
 		9B7C211F21E07B8E0058B456 /* CalendarBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */; };
-		9B7C212121E084CD0058B456 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B7C212021E084CD0058B456 /* GoogleService-Info.plist */; };
 		9BC0589721E73B2000B6D8A2 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589621E73B2000B6D8A2 /* ToastView.swift */; };
 		9BC0589921E7697200B6D8A2 /* appAgreementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589821E7697200B6D8A2 /* appAgreementVC.swift */; };
 		9BC0589B21E76A0600B6D8A2 /* userAgreementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC0589A21E76A0600B6D8A2 /* userAgreementVC.swift */; };
@@ -108,6 +107,7 @@
 		9BD13B1021DB872D00A3688F /* CalendarListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */; };
 		9BD13B1221DBB32100A3688F /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1121DBB32100A3688F /* CalendarData.swift */; };
 		9BD13B1421DBB3BE00A3688F /* TodayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD13B1321DBB3BE00A3688F /* TodayData.swift */; };
+		9BEBBF3D21E8D2D3000B48C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BEBBF3C21E8D2D3000B48C0 /* GoogleService-Info.plist */; };
 		9BEFFFC821D4F21C007B2167 /* HomeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */; };
 		9BF2B93D21E878FE00ADD721 /* MissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2B93C21E878FE00ADD721 /* MissionService.swift */; };
 		9BF2B93F21E8796A00ADD721 /* Mission_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2B93E21E8796A00ADD721 /* Mission_Model.swift */; };
@@ -214,7 +214,6 @@
 		9B6A647121D32D24004A3F5C /* CalendarAddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAddVC.swift; sourceTree = "<group>"; };
 		9B6A647321D34A34004A3F5C /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		9B7C211E21E07B8E0058B456 /* CalendarBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarBoard.storyboard; sourceTree = "<group>"; };
-		9B7C212021E084CD0058B456 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BC0589621E73B2000B6D8A2 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		9BC0589821E7697200B6D8A2 /* appAgreementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appAgreementVC.swift; sourceTree = "<group>"; };
 		9BC0589A21E76A0600B6D8A2 /* userAgreementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userAgreementVC.swift; sourceTree = "<group>"; };
@@ -222,6 +221,7 @@
 		9BD13B0F21DB872D00A3688F /* CalendarListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarListCell.swift; sourceTree = "<group>"; };
 		9BD13B1121DBB32100A3688F /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		9BD13B1321DBB3BE00A3688F /* TodayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayData.swift; sourceTree = "<group>"; };
+		9BEBBF3C21E8D2D3000B48C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9BEFFFC721D4F21C007B2167 /* HomeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionVC.swift; sourceTree = "<group>"; };
 		9BF2B93C21E878FE00ADD721 /* MissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionService.swift; sourceTree = "<group>"; };
 		9BF2B93E21E8796A00ADD721 /* Mission_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission_Model.swift; sourceTree = "<group>"; };
@@ -518,8 +518,8 @@
 				9B453ED321CDFD3B001BD091 /* Assets.xcassets */,
 				4D01053221E7932300CDC17B /* launchSplash.json */,
 				4D01053621E7B88900CDC17B /* splash_ios.json */,
+				9BEBBF3C21E8D2D3000B48C0 /* GoogleService-Info.plist */,
 				9B453ED821CDFD3B001BD091 /* Info.plist */,
-				9B7C212021E084CD0058B456 /* GoogleService-Info.plist */,
 			);
 			path = flower;
 			sourceTree = "<group>";
@@ -619,11 +619,11 @@
 				4D01053721E7B88900CDC17B /* splash_ios.json in Resources */,
 				4D01053921E7BB2900CDC17B /* Main.storyboard in Resources */,
 				9B7C211F21E07B8E0058B456 /* CalendarBoard.storyboard in Resources */,
-				9B7C212121E084CD0058B456 /* GoogleService-Info.plist in Resources */,
 				9B453EDF21CDFDFA001BD091 /* Today.storyboard in Resources */,
 				9B453ED421CDFD3B001BD091 /* Assets.xcassets in Resources */,
 				9B453EE721CE01EA001BD091 /* ChatBoard.storyboard in Resources */,
 				4D01053321E7932300CDC17B /* launchSplash.json in Resources */,
+				9BEBBF3D21E8D2D3000B48C0 /* GoogleService-Info.plist in Resources */,
 				9B453EE121CDFEF9001BD091 /* HomeBoard.storyboard in Resources */,
 				9B453EE521CE014B001BD091 /* PlusBoard.storyboard in Resources */,
 			);
@@ -941,7 +941,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.famfamTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.famfamd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -963,7 +963,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.famfamTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.famfamd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
