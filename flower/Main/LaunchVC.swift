@@ -10,9 +10,9 @@ import UIKit
 import Lottie
 
 class LaunchVC: UIViewController {
-    
+
     @IBOutlet var logoImage: UIImageView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,14 +27,10 @@ class LaunchVC: UIViewController {
         logoImage.center = self.view.center
         logoImage.contentMode = .scaleAspectFit
         logoImage.layer.zPosition = 1
-            
-        animationView.play { (finish) in
-            if finish {
-                print("끝")
-            }
 
+       
                 
-        }
+        
     }
 }
 

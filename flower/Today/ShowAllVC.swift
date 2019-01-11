@@ -5,7 +5,6 @@
 //  Created by 김지민 on 08/01/2019.
 //  Copyright © 2019 성다연. All rights reserved.
 //
-
 import UIKit
 
 class ShowAllVC: UIViewController {
@@ -61,17 +60,14 @@ extension ShowAllVC: UICollectionViewDataSource {
 //        return 2
 //    }
     
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        print("가나다4")
-        return PhotoList.count
-        
 //        if section == 0 {
 //            return PhotoList.count
 //        } else if section == 1 {    // this is going to be the last section with just 1 cell which will show the loading indicator
 //            return 1
 //        }
-//        return 20
+        return PhotoList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,6 +107,5 @@ extension ShowAllVC: UICollectionViewDelegateFlowLayout {
     
     
 }
-
 
 
