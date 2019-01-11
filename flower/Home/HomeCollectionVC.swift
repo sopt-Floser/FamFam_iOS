@@ -13,7 +13,8 @@ class HomeCollectionVC: UIViewController {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var profileCollectionView: UICollectionView!
     @IBAction func settingBtn(_ sender: UIButton) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "settingStoryboard") as! PlusVC
+        let storyboard = UIStoryboard(name: "PlusBoard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "settingStoryboard") as! PlusVC
         present(vc, animated: true, completion: nil)
     }
     

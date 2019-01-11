@@ -46,7 +46,7 @@ class IntroduceVC: UIViewController, UIScrollViewDelegate {
         
         
         if (UserDefaults.standard.string(forKey: "token") != nil) {
-            //autoLogin()
+            autoLogin()
         }
     }
     
