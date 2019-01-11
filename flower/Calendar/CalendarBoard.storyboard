@@ -367,17 +367,6 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
-                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1in-b4-fsN">
-                                                            <rect key="frame" x="8" y="62" width="55" height="12"/>
-                                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="cHN-dt-0tH"/>
-                                                                <constraint firstAttribute="width" constant="55" id="eVO-yI-y64"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="highlightedColor" red="0.49019607843137253" green="0.6705882352941176" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </label>
                                                         <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-Rp-lyp">
                                                             <rect key="frame" x="7.5" y="46" width="55" height="12"/>
                                                             <color key="backgroundColor" red="0.58039215686274503" green="0.50588235294117645" blue="0.50588235294117645" alpha="1" colorSpace="calibratedRGB"/>
@@ -395,12 +384,12 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a7-9u-2S9">
-                                                            <rect key="frame" x="7.5" y="31" width="55" height="12"/>
-                                                            <color key="backgroundColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a7-9u-2S9">
+                                                            <rect key="frame" x="11" y="31" width="45" height="12"/>
+                                                            <color key="backgroundColor" red="0.52549019607843139" green="0.66666666666666663" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="12" id="BDu-8m-C0J"/>
-                                                                <constraint firstAttribute="width" constant="55" id="L3Z-xt-nPT"/>
+                                                                <constraint firstAttribute="width" constant="45" id="L3Z-xt-nPT"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <color key="textColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,16 +398,13 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="9a7-9u-2S9" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" id="Blb-5x-oxG"/>
-                                                    <constraint firstItem="1in-b4-fsN" firstAttribute="width" secondItem="cMW-m0-RGg" secondAttribute="height" multiplier="55:81" id="CfA-zR-mSB"/>
-                                                    <constraint firstItem="1in-b4-fsN" firstAttribute="top" secondItem="dO5-Rp-lyp" secondAttribute="bottom" constant="3" id="HVB-zd-Gf9"/>
-                                                    <constraint firstItem="1in-b4-fsN" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" id="T12-XA-9Yo"/>
+                                                    <constraint firstItem="9a7-9u-2S9" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" constant="-1.5" id="Blb-5x-oxG"/>
                                                     <constraint firstItem="dO5-Rp-lyp" firstAttribute="centerX" secondItem="cMW-m0-RGg" secondAttribute="centerX" id="XY8-u2-on5"/>
                                                     <constraint firstItem="9a7-9u-2S9" firstAttribute="top" secondItem="UVU-qx-LvT" secondAttribute="bottom" id="YZy-sb-4ZN"/>
                                                     <constraint firstItem="cMW-m0-RGg" firstAttribute="centerX" secondItem="wGE-6H-eW8" secondAttribute="centerX" id="ZXK-HO-Cqo"/>
                                                     <constraint firstItem="UVU-qx-LvT" firstAttribute="centerX" secondItem="wGE-6H-eW8" secondAttribute="centerX" id="pJy-Ok-kj4"/>
                                                     <constraint firstItem="cMW-m0-RGg" firstAttribute="centerY" secondItem="wGE-6H-eW8" secondAttribute="centerY" id="vKt-pW-6wL"/>
-                                                    <constraint firstItem="9a7-9u-2S9" firstAttribute="width" secondItem="cMW-m0-RGg" secondAttribute="height" multiplier="55:81" id="wxd-wl-Dl1"/>
+                                                    <constraint firstItem="9a7-9u-2S9" firstAttribute="width" secondItem="cMW-m0-RGg" secondAttribute="height" multiplier="55:81" constant="-10" id="wxd-wl-Dl1"/>
                                                     <constraint firstItem="UVU-qx-LvT" firstAttribute="centerY" secondItem="wGE-6H-eW8" secondAttribute="centerY" constant="-20" id="y5F-RK-gho"/>
                                                     <constraint firstItem="dO5-Rp-lyp" firstAttribute="top" secondItem="9a7-9u-2S9" secondAttribute="bottom" constant="3" id="y9V-qo-CoB"/>
                                                 </constraints>
@@ -427,7 +413,6 @@
                                                     <outlet property="dateLabel" destination="UVU-qx-LvT" id="n1s-gW-kf2"/>
                                                     <outlet property="eventLabel" destination="9a7-9u-2S9" id="DVN-Ag-NcJ"/>
                                                     <outlet property="eventLabel2" destination="dO5-Rp-lyp" id="Vi4-Tn-TpZ"/>
-                                                    <outlet property="eventLabel3" destination="1in-b4-fsN" id="pKP-mE-7Oc"/>
                                                     <outlet property="selectedView" destination="cMW-m0-RGg" id="MTo-sm-ySx"/>
                                                     <segue destination="War-zp-aYd" kind="presentation" identifier="popupSegue" id="HFN-Ic-vpt"/>
                                                 </connections>

@@ -45,12 +45,19 @@ class CalendarData {
     var CalendarServerArray: [String] = []
     
     init(){
-        let stock = CalendarModel(date: "2019-01-02T00:00", memo: "합숙", color: "#eeclad")
-        let stock2 = CalendarModel(date: "2019-01-05T00:00", memo: "서버 합동", color: "#8eedd6")
-        let stock3 = CalendarModel(date: "2019-01-06T00:00", memo: "에어비엔비", color: "#367bf0")
-        let stock4 = CalendarModel(date: "2019-01-07T00:00", memo: "와우", color: "#fea2ab")
-        let stock5 = CalendarModel(date: "2019-01-08T00:00", memo: "오버워치", color: "#525c68")
-        let stock6 = CalendarModel(date: "2019-01-06T00:00", memo: "라면 데이", color: "#3644f9")
+                let stock = CalendarModel(date: "2019 01 02", memo: "합숙", color: "#eeclad")
+                let stock2 = CalendarModel(date: "2019 01 05", memo: "서버 합동", color: "#8eedd6")
+                let stock3 = CalendarModel(date: "2019 01 06", memo: "에어비엔비", color: "#367bf0")
+                let stock4 = CalendarModel(date: "2019 01 09", memo: "와우", color: "#fea2ab")
+                let stock5 = CalendarModel(date: "2019 01 12", memo: "오버워치", color: "#525c68")
+                let stock6 = CalendarModel(date: "2019 01 24", memo: "라면 데이", color: "#3644f9")
+
+//        let stock = CalendarModel(date: "2019-01-02'T'00:00", memo: "합숙", color: "#eeclad")
+//        let stock2 = CalendarModel(date: "2019-01-05'T'00:00", memo: "서버 합동", color: "#8eedd6")
+//        let stock3 = CalendarModel(date: "2019-01-06T00:00", memo: "에어비엔비", color: "#367bf0")
+//        let stock4 = CalendarModel(date: "2019-01-07T00:00", memo: "와우", color: "#fea2ab")
+//        let stock5 = CalendarModel(date: "2019-01-08T00:00", memo: "오버워치", color: "#525c68")
+//        let stock6 = CalendarModel(date: "2019-01-06T00:00", memo: "라면 데이", color: "#3644f9")
         
         self.CalendarDataArray = [stock, stock2, stock3, stock4, stock5, stock6]
         self.CalendarDateArray = [stock.date, stock2.date, stock3.date, stock4.date, stock5.date, stock6.date]
