@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-
+var timerIsWork2 = false
 class JoinCellPhoneVC: UIViewController {
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var codeView: UIView!
@@ -23,7 +23,7 @@ class JoinCellPhoneVC: UIViewController {
     var sendPhoneNumber:SignUpPhoneNumber?
     var phoneNumber:String? // 프로토콜 안먹혀서 임시로 전역변수로 씀
     var time: Timer?
-    var totalTime = 60
+    var totalTime = 600
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,6 +62,7 @@ extension JoinCellPhoneVC {
                 return
             }
             guard let verificationID = verificationID else { return }
+            print("verificationID = \(verificationID)")
              // TODO: get SMS verification code from user.
             if let verificationCode = self.codeTF.text {
                 let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID, verificationCode: verificationCode)
@@ -76,9 +77,20 @@ extension JoinCellPhoneVC {
         Auth.auth().languageCode = "kr"
     }
     
+    func dateformatting(value:String) -> Date{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss"
+        return dateFormatter.date(from: value) ?? Date()
+    }
+    
     private func startOtpTimer() {
-        self.totalTime = 180
-        self.time = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        if totalTime == 0 {
+            totalTime = 600
+        }
+        if (timerIsWork2 == false){
+            self.time = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            timerIsWork2 = true
+        }
     }
     
     func timeFormatted(_ totalSeconds: Int) -> String {
@@ -88,16 +100,22 @@ extension JoinCellPhoneVC {
     }
     
     @objc func updateTimer() {
-        self.timer.text = self.timeFormatted(self.totalTime)
-        if totalTime != 0 {
-            totalTime -= 1
-        } else {
-            if let time = self.time {
-                time.invalidate()
-                self.time = nil
-                // 00:00 시 다시 인증코드 보내기
-                resetAsking()
+        self.timer.text = self.timeFormatted(totalTime)
+        
+        if (timerIsWork2 == true){
+            if totalTime != 0 {
+                totalTime -= 1
+            } else {
+                if let time = self.time {
+                    time.invalidate()
+                    self.time = nil
+                    timerIsWork2 = false
+                    // 00:00 시 다시 인증코드 보내기
+                }
             }
+        }
+        else {
+            self.time?.invalidate()
         }
     }
     
@@ -149,6 +167,7 @@ extension JoinCellPhoneVC {
                 self.bottomBtn.addTarget(self, action: #selector(self.moveView), for: .touchUpInside)
             }
         }
+        print("auth checking...")
     }
     
     func firebaseLogin(_ credential: AuthCredential) {

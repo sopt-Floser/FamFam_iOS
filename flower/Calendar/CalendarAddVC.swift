@@ -220,7 +220,7 @@ extension CalendarAddVC {
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "#366CE2")
         }
         else {
-            ToastView.shared.short(self.view, txt_msg: "입력하지 않은 정보가 있습니다.")
+            //ToastView.shared.short(self.view, txt_msg: "입력하지 않은 정보가 있습니다.")
             saveBtnOutlet.isUserInteractionEnabled = false
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "9B9B9B")
         }
@@ -234,7 +234,7 @@ extension CalendarAddVC {
             perseonView.reloadInputViews()
         }
         else {
-            ToastView.shared.short(self.view, txt_msg: "입력하지 않은 정보가 있습니다.")
+            //ToastView.shared.short(self.view, txt_msg: "입력하지 않은 정보가 있습니다.")
             saveBtnOutlet.isUserInteractionEnabled = false
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "9B9B9B")
         }

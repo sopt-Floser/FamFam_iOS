@@ -143,7 +143,7 @@ extension TodayFeedVC: UITableViewDelegate {
         
         nextVC.viewHeight = cellHeight //셀의 높이를 다음 화면의 뷰 높이로 보냄
         
-        nextVC.postProfileImage = gsno(post.photos?[0].photoName)
+        nextVC.postProfileImage = gsno(post.userProfile)
         nextVC.postName = post.userName
         nextVC.postDate = post.content?.createdAt
         for i in 0..<post.photos!.count {

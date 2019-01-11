@@ -104,7 +104,37 @@ class PostFullVC: UIViewController, UIScrollViewDelegate {
         print("댓글 리스트 : \(postReplyList)")
         imageScroll()
         self.postFullTable.reloadData()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboard(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboard(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboard(notification:)), name:UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        setupTap()
     }
+    
+    @objc func keyboard(notification:Notification) {
+        guard let keyboardReact = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
+            return
+        }
+        
+        if notification.name == UIResponder.keyboardWillShowNotification ||  notification.name == UIResponder.keyboardWillChangeFrameNotification {
+            self.view.frame.origin.y = -keyboardReact.height
+        }else{
+            self.view.frame.origin.y = 0
+        }
+        
+    }
+    
+    func setupTap() {
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        self.view.addGestureRecognizer(viewTap)
+    }
+    
+    @objc func viewTapped() {
+        self.view.endEditing(true)
+    }
+    
     
     func imageScroll(){
         view.layoutIfNeeded()

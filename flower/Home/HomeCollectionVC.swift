@@ -12,6 +12,10 @@ class HomeCollectionVC: UIViewController {
     /** 콜렉션 뷰 */
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var profileCollectionView: UICollectionView!
+    @IBAction func settingBtn(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "settingStoryboard") as! PlusVC
+        present(vc, animated: true, completion: nil)
+    }
     
     var FamilyMember:[FamilyModel] = []
     var feelCountData :Int = 0

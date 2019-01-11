@@ -34,7 +34,7 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
         LoginService.shared.login(id: id, password: password){
             (data) in guard let status = data.status else {return}
-        
+            print("status = \(status)")
             switch status {
             case 200:
                 ToastView.shared.short(self.view, txt_msg: "로그인 성공")

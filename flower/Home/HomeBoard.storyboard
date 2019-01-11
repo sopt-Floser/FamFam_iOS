@@ -473,7 +473,7 @@
                                                             <rect key="frame" x="0.0" y="28" width="311" height="60"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F53-k8-vbE" id="KTl-ca-R6C">
-                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="311" height="59.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2SR-FJ-aRt">
@@ -595,7 +595,7 @@
                                     <constraint firstAttribute="width" constant="85" id="Ric-Vk-UvD"/>
                                     <constraint firstAttribute="height" constant="19" id="Wro-gT-hVQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.21176470589999999" green="0.42352941179999998" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -618,6 +618,14 @@
                                 </state>
                                 <connections>
                                     <segue destination="jxy-ys-Dpu" kind="presentation" id="lh5-Hx-Lbz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGR-km-hdb">
+                                <rect key="frame" x="300" y="38" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnSetting"/>
+                                <connections>
+                                    <action selector="settingBtn:" destination="2ZG-cW-Z8j" eventType="touchUpInside" id="uuK-M7-x8S"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -655,6 +663,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnSetting" width="48" height="48"/>
         <image name="family" width="612" height="408"/>
         <image name="iconEditBackground" width="48" height="48"/>
         <image name="imgHug" width="165" height="164"/>

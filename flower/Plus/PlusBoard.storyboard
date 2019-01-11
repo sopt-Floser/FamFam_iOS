@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaM-b7-EZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="-1666"/>
+            <point key="canvasLocation" x="1122" y="-1685"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Agl-L2-lIz">
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aA-Vs-ON3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4401" y="-2769"/>
+            <point key="canvasLocation" x="4484" y="-2492"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4P5-Rd-t6d">
@@ -193,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYI-Jm-qSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2653.5999999999999" y="-1666.4167916041981"/>
+            <point key="canvasLocation" x="2585" y="-1671"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DUD-RZ-Alb">
@@ -224,7 +224,7 @@
         <!--더보기-->
         <scene sceneID="p72-U3-Jqe">
             <objects>
-                <viewController id="Hi1-lF-tfS" customClass="PlusVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingStoryboard" id="Hi1-lF-tfS" customClass="PlusVC" customModule="flower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ld-Dz-8fX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6F-oE-UcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181.5999999999999" y="-2492.2038980509747"/>
+            <point key="canvasLocation" x="1135" y="-2492"/>
         </scene>
         <!--알림 설정-->
         <scene sceneID="9br-i3-Yph">
@@ -469,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaC-jQ-LH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-1666"/>
+            <point key="canvasLocation" x="1881" y="-1685"/>
         </scene>
         <!--프로필 편집-->
         <scene sceneID="RYT-cH-llw">
