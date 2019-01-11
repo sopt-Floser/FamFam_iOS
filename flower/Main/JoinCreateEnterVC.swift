@@ -16,18 +16,12 @@ class JoinCreateEnterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createBtn.addTarget(self, action: #selector(createGroupSelector), for: .touchUpInside)
+        createBtn.addTarget(self, action: #selector(createGroup), for: .touchUpInside)
 
         // Do any additional setup after loading the view.
     }
     
-
-    @objc func createGroupSelector(){
-        createGroup()
-        enjoyGroup()
-    }
-    
-    func createGroup(){
+    @objc func createGroup(){
         GroupService.shared.createGroup{ res in
             switch res.status {
             case 201 :
@@ -42,6 +36,7 @@ class JoinCreateEnterVC: UIViewController {
             case 600 :
                 print("DB 에러")
             default:
+                print("status = \(res.status)")
                 print("그룹 생성 시도 중")
             }
         }
@@ -66,6 +61,7 @@ class JoinCreateEnterVC: UIViewController {
             case 600:
                 print("데이터베이스 에러")
             default:
+                print("status = \(res.status)")
                 print("그룹 참여 시도중")
 
             }

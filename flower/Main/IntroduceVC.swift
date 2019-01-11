@@ -29,10 +29,6 @@ class IntroduceVC: UIViewController, UIScrollViewDelegate {
             imageView.contentMode = .scaleAspectFit
             self.scrollView.addSubview(imageView)
             
-            
-            
-            
-            
         }
         self.scrollView.isPagingEnabled = true
         self.scrollView.bounces = false
@@ -47,6 +43,41 @@ class IntroduceVC: UIViewController, UIScrollViewDelegate {
         self.pageControl.tintColor = UIColor.red
         self.pageControl.pageIndicatorTintColor = UIColor.black
         self.pageControl.currentPageIndicatorTintColor = UIColor.blue
+        
+        
+        if (UserDefaults.standard.string(forKey: "token") != nil) {
+            autoLogin()
+        }
+    }
+    
+    
+    func autoLogin(){
+        LoginService.shared.autoLogin(){ data in
+            guard let status = data.status else {return}
+            switch status {
+            case 200 :
+                print("자동 로그인 성공")
+                self.moveToTaps()
+            case 401 :
+                print("토큰 인증 실패")
+            case 404 :
+                print("회원을 찾을 수 없습니다")
+            case 500 :
+                print("서버 에러")
+            case 600 :
+                print("DB 에러")
+            default:
+                print("자동로그인 시도중")
+            }
+        }
+    }
+    
+    func moveToTaps(){
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "tabbar")
+        self.view.endEditing(true)
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
     }
     
     @objc func changePage(sender: AnyObject) {
@@ -60,7 +91,7 @@ class IntroduceVC: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = Int(pageNumber)
     }
 
-    
+
     
 //    override func viewDidLoad() {
 //        super.viewDidLoad()

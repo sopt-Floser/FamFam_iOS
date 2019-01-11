@@ -22,6 +22,7 @@ class TodayFeedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.endEditing(true)
 //        getTodayFeedData() //모델에서 피드 데이터 받아오는 함수
         //cellForRowAt 에서 데이터 Set
@@ -51,9 +52,29 @@ class TodayFeedVC: UIViewController {
         super.viewWillAppear(animated)
         self.hidesBottomBarWhenPushed = false
         
-        TodayService.shared.getAllContent(page_no: 5, page_size: 5){[weak self] (data) in guard let `self` = self else {return}
-            self.todayFeedList = data
-            self.todayFeedTable.reloadData()
+        TodayService.shared.getAllContent(page_no: 0, page_size: 10){ jimin in
+            guard let jimin2 = jimin.status else {return}
+            guard let jimin3 = jimin.data else {
+                return}
+            guard let jimin4 = jimin3.contents else {return}
+            switch jimin2{
+            case 200 :
+                self.todayFeedList = jimin4
+                self.todayFeedTable.reloadData()
+                print ("오늘의 하루 피드 조회 성공")
+            case 204 :
+                print ("게시글을 찾을 수 없습니다.")
+            case 404 :
+                print ("회원을 찾을 수 없습니다.")
+            case 500 :
+                print ("서버 내부 에러")
+            case 600 :
+                print ("DB 에러")
+            default :
+                print(jimin2)
+                print ("모든 컨텐츠 조회")
+                
+            }
         }
     }
     

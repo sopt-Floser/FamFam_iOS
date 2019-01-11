@@ -30,6 +30,7 @@ struct GroupService :APIManager, Requestable{
         post(groupURL, body: nil, header: headers){ res in
             switch res {
             case .success(let value):
+                print("token = \(UserDefaults.standard.string(forKey: "token"))")
                 completion(value)
             case .error(let error):
                 print(error)
