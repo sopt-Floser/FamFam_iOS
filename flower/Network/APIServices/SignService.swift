@@ -29,10 +29,8 @@ struct SignService : APIManager, Requestable {
             switch res {
             case .success(let value):
                 completion(value)
-                print("sign ID check success")
             case .error(let value):
                 completion(value)
-                print("sign ID check failed")
             }
         }
     }
@@ -54,10 +52,8 @@ struct SignService : APIManager, Requestable {
             switch res {
             case .success(let value):
                 completion(value)
-                print("sign up success")
             case .error(let value):
                 completion(value)
-                print("sign up failed")
             }
         }
     }

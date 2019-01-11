@@ -29,6 +29,7 @@ struct PhotoService : APIManager, Requestable {
         }
     }
     
+    //개인
     func getPersonalPhotos(userIdx:Int?, page_no:Int?, page_size:Int?, completion:@escaping(NetworkData) -> Void){
         let queryURL = photoURL + "?userIdx=\(userIdx)&page=\(page_no ?? 0)&size=\(page_size ?? 20)"
         get(queryURL, body: nil, header: header){ res in

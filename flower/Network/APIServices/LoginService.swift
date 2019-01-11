@@ -32,15 +32,21 @@ struct LoginService: APIManager, Requestable {
             switch res {
             case .success(let value):
                 completion(value)
-                print("login success")
             case .error(let value):
                 completion(value)
-                print("login failed")
             }
         }
     }
     
-    func autoLogin(){
-        
+    // 자동 로그인
+    func autoLogin(completion:@escaping(NetworkData)->Void){
+        get(loginURL, body: nil, header: uploadHeader){ res in
+            switch res {
+            case .success(let value):
+                completion(value)
+            case .error(let value):
+                completion(value)
+            }
+        }
     }
 }

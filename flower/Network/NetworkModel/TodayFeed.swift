@@ -18,6 +18,7 @@ struct TodayFeed : Mappable {
         
     }
     
+    
     mutating func mapping(map: Map) {
         contents <- map["contents"]
         totalPage <- map["totalPage"]

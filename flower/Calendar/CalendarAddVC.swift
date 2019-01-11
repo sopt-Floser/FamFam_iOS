@@ -157,12 +157,8 @@ extension CalendarAddVC {
         personDateLabel.text = setDateLabel()
         
         let eatSegmentControl = BetterSegmentedControl(frame: CGRect(x: (view.frame.width - 302 ) / 2 - 4, y: (view.frame.height)/2 - 100, width: 306, height: 38), segments: LabelSegment.segments(withTitles: ["같이 먹어요!", "먹고 올게요!"], normalBackgroundColor: .white, normalTextColor: UIColor.init(hex: "#656565"), selectedBackgroundColor: .white, selectedTextColor: UIColor.init(hex: "#366CE2")), index: 1, options: [.backgroundColor(UIColor.init(hex: "#656565")), .indicatorViewBackgroundColor(UIColor.init(hex: "#366CE2")) ])
-//        eatSegmentControl.layer.borderWidth = 3
-//        eatSegmentControl.layer.borderColor = UIColor(hex: "#366CE2").cgColor
         
         let backSegmentControl = BetterSegmentedControl(frame: CGRect(x: (view.frame.width - 302) / 2 - 4, y: (view.frame.height) / 2 + 14, width: 306, height: 75), segments: LabelSegment.segments(withTitles: ["10시 전", "10시 ~ 12시", "12시 이후"], normalBackgroundColor: .white, normalTextColor: UIColor.init(hex: "#656565"), selectedBackgroundColor: .white, selectedTextColor: UIColor.init(hex: "#366CE2")), index: 1, options: [.backgroundColor(UIColor.init(hex: "#656565")), .indicatorViewBackgroundColor(UIColor.init(hex: "#366CE2")) ])
-//        backSegmentControl.layer.borderWidth = 3
-//        backSegmentControl.layer.borderColor = UIColor.init(hex: "#366CE2").cgColor
         
         eatSegmentControl.layer.cornerRadius = 5
         backSegmentControl.layer.cornerRadius = 5
@@ -224,6 +220,7 @@ extension CalendarAddVC {
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "#366CE2")
         }
         else {
+            ToastView.shared.short(self.view, txt_msg: "입력하지 않은 정보가 있습니다.")
             saveBtnOutlet.isUserInteractionEnabled = false
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "9B9B9B")
         }
@@ -237,6 +234,7 @@ extension CalendarAddVC {
             perseonView.reloadInputViews()
         }
         else {
+            ToastView.shared.short(self.view, txt_msg: "입력하지 않은 정보가 있습니다.")
             saveBtnOutlet.isUserInteractionEnabled = false
             saveBtnOutlet.backgroundColor = UIColor.init(hex: "9B9B9B")
         }

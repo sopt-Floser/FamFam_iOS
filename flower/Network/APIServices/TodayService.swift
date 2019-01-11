@@ -12,10 +12,12 @@ import Alamofire
 /** 오늘의 하루 */
 struct TodayService: APIManager, Requestable {
     //typealias NetworkData = ResponseArray<Today_Contents>
-    typealias NetworkData = ResponseObject<TodayFeed>
     
+    typealias NetworkData = ResponseObject<TodayFeed> //ResponseArray
     static let shared = TodayService()
+    
     let todayURL = url("/contents")
+    
     let header: HTTPHeaders = [
         "Content-Type": "application/json"
     ]
@@ -61,6 +63,21 @@ struct TodayService: APIManager, Requestable {
             }
         }
     }
+//
+//    // 해당 컨텐츠 조회
+//    func getOneContent(contentIdx:Int? = 0, completion: @escaping(NetworkData) -> Void){
+//        let queryURL = todayURL + "/\(contentIdx)"
+//
+//        get(queryURL, body: nil, header: uploadHeader){ res in
+//            switch res {
+//            case .success(let value):
+//                completion(value)
+//            case .error(let error):
+//                print(error)
+//            }
+//
+//        }
+//    }
     
      //해당 컨텐츠 조회
         func getOneContent(contentIdx:Int? = 0, completion: @escaping(NetworkData) -> Void){
@@ -70,13 +87,29 @@ struct TodayService: APIManager, Requestable {
                 switch res {
                 case .success(let value):
                     guard let contents = value.data else {return}
-                    completion(contents)
+                    completion(value)
                 case .error(let error):
                     print(error)
                 }
     
             }
         }
+
+    //    func getOneContent(contentIdx:Int? = 0, completion: @escaping(Today_Contents) -> Void){
+    //        let queryURL = todayURL + "/\(contentIdx)"
+    //
+    //        get(queryURL, body: nil, header: uploadHeader){ res in
+    //            switch res {
+    //            case .success(let value):
+    //                guard let contents = value.data else {return}
+    //                completion(contents)
+    //            case .error(let error):
+    //                print(error)
+    //            }
+    //
+    //        }
+    //    }
+
     
     // 게시글 작성
     func writeContent(content:String, photos: [UIImage], completion: @escaping(Int) -> Void){

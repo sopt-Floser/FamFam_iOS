@@ -17,18 +17,16 @@ class TodayFeedVC: UIViewController {
     
     var images = [String]()
     var todayFeedList = [Today_Contents]()
-   // var todayPhotos = [Today_Photo]()
     var cellHeight : CGFloat = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.endEditing(true)
-//        getTodayFeedData() //모델에서 피드 데이터 받아오는 함수
-        //cellForRowAt 에서 데이터 Set
-        
-        
+   
         todayFeedTable.delegate = self
         todayFeedTable.dataSource = self
+        self.todayFeedTable.reloadData()
 
         self.todayFeedTable.rowHeight = UITableView.automaticDimension
         view.layoutIfNeeded()
@@ -51,13 +49,9 @@ class TodayFeedVC: UIViewController {
         super.viewWillAppear(animated)
         self.hidesBottomBarWhenPushed = false
         
-        
-        
-        
         TodayService.shared.getAllContent(page_no: 0, page_size: 10){ jimin in
             guard let jimin2 = jimin.status else {return}
-            guard let jimin3 = jimin.data else {
-                return}
+            guard let jimin3 = jimin.data else {return}
             guard let jimin4 = jimin3.contents else {return}
             switch jimin2{
             case 200 :
@@ -95,25 +89,13 @@ extension TodayFeedVC: UITableViewDataSource {
         
         //cell 객체를 선언합니다. reusable identifier를 제대로 설정해주는거 잊지마세요!
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodayFeedCell") as! TodayFeedCell
-        
+        print("리스트\(todayFeedList)")
         //각 row에 해당하는 cell의 데이터를 넣어주기위해 모델에서 post 데이터 하나를 선언합니다.
         let post = todayFeedList[indexPath.row]
         
-        cell.postProfileImage?.imageFromUrl(gsno(post.photos?[0].photoName), defaultImgPath: "")
+        cell.postProfileImage?.imageFromUrl(gsno(post.userProfile), defaultImgPath: "")
         cell.postName.text = post.userName
         cell.postDate.text = post.content?.createdAt
-   //     guard let photoCount = post.photos else {return}
-   //     cell.imageList = post.photos[i].PhotoName
-        //cell.postImage = post.photos?[0].photoName
-        
-//        var iimage = imageFromUrl(gsno(post.photos[0].PhotoName), defaultImgPath: "")
-//        
-//
-        
-//        for i in 0..<post.photos!.count {
-//            cell.images.append(gsno(post.photos?[i].photoName))
-//        }
-        
         cell.postImage.imageFromUrl(gsno(post.photos?[0].photoName), defaultImgPath: "")
         
         cell.pageControl.numberOfPages = post.photos!.count
@@ -152,7 +134,7 @@ extension TodayFeedVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //아래의 과정들은 화면전환에서 데이터 전달을 하는 방법과 동일합니다.
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "TodayFeedCell") as! TodayFeedCell
+
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "PostFullVC") as! PostFullVC
         let post = todayFeedList[indexPath.row]
         let row = tableView.cellForRow(at: indexPath)
@@ -162,45 +144,23 @@ extension TodayFeedVC: UITableViewDelegate {
         nextVC.viewHeight = cellHeight //셀의 높이를 다음 화면의 뷰 높이로 보냄
         
         nextVC.postProfileImage = gsno(post.photos?[0].photoName)
-        
         nextVC.postName = post.userName
         nextVC.postDate = post.content?.createdAt
-      
-        
         for i in 0..<post.photos!.count {
             nextVC.images.append(gsno(post.photos?[i].photoName))
         }
         nextVC.postImagePageControl = post.photos?.count
-        
         nextVC.postContent = post.content?.content
         nextVC.replyCount = post.content?.commentCount
-        
-//        nextVC.postNameView = cell.postName
-//        nextVC.postDateView = cell.postDate
-//        // 중간 (게시글)
-//        nextVC.postImageView = cell.postImage
-//
-//        nextVC.postContentView = cell.postContent
-//
-//        nextVC.replyCountView = cell.replyCount
-//
-//        nextVC.postContent = post.content?.content
-//
-//        nextVC.replyCount = post.content?.commentCount
+        nextVC.contentIdx = post.content?.contentIdx
+
         self.hidesBottomBarWhenPushed = true
-//        present(nextVC, animated: true, completion: nil)
-        navigationController?.pushViewController(nextVC, animated: true)
-    } //여기까지 보셨다면 잠깐 다시 위의 viewWillApear로!
+        
+        print ("게시글 상세보기 페이지로 넘어갑니다")
+
+        present(nextVC, animated: true, completion: nil)
+        //navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
 
-//extension TodayFeedVC {
-//    func getTodayFeedData() {
-//        let post1 = TodayFeedData(pPImage: "sampleProfile", pName: "승수", pDate: "19950801", pImage: "tempImg", pPage: 3, eImage: "emotionSmile", eName: "엄마", pContent: "스누피 뒷모습 너무 귀엽다 찰리브라운 대머리 스누피 귀가 잘 안보이네", rCount: 2)
-//        let post2 = TodayFeedData(pPImage: "momPic", pName: "엄마", pDate: "20181225", pImage: "cakeImg", pPage: 5, eImage: "emotionSmile", eName: "막내", pContent: "엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구! 엄청 많이 말하면 줄이 넘어가나 셀 사이즈 조정을 해야하는 데 그건 어떻게 해 망했어 진짜 어쩌구 저쩌구 길어졌나? 엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구! 엄청 많이 말하면 줄이 넘어가나 셀 사이즈 조정을 해야하는 데 그건 어떻게 해 망했어 진짜 어쩌구 저쩌구 길어졌나? 엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구! 엄청 많이 말하면 줄이 넘어가나 셀 사이즈 조정을 해야하는 데 그건 어떻게 해 망했어 진짜 어쩌구 저쩌구 길어졌나? 엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구! 엄청 많이 말하면 줄이 넘어가나 셀 사이즈 조정을 해야하는 데 그건 어떻게 해 망했어 진짜 어쩌구 저쩌구 길어졌나? 엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구! 엄청 많이 말하면 줄이 넘어가나 셀 사이즈 조정을 해야하는 데 그건 어떻게 해 망했어 진짜 어쩌구 저쩌구 길어졌나? 엄마와 함께 즐거운 데이트! :) 날씨는 별로 엄마는 내 맘의 별로>< 배고프고 춥고 어쩌구 저쩌구! 엄청 많이 말하면 줄이 넘어가나 셀 사이즈 조정을 해야하는 데 그건 어떻게 해 망했어 진짜 어쩌구 저쩌구 길어졌나? ", rCount: 4)
-//        let post3 = TodayFeedData(pPImage: "tempImg", pName: "스누피", pDate: "20181225", pImage: "family", pPage: 5, eImage: "emotionSmile", eName: "막내", pContent: "가족", rCount: 10)
-//        todayFeedList = [post1,post2,post3]
-//
-//    }
-//
-//}
 

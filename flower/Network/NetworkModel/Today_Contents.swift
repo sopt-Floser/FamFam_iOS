@@ -13,6 +13,7 @@ import ObjectMapper
 struct Today_Contents : Mappable {
     var userName : String?
     var photos : [Today_Photo]?
+    var userProfile : String?
     var content : Today_Content?
    
     init?(map: Map) {
@@ -22,6 +23,7 @@ struct Today_Contents : Mappable {
     mutating func mapping(map: Map) {
         userName  <- map["userName"]
         photos <- map["photos"]
+        userProfile <- map["userProfile"]
         content <- map["content"]
     }
 

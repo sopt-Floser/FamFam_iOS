@@ -22,7 +22,10 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         idTF.resignFirstResponder()
 //        idTF.delegate = self
 //        passwordTF.delegate = self
+        
         loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
+        
+        
     }
     
     @objc func login(){
@@ -34,21 +37,12 @@ class LoginVC: UIViewController , UITextFieldDelegate{
         
             switch status {
             case 200:
-                print("로그인 성공")
+                ToastView.shared.short(self.view, txt_msg: "로그인 성공")
                 guard let token = data.data?.token else { return }
                 UserDefaults.standard.set(token, forKey: "token")
-               
-//                Auth.auth().sign
-//                Auth.auth().signIn(withCustomToken: UserDefaults.standard.data(forKey: "token"), completion: {(user, error) in
-//                    guard error == nil else {
-//                        print("Error Occured durign sign in")
-//                        return
-//                    } completion()
-//                })
-               
                 self.moveToTaps()
             case 400:
-                print("로그인 실패")
+                ToastView.shared.short(self.view, txt_msg: "로그인 실패")
             case 500 :
                 print("로그인 - 서버 내부 에러")
             case 600 :
@@ -62,7 +56,6 @@ class LoginVC: UIViewController , UITextFieldDelegate{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-   
     
     func moveToTaps(){
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
