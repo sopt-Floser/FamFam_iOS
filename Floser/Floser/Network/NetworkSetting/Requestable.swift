@@ -20,54 +20,55 @@ protocol Requestable {
 extension Requestable {
     //서버에 get 요청을 보내는 함수
     func get(_ url: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
-        Alamofire.request(url, method: .get, parameters: body, encoding: JSONEncoding.default, headers: header).responseObject { (res: DataResponse<NetworkData>) in
+        
+        AF.request(url, method: .get, parameters: body, encoding: JSONEncoding.default, headers: header).responseData { res in
             switch res.result {
             case .success:
-                guard let value = res.result.value else { return }
-                completion(.success(value))
+                guard let value = res.value else { return }
+                completion(.success(value as! Self.NetworkData))
             case .failure:
-                guard let value = res.result.value else { return }
-                completion(.error(value))
+                guard let value = res.value else { return }
+                completion(.error(value as! Self.NetworkData))
             }
         }
     }
     
     //서버에 post 요청을 보내는 함수
     func post(_ url: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
-        Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseObject { (res: DataResponse<NetworkData>) in
+        AF.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseData { res in
             switch res.result {
             case .success:
-                guard let value = res.result.value else { return }
-                completion(.success(value))
+                guard let value = res.value else { return }
+                completion(.success(value as! Self.NetworkData))
             case .failure:
-                guard let value = res.result.value else { return }
-                completion(.error(value))
+                guard let value = res.value else { return }
+                completion(.error(value as! Self.NetworkData))
             }
         }
     }
     
     func put(_ url: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
-        Alamofire.request(url, method: .put, parameters: body, encoding: JSONEncoding.default, headers: header).responseObject { (res: DataResponse<NetworkData>) in
+        AF.request(url, method: .put, parameters: body, encoding: JSONEncoding.default, headers: header).responseData { res in
             switch res.result {
             case .success:
-                guard let value = res.result.value else { return }
-                completion(.success(value))
+                guard let value = res.value else { return }
+                completion(.success(value as! Self.NetworkData))
             case .failure:
-                guard let value = res.result.value else { return }
-                completion(.error(value))
+                guard let value = res.value else { return }
+                completion(.error(value as! Self.NetworkData))
             }
         }
     }
     
     func delete(_ url: String, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (NetworkResult<NetworkData>) -> Void) {
-        Alamofire.request(url, method: .delete, parameters: body, encoding: JSONEncoding.default, headers: header).responseObject { (res: DataResponse<NetworkData>) in
+        AF.request(url, method: .delete, parameters: body, encoding: JSONEncoding.default, headers: header).responseData { res in
             switch res.result {
             case .success:
-                guard let value = res.result.value else { return }
-                completion(.success(value))
+                guard let value = res.value else { return }
+                completion(.success(value as! Self.NetworkData))
             case .failure:
-                guard let value = res.result.value else { return }
-                completion(.error(value))
+                guard let value = res.value else { return }
+                completion(.error(value as! Self.NetworkData))
             }
         }
     }

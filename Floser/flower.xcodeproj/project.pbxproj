@@ -338,7 +338,6 @@
 			children = (
 				9B04F0D521E11D9400457181 /* NetworkSetting */,
 				9B09D64A21DE126400AE1E6F /* NetworkModel */,
-				9B09D63B21DE0F2C00AE1E6F /* Extension */,
 				9B09D63A21DE0DC900AE1E6F /* APIServices */,
 			);
 			path = Network;
@@ -365,6 +364,7 @@
 		9B09D63B21DE0F2C00AE1E6F /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9BC0589E21E7BB0300B6D8A2 /* ProtocolFile.swift */,
 				4DC7112721DD0F51001FACB6 /* CustomNavigationBar.swift */,
 				9B09D65521DE1F5E00AE1E6F /* UIViewController+Extension.swift */,
 				9BC0589621E73B2000B6D8A2 /* ToastView.swift */,
@@ -397,6 +397,19 @@
 			path = NetworkModel;
 			sourceTree = "<group>";
 		};
+		9B0C880B25F126B20072303C /* VeiwController */ = {
+			isa = PBXGroup;
+			children = (
+				9B44BEDF21CF33DE00EB5C17 /* Main */,
+				9B7C211D21E07B7F0058B456 /* Calendar */,
+				9B44BEE321CF341300EB5C17 /* Today */,
+				9B44BEE221CF33FF00EB5C17 /* Chat */,
+				9B44BEE121CF33F700EB5C17 /* Home */,
+				9B44BEE021CF33EA00EB5C17 /* Plus */,
+			);
+			path = VeiwController;
+			sourceTree = "<group>";
+		};
 		9B12427425F0BB58007577C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,7 +434,6 @@
 		9B44BEDF21CF33DE00EB5C17 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				4D01053821E7BB2900CDC17B /* Main.storyboard */,
 				4D7E1C2721E4948C00CA7942 /* LaunchVC.swift */,
 				4D2B85FE21D4642A00268906 /* LoginVC.swift */,
 				4DD94D2F21D495800098C7A2 /* IntroduceVC.swift */,
@@ -514,17 +526,13 @@
 			isa = PBXGroup;
 			children = (
 				9B12427425F0BB58007577C4 /* Supporting Files */,
+				9B09D63B21DE0F2C00AE1E6F /* Extension */,
 				9B09D63921DE0DB700AE1E6F /* Network */,
-				9B7C212221E098DF0058B456 /* Protocol */,
-				9B7C211D21E07B7F0058B456 /* Calendar */,
+				9B0C880B25F126B20072303C /* VeiwController */,
 				9B096B0C21D472AF00442A68 /* Model */,
-				9B44BEE321CF341300EB5C17 /* Today */,
-				9B44BEE221CF33FF00EB5C17 /* Chat */,
-				9B44BEE121CF33F700EB5C17 /* Home */,
-				9B44BEE021CF33EA00EB5C17 /* Plus */,
-				9B44BEDF21CF33DE00EB5C17 /* Main */,
 				4D01053221E7932300CDC17B /* launchSplash.json */,
 				4D01053621E7B88900CDC17B /* splash_ios.json */,
+				4D01053821E7BB2900CDC17B /* Main.storyboard */,
 				9BEBBF3C21E8D2D3000B48C0 /* GoogleService-Info.plist */,
 			);
 			path = Floser;
@@ -543,14 +551,6 @@
 				9B0DE9B821CF550E0020371E /* CalendarCell.swift */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		9B7C212221E098DF0058B456 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				9BC0589E21E7BB0300B6D8A2 /* ProtocolFile.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		9BEFFFC621D4CAB9007B2167 /* Mission */ = {
@@ -835,6 +835,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -890,6 +891,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -908,7 +910,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU8G5ASQP7;
-				INFOPLIST_FILE = flower/Info.plist;
+				INFOPLIST_FILE = "Floser/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -930,7 +932,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NU8G5ASQP7;
-				INFOPLIST_FILE = flower/Info.plist;
+				INFOPLIST_FILE = "Floser/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

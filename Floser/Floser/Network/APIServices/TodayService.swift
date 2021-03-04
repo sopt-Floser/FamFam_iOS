@@ -113,34 +113,21 @@ struct TodayService: APIManager, Requestable {
     
     // 게시글 작성
     func writeContent(content:String, photos: [UIImage], completion: @escaping(Int) -> Void){
-        
-        Alamofire.upload(multipartFormData: { (multipart) in
+        AF.upload(multipartFormData: { multipart in
             multipart.append(content.data(using: .utf8)!, withName: "content")
-            for i in 0..<photos.count {
-                multipart.append(photos[i].jpegData(compressionQuality: 0.5)!, withName: "photos", fileName: "image.jpeg", mimeType: "image/jpeg")
-            }
-        }, to: todayURL, headers: uploadDataHeader) { (result) in
             
-            //멀티파트로 성공적으로 인코딩 되었다면 success, 아니라면 failure 입니다.
-            switch result {
-            case .success(let upload, _, _):
-                
-                // 성공 하였다면 아래의 과정으로 응답 리스폰스에 대한 처리를 합니다.
-                // 여기부터는 request 함수와 동일합니다.
-                upload.responseObject { (res: DataResponse<ResponseArray<Today_Contents>>) in
-                    switch res.result {
-                    case .success:
-                        guard let status = res.result.value?.status else { return }
-                        completion(status)
-                    case .failure(let err):
-                        print(err)
-                    }
-                }
-                
+            for i in 0..<photos.count {
+                multipart.append(photos[i].jpegData(compressionQuality: 0.5)!, withName: "photos", fileName: "image.jpeg", mimeType: "content")
+            }
+        }, to: todayURL, usingThreshold: UInt64.init(), headers: uploadHeader).responseJSON(completionHandler: { result in
+            switch result.result {
+            case .success:
+                guard let status = result.value else { return }
+                completion(status as! Int)
             case .failure(let err):
                 print(err)
             }
-        }
+        })
     }
     
     // 해당 컨텐츠 수정
